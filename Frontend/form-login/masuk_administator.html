@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Mahasiswa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="asset/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body class="custom-body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-6  order-lg-first order-last bg-left d-flex justify-content-center align-items-center">
+        <img src="asset/img/login-administator.png" alt="Ilustrasi Login" class="login-illustration">
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-6  order-lg-last order-first bg-right">
+        <div class="row align-items-center">
+          <div class="logo-container">
+            <img src="asset/img/logo-kejardosen.png" alt="Logo KJRDNS" class="logo">
+            <p class="welcome-title text-center">Selamat Datang!👋 </p>
+            <p class="welcome-subtitle text-center ms-5 me-5">Anda berada di halaman masuk sebagai Administator💻, Silahkan masuk sebagai Administator👨🏻‍💻👩🏻‍💻</p>
+          </div>
+          <div class="input-container mx-auto">
+            <label for="usernameInput" class="input-label">👤 Username</label>
+            <input id="usernameInput" type="text" class="form-control custom-input" placeholder="masukkan Username anda ...">
+          </div>
+          <div class="input-container mx-auto mt-2">
+            <label for="passwordInput" class="input-label">🔐 Kata Sandi</label>
+            <div class="input-group">
+              <input id="passwordInput" type="password" class="form-control custom-input" placeholder="masukkan kata sandi anda ...">
+              <!-- <button id="togglePassword" class="btn btn-outline-secondary">
+                <i class="bi bi-eye-slash"></i>
+              </button> -->
+              <button id="togglePassword" class="btn-toggle-password ps-2 pe-2">
+                <i class="bi bi-eye-slash"></i>
+              </button>
+              
+            </div>
+          </div>
+          <div class="remember-forgot-container d-flex justify-content-between mx-auto mt-2">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe">
+              <label for="rememberMe" class="form-check-label text-secondary">Ingat saya</label>
+            </div>
+            <a href="#" class="forgot-password">Lupa kata sandi?</a>
+          </div>
+          <div class="submit-button-container mx-auto mt-3">
+            <button class="btn btn-custom-submit">Masuk</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="asset/script.js"></script>
+</body>
+</html>
