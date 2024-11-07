@@ -1,0 +1,205 @@
+<html>
+<head>
+    <title>Dashboard</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div id="root"></div>
+    <script type="text/babel">
+        const App = () => {
+            const [sidebarOpen, setSidebarOpen] = React.useState(false);
+            const [progress, setProgress] = React.useState(25); // Initial progress percentage
+    
+            const toggleSidebar = () => {
+                setSidebarOpen(!sidebarOpen);
+            };
+    
+            // Function to update the progress
+            const updateProgress = () => {
+                // Example: Increase progress by 10%, capped at 100%
+                setProgress((prev) => (prev + 10 > 100 ? 100 : prev + 10));
+            };
+    
+            return (
+                <div className="flex">
+                    {/* Sidebar */}
+                    <aside className={`bg-cyan-100 h-screen flex flex-col items-center py-4 transition-all duration-300 ${sidebarOpen ? 'w-64' : 'w-16'}`}>
+                        <div className="mb-8">
+                            <img src="https://placehold.co/40x40" alt="Logo" className="w-10 h-10" />
+                        </div>
+                        {/* Sidebar Menu */}
+                        <ul className="flex flex-col space-y-4">
+                            <li className="flex items-center">
+                                <img src="home.svg" alt="Home" className="w-6 h-6" />
+                                {sidebarOpen && <span className="ml-4 text-gray-600">Beranda</span>}
+                            </li>
+                            <li className="flex items-center">
+                                <img src="calendar.svg" alt="Ajukan Jadwal" className="w-6 h-6" />
+                                {sidebarOpen && <span className="ml-4 text-gray-600">Ajukan Jadwal</span>}
+                            </li>
+                            <li className="flex items-center">
+                                <img src="progress.svg" alt="Progress TA" className="w-6 h-6" />
+                                {sidebarOpen && <span className="ml-4 text-gray-600">Progress TA</span>}
+                            </li>
+                            <li className="flex items-center">
+                                <img src="calendar.svg" alt="Kalender" className="w-6 h-6" />
+                                {sidebarOpen && <span className="ml-4 text-gray-600">Kalender</span>}
+                            </li>
+                            <li className="flex items-center">
+                                <img src="user.svg" alt="Profil" className="w-6 h-6" />
+                                {sidebarOpen && <span className="ml-4 text-gray-600">Profil</span>}
+                            </li>
+                            <li className="flex items-center">
+                                <img src="book.svg" alt="Logbook" className="w-6 h-6" />
+                                {sidebarOpen && <span className="ml-4 text-gray-600">Logbook</span>}
+                            </li>
+                            <li className="flex items-center">
+                                <img src="message.svg" alt="Pesan" className="w-6 h-6" />
+                                {sidebarOpen && <span className="ml-4 text-gray-600">Pesan</span>}
+                            </li>
+                        </ul>
+                    </aside>
+    
+                    {/* Main Content */}
+                    <main className="flex-1 p-6">
+                        <header className="flex justify-between items-center mb-6">
+                            <div className="flex items-center space-x-4">
+                                <i onClick={toggleSidebar} className="fas fa-bars text-xl text-gray-600 cursor-pointer"></i>
+                                <h1 className="text-2xl font-semibold">Dashboard</h1>
+                            </div>
+                            <div className="flex items-center space-x-4">
+                                <i className="fas fa-bell text-xl text-gray-600"></i>
+                                <img src="https://placehold.co/40x40" alt="User Avatar" className="w-10 h-10 rounded-full" />
+                            </div>
+                        </header>
+    
+                      {/* Other sections remain the same */}
+                        <section className="mb-6">
+                            <div className="bg-cyan-100 p-6 rounded-lg flex justify-between items-center">
+                                <div>
+                                    <h2 className="text-2xl font-semibold">Halo!</h2>
+                                    <p className="text-lg">Muhammad Maulana Yusuf</p>
+                                    <p className="text-sm text-gray-600">Bimbingan on time, skripsi on point!</p>
+                                    <button className="mt-4 bg-cyan-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2">
+                                        <i className="fas fa-calendar-alt"></i>
+                                        <span>Ajukan Jadwal</span>
+                                    </button>
+                                </div>
+                                <img src="https://placehold.co/100x100" alt="Illustration" className="w-24 h-24"/>
+                            </div>
+                        </section>
+    
+                        {/* Progress TA  */}
+                        <section className="mb-6">
+                            <div className="bg-white p-6 rounded-lg shadow-md">
+                                <h2 className="text-xl font-semibold mb-4">Progres TA</h2>
+                                <div className="w-full bg-gray-200 rounded-full h-6">
+                                    <div
+                                        className="bg-cyan-500 h-6 rounded-full"
+                                        style={{ width: `${progress}%` }}
+                                    ></div>
+                                </div>
+                                <p className="mt-2 text-gray-600">{progress}%</p>
+                                <button
+                                    onClick={updateProgress}
+                                    className="mt-4 bg-cyan-500 text-white px-4 py-2 rounded-lg"
+                                >
+                                    Update Progress
+                                </button>
+                            </div>
+                        </section>
+                        {/*jadwal nya*/}
+                        <section class="calendar">
+                            <h3>January, 2023</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Sun</th>
+                                        <th>Mon</th>
+                                        <th>Tue</th>
+                                        <th>Wed</th>
+                                        <th>Thu</th>
+                                        <th>Fri</th>
+                                        <th>Sat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>10</td>
+                                        <td>11</td>
+                                        <td>12</td>
+                                        <td>13</td>
+                                        <td>14</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>17</td>
+                                        <td>18</td>
+                                        <td>19</td>
+                                        <td>20</td>
+                                        <td>21</td>
+                                        <td>22</td>
+                                    </tr>
+                                    <tr>
+                                        <td>23</td>
+                                        <td>24</td>
+                                        <td>25</td>
+                                        <td>26</td>
+                                        <td>27</td>
+                                        <td>28</td>
+                                        <td>29</td>
+                                    </tr>
+                                    <tr>
+                                        <td>30</td>
+                                        <td>31</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>        
+                        {/* Other content */}
+                    </main>
+                </div>
+            );
+        };
+    
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+    
+</body>
+</html>
+
