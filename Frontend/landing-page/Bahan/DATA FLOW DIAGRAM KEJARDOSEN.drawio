@@ -1,0 +1,180 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="Page-1" id="rlbGp_ObdhnXWiICMIEm">
+    <mxGraphModel dx="960" dy="573" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QQ--ymS1PmZrMy7vc1KZ-1" target="QQ--ymS1PmZrMy7vc1KZ-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-14" value="Data Pengguna" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QQ--ymS1PmZrMy7vc1KZ-11">
+          <mxGeometry x="-0.1486" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-1" value="Proses Otentikasi" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="398" y="142" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QQ--ymS1PmZrMy7vc1KZ-2" target="QQ--ymS1PmZrMy7vc1KZ-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="QQ--ymS1PmZrMy7vc1KZ-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="312" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-28" value="kodePengajuan,&lt;div&gt;waktu_pengajuan,&lt;/div&gt;&lt;div&gt;tanggal_pengajuan,&lt;/div&gt;&lt;div&gt;status&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QQ--ymS1PmZrMy7vc1KZ-26">
+          <mxGeometry x="-0.0474" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-2" value="Proses Pengajuan Bimbingan" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="398" y="272" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QQ--ymS1PmZrMy7vc1KZ-3" target="QQ--ymS1PmZrMy7vc1KZ-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-35" value="Data Bimbingan" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QQ--ymS1PmZrMy7vc1KZ-13">
+          <mxGeometry x="-0.1783" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="QQ--ymS1PmZrMy7vc1KZ-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="246.8709677419355" y="443.7741935483871" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-32" value="KodeJadwal,&lt;div&gt;tanggal_pelaksanaan,&lt;/div&gt;&lt;div&gt;waktu_pelaksanaan&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QQ--ymS1PmZrMy7vc1KZ-31">
+          <mxGeometry x="0.0052" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-3" value="Proses&amp;nbsp; Bimbingan" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="398" y="404" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QQ--ymS1PmZrMy7vc1KZ-4" target="QQ--ymS1PmZrMy7vc1KZ-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="QQ--ymS1PmZrMy7vc1KZ-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="633" y="567" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-42" value="kodeLogbook,&lt;div&gt;isi_logbook&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QQ--ymS1PmZrMy7vc1KZ-39">
+          <mxGeometry x="-0.1853" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-4" value="Proses Pencatatan Hasil Bimbingan" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="398" y="527" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="QQ--ymS1PmZrMy7vc1KZ-5" target="QQ--ymS1PmZrMy7vc1KZ-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="523" y="182" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-7" value="username, password" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QQ--ymS1PmZrMy7vc1KZ-6">
+          <mxGeometry x="0.0405" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-5" value="Pengguna" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="651" y="165.5" width="81" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-9" value="" style="shape=link;html=1;rounded=0;width=31.25;" edge="1" parent="1">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="647" y="311.7" as="sourcePoint" />
+            <mxPoint x="747" y="311.7" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-25" value="tb_pengajuanJadwal" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QQ--ymS1PmZrMy7vc1KZ-9">
+          <mxGeometry x="-0.0918" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-10" value="tb_userMahasiswa" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="152" y="169" width="118" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.006;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="QQ--ymS1PmZrMy7vc1KZ-1" target="QQ--ymS1PmZrMy7vc1KZ-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-19" value="username, password" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QQ--ymS1PmZrMy7vc1KZ-17">
+          <mxGeometry x="-0.0777" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" edge="1" parent="1" source="QQ--ymS1PmZrMy7vc1KZ-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="129" y="458" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-45" value="Data Jadwal Bimbingan" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QQ--ymS1PmZrMy7vc1KZ-43">
+          <mxGeometry x="-0.2587" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" edge="1" parent="1" source="QQ--ymS1PmZrMy7vc1KZ-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="678" y="588" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-20" value="Proses Penyimpanan Riwayat Bimbingan" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="398" y="650" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-23" value="" style="shape=link;html=1;rounded=0;width=31.25;" edge="1" parent="1">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="161" y="181.77999999999997" as="sourcePoint" />
+            <mxPoint x="261" y="181.77999999999997" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-29" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="QQ--ymS1PmZrMy7vc1KZ-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="699" y="327" as="sourcePoint" />
+            <mxPoint x="523" y="317" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="698" y="444" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-30" value="Data Pengajuan Jadwal" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QQ--ymS1PmZrMy7vc1KZ-29">
+          <mxGeometry x="0.0744" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-33" value="" style="shape=link;html=1;rounded=0;width=30.833333333333336;" edge="1" parent="1">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="123" y="443.58" as="sourcePoint" />
+            <mxPoint x="223" y="443.58" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-34" value="tb_jadwalBimbingan" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QQ--ymS1PmZrMy7vc1KZ-33">
+          <mxGeometry x="-0.0767" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QQ--ymS1PmZrMy7vc1KZ-36" target="QQ--ymS1PmZrMy7vc1KZ-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-38" value="isi_logbook" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QQ--ymS1PmZrMy7vc1KZ-37">
+          <mxGeometry x="-0.3169" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-36" value="Mahasiswa" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="149" y="550" width="79" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-40" value="" style="shape=link;html=1;rounded=0;width=44.54545454545454;" edge="1" parent="1">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="632" y="566.55" as="sourcePoint" />
+            <mxPoint x="732" y="566.55" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QQ--ymS1PmZrMy7vc1KZ-41" value="tb_logbook" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="QQ--ymS1PmZrMy7vc1KZ-40">
+          <mxGeometry x="-0.1764" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

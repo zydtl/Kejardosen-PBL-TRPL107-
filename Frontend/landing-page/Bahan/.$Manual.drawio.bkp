@@ -1,0 +1,147 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="Page-1" id="qMV6bhPH1iuF4g4IwMNm">
+    <mxGraphModel dx="1840" dy="2060" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-1" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;Aplikasi Penjadwalan Bimbingan Tugas Akhir&lt;/span&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-112" y="-814" width="601" height="1173" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-2" value="Dosen" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-1">
+          <mxGeometry y="24" width="200" height="1148" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-3" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; white-space-collapse: preserve;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Dosen menerima email dan memberikan keputusan&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-2">
+          <mxGeometry x="12" y="158" width="176" height="111" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-2" source="lL4qf_nBTmUlq71SzCkE-5" target="lL4qf_nBTmUlq71SzCkE-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-5" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; text-align: justify; white-space-collapse: preserve;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Dosen memberikan bimbingan&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-2">
+          <mxGeometry x="12" y="551" width="174" height="123" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-6" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; text-align: justify; white-space-collapse: preserve;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Dosen memberi feedback terkait tugas akhir mahasiswa&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-2">
+          <mxGeometry x="12" y="708" width="174" height="123" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-7" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; text-align: justify; white-space-collapse: preserve;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Menyusun dan memperbarui ketersediaan waktu untuk bimbingan.&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-2">
+          <mxGeometry x="12" y="35" width="176" height="111" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-8" value="Sistem" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-1">
+          <mxGeometry x="200" y="24" width="200" height="1149" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-9" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Mengirimkan email notifikasi kepada dosen untuk memberikan persetujuan jadwal&lt;/font&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-8">
+          <mxGeometry x="13" y="158" width="176" height="111" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-8" source="lL4qf_nBTmUlq71SzCkE-11" target="lL4qf_nBTmUlq71SzCkE-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-11" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; text-align: justify; white-space-collapse: preserve;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Sistem  memberikan pilihan jadwal lain dari dosen kepada mahasiswa&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-8">
+          <mxGeometry x="85" y="349" width="104" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-12" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; text-align: justify; white-space-collapse: preserve;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;Sistem mengirimkan notifikasi perubahan jadwal kepada mahasiswa&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-8">
+          <mxGeometry x="104" y="459" width="92" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-13" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; text-align: justify; white-space-collapse: preserve;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Sistem mengirimkan email notifikasi pengingat pelaksanaan bimbingan kepada mahasiswa dan dosen&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-8">
+          <mxGeometry x="4" y="459" width="92" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-8" source="lL4qf_nBTmUlq71SzCkE-15" target="lL4qf_nBTmUlq71SzCkE-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-15" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; white-space-collapse: preserve;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Sistem menyimpan feedback dosen di progres tugas akhir mahasiswa&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-8">
+          <mxGeometry x="13" y="867" width="174" height="123" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-16" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; white-space-collapse: preserve;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Sistem menyimpan histori bimbingan&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-8">
+          <mxGeometry x="13" y="1016" width="174" height="123" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-8" source="lL4qf_nBTmUlq71SzCkE-19" target="lL4qf_nBTmUlq71SzCkE-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-18" value="Ditolak" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="lL4qf_nBTmUlq71SzCkE-17">
+          <mxGeometry x="-0.2993" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-19" value="" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-8">
+          <mxGeometry x="13" y="278" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.536;entryY=0.039;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-8" source="lL4qf_nBTmUlq71SzCkE-19" target="lL4qf_nBTmUlq71SzCkE-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-21" value="Disetujui" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="lL4qf_nBTmUlq71SzCkE-20">
+          <mxGeometry x="-0.0417" y="1" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-22" value="Mahasiswa" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-1">
+          <mxGeometry x="400" y="24" width="200" height="1149" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-23" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; white-space-collapse: preserve;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Mengajukan permintaan &lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; white-space-collapse: preserve;&quot;&gt;&lt;font size=&quot;3&quot; style=&quot;&quot;&gt;bimbingan kepada dosen &lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; white-space-collapse: preserve; background-color: initial;&quot;&gt;&lt;font size=&quot;3&quot;&gt;sesuai jadwal yang tertera pada aplikasi&lt;/font&gt;.&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-22">
+          <mxGeometry x="12" y="159" width="176" height="111" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-22" source="lL4qf_nBTmUlq71SzCkE-25" target="lL4qf_nBTmUlq71SzCkE-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-25" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; text-align: justify; white-space-collapse: preserve;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Mahasiswa memilih jadwal lain yang tersedia&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-22">
+          <mxGeometry x="14" y="580" width="174" height="123" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-22" source="lL4qf_nBTmUlq71SzCkE-27" target="lL4qf_nBTmUlq71SzCkE-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-27" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; white-space-collapse: preserve;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Mahasiswa mendapatkan bimbingan&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-22">
+          <mxGeometry x="14" y="721" width="174" height="123" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-22" source="lL4qf_nBTmUlq71SzCkE-29" target="lL4qf_nBTmUlq71SzCkE-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-29" value="&lt;div style=&quot;line-height: 108%;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;, serif; white-space-collapse: preserve;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Mahasiswa mendapatkan feedback dari dosen&lt;/font&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=#000000;align=center;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-22">
+          <mxGeometry x="13" y="868" width="174" height="123" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-30" value="" style="ellipse;whiteSpace=wrap;html=1;fontColor=#ffffff;rounded=0;fillColor=#a20025;strokeColor=#6F0000;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-22">
+          <mxGeometry x="65.5" y="1029" width="69" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-31" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="lL4qf_nBTmUlq71SzCkE-22">
+          <mxGeometry x="74" y="43" width="52" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-32" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-22" source="lL4qf_nBTmUlq71SzCkE-31" target="lL4qf_nBTmUlq71SzCkE-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-217" y="273" as="sourcePoint" />
+            <mxPoint x="-174" y="304" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-33" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-1" source="lL4qf_nBTmUlq71SzCkE-9" target="lL4qf_nBTmUlq71SzCkE-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="422" y="248" as="sourcePoint" />
+            <mxPoint x="399" y="248" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-1" source="lL4qf_nBTmUlq71SzCkE-3" target="lL4qf_nBTmUlq71SzCkE-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-1" source="lL4qf_nBTmUlq71SzCkE-12" target="lL4qf_nBTmUlq71SzCkE-25">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="367.1034482758621" y="669.1034482758621" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="350" y="666" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-1" source="lL4qf_nBTmUlq71SzCkE-13" target="lL4qf_nBTmUlq71SzCkE-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-1" source="lL4qf_nBTmUlq71SzCkE-6" target="lL4qf_nBTmUlq71SzCkE-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="98.81818181818176" y="995.9090909090908" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-1" source="lL4qf_nBTmUlq71SzCkE-13" target="lL4qf_nBTmUlq71SzCkE-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-1" source="lL4qf_nBTmUlq71SzCkE-15" target="lL4qf_nBTmUlq71SzCkE-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lL4qf_nBTmUlq71SzCkE-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lL4qf_nBTmUlq71SzCkE-1" source="lL4qf_nBTmUlq71SzCkE-23" target="lL4qf_nBTmUlq71SzCkE-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

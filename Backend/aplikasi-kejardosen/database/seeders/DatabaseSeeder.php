@@ -19,5 +19,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        // Panggil LoginMasukSeeders untuk mengisi data ke tb_dosen, tb_mahasiswa, dan tb_administrator
+        $this->call(LoginMasukSeeders::class);
     }
 }
