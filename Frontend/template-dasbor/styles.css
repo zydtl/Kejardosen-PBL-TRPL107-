@@ -1,0 +1,37 @@
+body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .sidebar {
+    background-color: #E0F7FA; /* Light cyan */
+    height: 100vh;
+    transition: width 0.3s;
+  }
+  
+  .sidebar ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .sidebar li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .sidebar img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .main-content {
+    padding: 24px;
+    flex: 1;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
