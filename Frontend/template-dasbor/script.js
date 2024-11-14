@@ -15,15 +15,15 @@ const App = () => {
     return (
         <div className="flex">
             {/* Sidebar */}
-            <aside className={`sidebar flex flex-col items-center py-4 transition-all duration-300 ${sidebarOpen ? 'w-64' : 'w-16'}`}>
-                <div className="mb-8">
-                    <img src="https://placehold.co/40x40" alt="Logo" className="w-10 h-10" />
+            <aside className={`sidebar flex flex-col items-center py-4 transition-all duration-300 ${sidebarOpen ? 'w-35' : 'w-20'}`}>
+                <div className="flex flex-col items-center mb-8 w-full">
+                    <img src="bahan/logokjrdns.png" alt="Logo" />
                 </div>
                 {/* Sidebar Menu */}
                 <ul className="flex flex-col space-y-4">
-                    {['Beranda', 'Ajukan Jadwal', 'Progress TA', 'Kalender', 'Profil', 'Logbook', 'Pesan'].map((item, index) => (
+                    {['Beranda', 'Daftar Mahasiswa', 'Daftar Dosen', 'Hubungkan Mahasiswa', 'Lihat Bimbingan'].map((item, index) => (
                         <li key={index} className="flex items-center">
-                            <img src={`${item.toLowerCase().replace(' ', '_')}.svg`} alt={item} className="w-6 h-6" />
+                            <i class="fi fi-rr-graduation-cap"></i>
                             {sidebarOpen && <span className="ml-4 text-gray-600">{item}</span>}
                         </li>
                     ))}
@@ -35,7 +35,7 @@ const App = () => {
                 <header className="header flex justify-between items-center mb-6">
                     <div className="flex items-center space-x-4">
                         <i onClick={toggleSidebar} className="fas fa-bars text-xl text-gray-600 cursor-pointer"></i>
-                        <h1 className="text-2xl font-semibold">Dashboard</h1>
+                       
                     </div>
                     <div className="flex items-center space-x-4">
                         <i className="fas fa-bell text-xl text-gray-600"></i>
