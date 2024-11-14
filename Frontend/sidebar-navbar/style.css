@@ -101,23 +101,21 @@ body {
 .logokjr{
     width: 150px;
 }
+
 .menu {
     list-style-type: none;
-    padding: 10px 0;
 }
  
 .menu li {
     font-size: 16px;
-    padding: 10px 20px;
+    padding: 15px 40px;
     text-align: center;
     display: flex;
     align-items: center;
     cursor: pointer;
     transition: background 0.3s;
     color: black;
-    font-weight: 600;
-    margin-bottom: 10px;
-    
+    font-weight: 600;    
 }
 
 span{
