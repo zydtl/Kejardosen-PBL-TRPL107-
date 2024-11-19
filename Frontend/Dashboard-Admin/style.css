@@ -1,0 +1,285 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    transition: 0.3s;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar  {
+    font-size: 5px;
+}
+
+.navbar .toggle-button {
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.toggle-button {
+    color: #000000;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    outline: none;
+}
+
+
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right i {
+    font-size: 15px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 70px; /* Width saat tertutup */
+    height: 100vh;
+    background-color: #d5f5f8;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 0.3s;
+    overflow-x: hidden;
+}
+
+.sidebar.expanded {
+    width: 270px; /* Width saat terbuka */
+    
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logokjr{
+    width: 150px;
+}
+
+.menu {
+    list-style-type: none;
+}
+ 
+.menu li {
+    font-size: 16px;
+    padding: 15px 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: black;
+    font-weight: 600;    
+}
+
+span{
+    margin-left: 20px;
+}
+.menu li:hover {
+    background-color: #B1E8F0;
+}
+
+/* Icon Styling */
+.container i {
+    font-size: 18px;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex-grow: 1;
+    padding: 15px;
+    padding-top: 80px; 
+}
+
+/* Ubah ukuran logo saat sidebar ditutup */
+.sidebar:not(.expanded) .logokjr {
+    width: 100%; /* Ukuran logo saat sidebar ditutup */
+    height: 30px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    content: url(Bahan/kejardosen-logo-initial.png);
+    
+}
+.sidebar.expanded .logokjr {
+    content: url('Bahan/logokjrdns.png'); /* Logo saat sidebar terbuka */
+    width: 150px;
+    height: auto;
+}
+
+/* Hide text when sidebar is closed */
+.sidebar:not(.expanded) .menu-text {
+    display: none;
+}
+
+/* Styling Class BOX */
+
+.box{
+    width: 900px;
+    height: 250px;
+    background-color: #B1E8F0;
+    background-image: linear-gradient(to bottom left, #B1E8F0, #EFFAFE);
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.h1{
+    font-size: 30px;
+    margin-bottom: -10px;
+    
+}
+.h2{
+    font-size: 40px;
+    margin-bottom: 0px;
+    
+}
+.h3{
+    font-size: 25px;
+    font-weight: 300;
+    
+}
+
+.gambar{
+    height: 210px;
+    display: block;
+    top: 90px;
+    right: 0px;
+    padding: 7px;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0px;
+    width: 100px;
+}
+
+.box1{
+    width: 400px;
+    height: 100px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between; 
+}
+
+.box2{
+    width: 400px;
+    height: 100px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between; 
+    margin-left: 100px;
+}
+.box3{
+    width: 400px;
+    height: 100px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    display: flex;
+    margin-top: -40px;
+    justify-content: space-between; 
+    
+}
+
+.kotak2 .h1{
+    font-size: 20px;
+    margin-bottom: -4px;
+}
+.kotak2 .h2{
+    font-size: 15px;
+    width: 1000px;
+    
+    
+}
+.graduation{
+    width: 70px;
+    height: 70px;
+    background-color: #3EBCD2;
+    padding: 10px;
+    justify-content: flex-start;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+.kotak2{
+    
+    margin-right: 200px;
+    margin-top: 2px;
+    margin-left: 10px;
+    
+
+}
+.kotak{
+
+    width: 900px;
+    height: 300px;
+    flex: auto;
+    display: flex;
+   flex-wrap: wrap;
+    
+}
+html, body {
+    height: 100%;
+    overflow: hidden; /* Cegah scroll vertikal */
+}
