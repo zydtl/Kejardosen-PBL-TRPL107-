@@ -201,6 +201,15 @@ span{
     text-decoration: none;
     
 }
+.buttonprogres{
+    width: 150px;
+    height: 40px;
+    background-color: #3EBCD2;
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+    margin-top: -9px;
+}
 .button{
    
     width: 180px;
@@ -211,10 +220,29 @@ span{
     display: flex;
     margin-top: 20px;
 }
+.buttonlogbook img{
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    margin-left: 0px;
+    margin-right: 13px
+    
+
+}
 .button img{
     width: 20px;
     margin-bottom: 0px;
     margin-left: 10px;
+}
+.buttonlogbook a{
+    margin-bottom: 19px;
+    margin-right: -200px;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    text-align:center ;
+    text-decoration: none;
+    color: white;
 }
 a{
     margin-bottom: 19px;
@@ -233,12 +261,14 @@ a{
     text-decoration: none;
     color: white   ;
     margin-bottom: 40px;
+    
 }
+
 .button a{
     width: 480px;
     margin-left: 0px;
     text-align: center;
-    background-color: #1f819b;
+    background-color: #3EBCD2;
     padding-left: 20px;
 }
 .gambar{
@@ -256,7 +286,7 @@ a{
 
 .box1{
     width: 700px;
-    height: 300px;
+    height: 150px;
     background-color: white;
     box-sizing: border-box;
     
@@ -265,7 +295,17 @@ a{
     padding: 20px;
     margin-top: 10px;
     padding-left: 27px;
-    
+}
+.boxjadwal{
+    width: 700px;
+    height: 300px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    padding: 20px;
+    margin-top: 10px;
+    padding-left: 27px;
 }
 
 .box2{
@@ -356,11 +396,14 @@ html, body {
     display: flex;
 }
 .Jadwal-Dosen{
-    width: 900px;
-    background-color: white;
+    width: 7000px;
     font-size: 8px;
     margin-left: 12px;
-    
+}
+.Jadwal-Dosenok{
+    font-size: 8px;
+    margin-left: 12px;
+    width: 1000px;
 }
 
 .kotak2 .fi{
@@ -372,7 +415,8 @@ html, body {
     margin-top: 2px;
     margin-left: 10px;
     display: flex;
-   
+    justify-content: space-between;
+    justify-content: center;
     
 }
 
@@ -408,6 +452,8 @@ html, body {
     align-items: center;
     height: 100vh;
     display: flex;
+    width: 100000px;
+
     
 }
 .container-kedua{
@@ -510,17 +556,26 @@ html, body {
 }
 .tanggal{
     display: flex;
-    margin-top: 8px;
+    margin-top: 4px;
 }
-.lokasi2{
-    margin-left:105px;
+.tanggal10{
+    display: flex;
+    margin-top: 8px;
+    
+}
+ .lokasi2{
+   display: flex;
+}
+.tanggal .lokasi2{
+    margin-left: 105px;
+    margin-top: 0px;
 }
 .lokasi3{
     margin-left: 123px;
 }
 .kode{
     display: flex;
-    margin-top: 8px;
+    margin-top: 4px;
 }
 .kalender{
     display: flex;
@@ -536,6 +591,9 @@ html, body {
 .js-calender{
     overflow: hidden;
 }
+.kalender{
+    margin-top: -200px;
+}
 
 
 /* Kontainer bar progres */
@@ -546,7 +604,7 @@ html, body {
     height: 40px; /* Tinggi bar */
     overflow: hidden; /* Untuk mencegah konten keluar */
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
-    margin-top: 25px;
+    margin-top: 10px;
   }
   
   /* Bar progres */
@@ -598,13 +656,13 @@ html, body {
     margin-left: 350px;
 }
 
-.tanggal .tempatku{
+.tanggal10 .tempatku{
     margin-left: 5px;
     margin-top: -2px;
 }
-.tanggal .lokasi2{
-    margin-left: 272px;
-    margin-top: 5px;
+.tanggal10 .lokasi7{
+    margin-left: 267px;
+    margin-top: -1px;
 }
 .teksone .ruangan{
     margin-top: 10px;
