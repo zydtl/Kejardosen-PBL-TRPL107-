@@ -67,13 +67,6 @@
     display: flex;
     height: 100vh;
 }
-.main-content{
-    margin-left: 270px; /* Margin saat sidebar tertutup */
-    transition: margin-left 0.3s;
-}
-.main-content.expanded {
-    margin-left: 330px; /* Margin saat sidebar terbuka */
-}
 
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -90,8 +83,6 @@ body {
     align-items: center;
     transition: width 0.3s;
     position: fixed;
-    
-
 }
 
 .sidebar.expanded {
@@ -117,7 +108,7 @@ body {
  
 .menu li {
     font-size: 16px;
-    padding: 15px 25px;
+    padding: 15px 40px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -136,7 +127,7 @@ span{
 
 /* Icon Styling */
 .container i {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 /* Main Content Styling */

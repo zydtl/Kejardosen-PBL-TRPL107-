@@ -42,9 +42,7 @@
     outline: none;
 }
 
-.toggle-button:hover {
-    background-color: #B1E8F0;
-}
+
 
 .navbar-right {
     display: flex;
@@ -67,6 +65,7 @@
 /* Container Layout */
 .container {
     display: flex;
+    height: 100vh;
 }
 
 body {
@@ -150,3 +149,4 @@ span{
 .sidebar:not(.expanded) .menu-text {
     display: none;
 }
+

@@ -1,4 +1,5 @@
 /* Reset CSS */
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
@@ -115,7 +116,7 @@ body {
  
 .menu li {
     font-size: 16px;
-    padding: 15px 25px;
+    padding: 15px 40px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -134,7 +135,7 @@ span{
 
 /* Icon Styling */
 .container i {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 /* Main Content Styling */
