@@ -1,0 +1,275 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    height: auto;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    transition: 0.3s;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-size: 16px;
+}
+
+.navbar .toggle-button {
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.toggle-button {
+    color: #000000;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    outline: none;
+}
+
+.logbook-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 0 0;
+}
+
+.input-box {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-box:last-child {
+    margin-right: 0;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 45px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+textarea {
+    width: 880px;
+    height: 45px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+form .button {
+    margin-top: 15px;
+    padding-bottom: 70px;
+    text-align: right;
+    border-radius: 10px;
+}
+
+form .button input {
+    width: 200px;
+    height: 50px;
+    margin-left: 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
+
+.button .submit {
+    background-color: #3EBCD2;
+}
+
+.button .cancel {
+    background-color: #95DFEA;
+}
+
+.button .submit:hover {
+    background-color: #D5F5F8;
+    color: #3EBCD2;
+}
+
+.button .cancel:hover {
+    background-color: #D5F5F8;
+    color: #3EBCD2;
+}
+
+input {
+    margin-top: 5px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right i {
+    font-size: 15px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    height: 50px;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 70px;
+    height: 900px;
+    background-color: #d5f5f8;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 0.3s;
+    position: fixed;
+}
+
+.sidebar.expanded {
+    width: 270px;
+}
+
+.sidebar span {
+    margin-left: 10px;
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logokjr{
+    width: 150px;
+}
+
+.menu {
+    list-style-type: none;
+}
+
+.menu li {
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: black;
+    font-weight: 600;
+}
+
+.menu li:hover {
+    background-color: #B1E8F0;
+}
+
+.sidebar.expanded .menu li {
+    padding: 15px 50px;
+}
+
+.sidebar:not(.expanded) .menu li {
+    padding: 15px 25px;
+}
+
+/* Icon Styling */
+.container i {
+    font-size: 20px;
+}
+
+.title {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex-grow: 1;
+    margin-top: 60px;
+    transition: margin-left 0.3s ease;
+    padding: 25px 40px;
+}
+
+.main-content form .logbook-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form .logbook-details .input-box {
+    width: calc(100% / 2 - 20px);
+}
+
+.logbook-details .input-box input {
+    height: 45px;
+    width: 100%;
+}
+
+.logbook-content .input-box {
+    margin-top: 15px;
+}
+
+/* Menyesuaikan margin konten utama berdasarkan status sidebar */
+.sidebar:not(.expanded) ~ .main-content {
+    margin-left: 70px;
+}
+
+.sidebar.expanded ~ .main-content {
+    margin-left: 270px;
+}
+
+/* Ubah ukuran logo saat sidebar ditutup */
+.sidebar:not(.expanded) .logokjr {
+    width: 100%;
+    height: 30px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    content: url('Bahan/kejardosen-logo-initial.png');
+}
+
+.sidebar.expanded .logokjr {
+    content: url('Bahan/logokjrdns.png');
+    width: 150px;
+    height: auto;
+}
+
+/* Hide text when sidebar is closed */
+.sidebar:not(.expanded) .menu-text {
+    display: none;
+}
