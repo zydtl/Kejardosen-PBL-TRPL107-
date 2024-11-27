@@ -1,0 +1,127 @@
+
+/* Styling Class BOX */
+
+.box{
+    width: 900px;
+    height: 250px;
+    background-color: #B1E8F0;
+    background-image: linear-gradient(to bottom left, #B1E8F0, #EFFAFE);
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.h1{
+    font-size: 30px;
+    margin-bottom: -10px;
+    
+}
+.h2{
+    font-size: 40px;
+    margin-bottom: 0px;
+    
+}
+.h3{
+    font-size: 25px;
+    font-weight: 300;
+    
+}
+
+.gambar{
+    height: 210px;
+    display: block;
+    top: 90px;
+    right: 0px;
+    padding: 7px;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0px;
+    width: 100px;
+}
+
+.box1{
+    width: 400px;
+    height: 100px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between; 
+}
+
+.box2{
+    width: 400px;
+    height: 100px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between; 
+    margin-left: 100px;
+}
+.box3{
+    width: 400px;
+    height: 100px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    display: flex;
+    margin-top: -40px;
+    justify-content: space-between; 
+    
+}
+
+.kotak2 .h1{
+    font-size: 20px;
+    margin-bottom: -4px;
+}
+.kotak2 .h2{
+    font-size: 15px;
+    width: 1000px;
+    
+    
+}
+.graduation{
+    width: 70px;
+    height: 70px;
+    background-color: #3EBCD2;
+    padding: 10px;
+    justify-content: flex-start;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+.kotak2{
+    
+    margin-right: 200px;
+    margin-top: 2px;
+    margin-left: 10px;
+    
+
+}
+.kotak{
+
+    width: 900px;
+    height: 300px;
+    flex: auto;
+    display: flex;
+   flex-wrap: wrap;
+    
+}
+html, body {
+    height: 100%;
+    overflow: hidden; /* Cegah scroll vertikal */
+}
