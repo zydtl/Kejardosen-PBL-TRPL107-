@@ -24,5 +24,13 @@ function updateLayout() {
     mainContent.style.marginLeft = `${sidebarWidth}px`;
 }
 
+document.querySelectorAll('.submenu-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', function () {
+        const parent = this.parentElement;
+        parent.classList.toggle('active');
+    });
+});
+
+
 // Panggil fungsi updateLayout() saat halaman pertama kali dimuat
 window.onload = updateLayout;
