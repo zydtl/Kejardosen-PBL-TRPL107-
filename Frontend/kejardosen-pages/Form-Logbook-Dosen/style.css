@@ -203,11 +203,11 @@ body {
     height: 30px;
     margin-top: -5px;
     margin-bottom: 10px;
-    content: url('Bahan/kejardosen-logo-initial.png');
+    content: url('../asset/img/kejardosen-logo-initial.png');
 }
 
 .sidebar.expanded .logokjr {
-    content: url('Bahan/logokjrdns.png');
+    content: url('../asset/img/logokjrdns.png');
     width: 150px;
     height: auto;
 }
