@@ -22,6 +22,34 @@ body {
     width: 200vh;
 }
 
+/* status */
+.status-accept {
+    color: #129D2E;
+    background-color: #BAFFBA;
+    padding: 3px 15px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* .status-reject {
+    color: #A70606;
+    background-color: #FFC6BA;
+    padding: 3px 15px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 600;
+} */
+
+/* icon aksi */
+.col i {
+    background-color: #B1E8F0;
+    color: #22A0B8;
+    border-radius: 10px;
+    padding: 8px 8px 4px 8px;
+    margin-bottom: 0;
+}
+
 .table-header, .table-row {
     display: flex;
     justify-content: space-between;
@@ -75,14 +103,16 @@ body {
 .pagination button {
     padding: 10px 15px;
     margin: 0 5px;
-    border: 1px solid #ddd;
-    background-color: #f7f7f7;
+    border: 1px solid white;
+    background-color: #22A0B8;
+    color: white;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .pagination button:hover {
-    background-color: #95A5A6;
-    color: white;
+    background-color: #B1E8F0;
+    color: black;
 }
 
 .page-numbers {
@@ -90,16 +120,18 @@ body {
 }
 
 .page-number {
-    padding: 10px;
-    margin: 0 5px;
+    padding: 8px;
+    margin: 0 10px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .page-number.active {
-    background-color: #95A5A6;
+    background-color: #B1E8F0;
     color: white;
 }
 
 .page-number:hover {
-    background-color: #BDC3C7;
+    background-color: #3EBCD2;
+    color: white;
 }
