@@ -1,4 +1,5 @@
 
+
 .main {
     flex-grow: 1;
     padding: 20px;
@@ -197,7 +198,7 @@
   font-size: 14px;
   border: none;
   cursor: not-allowed;
-  margin-right: px;
+  
 }
 
 label {
@@ -384,6 +385,7 @@ textarea.form-control {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan modal */
   z-index: 70000000000000;
   position: relative;
+
 }
 
 
@@ -399,12 +401,9 @@ textarea.form-control {
   
 #catatandosen{
   background-color: #ccc;
+  cursor: not-allowed;
+  
 }
-
-
-
-
-
 .modal-container.show {
   opacity: 1;
   transform: translateY(0);
@@ -443,12 +442,8 @@ textarea.form-control {
 /* Detail Pengajuan */
 
 #content{
-  display: none;
-  
-  
   top: 0;
   position: absolute;
-
 }
 .container1 {
   width: 1300px;
@@ -460,7 +455,6 @@ textarea.form-control {
   height: 1000px;
   margin-left: -14px;
   margin-top: 50px;
-
 }
 
 .header {
@@ -483,12 +477,7 @@ textarea.form-control {
  margin-top: 5px;
  border-radius: 50%;
 }
-.img-header{
-   
-    
 
- 
-}
 .card {
   
   border-radius: 8px;
@@ -504,8 +493,9 @@ textarea.form-control {
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
-  width: 1250px;
+  width: 1050px;
 }
+
 
 .card-header .badge {
   background: #fff97e;
@@ -516,7 +506,7 @@ textarea.form-control {
   text-transform: uppercase;
 }
 .text-header{
-  margin-left: -670px;
+  margin-left: -470px;
   font-size: 18px
 }
 .card-body {
@@ -534,7 +524,7 @@ textarea.form-control {
   border-radius: 10px;
   height: 45px;
   padding-top: 10px;
-  width: 1250px;
+  width: 1050px;
   
 
 }
@@ -547,4 +537,16 @@ textarea.form-control {
  b{
   color: black
  }
+ .btnku{
+  background-color: #00bcd4;
+  color: white;
+  margin-right: 210px;
+  
+ }
+ .btnku:active{
+  transform: scale(0.96);
+ }
+
  
+
+
