@@ -136,6 +136,8 @@ body {
     bottom: 0;
 }
 
+
+
 .sidebar span {
     margin-left: 10px;
 }
@@ -189,6 +191,7 @@ body {
     width: 85px;
 }
 
+
 /* Sidebar - Logo Section */
 .logo-section {
     display: flex;
@@ -238,4 +241,3 @@ body {
 .sidebar:not(.expanded) .menu-text {
     display: none;
 }
-

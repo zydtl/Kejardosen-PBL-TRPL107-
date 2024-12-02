@@ -70,7 +70,7 @@ generatePageNumbers();
 
 function searchTable() {
     // Ambil input pencarian
-    const input = document.getElementById('searchInput');
+    const input = document.getElementById('search-input');
     const filter = input.value.toLowerCase();
     const tableRows = document.querySelectorAll('.responsive-table .table-row');
 

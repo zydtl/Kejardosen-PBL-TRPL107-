@@ -20,7 +20,7 @@ body {
     list-style: none;
     padding: 0;
     margin: 20px 0;
-    width: 200vh;
+    width: 180vh;
 }
 
 /* status */
@@ -80,16 +80,23 @@ body {
 }
 
 .table-row .col-1, .table-header .col-1 {
-    flex: 1;
+    flex: 0.8;
 }
 
 .table-row .col-2, .table-header .col-2 {
-    flex: 2; /* Adjust proportions */
+    flex: 1.5; /* Adjust proportions */
 }
 
-.table-row .col-3, .table-header .col-3,
+.table-row .col-3, .table-header .col-3 {
+    flex: 1.5; /* Adjust proportions */
+}
+
 .table-row .col-4, .table-header .col-4 {
-    flex: 1.5;
+    flex: 0.5;
+}
+
+.table-row .col-5, .table-header .col-5 {
+    flex: 0.5;
 }
 
 /* Pagination Styling */
