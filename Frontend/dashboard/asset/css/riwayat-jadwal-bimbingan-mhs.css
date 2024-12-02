@@ -23,16 +23,16 @@ body {
 }
 
 /* status */
-.status-accept {
-    color: #129D2E;
-    background-color: #BAFFBA;
+.status-finish {
+    color: grey;
+    background-color: #cccccc9c;
     padding: 3px 15px;
     border-radius: 15px;
     font-size: 15px;
     font-weight: 600;
 }
 
-/* .status-reject {
+/* .status-cancel {
     color: #A70606;
     background-color: #FFC6BA;
     padding: 3px 15px;
