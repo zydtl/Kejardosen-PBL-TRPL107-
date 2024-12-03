@@ -73,6 +73,7 @@ function searchTable() {
     const input = document.getElementById('search-input');
     const filter = input.value.toLowerCase();
     const tableRows = document.querySelectorAll('.responsive-table .table-row');
+    
 
     // Loop melalui semua baris di tabel
     tableRows.forEach(row => {
@@ -88,5 +89,46 @@ function searchTable() {
 
         // Tampilkan atau sembunyikan baris berdasarkan pencocokan
         row.style.display = match ? '' : 'none';
+    });
+}
+
+// JS untuk fitur pencarian
+function searchTable() {
+    // Ambil input pencarian
+    const input = document.getElementById('search-input');
+    const filter = input.value.toLowerCase();
+    const tableRows = document.querySelectorAll('.responsive-table .table-row');
+    
+
+    // Loop melalui semua baris di tabel
+    tableRows.forEach(row => {
+        const cells = row.querySelectorAll('.col');
+        let match = false;
+
+        // Periksa setiap kolom dalam baris
+        cells.forEach(cell => {
+            if (cell.textContent.toLowerCase().includes(filter)) {
+                match = true;
+            }
+        });
+
+        // Tampilkan atau sembunyikan baris berdasarkan pencocokan
+        row.style.display = match ? '' : 'none';
+    });
+}
+
+// JS untuk fitur pencarian daftar logbook dosen
+function searchTable() {
+    let input = document.getElementById('search-input').value.toLowerCase();
+    let table = document.querySelector('.responsive-table-daftar');
+    let rows = table.querySelectorAll('.table-row');
+    
+    rows.forEach(row => {
+        let text = row.textContent.toLowerCase();
+        if (text.includes(input)) {
+            row.style.display = ''; // Tampilkan row jika cocok
+        } else {
+            row.style.display = 'none'; // Sembunyikan row jika tidak cocok
+        }
     });
 }
