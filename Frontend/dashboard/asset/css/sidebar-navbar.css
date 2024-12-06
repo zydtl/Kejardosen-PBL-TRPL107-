@@ -86,9 +86,6 @@ body {
     position: fixed;
     transform: translateX(0); /* Tampilkan */
 }
-.bar{
-    position: static;
-}
 
 .sidebar.expanded {
     width: 270px; /* Width saat terbuka */
