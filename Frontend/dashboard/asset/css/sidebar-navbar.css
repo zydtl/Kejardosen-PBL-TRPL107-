@@ -86,6 +86,9 @@ body {
     position: fixed;
     transform: translateX(0); /* Tampilkan */
 }
+.bar{
+    position: static;
+}
 
 .sidebar.expanded {
     width: 270px; /* Width saat terbuka */
@@ -100,19 +103,8 @@ body {
     padding: 20px 0;
 }
 
-.menu-item.active .arrow {
-    transform: rotate(180deg);
-}
-
-.sidebar.expanded {
-    width: 285px;
-    overflow-y: scroll;
-    top: 0;
-    bottom: 0;
-}
-
-.sidebar span {
-    margin-left: 10px;
+.logokjr{
+    width: 150px;
 }
 
 .menu {
@@ -143,28 +135,11 @@ span{
     font-size: 18px;
 }
 
-.sidebar:not(.expanded) .submenu li a:hover,
-.sidebar.expanded .submenu li a:hover {
-    background-color: #3EBCD2;
-    color: white;
-}
-
-.sidebar:not(.expanded) .menu li a,
-.sidebar:not(.expanded) .menu li .submenu-toggle {
-    padding: 15px 25px;
-}
-
-.sidebar:not(.expanded) {
-    overflow-y: scroll;
-    width: 85px;
-}
-
-/* Sidebar - Logo Section */
-.logo-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
+/* Main Content Styling */
+.main-content {
+    flex-grow: 1;
+    padding: 15px;
+    padding-top: 80px; 
 }
 
 /* Ubah ukuran logo saat sidebar ditutup */
@@ -186,4 +161,33 @@ span{
 .sidebar:not(.expanded) .menu-text {
     display: none;
 }
+
+
+    
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.navbar {
+    width: calc(100% - 70px); /* Width saat sidebar tertutup */
+    left: 70px; /* Posisi saat sidebar tertutup */
+    transition: all 0.3s ease; /* Tambahkan animasi */
+}
+
+.navbar.expanded {
+    width: calc(100% - 270px); /* Width saat sidebar terbuka */
+    left: 270px; /* Posisi saat sidebar terbuka */
+}
+
+.main-content {
+    margin-left: 70px; /* Margin saat sidebar tertutup */
+    transition: margin-left 0.3s ease; /* Tambahkan animasi */
+}
+
+.main-content.expanded {
+    margin-left: 270px; /* Margin saat sidebar terbuka */
+}
+
 

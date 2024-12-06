@@ -5,7 +5,12 @@
     transition: margin-left 0.3s ease;
     padding: 25px 40px;
 }
-
+body{
+    overflow: hidden;
+}
+.containerlogbook{
+    margin-top: -80px;
+}
 .main-content form .logbook-details {
     display: flex;
     flex-wrap: wrap;
