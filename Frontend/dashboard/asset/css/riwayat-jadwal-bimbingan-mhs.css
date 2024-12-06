@@ -33,14 +33,14 @@ body {
     font-weight: 600;
 }
 
-/* .status-cancel {
+.status-cancel {
     color: #A70606;
     background-color: #FFC6BA;
     padding: 3px 15px;
     border-radius: 15px;
     font-size: 15px;
     font-weight: 600;
-} */
+}
 
 /* icon aksi */
 .col i {
@@ -80,16 +80,25 @@ body {
 }
 
 .table-row .col-1, .table-header .col-1 {
-    flex: 1;
+    flex: 0.5;
 }
 
 .table-row .col-2, .table-header .col-2 {
-    flex: 2; /* Adjust proportions */
+    flex: 1; /* Adjust proportions */
 }
 
-.table-row .col-3, .table-header .col-3,
+.table-row .col-3, .table-header .col-3 {
+    flex: 0.7;
+}
 .table-row .col-4, .table-header .col-4 {
-    flex: 1.5;
+    flex: 0.5;
+}
+
+.table-row .col-5, .table-header .col-5 {
+    flex: 0.5;
+}
+.table-row .col-6, .table-header .col-6 {
+    flex: 0.5;
 }
 
 /* Pagination Styling */
@@ -135,4 +144,22 @@ body {
 .page-number:hover {
     background-color: #3EBCD2;
     color: white;
+}
+
+/* Pencarian */
+.search-container {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#search-input {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    width: 40vh;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0), 0 0px 10px 0 rgba(0, 0, 0, 0.068);
 }

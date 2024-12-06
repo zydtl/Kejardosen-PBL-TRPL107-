@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logbook Dosen</title>
+    <link rel="stylesheet" href="../asset/css/logbook-dosen.css">
+    <link rel="stylesheet" href="../asset/css/sidebar-navbar.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css">    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <!-- HAMBURGER BUTTON -->
+        <button onclick="toggleSidebar()" class="toggle-button">&#9776;</button>
+        <div class="navbar-right">
+            <a href="/"><i class="fi fi-br-bell"></i></a>
+            <a href="/"><i class="fi fi-br-power"></i></a>
+            <a href="/"><img src="../asset/img/avatar.png" alt="User Profile" class="profile-icon"></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="logo-section">
+                <a href="/"><img src="../asset/img/logokjrdns.png" alt="Kejardosen Logo" class="logokjr"/></a>
+            </div>
+            <ul class="menu">
+                <li><a href="/"><i class="fi fi-br-home"></i> <span class="menu-text">Beranda</span></a></li>
+                <li><a href="/"><i class="fi fi-br-graduation-cap"></i> <span class="menu-text">Pengajuan</span></a></li>
+                <li><a href="/"><i class="fi fi-br-list-check"></i> <span class="menu-text">Daftar Bimbingan</span></a></li>
+                <li><a href="/"><i class="fi fi-br-calendar"></i> <span class="menu-text">Kalender</span></a></li>
+                <li><a href="/"><i class="fi fi-br-memo"></i> <span class="menu-text">Logbook</span></a></li>
+                <li class="menu-item has-submenu">
+                    <div class="submenu-toggle">
+                        <i class="fi fi-br-time-past"></i> <span class="menu-text">Riwayat</span>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="/"><i class="fi fi-br-time-past"></i> <span class="menu-text">Riwayat Pengajuan</span></a></li>
+                        <li><a href="/"><i class="fi fi-br-time-past"></i> <span class="menu-text">Riwayat Jadwal Bimbingan</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="/"><i class="fi fi-br-user"></i> <span class="menu-text">Profil</span></a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+                     
+            <div class="title">Logbook</div>
+            <div class="search-container">
+                <input type="text" id="search-input" onkeyup="searchTable()" placeholder="Pencarian">
+            </div> 
+            <ul class="responsive-table">
+                <li class="table-header">
+                    <div class="col col-1">NIM</div>
+                    <div class="col col-2">Nama</div>
+                    <div class="col col-3">Terakhir Diubah</div>
+                    <div class="col col-4">Progres TA</div>
+                    <div class="col col-5">Aksi</div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401057</div>
+                    <div class="col col-2" data-label="Nama">Muhammad Maulana Yusuf</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">10 September 2024 07:00 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">25%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401037</div>
+                    <div class="col col-2" data-label="Nama">Hasna Fadhilah Ramadhan</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">13 September 2024 07:00 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">50%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401032</div>
+                    <div class="col col-2" data-label="Nama">Christian Jeremiatur Hamonangan S</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">14 September 2024 07:00 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">50%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401001</div>
+                    <div class="col col-2" data-label="Nama">Andi Pratama</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">01 Desember 2024 10:00 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">30%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401022</div>
+                    <div class="col col-2" data-label="Nama">Rina Dewi</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">25 November 2024 14:30 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">60%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401035</div>
+                    <div class="col col-2" data-label="Nama">Bagus Raharjo</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">20 November 2024 08:15 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">85%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401047</div>
+                    <div class="col col-2" data-label="Nama">Siti Nurhaliza</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">29 November 2024 17:50 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">45%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401055</div>
+                    <div class="col col-2" data-label="Nama">Yusuf Kurniawan</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">18 November 2024 12:10 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">20%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401068</div>
+                    <div class="col col-2" data-label="Nama">Dewi Ayu</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">10 November 2024 09:40 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">70%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401077</div>
+                    <div class="col col-2" data-label="Nama">Faisal Hakim</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">03 Desember 2024 15:25 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">95%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>     
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401088</div>
+                    <div class="col col-2" data-label="Nama">Lia Permatasari</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">02 Desember 2024 10:45 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">40%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401099</div>
+                    <div class="col col-2" data-label="Nama">Dani Firmansyah</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">15 November 2024 11:20 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">65%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401105</div>
+                    <div class="col col-2" data-label="Nama">Putri Maharani</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">28 November 2024 09:00 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">50%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401112</div>
+                    <div class="col col-2" data-label="Nama">Eka Saputra</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">05 Desember 2024 08:30 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">10%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401123</div>
+                    <div class="col col-2" data-label="Nama">Wawan Kurnia</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">27 November 2024 18:20 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">80%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401134</div>
+                    <div class="col col-2" data-label="Nama">Rika Andini</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">30 November 2024 14:10 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">35%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="NIM">4342401145</div>
+                    <div class="col col-2" data-label="Nama">Budi Prakoso</div>
+                    <div class="col col-3" data-label="Terakhir Diubah">04 Desember 2024 16:50 WIB</div>
+                    <div class="col col-4" data-label="Progres TA">90%</div>
+                    <div class="col col-5" data-label="Aksi"><a href="/"><i class="fi fi-br-list"></i></a></div>
+                </li>       
+            </ul>
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="prev-page">Prev</button>
+                <span class="page-numbers">
+                    <span class="page-number active">1</span>
+                    <span class="page-number">2</span>
+                    <span class="page-number">3</span>
+                    <!-- Tambahkan lebih banyak page number sesuai dengan jumlah data -->
+                </span>
+                <button class="next-page">Next</button>
+            </div>
+        </div>
+    </div>
+    <script src="../asset/javascript/sidebar-navbar.js"></script>
+    <script src="../asset/javascript/logbook-dosen.js"></script>
+
+</body>
+</html>
