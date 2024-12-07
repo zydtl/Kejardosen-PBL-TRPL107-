@@ -6,12 +6,17 @@
     padding: 25px 40px;
 }
 
+.containerlogbook{
+    margin-top: -80px;
+}
+
+
 .main-content form .logbook-details {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
-
+} 
+     
 form .logbook-details .input-box {
     width: calc(100% / 2 - 20px);
 }
