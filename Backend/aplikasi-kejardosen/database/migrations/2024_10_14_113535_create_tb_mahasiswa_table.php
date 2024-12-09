@@ -13,18 +13,19 @@ return new class extends Migration
     {
         Schema::create('tb_mahasiswa', function (Blueprint $table) {
             $table->bigInteger('nim')->length(10)->primary();
-            $table->string('judul_tugas_akhir'); // Tidak ada panjang ditentukan, gunakan default
-            $table->string('nama_mahasiswa'); // Tidak ada panjang ditentukan, gunakan default
-            $table->string('password'); // Tidak ada panjang ditentukan, gunakan default
-            $table->string('email'); // Tidak ada panjang ditentukan, gunakan default
-            $table->bigInteger('nik_dosen')->unsigned(); // Foreign key, nik_dosen dari tb_dosen
-            $table->string('no_telp')->length(13); // Tidak ada panjang ditentukan, gunakan default
-            $table->string('kelas'); // Tidak ada panjang ditentukan, gunakan default
+            $table->string('judul_tugas_akhir'); 
+            $table->string('nama_mahasiswa');
+            $table->string('password'); 
+            $table->string('email'); 
+            $table->bigInteger('nik_dosen')->unsigned();
+            $table->string('no_telp')->length(13);
+            $table->string('kelas');
             $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
-            $table->timestamps(); // Kolom created_at dan updated_at
-            $table->string('remember_token', 100)->nullable(); // Menambahkan kolom remember_token
-            // Foreign key constraint
+            $table->timestamps();
+            $table->string('remember_token', 100)->nullable();
             $table->foreign('nik_dosen')->references('nik')->on('tb_dosen');
+            $table->integer('createdByAdmin')->unsigned();
+            $table->foreign('createdByAdmin')->references('idAdministrator')->on('tb_administrator');
         });
         
         

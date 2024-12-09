@@ -42,7 +42,17 @@ return [
         ],
         'admin' => [
             'driver' => 'session',
-            'provider' => 'administrators', // Provider ini akan kita definisikan di bawah
+            'provider' => 'admins',
+        ],
+    
+        'dosen' => [
+            'driver' => 'session',
+            'provider' => 'dosens',
+        ],
+    
+        'mahasiswa' => [
+            'driver' => 'session',
+            'provider' => 'mahasiswas',
         ],
     ],
 
@@ -78,9 +88,19 @@ return [
 
         //--------------------------------------------------------------------------------------------
 
-        'administrators' => [
+        'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Administrator::class, // Model untuk admin
+            'model' => App\Models\Administrator::class,
+        ],
+    
+        'dosens' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Dosen::class,
+        ],
+    
+        'mahasiswas' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Mahasiswa::class,
         ],
     ],
 

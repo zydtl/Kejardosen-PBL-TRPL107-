@@ -14,8 +14,6 @@ class Dosen extends Authenticatable
     protected $table = 'tb_dosen';
     protected $primaryKey = 'nik';
     public $incrementing = false;
-    protected $keyType = 'bigInteger';
-
     protected $fillable = [
         'nik', 'nama_dosen', 'password', 'email', 'no_telp', 'jenis_kelamin', 'remember_token'
     ];

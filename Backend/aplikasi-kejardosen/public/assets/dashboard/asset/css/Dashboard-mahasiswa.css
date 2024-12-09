@@ -1,0 +1,511 @@
+
+/* Styling Class BOX */
+
+.box{
+    width: 700px;
+    height: 250px;
+    background-color: #B1E8F0;
+    background-image: linear-gradient(to bottom left, #B1E8F0, #EFFAFE);
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.h1{
+    font-size: 20px;
+    margin-bottom: -5px;
+    
+}
+.h2{
+    font-size: 25px;
+    margin-bottom: 5px;
+    
+}
+.h3{
+    font-size: 15px;
+    font-weight: 400;
+    
+}
+.box a{
+    
+    color: white;
+    text-decoration: none;
+    
+}
+.buttonprogres{
+    width: 150px;
+    height: 40px;
+    background-color: #3EBCD2;
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+    margin-top: -9px;
+}
+.button{
+   
+    width: 180px;
+    height: 45px;
+    
+    align-items: center;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 20px;
+}
+.buttonlogbook img{
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    margin-left: 0px;
+    margin-right: 13px
+    
+
+}
+.button img{
+    width: 20px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+}
+.buttonlogbook a{
+    margin-bottom: 19px;
+    margin-right: -200px;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    text-align:center ;
+    text-decoration: none;
+    color: white;
+}
+a{
+    margin-bottom: 19px;
+    margin-left: 90px;
+    
+    padding: 0px;
+    text-align:center ;
+}
+.button-x a{
+    width: 160px;
+    margin-left: 0px;
+    text-align: center;
+    background-color: #1f819b;
+    padding-left: 15px;
+    font-size: 15px;
+    text-decoration: none;
+    color: white   ;
+    margin-bottom: 40px;
+    
+}
+
+.button a{
+    width: 480px;
+    margin-left: 0px;
+    text-align: center;
+    background-color: #3EBCD2;
+    padding-left: 20px;
+}
+.gambar{
+    height: 210px;
+    display: block;
+    top: 90px;
+    right: 0px;
+    padding: 7px;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0px;
+    width: 100px;
+}
+
+.box1{
+    width: 700px;
+    height: 150px;
+    background-color: white;
+    box-sizing: border-box;
+    
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    padding: 20px;
+    margin-top: 10px;
+    padding-left: 27px;
+}
+.boxjadwal{
+    width: 700px;
+    height: 300px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    padding: 20px;
+    margin-top: 10px;
+    padding-left: 27px;
+}
+
+.box2{
+    width: 330px;
+    height: 100px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between; 
+    margin-left: 0px;
+
+}
+.box3{
+    width: 330px;
+    height: 100px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between; 
+    margin-left: 40px;
+    
+}
+
+.kotak2 .h1{
+    font-size: 20px;
+    margin-bottom: -4px;
+}
+.kotak2 .h2{
+    font-size: 15px;
+    width: 1000px;  
+}
+.kotak3 .h1{
+    font-size: 20px;
+    margin-bottom: -4px;
+}
+.kotak3 .h2{
+    font-size: 15px;
+    width: 1000px;  
+}
+.graduation{
+    width: 70px;
+    height: 70px;
+    background-color: #3EBCD2;
+    padding: 10px;
+    justify-content: flex-start;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+.kotak2{
+    
+    margin-right: 200px;
+    margin-top: -10px;
+    margin-left: 10px;
+    
+    padding: 10px;
+}
+.kotak3{
+    margin-right: 200px;
+    margin-top: -10px;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.kotak{
+
+    width: 900px;
+    height: 300px;
+    flex: auto;
+    display: flex;
+   flex-wrap: wrap;
+    
+}
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.keren{
+    display: flex;
+}
+.Jadwal-Dosen{
+    width: 7000px;
+    font-size: 8px;
+    margin-left: 12px;
+}
+.Jadwal-Dosenok{
+    font-size: 8px;
+    margin-left: 12px;
+    width: 1000px;
+}
+
+.kotak2 .fi{
+  width: 400px;
+}
+
+.kotak1{
+    margin-right: 200px;
+    margin-top: 2px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    
+}
+
+.jadwal{
+    display: flex;
+    margin-top: 100px;
+        
+
+
+   
+
+}
+.jadwal .text{
+    width: 90px;
+    text-decoration: none;
+    height: 80px;
+    text-align: center;
+    background-color: #3EBCD2;
+    margin-left: 10px;
+    color: white;
+    padding-top: 20px;
+    border-radius: 15px;
+    font-size: 15px;
+    justify-content: space-between;
+    flex:auto
+}
+
+
+
+.container-fluid{
+    
+     /* Mengatur elemen agar berurutan */
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    width: 100000px;
+
+    
+}
+.container-kedua{
+   
+    margin-left: 10px;
+    width: 1000px;
+    height: 1000px;
+}
+.kolom{
+    
+    
+    width: 700px;
+    margin-top: -91px;
+}
+.kolom2{
+    
+    
+    width: 300px;
+    height:550px;
+    
+    margin-top: -91px;
+   
+}
+.teksjadwal1 h1{
+    font-size: 20px;
+}
+.teksjadwal1{
+    margin-left: 20px;
+}
+.profil{
+    margin-left:20px ;
+    background-image: linear-gradient(to top left, #B1E8F0, #EFFAFE);
+    width: 330px;
+    height: 214px;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
+    justify-content: space-between;
+    
+    
+}
+
+.profil img{
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+}
+
+.info .line1{
+    display: flex;
+    justify-content: space-between;
+    width: 167px;
+    font-size: 15px;
+    display: flex;
+    margin-top: 5px;
+}
+.info .line2{
+    display: flex;
+    justify-content: space-between;
+    width: 105px;
+    font-size: 15px;
+    display: flex;
+    margin-top: 1px;
+}
+.info{
+    margin-left: 10px;
+    justify-content: space-between;
+   
+}
+.garis1{
+    display: flex;
+    align-items: center;
+    
+}
+.ruangan{
+    display: flex;
+    
+    
+}
+ .lokasi{
+    margin-left: 171px; 
+}
+.lokasionline{
+    margin-left: 40px;
+}
+.ruangan p{
+    font-weight: 400;
+}
+.garis2{
+    margin-top: 10px;
+    
+}
+.garis2 p{
+    margin-top: 1px;
+    font-size: 13px ;
+}
+.garis2 .tempat{
+    margin-left: 5px;
+}
+.tanggal{
+    display: flex;
+    margin-top: 4px;
+}
+.tanggal10{
+    display: flex;
+    margin-top: 8px;
+    
+}
+ .lokasi2{
+   display: flex;
+}
+.tanggal .lokasi2{
+    margin-left: 105px;
+    margin-top: 0px;
+}
+.lokasi3{
+    margin-left: 123px;
+}
+.kode{
+    display: flex;
+    margin-top: 4px;
+}
+.kalender{
+    display: flex;
+}
+
+#calendar {
+    width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+    
+    
+  }
+.js-calender{
+    overflow: hidden;
+}
+.kalender{
+    margin-top: -200px;
+}
+
+
+/* Kontainer bar progres */
+.progress-container {
+    width: 100%; /* Panjang penuh */
+    background-color: #f3f3f3; /* Warna background */
+    border-radius: 10px; /* Membuat sudut melengkung */
+    height: 40px; /* Tinggi bar */
+    overflow: hidden; /* Untuk mencegah konten keluar */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+  }
+  
+  /* Bar progres */
+  .progress-bar {
+    height: 100%; /* Tinggi penuh dari kontainer */
+    background-color: #00bcd4; /* Warna utama bar */
+    text-align: center; /* Teks di tengah */
+    line-height: 20px; /* Menyesuaikan teks */
+    color: white; /* Warna teks */
+    white-space: nowrap; /* Agar teks tetap di satu baris */
+    transition: width 0.5s ease; /* Animasi saat nilai berubah */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 10px;
+  }
+   .gambardosen img{
+    width: 130px;
+    height: 130px;
+
+}
+.pemilihan-jadwal{
+    display: flex;
+   align-items: center;
+   margin-top: -20px;
+   
+   
+}
+
+.pemilihan-jadwal .ruangan{
+    display: flex;
+
+}
+.pemilihan-jadwal .tanggal{
+    display: flex;
+}
+
+
+.pemilihan-jadwal .teksone{
+    margin-top: 35px;
+    margin-left: 10px;
+}
+
+.ruangan .tempatmu{
+    margin-left: 5px;
+    margin-top: -2px;
+}
+.ruangan .lokasixy{
+    margin-left: 350px;
+}
+
+.tanggal10 .tempatku{
+    margin-left: 5px;
+    margin-top: -2px;
+}
+.tanggal10 .lokasi7{
+    margin-left: 267px;
+    margin-top: -1px;
+}
+.teksone .ruangan{
+    margin-top: 10px;
+}
+.button-x{
+    margin-top: -3px;
+}
+.pilih-jadwal .jadwal{
+    margin-top: -23px;
+}
+  

@@ -15,8 +15,6 @@ class Mahasiswa extends Authenticatable
     protected $table = 'tb_mahasiswa';
     protected $primaryKey = 'nim';
     public $incrementing = false;
-    protected $keyType = 'bigInteger';
-
     protected $fillable = [
         'nim', 'nama_mahasiswa', 'password', 'email', 'no_telp', 'kelas', 'jenis_kelamin', 'remember_token'
     ];

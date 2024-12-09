@@ -1,8 +1,5 @@
 @extends('auth.layout.master')
 
-
-@extends('auth.layout.master')
-
 @section('content')
   <div class="container-fluid">
     <div class="row">

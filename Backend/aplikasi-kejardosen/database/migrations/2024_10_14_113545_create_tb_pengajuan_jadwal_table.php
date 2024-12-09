@@ -17,7 +17,7 @@ return new class extends Migration
             $table->time('waktu_pengajuan');
             $table->date('tanggal_anjuranDosen');
             $table->time('waktu_anjuranDosen');
-            $table->bigInteger('nim'); // Hapus panjang, gunakan integer default
+            $table->bigInteger('nim');
             $table->enum('status', ['menunggu', 'disetujui', 'ditolak', 'alternatif']);
             $table->timestamps();
             $table->foreign('nim')->references('nim')->on('tb_mahasiswa');

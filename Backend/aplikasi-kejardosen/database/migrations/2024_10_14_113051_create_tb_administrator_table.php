@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tb_administrator', function (Blueprint $table) {
-            $table->integer('idAdministrator')->primary(); // Mendefinisikan primary key di sini
+            $table->unsignedInteger('idAdministrator')->primary(); 
             $table->string('username')->unique();
             $table->string('nama');
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();
             $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
-            $table->string('remember_token', 100)->nullable(); // Menambahkan kolom remember_token
+            $table->string('remember_token', 100)->nullable(); 
         });
         
     }
