@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pengajuan Dosen</title>
+  <link rel="stylesheet" href=  "{{asset('asset/css/sidebar-navbar.css')}}" />
+  <link rel="stylesheet" href="{{asset('asset/css/Pengajuan-dosen.css')}}" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css" />
+  <link rel="stylesheet"
+    href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
+  <link rel="stylesheet"
+    href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css" />
+  <link rel="stylesheet"
+    href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+  <header class="navbar">
+    <!-- HUMBURGER BUTTON -->
+    <button onclick="toggleSidebar()" class="toggle-button">&#9776;</button>
+    <div class="navbar-right">
+      <a href="/"><i class="fi fi-br-bell"></i></a>
+      <a href="/"><i class="fi fi-br-power"></i></a>
+      <a href="/"><img src="{{asset('asset/img/avatar.png')}}" alt="User Profile" class="profile-icon" /></a>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <!-- logo -->
+      <div class="logo-section">
+        <a href="/"><img src="{{asset('asset/img/logokjrdns.png')}}" alt="Kejardosen Logo" class="logokjr" /></a>
+      </div>
+      <ul class="menu">
+        <li>
+          <a href="/"><i class="fi fi-br-home"></i>
+            <span class="menu-text">Beranda</span></a>
+        </li>
+        <li>
+          <a href="/"><i class="fi fi-br-graduation-cap"></i>
+            <span class="menu-text">Pengajuan</span></a>
+        </li>
+        <li>
+          <a href="/"><i class="fi fi-br-list-check"></i>
+            <span class="menu-text">Jadwal Bimbingan</span></a>
+        </li>
+        <li>
+          <a href="/"><i class="fi fi-br-calendar"></i>
+            <span class="menu-text">Kalender</span></a>
+        </li>
+        <li>
+          <a href="/"><i class="fi fi-br-memo"></i>
+            <span class="menu-text">Logbook</span></a>
+        </li>
+        <li class="menu-item has-submenu">
+          <div class="submenu-toggle">
+            <i class="fi fi-br-time-past"></i>
+            <span class="menu-text">Riwayat</span>
+          </div>
+          <ul class="submenu">
+            <li>
+              <a href="/"><i class="fi fi-br-time-past"></i>
+                <span class="menu-text">Riwayat Pengajuan</span></a>
+            </li>
+            <li>
+              <a href="/"><i class="fi fi-br-time-past"></i>
+                <span class="menu-text">Riwayat Jadwal Bimbingan</span></a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/"><i class="fi fi-br-user"></i>
+            <span class="menu-text">Profil</span></a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content utama">
+      <div class="title">
+        <h1>Pengajuan</h1>
+      </div>
+      <div class="search-container">
+        <input type="text" id="search-input" onkeyup="searchTable()" placeholder="Pencarian">
+      </div>
+      <ul class="responsive-table">
+        <li class="table-row baris-pengajuan">
+          <div class="col col-1" data-label="img">
+            <img src="{{asset('asset/img/avatar.png')}}" alt="" />
+          </div>
+          <div class="col col-2" data-label="Diajukan Pada">
+            <h1>Muhammad Maulana Yusuf</h1>
+            <p>4342401XXX - TRPL 7B Pagi</p>
+          </div>
+          <div class="col col-3" data-label="Tanggal Pengajuan">
+            <h1>Pengajuan Jadwal:</h1>
+            <p>12 September 2024 09:00 WIB</p>
+          </div>
+          <div class="col col-4" data-label="Waktu Pengajuan">
+            <h1>Kode Pengajuan:</h1>
+            <p>WKWHGG54</p>
+          </div>
+          <a><button id="openFormpengajuan" class="btn btnku btnkeren">
+              Lihat Pengajuan
+            </button></a>
+        </li>
+      </ul>
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="prev-page">Prev</button>
+        <span class="page-numbers">
+          <span class="page-number active">1</span>
+          <span class="page-number">2</span>
+          <span class="page-number">3</span>
+          <!-- Tambahkan lebih banyak page number sesuai dengan jumlah data -->
+        </span>
+        <button class="next-page">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form melihat pengajuan mahasiswa -->
+
+  <div id="formModaledit" class="hidden modal">
+    <div class="modal-content modalpengajuan">
+      <div class="cancel"><button class="btn close-modal">X</button></div>
+      <form>
+        <div class="pengajuan-split">
+          <div id="double5" class="form-group kepanjangan1">
+            <div class="profil">
+              <img class="foto-profil" src="{{asset('asset/img/avatar.png')}}" alt="Profil" />
+            </div>
+            <div class="detail-item" data-label="Diajukan Pada">
+              <h4>Muhammad Maulana Yusuf</h4>
+              <p>4342401XXX - TRPL 7B Pagi</p>
+            </div>
+            <div class="detail-item" data-label="Tanggal Pengajuan">
+              <h4>Pengajuan Jadwal:</h4>
+              <p>12 September 2024 09:00 WIB</p>
+            </div>
+            <div class="detail-item" data-label="Waktu Pengajuan">
+              <h4>Kode Pengajuan:</h4>
+              <p>WKWHGG54</p>
+            </div>
+            <div class="banding">
+              <button type="button" id="btnAturUlang" class="btn btnku btnkeren btnlagi" onclick="switchToForm2()">
+                Atur Ulang Jadwal
+              </button>
+            </div>
+            <div class="respon">
+              <button id="tolak" class="tolak"><i class="fi fi-br-cross"></i></button>
+              <button id="terima" class="terima"><i class="fi fi-br-check"></i></button>
+            </div>
+          </div>
+          <div class="bagian2">
+            <div class="form-group two-col">
+              <div class="double">
+                <label for="tanggal">
+                  <p>Tanggal Pengajuan</p>
+                </label>
+                <input class="mati1" type="date" id="tanggal1 " class="form-control1 mati" disabled />
+              </div>
+              <div class="double2">
+                <label for="tanggal">
+                  <p>Waktu Pengajuan</p>
+                </label>
+                <input type="time" id="tanggal2 " class="form-control1oke lebar1" disabled />
+              </div>
+            </div>
+            <div id="double2" class="form-group">
+              <div class="double3">
+                <label for="judul">Judul Bimbingan</label>
+                <input class="mati" type="text" id="judul " class="form-control1 lebar mati"
+                  placeholder="Judul Bimbingan" disabled />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="judul">Catatan Mahasiswa</label>
+              <textarea id="catatandosen" class="form-control poke" rows="4"
+                placeholder="Selamat Pagi Bu, izin ingin meminta bantuan ibu untuk mengecek isi tugas akhir saya di bab 1"
+                disabled></textarea>
+            </div>
+            <div id="double7" class="form-group" style="display: none">
+              <div class="double1 just1">
+                <p for="tanggal"><b>Tanggal Anjuran Dosen</b></p>
+                <input type="date" id="tanggal1 " class="form-control1 mati atur1" />
+              </div>
+              <div class="double2 just">
+                <p for="waktu"><b> Waktu Anjuran Dosen</b></p>
+                <input type="time" id="waktu" class="form-control1oke lebar1 atur1" />
+              </div>
+            </div>
+            <div class="form-group">
+              <form method="post" class="">
+                <label for="judul">Pilih Jenis Bimbingan</label>
+                <select id="judul" class="form-control poke" name="jurusan">
+                  <option class="item" value="#">Offline<br /></option>
+                  <option class="item" value="#">Online <br /></option>
+                </select>
+              </form>
+            </div>
+            <div class="form-group">
+              <label for="judul">Ruangan</label>
+              <input type="text" id="judul" class="form-control poke" placeholder="cth: TA.12, Zoom meeting" />
+            </div>
+            <div class="form-group">
+              <label for="catatan">Catatan Dosen</label>
+              <textarea id="catatan" class="form-control poke" rows="4"
+                placeholder="Tambahkan catatan untuk mahasiswa"></textarea>
+            </div>
+          </div>
+
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+  <script src="{{asset('asset/javascript/Alert_Pengajuan-Dosen.js')}}"></script>
+  <script src="{{asset('asset/javascript/Ganti-form.js')}}"></script>
+  <script src="{{asset('asset/javascript/pengajuanDosen.js')}}"></script>
+  <script src="{{asset('asset/javascript/sidebar-navbar.js')}}"></script>
+</body>
+
+</html>
