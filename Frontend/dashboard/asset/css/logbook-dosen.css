@@ -10,9 +10,11 @@ body {
 /* Main Content Styling */
 .main-content {
     flex-grow: 1;
-    margin-top: 60px;
+    margin-top: 15px;
+    margin-left: 15px;
     transition: margin-left 0.3s ease;
     padding: 25px 40px;
+    overflow-x: hidden; /* Menghindari scroll tidak perlu */
 }
 
 /* Pengaturan ukuran kolom tabel logbook-dosen.html  */
@@ -22,7 +24,10 @@ body {
     list-style: none;
     padding: 0;
     margin: 20px 0;
-    width: 180vh;
+    width: 100%; /* Lebar tabel disesuaikan dengan container */
+    max-width: 100%; /* Membatasi tabel agar tidak melebihi layar */
+    overflow-x: auto; /* Menambahkan scroll jika konten tabel melebihi layar */
+    border-collapse: collapse;
 }
 
 /* icon aksi */
@@ -41,6 +46,7 @@ body {
     padding: 15px 20px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
+    flex-wrap: wrap; /* Membungkus jika tidak cukup ruang */
 }
 
 .table-header {
@@ -58,28 +64,28 @@ body {
 }
 
 .table-row .col, .table-header .col {
-    flex: 1; /* All columns take equal width by default */
-    text-align: center; /* Horizontal alignment */
+    flex: 1;
+    text-align: center;
+    word-wrap: break-word; /* Membungkus teks panjang */
 }
 
 .table-row .col-1, .table-header .col-1 {
-    flex: 0.8;
+    flex: 0.5;
 }
 
 .table-row .col-2, .table-header .col-2 {
-    flex: 1.5; /* Adjust proportions */
+    flex: 1; 
 }
 
 .table-row .col-3, .table-header .col-3 {
-    flex: 1.5; /* Adjust proportions */
+    flex: 0.7;
 }
-
 .table-row .col-4, .table-header .col-4 {
-    flex: 0.5;
+    flex: 0.3;
 }
 
 .table-row .col-5, .table-header .col-5 {
-    flex: 0.5;
+    flex: 0.3;
 }
 
 
@@ -88,7 +94,29 @@ body {
     list-style: none;
     padding: 0;
     margin: 20px 0;
-    width: 180vh;
+    width: 100%; /* Lebar tabel disesuaikan dengan container */
+    max-width: 100%; /* Membatasi tabel agar tidak melebihi layar */
+    overflow-x: auto; /* Menambahkan scroll jika konten tabel melebihi layar */
+    border-collapse: collapse;
+    
+    .table-header {
+        background-color: #B1E8F0;
+        color: #000;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .table-header, .table-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Vertical alignment */
+        padding: 15px 20px;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+        flex-wrap: wrap; /* Membungkus jika tidak cukup ruang */
+    }
     
     .table-header {
         background-color: #B1E8F0;
@@ -105,8 +133,9 @@ body {
     }
     
     .table-row .col, .table-header .col {
-        flex: 1; /* All columns take equal width by default */
-        text-align: center; /* Horizontal alignment */
+        flex: 1;
+        text-align: center;
+        word-wrap: break-word; /* Membungkus teks panjang */
     }
     
     .table-row .col-1, .table-header .col-1 {
@@ -114,7 +143,7 @@ body {
     }
     
     .table-row .col-2, .table-header .col-2 {
-        flex: 0.7; /* Adjust proportions */
+        flex: 0.5; /* Adjust proportions */
     }
     
     .table-row .col-3, .table-header .col-3 {
@@ -126,14 +155,26 @@ body {
     }
     
     .table-row .col-5, .table-header .col-5 {
-        flex: 0.5;
+        flex: 0.3;
     }
 
     .table-row .col-6, .table-header .col-6 {
-        flex: 0.5;
+        flex: 0.3;
     }
 }
     
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .table-header, .table-row {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .table-row .col, .table-header .col {
+        flex: 100%; /* Kolom menggunakan seluruh lebar layar */
+        text-align: left;
+    }
+}
 
 /* Pagination Styling */
 .pagination {
