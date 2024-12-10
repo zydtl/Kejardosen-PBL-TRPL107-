@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pengajuan Dosen</title>
-  <link rel="stylesheet" href=  "{{asset('asset/css/sidebar-navbar.css')}}" />
-  <link rel="stylesheet" href="{{asset('asset/css/Pengajuan-dosen.css')}}" />
+  <link rel="stylesheet" href=  "{{asset('assets/dashboard/asset/css/sidebar-navbar.css')}}" />
+  <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/Pengajuan-dosen.css')}}" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css">
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
@@ -29,7 +29,7 @@
     <div class="navbar-right">
       <a href="/"><i class="fi fi-br-bell"></i></a>
       <a href="/"><i class="fi fi-br-power"></i></a>
-      <a href="/"><img src="{{asset('asset/img/avatar.png')}}" alt="User Profile" class="profile-icon" /></a>
+      <a href="/"><img src="{{asset('assets/dashboard/asset/img/avatar.png')}}" alt="User Profile" class="profile-icon" /></a>
     </div>
   </header>
 
@@ -38,7 +38,7 @@
     <aside id="sidebar" class="sidebar">
       <!-- logo -->
       <div class="logo-section">
-        <a href="/"><img src="{{asset('asset/img/logokjrdns.png')}}" alt="Kejardosen Logo" class="logokjr" /></a>
+        <a href="/"><img src="{{asset('assets/dashboard/asset/img/logokjrdns.png')}}" alt="Kejardosen Logo" class="logokjr" /></a>
       </div>
       <ul class="menu">
         <li>
@@ -95,7 +95,7 @@
       <ul class="responsive-table">
         <li class="table-row baris-pengajuan">
           <div class="col col-1" data-label="img">
-            <img src="{{asset('asset/img/avatar.png')}}" alt="" />
+            <img src="{{asset('assets/dashboard/asset/img/avatar.png')}}" alt="" />
           </div>
           <div class="col col-2" data-label="Diajukan Pada">
             <h1>Muhammad Maulana Yusuf</h1>
@@ -137,7 +137,7 @@
         <div class="pengajuan-split">
           <div id="double5" class="form-group kepanjangan1">
             <div class="profil">
-              <img class="foto-profil" src="{{asset('asset/img/avatar.png')}}" alt="Profil" />
+              <img class="foto-profil" src="{{asset('assets/dashboard/asset/img/avatar.png')}}" alt="Profil" />
             </div>
             <div class="detail-item" data-label="Diajukan Pada">
               <h4>Muhammad Maulana Yusuf</h4>
@@ -227,10 +227,10 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
-  <script src="{{asset('asset/javascript/Alert_Pengajuan-Dosen.js')}}"></script>
-  <script src="{{asset('asset/javascript/Ganti-form.js')}}"></script>
-  <script src="{{asset('asset/javascript/pengajuanDosen.js')}}"></script>
-  <script src="{{asset('asset/javascript/sidebar-navbar.js')}}"></script>
+  <script src="{{asset('assets/dashboard/asset/javascript/Alert_Pengajuan-Dosen.js')}}"></script>
+  <script src="{{asset('assets/dashboard/asset/javascript/Ganti-form.js')}}"></script>
+  <script src="{{asset('assets/dashboard/asset/javascript/pengajuanDosen.js')}}"></script>
+  <script src="{{asset('assets/dashboard/asset/javascript/sidebar-navbar.js')}}"></script>
 </body>
 
 </html>
