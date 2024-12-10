@@ -105,7 +105,72 @@ body {
     flex: 0.5;
 }
 .table-row .col-6, .table-header .col-6 {
-    flex: 0.5;
+    flex: 0.3;
+}
+
+.responsive-table-dsn {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 100%; /* Lebar tabel disesuaikan dengan container */
+    max-width: 100%; /* Membatasi tabel agar tidak melebihi layar */
+    overflow-x: auto; /* Menambahkan scroll jika konten tabel melebihi layar */
+    border-collapse: collapse;
+
+    .table-header, .table-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Vertical alignment */
+        padding: 15px 20px;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+        flex-wrap: wrap; /* Membungkus jika tidak cukup ruang */
+    }
+    
+    .table-header {
+        background-color: #B1E8F0;
+        color: #000;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .table-row {
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .table-row .col, .table-header .col {
+        flex: 1;
+        text-align: center;
+        word-wrap: break-word; /* Membungkus teks panjang */
+    }
+    
+    .table-row .col-1, .table-header .col-1 {
+        flex: 0.5;
+    }
+    
+    .table-row .col-2, .table-header .col-2 {
+        flex: 0.5; 
+    }
+    
+    .table-row .col-3, .table-header .col-3 {
+        flex: 1;
+    }
+    .table-row .col-4, .table-header .col-4 {
+        flex: 0.7;
+    }
+    
+    .table-row .col-5, .table-header .col-5 {
+        flex: 0.5;
+    }
+    .table-row .col-6, .table-header .col-6 {
+        flex: 0.5;
+    }
+    .table-row .col-7, .table-header .col-7 {
+        flex: 0.3;
+    }
 }
 
 /* Media Query for Smaller Screens */
