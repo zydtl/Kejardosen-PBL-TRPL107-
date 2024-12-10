@@ -10,7 +10,7 @@ btnAturUlang.addEventListener("click", function () {
   if (!isAdditionalShown) {
     // Tampilkan elemen tambahan dengan transisi ukuran
     additionalInputs.style.display = "block";
-    btnAturUlang.textContent = "Pengajuannya Mahasiswa";
+    btnAturUlang.textContent = "Batalkan";
   } else {
     // Sembunyikan elemen tambahan dengan transisi ukuran
     additionalInputs.style.display = "none";

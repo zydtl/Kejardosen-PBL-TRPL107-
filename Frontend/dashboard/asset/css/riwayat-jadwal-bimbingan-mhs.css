@@ -10,9 +10,11 @@ body {
 /* Main Content Styling */
 .main-content {
     flex-grow: 1;
-    margin-top: 60px;
+    margin-top: 15px;
+    margin-left: 15px;
     transition: margin-left 0.3s ease;
     padding: 25px 40px;
+    overflow-x: hidden; /* Menghindari scroll tidak perlu */
 }
 
 /* Responsive Table */
@@ -20,7 +22,10 @@ body {
     list-style: none;
     padding: 0;
     margin: 20px 0;
-    width: 150vh;
+    width: 100%; /* Lebar tabel disesuaikan dengan container */
+    max-width: 100%; /* Membatasi tabel agar tidak melebihi layar */
+    overflow-x: auto; /* Menambahkan scroll jika konten tabel melebihi layar */
+    border-collapse: collapse;
 }
 
 /* status */
@@ -58,6 +63,7 @@ body {
     padding: 15px 20px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
+    flex-wrap: wrap; /* Membungkus jika tidak cukup ruang */
 }
 
 .table-header {
@@ -75,8 +81,9 @@ body {
 }
 
 .table-row .col, .table-header .col {
-    flex: 1; /* All columns take equal width by default */
-    text-align: center; /* Horizontal alignment */
+    flex: 1;
+    text-align: center;
+    word-wrap: break-word; /* Membungkus teks panjang */
 }
 
 .table-row .col-1, .table-header .col-1 {
@@ -99,6 +106,18 @@ body {
 }
 .table-row .col-6, .table-header .col-6 {
     flex: 0.5;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .table-header, .table-row {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .table-row .col, .table-header .col {
+        flex: 100%; /* Kolom menggunakan seluruh lebar layar */
+        text-align: left;
+    }
 }
 
 /* Pagination Styling */
@@ -164,50 +183,3 @@ body {
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0), 0 0px 10px 0 rgba(0, 0, 0, 0.068);
 }
 
-
-/* Halaman Enroll Admin*/
-.container-fluid{
-    margin-left: 15%;
-}
-
-
-.search-container img{
-    width:20px;
-    height: 20px;
-    margin-left: 10px;
-}
-
-.search-container button{
-    align-items: center;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 61%;
-}
-.band{
-    width: 100%;
-    border-radius:20px;
-    margin-bottom: 20px;
-    
-}
-.waw{
-    height: auto;
-}
-
-
-#formModaldeletecapek{
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    display:none;
-    justify-content: center;
-    align-items: center;
-    z-index: 910101010101020220022020;
-    
-  }
-
-  .trpl{
-    width: 100%;
-  }
