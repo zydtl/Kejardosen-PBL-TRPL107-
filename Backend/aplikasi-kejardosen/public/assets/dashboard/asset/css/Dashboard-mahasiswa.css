@@ -288,6 +288,7 @@ html, body {
     height: 100vh;
     display: flex;
     width: 100000px;
+    margin-left: 200px;
 
     
 }
@@ -296,6 +297,7 @@ html, body {
     margin-left: 10px;
     width: 1000px;
     height: 1000px;
+    margin-left: 200px;
 }
 .kolom{
     

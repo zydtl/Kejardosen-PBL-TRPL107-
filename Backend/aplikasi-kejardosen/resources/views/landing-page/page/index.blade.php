@@ -87,7 +87,7 @@
       <p style="width: 1000px;font-size: 35px;">Penjadwalan Bimbingan Tugas Akhir</p>
       <a href="#Tentangsection" class="btn mt-3" style="background-color: #1f819b;color: white;width: 135px;">Lihat lebih jauh</a>
     </div>
-    <div class="col-md-6 " >
+    <div class="col-md-6 ">
       <img src="{{ asset('assets/home/asset/Kalender baru.svg') }}" style="height:521px;" alt="Calendar" class="img-fluid">
   </div>
   </div>
