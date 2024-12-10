@@ -170,6 +170,7 @@ body {
     margin-left: 15%;
 }
 
+
 .search-container img{
     width:20px;
     height: 20px;
@@ -205,4 +206,8 @@ body {
     align-items: center;
     z-index: 910101010101020220022020;
     
+  }
+
+  .trpl{
+    width: 100%;
   }
