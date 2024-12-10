@@ -1,6 +1,6 @@
 // JavaScript for pagination
 let currentPage = 1;
-const rowsPerPage = 5;
+const rowsPerPage = 8;
 const rows = document.querySelectorAll('.table-row');
 const totalPages = Math.ceil(rows.length / rowsPerPage);
 const paginationContainer = document.querySelector('.pagination .page-numbers');
@@ -91,69 +91,50 @@ function searchTable() {
     });
 }
 
-//Untuk memunculkan form pengajuan di halaman dosen
-// Seleksi elemen modal
-const formModal = document.getElementById('formModaledit');
+document.querySelector(".btn-tolak").addEventListener("click", async function () {
+    const confirmation = await Swal.fire({
+        title: "Apakah Anda yakin?",
+        text: "Jadwal yang telah diterima akan dibatalkan dan mahasiswa akan diberitahu.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#22a0b8",
+        cancelButtonColor: "#95dfea",
+        confirmButtonText: "Ya, batalkan jadwal!",
+        cancelButtonText: "Tidak, tetap terima!"
+    });
 
-// Fungsi untuk menampilkan modal
-const openModal = () => {
-  formModal.style.display = 'flex'; // Tampilkan modal
-};
+    if (confirmation.isConfirmed) {
+        const { value: reason } = await Swal.fire({
+            title: "Alasan Pembatalan",
+            input: "textarea",
+            inputLabel: "Masukkan alasan pembatalan bimbingan",
+            inputPlaceholder: "Tuliskan alasan Anda di sini...",
+            inputAttributes: {
+                "aria-label": "Tuliskan alasan Anda di sini"
+            },
+            showCancelButton: true,
+            confirmButtonText: "Kirim",
+            cancelButtonText: "Batal",
+            confirmButtonColor: "#22a0b8",
+            cancelButtonColor: "#95dfea"
+        });
 
-// Fungsi untuk menutup modal   
-const closeModal = () => {
-  formModal.style.display = 'none'; // Sembunyikan modal
-};
-
-// Seleksi semua tombol dengan class 'open-modal'
-const openButtons = document.querySelectorAll('.btnkeren');
-openButtons.forEach(button => {
-  button.addEventListener('click', openModal); // Tambahkan event listener ke setiap tombol
+        if (reason) {
+            // Logika untuk mengirim alasan pembatalan ke backend
+            Swal.fire({
+                title: "Jadwal Dibatalkan!",
+                text: `Jadwal berhasil dibatalkan dengan alasan: "${reason}"`,
+                icon: "success",
+                confirmButtonColor: "#22a0b8"
+            });
+        } else {
+            Swal.fire({
+                title: "Pembatalan Dibatalkan",
+                text: "Anda harus memberikan alasan pembatalan!",
+                icon: "info",
+                confirmButtonColor: "#22a0b8"
+            });
+        }
+    }
 });
-
-// Seleksi tombol "X" untuk menutup modal
-const closeButton = document.querySelector('.close-modal');
-closeButton.addEventListener('click', closeModal);
-
-// Tutup modal jika klik di luar modal
-window.addEventListener('click', (event) => {
-  if (event.target === formModal) {
-    closeModal();
-  }
-});
-
-
-// Pengaturan pemilihan tanggal anjuran
-const inputDate = document.getElementById("tanggal");
-
-// Dapatkan tanggal hari ini
-const today = new Date();
-
-// Tentukan tanggal minimum (hari besok)
-const tomorrow = new Date(today);
-tomorrow.setDate(today.getDate() + 1); // Tambahkan 1 hari
-
-// Tentukan tanggal maksimum (30 hari ke depan)
-const maxDate = new Date(today);
-maxDate.setDate(today.getDate() + 30); // Tambahkan 30 hari
-
-// Format tanggal menjadi `YYYY-MM-DD`
-const formatDate = (date) => {
-    const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Bulan berbasis indeks (0-11)
-    const day = date.getDate().toString().padStart(2, "0");
-    return `${year}-${month}-${day}`;
-};
-
-// Tetapkan atribut `min` dan `max`
-inputDate.setAttribute("min", formatDate(tomorrow));
-inputDate.setAttribute("max", formatDate(maxDate));
-
-console.log(`Min date: ${formatDate(tomorrow)}, Max date: ${formatDate(maxDate)}`);
-
-
-
-
-
-
 

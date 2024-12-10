@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pengajuan Dosen</title>
+  <title>Pengajuan - Dosen</title>
   <link rel="stylesheet" href=  "{{asset('assets/dashboard/asset/css/sidebar-navbar.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/Pengajuan-dosen.css')}}" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css">
