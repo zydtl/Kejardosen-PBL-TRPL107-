@@ -132,3 +132,28 @@ function searchTable() {
         }
     });
 }
+
+// alert menghapus logbook pada logbook mahasiswa
+
+document.querySelector(".btn-hapus").addEventListener("click", function () {
+    Swal.fire({
+        title: "Apakah Anda yakin?",
+        text: "Logbook ini akan dihapus secara permanen dan tidak dapat dipulihkan!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#22a0b8", // Warna tombol konfirmasi merah untuk menekankan penghapusan
+        cancelButtonColor: "#95dfea", // Warna tombol pembatalan abu-abu
+        confirmButtonText: "Ya, hapus logbook!",
+        cancelButtonText: "Tidak, batalkan!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Logic untuk menghapus logbook bisa ditambahkan di sini
+            Swal.fire({
+                title: "Dihapus!",
+                text: "Logbook Anda telah berhasil dihapus.",
+                icon: "success",
+                confirmButtonColor: "#22a0b8", // Warna tombol konfirmasi hijau
+            });
+        }
+    });
+});

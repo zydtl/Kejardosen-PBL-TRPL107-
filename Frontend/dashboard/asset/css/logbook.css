@@ -31,13 +31,34 @@ body {
 }
 
 /* icon aksi */
-.col i {
-    background-color: #B1E8F0;
-    color: #22A0B8;
+.col button {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    font-size: larger;
+    cursor: pointer;
+    color: white;
+    font-weight: 800;
+    border: none;
     border-radius: 10px;
-    padding: 8px 8px 4px 8px;
-    margin-bottom: 0;
-}
+  }
+  
+  .col .btn-info {
+    background-color: blue;
+  }
+  
+  .col .btn-hapus {
+    background-color: red;
+    margin-right: 5px;
+  }
+  
+  .col .btn-edit {
+    background-color: orange;
+  }
+
+  .col .btn-list {
+    background-color: blue;
+  }
 
 .table-header, .table-row {
     display: flex;
@@ -159,7 +180,7 @@ body {
     }
 
     .table-row .col-6, .table-header .col-6 {
-        flex: 0.3;
+        flex: 0.5;
     }
 }
     
