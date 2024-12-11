@@ -11,17 +11,15 @@ function updateLayout() {
     const navbar = document.querySelector(".navbar");
     const mainContent = document.querySelector(".main-content");
 
-    const sidebarWidth = sidebar.classList.contains("expanded") ? 270 : 70;
-
-    navbar.style.width = `calc(100% - ${sidebarWidth}px)`;
-    navbar.style.left = `${sidebarWidth}px`;
-
-    inputBoxes.forEach(inputBox => {
-        inputBox.style.width = sidebar.classList.contains("expanded") ? "300px" : "400px";
-    });
-
-    mainContent.style.marginLeft = `${sidebarWidth}px`;
+    if (sidebar.classList.contains("expanded")) {
+        navbar.classList.add("expanded");
+        mainContent.classList.add("expanded");
+    } else {
+        navbar.classList.remove("expanded");
+        mainContent.classList.remove("expanded");
+    }
 }
+
 
 document.querySelectorAll('.submenu-toggle').forEach((toggle) => {
     toggle.addEventListener('click', function () {

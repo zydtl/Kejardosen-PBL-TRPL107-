@@ -1,56 +1,72 @@
-const form = document.getElementById("formModaledit");
-const btnSubmit = document.getElementById("openFormdelete");
-const modal = document.getElementById("formModaldelete");
-const confirmSubmit = document.getElementById("yes");
-const cancelSubmit = document.getElementById("closeFormdelete");
+// Laman pengajuan dosen
+terima.addEventListener("click", function (event) {
+  event.stopPropagation();
+  event.preventDefault();
 
-// Tampilkan modal saat tombol ceklis ditekan
-btnSubmit.addEventListener("click", function () {
-  modal.style.display = "block";
-});
+  // Tampilkan SweetAlert
+  Swal.fire({
+    title: "Apa Anda yakin ingin menyetujui pengajuan?",
+    text: "Anda masih bisa mengubah atau membatalkannya nanti.",
+    icon: "warning",
+    iconColor: "red",
+    showCancelButton: true,
+    cancelButtonText: "Batalkan",
+    confirmButtonColor: "#22a0b8",
+    cancelButtonColor: "#95dfea",
+    confirmButtonText: "Ya, setujui"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Tutup semua modal yang sedang terbuka
+      const modals = document.querySelectorAll(".modal"); // Sesuaikan dengan kelas modal Anda
+      modals.forEach(modal => {
+        modal.style.display = "none";
+      });
 
-// Kirim form jika tombol "Ya" ditekan
-confirmSubmit.addEventListener("click", function () {
-  form.submit();
-});
-
-// Tutup modal jika tombol "Ya" ditekan
-confirmSubmit.addEventListener("click", function () {
-    modal.style.display = "none";
+      Swal.fire({
+        title: "Disetujui!",
+        text: "Pengajuan berhasil disetujui.",
+        icon: "success",
+        confirmButtonColor: "#22a0b8",
+      });
+    }
   });
-
-// Tutup modal jika tombol "Tidak" ditekan
-cancelSubmit.addEventListener("click", function () {
-  modal.style.display = "none";
 });
 
+tolak.addEventListener("click", function (event) {
+  event.stopPropagation();
+  event.preventDefault();
 
+  Swal.fire({
+    title: "Apa Anda yakin ingin menolak pengajuan?",
+    text: "Anda masih bisa mengubah keputusan ini nanti jika diperlukan.",
+    icon: "warning",
+    iconColor: "red",
+    showCancelButton: true,
+    cancelButtonText: "Batalkan",
+    confirmButtonColor: "#22a0b8",
+    cancelButtonColor: "#95dfea",
+    confirmButtonText: "Ya, tolak"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Tutup semua modal yang sedang terbuka
+      const modals = document.querySelectorAll(".modal"); // Sesuaikan dengan kelas modal Anda
+      modals.forEach(modal => {
+        modal.style.display = "none";
+      });
 
-const form1 = document.getElementById("formModaledit");
-const btnSubmit1 = document.getElementById("openFormagree");
-const modal1 = document.getElementById("formModalagree");
-const confirmSubmit1 = document.getElementById("yes1");
-const cancelSubmit1 = document.getElementById("closeFormdelete1");
-
-// Tampilkan modal saat tombol ceklis ditekan
-btnSubmit1.addEventListener("click", function () {
-  modal1.style.display = "block";
-});
-
-// Kirim form jika tombol "Ya" ditekan
-confirmSubmit1.addEventListener("click", function () {
-  form1.submit();
-});
-
-// Tutup modal jika tombol "Ya" ditekan
-confirmSubmit1.addEventListener("click", function () {
-    modal1.style.display = "none";
+      Swal.fire({
+        title: "Ditolak!",
+        text: "Pengajuan berhasil ditolak.",
+        icon: "error",
+        confirmButtonColor: "#22a0b8",
+      });
+    }
   });
-
-
-// Tutup modal jika tombol "Tidak" ditekan
-cancelSubmit1.addEventListener("click", function () {
-  modal1.style.display = "none";
 });
 
 
+
+
+
+
+  

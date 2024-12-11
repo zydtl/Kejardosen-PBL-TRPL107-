@@ -1,10 +1,17 @@
- /* Reset CSS */
- * {
+/* Reset CSS */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    height: auto;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* Navbar Styling */
 .navbar {
     width: 100%;
     height: 50px;
@@ -19,12 +26,8 @@
     top: 0;
     left: 0;
     z-index: 1;
+    font-size: 16px;
 }
-
-.navbar  {
-    font-size: 5px;
-}
-
 
 .navbar .toggle-button {
     font-size: 20px;
@@ -42,8 +45,6 @@
     padding: 5px;
     outline: none;
 }
-
-
 
 .navbar-right {
     display: flex;
@@ -69,15 +70,10 @@
     height: 100vh;
 }
 
-
-body {
-    font-family: "Plus Jakarta Sans", sans-serif;
-}
-
 /* Sidebar Styling */
 .sidebar {
-    width: 70px; /* Width saat tertutup */
-    height: 900px;  
+    width: 70px; 
+    height: 100vh; 
     background-color: #d5f5f8;
     color: #fff;
     display: flex;
@@ -85,18 +81,97 @@ body {
     align-items: center;
     transition: width 0.3s;
     position: fixed;
-    transform: translateX(0); /* Tampilkan */
-}
-.bar{
-    position: static;
+    overflow-y: auto; 
+    top: 0;
+    bottom: 0;
 }
 
 .sidebar.expanded {
-    width: 270px; /* Width saat terbuka */
-    
+    width: 285px;
+    overflow-y: auto;
+    top: 0;
+    bottom: 0;
 }
 
-/* Logo Section */
+.sidebar span {
+    margin-left: 10px;
+}
+
+.menu {
+    list-style-type: none;
+}
+
+.menu-item .submenu {
+    display: none;
+    list-style-type: none;
+    margin-top: 10px;
+    transition: max-height 0.3s ease-out;
+}
+
+.submenu span {
+    font-size: 13px;
+}
+
+.menu-item.has-submenu {
+    display: block;
+}
+
+.menu-item.active .submenu {
+    display: block;
+}
+
+.submenu-toggle {
+    display: flex;
+    align-items: left;
+    cursor: pointer;
+}
+
+.menu li a,
+.menu li .submenu-toggle {
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: black;
+    font-weight: 600;
+}
+
+.menu li a:hover {
+    background-color: #B1E8F0;
+}
+
+.submenu-toggle:hover{
+    background-color: #B1E8F0;
+}
+
+.sidebar.expanded .menu li a,
+.sidebar.expanded .menu li .submenu-toggle {
+    padding: 15px 50px;
+}
+
+.sidebar.expanded .submenu li a {
+    padding: 15px 50px 15px 70px;
+}
+
+.sidebar:not(.expanded) .submenu li a:hover,
+.sidebar.expanded .submenu li a:hover {
+    background-color: #3EBCD2;
+    color: white;
+}
+
+.sidebar:not(.expanded) .menu li a,
+.sidebar:not(.expanded) .menu li .submenu-toggle {
+    padding: 15px 25px;
+}
+
+.sidebar:not(.expanded) {
+    overflow-y: scroll;
+    width: 85px;
+}
+
+/* Sidebar - Logo Section */
 .logo-section {
     display: flex;
     flex-direction: column;
@@ -104,31 +179,22 @@ body {
     padding: 20px 0;
 }
 
+.sidebar:not(.expanded) .logokjr {
+    width: 100%;
+    height: 30px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    content: url('Bahan/kejardosen-logo-initial.png');
+}
+
+.sidebar.expanded .logokjr {
+    content: url('Bahan/logokjrdns.png');
+    width: 150px;
+    height: auto;
+}
+
 .logokjr{
     width: 150px;
-}
-
-.menu {
-    list-style-type: none;
-}
- 
-.menu li {
-    font-size: 16px;
-    padding: 15px 25px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: background 0.3s;
-    color: black;
-    font-weight: 600;    
-}
-
-span{
-    margin-left: 20px;
-}
-.menu li:hover {
-    background-color: #B1E8F0;
 }
 
 /* Icon Styling */
@@ -136,59 +202,49 @@ span{
     font-size: 18px;
 }
 
+.navbar-right a i::before{
+    color: black;
+}
+
 /* Main Content Styling */
 .main-content {
     flex-grow: 1;
-    padding: 15px;
+    padding: 50px;
     padding-top: 80px; 
+    margin-left: 70px; 
+    transition: margin-left 0.3s ease;
 }
 
-/* Ubah ukuran logo saat sidebar ditutup */
 .sidebar:not(.expanded) .logokjr {
-    width: 100%; /* Ukuran logo saat sidebar ditutup */
+    width: 100%; 
     height: 30px;
     margin-top: -5px;
     margin-bottom: 10px;
     content: url('../img/kejardosen-logo-initial.png');
-    
 }
+
 .sidebar.expanded .logokjr {
-    content: url('../img/logokjrdns.png'); /* Logo saat sidebar terbuka */
+    content: url('../img/logokjrdns.png'); 
     width: 150px;
     height: auto;
 }
 
-/* Hide text when sidebar is closed */
 .sidebar:not(.expanded) .menu-text {
     display: none;
 }
 
-
-    
-html, body {
-    height: 100%;
-    overflow-x: hidden;
-    width: 100%;
-}
-
 .navbar {
-    width: calc(100% - 70px); /* Width saat sidebar tertutup */
-    left: 70px; /* Posisi saat sidebar tertutup */
-    transition: all 0.3s ease; /* Tambahkan animasi */
+    width: calc(100% - 70px); 
+    left: 70px; 
+    transition: all 0.3s ease;
 }
+
 
 .navbar.expanded {
-    width: calc(100% - 270px); /* Width saat sidebar terbuka */
-    left: 270px; /* Posisi saat sidebar terbuka */
-}
-
-.main-content {
-    margin-left: 70px; /* Margin saat sidebar tertutup */
-    transition: margin-left 0.3s ease; /* Tambahkan animasi */
+    width: calc(100% - 270px); 
+    left: 285px; 
 }
 
 .main-content.expanded {
-    margin-left: 270px; /* Margin saat sidebar terbuka */
+    margin-left: 270px; 
 }
-
-
