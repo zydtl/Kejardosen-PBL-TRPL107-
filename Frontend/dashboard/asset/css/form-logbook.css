@@ -1,12 +1,14 @@
 /* Main Content Styling */
 .main-content {
     flex-grow: 1;
-    margin-top: 60px;
+    margin-top: 90px;
     transition: margin-left 0.3s ease;
     padding: 25px 40px;
+    overflow: scroll;
 }
 body{
     overflow: hidden;
+    background-color: #f1f5f5;
 }
 .containerlogbook{
     margin-top: -80px;
@@ -39,6 +41,14 @@ form .logbook-details .input-box {
 .input-box {
     flex: 1;
     margin-right: 10px;
+}
+
+textarea:disabled {
+    background-color: #ccc;
+}
+
+input:disabled {
+    background-color: #ccc;
 }
 
 .input-box:last-child {
