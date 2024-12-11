@@ -131,7 +131,7 @@
             <form>
                 <div id="double" class="form-group">
                     <div class="double1">
-                        <label for="tanggal">Pilih Tanggal</label>
+                        <label for="tanggal1">Pilih Tanggal</label>
                         <input type="date" id="tanggal1" class="form-control1">
                     </div>
                     <div class="double2">
@@ -141,12 +141,12 @@
                 </div>
                 <div id="double" class="form-group">
                     <div class="double1">
-                        <label for="tanggal">Pilih Tanggal</label>
-                        <input type="date" id="tanggal1" class="form-control1">
+                        <label for="tanggal">Pilih Waktu</label>
+                        <input type="time" id="tanggal1" class="form-control1">
                     </div>
                     <div class="double2">
-                        <label for="tanggal">Tanggal Anjuran Dosen</label>
-                        <input type="date" id="tanggal2" class="form-control1oke" disabled>
+                        <label for="tanggal">Waktu Anjuran Dosen</label>
+                        <input type="time" id="tanggal2" class="form-control1oke" disabled>
                     </div>
                 </div>
                 

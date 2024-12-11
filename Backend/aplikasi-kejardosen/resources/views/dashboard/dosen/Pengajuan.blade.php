@@ -137,7 +137,7 @@
         <div class="pengajuan-split">
           <div id="double5" class="form-group kepanjangan1">
             <div class="profil">
-              <img class="foto-profil" src="{{asset('assets/dashboard/asset/img/avatar.png')}}" alt="Profil" />
+              <img class="foto-profil" src="{{asset('assets/dashboard/asset/img/avatar.png')}}" alt="" />
             </div>
             <div class="detail-item" data-label="Diajukan Pada">
               <h4>Muhammad Maulana Yusuf</h4>
@@ -167,13 +167,13 @@
                 <label for="tanggal">
                   <p>Tanggal Pengajuan</p>
                 </label>
-                <input class="mati1" type="date" id="tanggal1 " class="form-control1 mati" disabled />
+                <input class="mati1" type="date" id="tanggal1" class="form-control1 mati" disabled />
               </div>
               <div class="double2">
                 <label for="tanggal">
                   <p>Waktu Pengajuan</p>
                 </label>
-                <input type="time" id="tanggal2 " class="form-control1oke lebar1" disabled />
+                <input type="time" id="tanggal2" class="form-control1oke lebar1" disabled />
               </div>
             </div>
             <div id="double2" class="form-group">
@@ -193,7 +193,8 @@
             <div id="double7" class="form-group" style="display: none">
               <div class="double1 just1">
                 <p for="tanggal"><b>Tanggal Anjuran Dosen</b></p>
-                <input type="date" id="tanggal1 " class="form-control1 mati atur1" />
+                <!-- <input type="date" id="tanggal1" class="form-control1 mati atur1" /> -->
+                <input type="date" id="tanggal" required>
               </div>
               <div class="double2 just">
                 <p for="waktu"><b> Waktu Anjuran Dosen</b></p>
