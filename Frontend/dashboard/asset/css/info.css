@@ -77,6 +77,8 @@ body {
   margin-right: 10px;
 }
 
+
+/* button */
 .title-and-button {
   display: flex;
   align-items: center;
@@ -93,7 +95,7 @@ a:hover {
   cursor: pointer;
 }
 
-.btn-primary {
+.btn {
   background-color: #3EBCD2;
   color: white;
   padding: 10px 20px;
@@ -102,6 +104,10 @@ a:hover {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+.btn:active {
+  transform: scale(0.96);
 }
 
 
@@ -134,19 +140,6 @@ a:hover {
   margin-top: 50px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.header h4 {
-  margin: 0;
-  font-size: 1.5em;
-  color: #333;
-}
-
 .profile-pic {
   width: 90px;
   height: 90px;
@@ -155,11 +148,6 @@ a:hover {
   margin-left: 5px;
   border-radius: 50%;
 }
-
-/* .card {
-    border-radius: 8px;
-    overflow: hidden;
-  } */
 
 .card-header {
   background-color: #d5f5f8;
@@ -172,25 +160,10 @@ a:hover {
   width: auto;
 }
 
-
-.card-header .badge {
-  background: #fff97e;
-  color: #333;
-  font-size: 12px;
-  padding: 5px 10px;
-  border-radius: 12px;
-  text-transform: uppercase;
-}
-
 .text-header {
   margin-left: 25px;
   font-size: 18px;
   flex: 1;
-}
-
-.card-body {
-  padding: 15px;
-  width: 100%;
 }
 
 .detail-title {
@@ -204,15 +177,4 @@ a:hover {
   margin: 19px 0;
   font-size: 14px;
   color: #555;
-}
-
-.btnku {
-  background-color: #00bcd4;
-  color: white;
-  margin-right: 210px;
-
-}
-
-.btnku:active {
-  transform: scale(0.96);
 }
