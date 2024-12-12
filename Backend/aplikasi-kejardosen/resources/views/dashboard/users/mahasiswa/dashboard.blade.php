@@ -1,1 +1,0 @@
-<h1 style="font-size: 200px">kamu ada di halaman <span style="color: red">MAHASISWA</span></h1>

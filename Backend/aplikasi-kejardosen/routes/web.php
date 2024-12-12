@@ -9,6 +9,8 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('landing-page.page.index');
 });
+// Halaman Login ======================================================================================================================================================================================
+
 
 // Halaman login untuk Mahasiswa (untuk pengguna yang belum login)
 Route::get('/login/mahasiswa', [AuthController::class, 'showLoginMahasiswa'])->name('login.mahasiswa')->middleware('guest:mahasiswa');
@@ -22,20 +24,59 @@ Route::post('/login/dosen', [AuthController::class, 'loginDosen'])->name('login.
 Route::get('/login/admin', [AuthController::class, 'showLoginAdmin'])->name('login.admin')->middleware('guest:admin');
 Route::post('/login/admin', [AuthController::class, 'loginAdmin'])->name('login.admin.post');
 
+
+// Halaman Dashboard ================================================================================================================================================================================
+
+
 // Halaman dashboard untuk mahasiswa (hanya bisa diakses oleh mahasiswa yang sudah login)
 Route::get('/mahasiswa/dashboard', function () {
     return view('dashboard.mahasiswa.dashboard');
 })->name('mahasiswa.dashboard')->middleware('auth:mahasiswa');
+
+// Halaman pengajuan untuk Mahasiswa
+Route::get('/mahasiswa/pengajuan', function () {
+    return view('dashboard.mahasiswa.pengajuan');
+})->name('mahasiswa.pengajuan')
+    ->middleware('auth:mahasiswa');
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
 
 // Halaman dashboard untuk dosen (hanya bisa diakses oleh dosen yang sudah login)
 Route::get('/dosen/dashboard', function () {
     return view('dashboard.dosen.dashboard');
 })->name('dosen.dashboard')->middleware('auth:dosen');
 
+// Halaman pengajuan untuk Dosen
+Route::get('/dosen/pengajuan', function () {
+    return view('dashboard.dosen.pengajuan');
+})->name('dosen.pengajuan')
+    ->middleware('auth:dosen');
+
+Route::get('/dosen/form-logbook', function () {
+    return view('dashboard.dosen.form-logbook');
+})->name('dosen.form-logbook')
+    ->middleware('auth:dosen');
+
+Route::get('/dosen/jadwal-bimbingan', function () {
+    return view('dashboard.dosen.jadwal-bimbingan');
+})->name('dosen.jadwal-bimbingan')
+    ->middleware('auth:dosen');
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 // Halaman dashboard untuk admin (hanya bisa diakses oleh admin yang sudah login)
 Route::get('/admin/dashboard', function () {
     return view('dashboard.admin.dashboard');
 })->name('admin.dashboard')->middleware('auth:admin');
+
+
+
+// Rute logout================================================================================================================================================================================
+
 
 // Rute logout untuk admin
 Route::post('/logout/admin', [AuthController::class, 'logout'])->name('logout.admin');
@@ -57,7 +98,7 @@ Route::get('/login', function () {
         return redirect()->route('admin.dashboard');
     }
 
-    // Jika belum login, tetap arahkan ke halaman login
+    // Jika belum login, arahkan kembali ke landing page
     return redirect()->route('login.admin');
 })->name('login');
 

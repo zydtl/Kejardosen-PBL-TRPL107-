@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('kodeJadwal', 20);
             $table->text('isi_logbook');
             $table->string('judul_logbook', 255);
+            $table->string('catatan_dosen');
+            $table->string('catatan_mahasiswa');
             $table->float('progres', 5, 2)->default(0);
             $table->timestamps();
             $table->foreign('kodeJadwal')->references('kodeJadwal')->on('tb_jadwalBimbingan');

@@ -17,9 +17,12 @@ return new class extends Migration
             $table->time('waktu_bimbingan');
             $table->date('tanggal_pelaksanaan');
             $table->time('waktu_pelaksanaan');
+            $table->string('catatan_dosen');
+            $table->string('catatan_mahasiswa');
             $table->enum('status', ['diselesaikan', 'ditunda', 'menunggu']);
             $table->string('kodePengajuan', 20);
             $table->timestamps();
+            $table->string('tempat');
             $table->enum('jenis_bimbingan', ['luring','daring']);
             $table->foreign('kodePengajuan')->references('kodePengajuan')->on('tb_pengajuanJadwal');
         });

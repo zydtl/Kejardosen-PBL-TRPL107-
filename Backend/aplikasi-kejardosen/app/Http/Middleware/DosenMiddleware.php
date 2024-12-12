@@ -14,7 +14,6 @@ class DosenMiddleware
         if (!Auth::guard('dosen')->check()) {
             return redirect()->route('login.dosen');
         }
-
         // Jika sudah login, lanjutkan request
         return $next($request);
     }

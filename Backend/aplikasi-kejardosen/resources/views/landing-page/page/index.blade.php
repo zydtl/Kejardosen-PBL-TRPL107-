@@ -105,9 +105,9 @@
       <div class="modal-body text-center">
         <p>Silakan pilih masuk sebagai:</p>
         <div class="d-flex justify-content-around">
-          <a class="btn btn-outline-primary" href="#index_dosen.html"  onclick="masukSebagai('dosen')">Dosen</a>
-          <a class="btn btn-outline-success" href="#index_mahasiswa.html" onclick="masukSebagai('mahasiswa')">Mahasiswa</a>
-          <a class="btn btn-outline-warning" href="#index_admin.html"   onclick="masukSebagai('admin')">Admin</a>
+          <a class="btn btn-outline-primary" href="{{ route('login.dosen') }}"  onclick="masukSebagai('dosen')">Dosen</a>
+          <a class="btn btn-outline-success" href="{{ route('login.mahasiswa') }}" onclick="masukSebagai('mahasiswa')">Mahasiswa</a>
+          <a class="btn btn-outline-warning" href="{{ route('login.admin') }}"   onclick="masukSebagai('admin')">Admin</a>
         </div>
       </div>
      
