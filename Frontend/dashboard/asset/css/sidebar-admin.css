@@ -1,0 +1,188 @@
+ /* Reset CSS */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    transition: 0.3s;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.navbar  {
+    font-size: 5px;
+}
+
+.navbar .toggle-button {
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.toggle-button {
+    color: #000000;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    outline: none;
+}
+
+
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right i {
+    font-size: 15px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 70px; /* Width saat tertutup */
+    height: 900px;  
+    background-color: #d5f5f8;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 0.3s;
+    position: fixed;
+    transform: translateX(0); /* Tampilkan */
+}
+
+.sidebar.expanded {
+    width: 270px; /* Width saat terbuka */
+    
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logokjr{
+    width: 150px;
+}
+
+.menu {
+    list-style-type: none;
+}
+ 
+.menu li {
+    font-size: 16px;
+    padding: 15px 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: black;
+    font-weight: 600;    
+}
+
+span{
+    margin-left: 20px;
+}
+.menu li:hover {
+    background-color: #B1E8F0;
+}
+
+/* Icon Styling */
+.container i {
+    font-size: 18px;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex-grow: 1;
+    padding: 15px;
+    padding-top: 80px; 
+}
+
+/* Ubah ukuran logo saat sidebar ditutup */
+.sidebar:not(.expanded) .logokjr {
+    width: 100%; /* Ukuran logo saat sidebar ditutup */
+    height: 30px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    content: url('../img/kejardosen-logo-initial.png');
+}
+
+.sidebar.expanded .logokjr {
+    content: url('../img/logokjrdns.png'); /* Logo saat sidebar terbuka */
+    width: 150px;
+    height: auto;
+}
+
+/* Hide text when sidebar is closed */
+.sidebar:not(.expanded) .menu-text {
+    display: none;
+}
+    
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.navbar {
+    width: calc(100% - 70px); /* Width saat sidebar tertutup */
+    left: 70px; /* Posisi saat sidebar tertutup */
+    transition: all 0.3s ease; /* Tambahkan animasi */
+}
+
+.navbar.expanded {
+    width: calc(100% - 270px); /* Width saat sidebar terbuka */
+    left: 270px; /* Posisi saat sidebar terbuka */
+}
+
+.main-content {
+    margin-left: 70px; /* Margin saat sidebar tertutup */
+    transition: margin-left 0.3s ease; /* Tambahkan animasi */
+}
+
+.main-content.expanded {
+    margin-left: 270px; /* Margin saat sidebar terbuka */
+}
+
+

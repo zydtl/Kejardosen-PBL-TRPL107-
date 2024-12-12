@@ -16,6 +16,20 @@ document.querySelector("#closeForm").addEventListener("click", function(){
   document.querySelector("#formModal").style.display = "none";
 })
 
+//untuk tombol hapus pengajuan
+document.getElementById("openFormdelete").addEventListener("click", function(){
+  document.querySelector("#formModaldelete").style.display = "flex";
+})
+
+document.querySelector("#closeFormdelete").addEventListener("click", function(){
+  document.querySelector("#formModaldelete").style.display = "none";
+})
+
+document.getElementById('showButton').addEventListener('click', function () {
+  document.getElementById('content').style.display = 'block';
+   // Sembunyikan tombol setelah ditekan
+});
+
 
 // Pengaturan pemilihan tanggal pengajuan
 
