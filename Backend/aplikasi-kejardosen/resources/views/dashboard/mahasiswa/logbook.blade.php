@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Logbook - Dosen</title>
+    <title>Logbook - Mahasiswa</title>
     <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/logbook.css')}}">
     <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/sidebar-navbar.css')}}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css">
 
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css">    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
@@ -69,8 +70,10 @@
                     <div class="col col-4" data-label="Judul Logbook">Bimbingan ke-6 Revisi Bab III</div>
                     <div class="col col-5" data-label="Progres TA">25%</div>
                     <div class="col col-6" data-label="Aksi">
+                        <button class="btn-hapus"><i class="fi fi-br-trash delete"></i></button>
                         <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
                     </div>
+
                 </li>
             </ul>
             <!-- Pagination -->
@@ -86,6 +89,8 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
     <script src="{{asset('assets/dashboard/asset/javascript/sidebar-navbar.js')}}"></script>
     <script src="{{asset('assets/dashboard/asset/javascript/logbook.js')}}"></script>
 
