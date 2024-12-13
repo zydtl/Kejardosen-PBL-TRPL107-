@@ -1,6 +1,6 @@
 // JavaScript for pagination
 let currentPage = 1;
-const rowsPerPage = 8;
+const rowsPerPage = 5;
 const rows = document.querySelectorAll('.table-row');
 const totalPages = Math.ceil(rows.length / rowsPerPage);
 const paginationContainer = document.querySelector('.pagination .page-numbers');

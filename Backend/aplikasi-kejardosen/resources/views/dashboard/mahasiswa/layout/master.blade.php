@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../asset/img/kejardosen-logo-circle.png">
     <title>Pengajuan - Mahasiswa</title>
 
     @yield('css')
@@ -22,10 +23,7 @@
 </head>
 
 <body>
-
     @include('dashboard.mahasiswa.include.header')
-
-
 
 
     <div class="container">
@@ -36,6 +34,8 @@
 
         <!-- Main Content -->
         @yield('content')
+
+
 
     </div>
 
@@ -121,8 +121,9 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
-    
+
     @yield('js')
+
 
 
 </body>

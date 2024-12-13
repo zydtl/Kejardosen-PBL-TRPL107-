@@ -1,4 +1,5 @@
-@extends('dashboard.dosen.layout.master')
+@extends('dashboard.mahasiswa.layout.master')
+
 @section('css')
     <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/Pengajuan-mahasiswa.css')}}">
     <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/sidebar-navbar.css')}}">
@@ -42,5 +43,3 @@
     <script src="{{asset('assets/dashboard/asset/javascript/Pengajuan-mahasiswa.js')}}"></script>
     <script src="{{asset('assets/dashboard/asset/javascript/sidebar-navbar.js')}}"></script>
 @endsection
-
-

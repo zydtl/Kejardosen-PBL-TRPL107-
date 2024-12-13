@@ -1,207 +1,119 @@
-/* General Styling */
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #f1f5f5;
-}
 
-/* Main Content Styling */
-.main-content {
-  flex-grow: 1;
-  margin-top: 15px;
-  margin-left: 15px;
-  transition: margin-left 0.3s ease;
-  padding: 25px 40px;
-  overflow-x: hidden;
-  /* Menghindari scroll tidak perlu */
-}
 
-/* Responsive Table */
-.responsive-table {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  width: 100%;
-  /* Lebar tabel disesuaikan dengan container */
-  max-width: 100%;
-  /* Membatasi tabel agar tidak melebihi layar */
-  overflow-x: auto;
-  /* Menambahkan scroll jika konten tabel melebihi layar */
-  border-collapse: collapse;
-}
-
-/* status */
-.status-finish {
-  color: grey;
-  background-color: #cccccc9c;
-  padding: 3px 15px;
-  border-radius: 15px;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.status-cancel {
-  color: #A70606;
-  background-color: #FFC6BA;
-  padding: 3px 15px;
-  border-radius: 15px;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.status-waiting {
-  color: #83831E;
-  background-color: #FFF97E;
-  padding: 3px 15px;
-  border-radius: 15px;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.status-resched {
-  color: #83831E;
-  background-color: #FFF97E;
-  padding: 3px 15px;
-  border-radius: 15px;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-/* icon aksi */
-.col button {
-  margin: auto;
-  width: 40px;
-  height: 40px;
-  font-size: larger;
-  cursor: pointer;
-  color: white;
-  font-weight: 800;
-  border: none;
-  border-radius: 10px;
-}
-
-.col .btn-info {
-  background-color: blue;
-}
-
-.col .btn-tolak {
-  background-color: red;
-}
-
-.col .btn-edit {
-  background-color: orange;
-}
-
-.table-header,
-.table-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* Vertical alignment */
-  padding: 15px 20px;
-  font-size: 14px;
-  border-bottom: 1px solid #ddd;
-  flex-wrap: wrap;
-  /* Membungkus jika tidak cukup ruang */
-}
-
-.table-header {
-  background-color: #B1E8F0;
-  color: #000;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  border-radius: 10px 10px 0 0;
-}
-
-.table-row {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.table-row .col,
-.table-header .col {
-  flex: 1;
-  text-align: center;
-  word-wrap: break-word;
-  /* Membungkus teks panjang */
-}
-
-.table-row .col-1,
-.table-header .col-1 {
-  flex: 0.5;
-}
-
-.table-row .col-2,
-.table-header .col-2 {
-  flex: 1;
-  /* Adjust proportions */
-}
-
-.table-row .col-3,
-.table-header .col-3 {
-  flex: 0.7;
-}
-
-.table-row .col-4,
-.table-header .col-4 {
-  flex: 0.5;
-}
-
-.table-row .col-5,
-.table-header .col-5 {
-  flex: 0.7;
-}
-
-.table-row .col-6,
-.table-header .col-6 {
-  flex: 0.6;
-}
-
-/* Media Query for Smaller Screens */
-@media (max-width: 768px) {
-
-  .table-header,
-  .table-row {
-    font-size: 12px;
-    padding: 10px;
+.main {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  header h1 {
+    font-size: 1.8rem;
+    color: #333;
   }
 
-  .table-row .col,
-  .table-header .col {
-    flex: 100%;
-    /* Kolom menggunakan seluruh lebar layar */
+ footer span{
+    background-color: #22A0B8;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding-top: 4px;
+
+  }
+  
+  .btn-primary {
+    background-color: #3EBCD2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+  }
+  
+  table th, table td {
     text-align: left;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border: none;
   }
-}
-
-.title-and-button {
-  display: flex;
-  align-items: center;
-  /* Untuk membuat elemen sejajar secara vertikal */
-  justify-content: space-between;
-  /* Pastikan elemen memenuhi ruang horizontal */
-  gap: 10px;
-  /* Jarak antara kolom pencarian dan tombol */
-  margin-bottom: 20px;
-  /* Memberikan jarak dengan tabel di bawahnya */
-}
-
-a:hover {
-  cursor: pointer;
-}
-
-.btn-primary {
-  background-color: #3EBCD2;
-  color: white;
-  padding: 10px 20px;
-  font-weight: 700;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  
+  table th {
+    background-color: #B1E8F0;
+    
+    
+  }
+  tr .tepikanan{
+    border-top-right-radius: 25px;
+  }
+  tr .tepikiri{
+    border-top-left-radius: 25px;
+  }
+  tr .time{
+    position: relative;
+    
+  }
+  
+  .status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .status.pending {
+    background-color: #ffd900;
+    color: #333;
+     margin-left: 0px;
+     border-radius: 10px;
+  }
+  
+  .action-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+ 
+  
+  .action-btn.edit {
+    color: orange;
+  }
+  
+  .action-btn.view {
+    color: blue;
+  }
+  
+  footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  
+  .pagination-btn {
+    padding: 5px 10px;
+    border:#B1E8F0 solid ;
+    border-radius: 5px;
+    background-color: white;
+    color: #007bff;
+    cursor: pointer;
 }
 
 /* Styling container */
@@ -214,6 +126,7 @@ a:hover {
   border-radius: 8px;
   padding: 20px;
   z-index: 100000000000909;
+  
 }
 
 /* Judul modal */
@@ -221,20 +134,17 @@ a:hover {
   font-size: 25px;
   margin-bottom: 20px;
 }
-
-.modal4 h2 {
+.modal4 h2{
   font-size: 25px;
   margin-bottom: 20px;
 }
-
-.modal4 {
+.modal4{
   z-index: 1000;
 }
-
 .modal1 h2 {
   font-size: 25px;
   margin-bottom: 20px;
-
+  
 }
 
 /* Form styling */
@@ -243,14 +153,12 @@ a:hover {
   width: 475px;
   display: flex;
 }
-
 #double2 {
   margin-bottom: 15px;
   width: 475px;
   display: flex;
 }
-
-#double .form-control1 {
+#double .form-control1{
   width: 175%;
   padding: 10px;
   background-color: #D5F5F8;
@@ -258,8 +166,7 @@ a:hover {
   font-size: 14px;
   border: none;
 }
-
-#double2 .form-control1 {
+#double2 .form-control1{
   width: 215%;
   padding: 10px;
   background-color: #D5F5F8;
@@ -267,16 +174,13 @@ a:hover {
   font-size: 14px;
   border: none;
 }
-
-.double1 {
+.double1{
   margin-right: 145px;
 }
-
-.double3 {
+.double3{
   margin-right: 165px;
 }
-
-.form-control1ok {
+.form-control1ok{
   width: 145%;
   padding: 10px;
   background-color: #ccc;
@@ -286,8 +190,7 @@ a:hover {
   cursor: not-allowed;
   margin-right: 65PX;
 }
-
-.form-control1oke {
+.form-control1oke{
   width: 150%;
   padding: 10px;
   background-color: #ccc;
@@ -296,7 +199,7 @@ a:hover {
   border: none;
   cursor: not-allowed;
 
-
+  
 }
 
 label {
@@ -305,11 +208,31 @@ label {
   margin-bottom: 5px;
 }
 
-.form-group {
-  margin-top: 10px;
-}
-
 .form-control {
+  width: 97%;
+  padding: 10px;
+  background-color:  #D5F5F8;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+}
+.form-control1{
+  width: 100%;
+  padding: 10px;
+  background-color: #D5F5F8;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+}
+.form-controlcatatan{
+  width: 100%;
+  padding: 10px;
+  background-color: #D5F5F8;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+}
+.form-controljudul{
   width: 100%;
   padding: 10px;
   background-color: #D5F5F8;
@@ -318,32 +241,6 @@ label {
   border: none;
 }
 
-.form-control1 {
-  width: 100%;
-  padding: 10px;
-  background-color: #D5F5F8;
-  border-radius: 5px;
-  font-size: 14px;
-  border: none;
-}
-
-.form-controlcatatan {
-  width: 100%;
-  padding: 10px;
-  background-color: #D5F5F8;
-  border-radius: 5px;
-  font-size: 14px;
-  border: none;
-}
-
-.form-controljudul {
-  width: 100%;
-  padding: 10px;
-  background-color: #D5F5F8;
-  border-radius: 5px;
-  font-size: 14px;
-  border: none;
-}
 
 textarea.form-control {
   resize: none;
@@ -354,11 +251,6 @@ textarea.form-control {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-}
-
-.tolak button {
-  width: 50px;
-  height: 50px;
 }
 
 .btn {
@@ -372,24 +264,24 @@ textarea.form-control {
 .btn-primary {
   background-color: #00bcd4;
   color: white;
-}
+  margin-right: 15px;
 
+}
 .btn-primary1 {
   background-color: #00bcd4;
   color: white;
+  margin-right: 45px;
+
 }
 
-.btn-primary:active {
+.btn-primary:active{
   transform: scale(0.96);
 }
-
 .btn-secondary {
   background-color: #ccc;
   color: black;
   margin-left: 320px;
-  margin-right: 10px;
 }
-
 .btn-secondary1 {
   background-color: #ccc;
   color: black;
@@ -406,121 +298,161 @@ textarea.form-control {
   margin-left: 450px;
   position: fixed;
   display: flex;
-
+  
 }
-
 .modal-container1 {
-  display: none;
-  /* Default tersembunyi */
+  display: none; /* Default tersembunyi */
   position: fixed;
   padding-left: 400px;
   padding-top: 70px;
-  top: 0px;
+  top:0px ;
   left: 0;
   width: 4000px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  /* Transparansi hitam */
-  z-index: 1000;
-  /* Modal di atas elemen lain */
-  display: flex;
-  /* Modal di tengah */
+  background-color: rgba(0, 0, 0, 0.5); /* Transparansi hitam */
+  z-index: 1000; /* Modal di atas elemen lain */
+  display: flex; /* Modal di tengah */
 }
 
 
-#formModaledit {
+#formModaledit{
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
-  height: auto;
-  position: fixed;
+  height: 100%;
+  position: absolute;
   top: 0;
-  bottom: 0;
-  display: none;
+  display:none;
   justify-content: center;
   align-items: center;
   z-index: 1220220022020;
-  overflow-y: scroll;
 }
 
 .modal1 {
-  margin-top: 220px;
-  margin-bottom: 50px;
   background: white;
   border-radius: 8px;
   padding: 20px;
   padding-right: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  /* Bayangan modal */
+  width: 600px;
+  max-width: 90%;
+  height: 620px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan modal */
   z-index: 7000000000000000;
   position: relative;
 }
-
-#formModal {
+#formModal{
   background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
-  height: auto;
-  position: fixed;
+  height: 100%;
+  position: absolute;
   top: 0;
-  bottom: 0;
-  display: none;
+  display:none;
   justify-content: center;
   align-items: center;
-  z-index: 1220220022020;
-  overflow-y: scroll;
+  z-index: 9922022002202022222;
 }
-
-.modal {
-  margin-top: 220px;
-  margin-bottom: 50px;
+.modal{
   background: white;
   border-radius: 8px;
   padding: 20px;
   padding-right: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  /* Bayangan modal */
+  width: 500px;
+  max-width: 90%;
+  height: 470px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan modal */
   z-index: 7000000000000000;
   position: relative;
 }
 
+#formModaldelete{
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display:none;
+  justify-content: center;
+  align-items: center;
+  z-index: 910101010101020220022020;
+}
+
+.modal4{
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  padding-right: 20px;
+  width: 500px;
+  max-width: 90%;
+  height: 190px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan modal */
+  z-index: 70000000000000;
+  position: relative;
+
+}
 
 
-
-.teks .alert {
+.teks .alert{
   margin-top: -22px;
   margin-left: 25px;
   font-size: 15.5px;
 }
 
-.teks {
+.teks{
   margin-top: -10px;
   margin-bottom: 10px;
 }
-
-#catatandosen {
+  
+#catatandosen{
   background-color: #ccc;
   cursor: not-allowed;
-
+  
 }
-
 .modal-container.show {
   opacity: 1;
   transform: translateY(0);
 }
 
+.action-btn.delete{
+     background-color: red;
+     padding: 2px;
+     border-radius: 5px;
+     
+}
+.action-btn.delete:active{
+  transform: scale(0.96);
+}
+
+.action-btn.edit {
+  background-color: #FFC107;
+  padding: 2px;
+  align-items: center;
+  border-radius: 5px;
+  
+}
+.action-btn.edit:active{
+ transform:scale(0.96) ;
+}
+.action-btn.view{
+  background-color: blue;
+  padding: 2px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.action-btn.view:active{
+  transform: scale(0.96);
+}
 
 /* Detail Pengajuan */
 
-#content {
+#content{
   top: 0;
   position: absolute;
 }
-
 .container1 {
   width: 1300px;
   margin: 20px auto;
   padding: 20px;
   background: #fff;
-
+  
   border-radius: 8px;
   height: 1000px;
   margin-left: -14px;
@@ -544,12 +476,12 @@ textarea.form-control {
   width: 90px;
   height: 90px;
   border: 2px solid #ccc;
-  margin-top: 5px;
-  border-radius: 50%;
+ margin-top: 5px;
+ border-radius: 50%;
 }
 
 .card {
-
+  
   border-radius: 8px;
   overflow: hidden;
 }
@@ -575,12 +507,10 @@ textarea.form-control {
   border-radius: 12px;
   text-transform: uppercase;
 }
-
-.text-header {
+.text-header{
   margin-left: -470px;
   font-size: 18px
 }
-
 .card-body {
   padding: 15px;
   width: 100%;
@@ -597,7 +527,7 @@ textarea.form-control {
   height: 45px;
   padding-top: 10px;
   width: 1050px;
-
+  
 
 }
 
@@ -606,20 +536,21 @@ textarea.form-control {
   font-size: 14px;
   color: #555;
 }
-
-.btnku {
+ b{
+  color: black
+ }
+ .btnku{
   background-color: #00bcd4;
   color: white;
   margin-right: 210px;
-
-}
-
-.btnku:active {
+  
+ }
+ .btnku:active{
   transform: scale(0.96);
-}
+ }
 
-/* Form untuk melihat pengajuan mahasiswa di halaman dosen */
-.modalpengajuan {
+ /* Form untuk melihat pengajuan mahasiswa di halaman dosen */
+ .modalpengajuan {
   background: white;
   border-radius: 8px;
   padding: 20px;
