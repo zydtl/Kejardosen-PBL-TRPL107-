@@ -1,127 +1,148 @@
+.main-content {
+    overflow-y: scroll;
+}
 
-/* Styling Class BOX */
+body {
+    background-color: #f1f5f5;
+}
 
-.box{
-    width: 900px;
+.spacer {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* kolom kiri */
+/* Card welcome styling */
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.card-welcome {
+    display: flex;
+    width: 100%;
     height: 250px;
     background-color: #B1E8F0;
     background-image: linear-gradient(to bottom left, #B1E8F0, #EFFAFE);
     box-sizing: border-box;
-    padding: 40px;
+    padding: 30px;
     border-radius: 15px;
-    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
-    display: flex;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.060);
     justify-content: space-between;
     align-items: center;
-    
+    transition: all 0.5s ease; 
 }
-.h1{
-    font-size: 30px;
-    margin-bottom: -10px;
-    
+
+.img-welcome-admin {
+    width: 230px;
+    transition: width 0.3s ease, opacity 0.3s ease; 
 }
-.h2{
+
+
+.sidebar.expanded ~ .main-content .left .card-welcome {
+    width: auto; 
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: black;
+}
+
+.text h1 {
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.nama {
     font-size: 40px;
-    margin-bottom: 0px;
-    
-}
-.h3{
-    font-size: 25px;
-    font-weight: 300;
-    
+    font-weight:500;
 }
 
-.gambar{
-    height: 210px;
-    display: block;
-    top: 90px;
-    right: 0px;
-    padding: 7px;
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 0px;
-    width: 100px;
-}
-
-.box1{
-    width: 400px;
-    height: 100px;
-    background-color: white;
-    box-sizing: border-box;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
-    display: flex;
-    margin-top: 10px;
-    justify-content: space-between; 
-}
-
-.box2{
-    width: 400px;
-    height: 100px;
-    background-color: white;
-    box-sizing: border-box;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
-    display: flex;
-    margin-top: 10px;
-    justify-content: space-between; 
-    margin-left: 100px;
-}
-.box3{
-    width: 400px;
-    height: 100px;
-    background-color: white;
-    box-sizing: border-box;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.247);
-    display: flex;
-    margin-top: -40px;
-    justify-content: space-between; 
-    
-}
-
-.kotak2 .h1{
+.slogan {
     font-size: 20px;
-    margin-bottom: -4px;
-}
-.kotak2 .h2{
-    font-size: 15px;
-    width: 1000px;
-    
-    
-}
-.graduation{
-    width: 70px;
-    height: 70px;
-    background-color: #3EBCD2;
-    padding: 10px;
-    justify-content: flex-start;
-    justify-content: space-between;
-    border-radius: 15px;
+    font-weight: 300;
+    margin-top: 10px;
 }
 
-.kotak2{
-    
-    margin-right: 200px;
-    margin-top: 2px;
-    margin-left: 10px;
-    
-
-}
-.kotak{
-
-    width: 900px;
-    height: 300px;
-    flex: auto;
+.atur{
+    height: 45px;
+    padding: 0px 20px;
+    border: none;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 20px;
     display: flex;
-   flex-wrap: wrap;
-    
+    background-color: #00bcd4;
+    gap: 10px;
 }
-html, body {
-    height: 100%;
-    overflow: hidden; /* Cegah scroll vertikal */
+
+.atur i {
+    font-size: 25px;
+    color: white;
+}
+
+.atur h3 {
+    color: white;
+    flex: 1;
+    margin-left: 5px;
+}
+
+/*card info */
+.info-cards {
+    display: flex;
+    gap: 20px;
+    transition: all 0.5s ease;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+}
+
+.card-info-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #3EBCD2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.card-info-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.card-info-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-info-details h4 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.card-info-details span {
+    font-size: 17px;
+    color: #666;
+}
+
+.sidebar.expanded ~ .main-content .info-cards {
+    width: auto;
 }
