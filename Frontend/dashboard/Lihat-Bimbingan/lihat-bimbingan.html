@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../asset/img/kejardosen-logo-circle.png">
-    <title>LIHAT BIMBINGAN </title>
-    <link rel="stylesheet" href="../asset/css/sidebar-admin.css">
-    <link rel="stylesheet" href="../asset/css/pengajuan-mahasiswa-terbaru.css">
-    <link rel="stylesheet" href="../asset/css/riwayat-bimbingan2.css">
+    <title>Lihat Bimbingan</title>
+    <link rel="stylesheet" href="../asset/css/sidebar-navbar.css">
+    <link rel="stylesheet" href="../asset/css/admin.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
@@ -17,96 +16,65 @@
 </head>
 <body>
     <header class="navbar">
-        <button onclick="toggleSidebar()" class="toggle-button">☰</button>
+        <!-- HAMBURGER BUTTON -->
+        <button onclick="toggleSidebar()" class="toggle-button">&#9776;</button>
         <div class="navbar-right">
-            <i class="fi fi-br-bell"></i>
-            <i class="fi fi-br-power"></i>
-            <img src="../asset/img/avatar.png" alt="User Profile" class="profile-icon">
+            <a href="/"><i class="fi fi-br-bell"></i></a>
+            <a href="/"><i class="fi fi-br-power"></i></a>
+            <a href="/"><img src="../asset/img/avatar-admin.jpg" alt="User Profile" class="profile-icon" /></a>
         </div>
     </header>
 
     <div class="container">
         <!-- Sidebar -->
-        <aside id="sidebar" class="sidebar bapak">
-            <!-- logo -->
+        <aside id="sidebar" class="sidebar">
             <div class="logo-section">
-                <img src="../asset/img/logokjrdns.png" alt="Kejardosen Logo" class="logokjr"/>
+                <a href="/"><img src="../asset/img/logokjrdns.png" alt="Kejardosen Logo" class="logokjr" /></a>
             </div>
             <ul class="menu">
-                <li><i class="fi fi-br-home"></i> <span class="menu-text">Beranda</span></li>
-                <li><i class="fi fi-br-graduation-cap"></i> <span class="menu-text">Daftar Mahasiswa</span></li>
-                <li><i class="fi fi-ss-lesson-class"></i> <span class="menu-text">Daftar Dosen</span></li>
-                <li><i class="fi fi-rr-people-network-partner"></i> <span class="menu-text">Hubungkan Mahasiswa</span></li>
-                <li><i class="fi fi-ss-workshop"></i> <span class="menu-text">Lihat Bimbingan</span></li>
+                <li>
+                    <a href="/"><i class="fi fi-br-home"></i>
+                        <span class="menu-text">Beranda</span></a>
+                </li>
+                <li>
+                    <a href="/"><i class="fi fi-br-graduation-cap"></i>
+                        <span class="menu-text">Daftar Mahasiswa</span></a>
+                </li>
+                <li>
+                    <a href="/"><i class="fi fi-br-lesson-class"></i>
+                        <span class="menu-text">Daftar Dosen</span></a>
+                </li>
+                <li>
+                    <a href="/"><i class="fi fi-br-people-network-partner"></i>
+                        <span class="menu-text">Hubungkan Mahasiswa</span></a>
+                </li>
+                <li>
+                    <a href="/"><i class="fi fi-br-workshop"></i>
+                        <span class="menu-text">Lihat Bimbingan</span></a>
+                </li>
             </ul>
         </aside>
+
         <!-- Main Content -->
-        <div class="main-content">
-            <div class="container-fluid">
-            <div class="title"><H1>Lihat Bimbingan</H1></div>  
+         <div class="main-content" >
+                     
+            <div class="title"><h1>Lihat Bimbingan</h1></div>
             <div class="search-container">
                 <input type="text" id="search-input" onkeyup="searchTable()" placeholder="Pencarian">
-
-            </div>
-            <ul class="responsive-table apt">
+            </div> 
+            <ul class="responsive-table-bimbingan">
                 <li class="table-header">
                     <div class="col col-1">Kode Jadwal</div>
                     <div class="col col-2">NIM</div>
-                    
-                    <div class="col col-5">NIK Dosen</div>
-                    <div class="col col-6">Waktu Bimbingan</div>
+                    <div class="col col-3">NIK/NIDN</div>
+                    <div class="col col-4">Waktu Bimbingan</div>
                 </li>
                 <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">KJR98KQAM</div>
-                    <div class="col col-2" data-label="NIM">4342401040</div>
-                    
-                    <div class="col col-5" data-label="NIK Dosen">122279</div>
-
-                    <div class="col col-6" data-label="Waktu Bimbingan"> 12-09-2024 11:00 WIB</div>
+                    <div class="col col-1" data-label="NIK/NIDN">KJR98KQAM</div>
+                    <div class="col col-2" data-label="NIM">4342401057</div>
+                    <div class="col col-3" data-label="NIK/NIDN">122279</div>
+                    <div class="col col-4" data-label="Waktu Bimbingan">12-09-2024 11:00 WIB</div>
                 </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">KJR98KQAM</div>
-                    <div class="col col-2" data-label="NIM">4342401040</div>
-                    
-                    <div class="col col-5" data-label="NIK Dosen">122279</div>
-         
-                    <div class="col col-6" data-label="Waktu Bimbingan"> 12-09-2024 11:00 WIB</div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">KJR98KQAM</div>
-                    <div class="col col-2" data-label="NIM">4342401040</div>
-                    
-                    <div class="col col-5" data-label="NIK Dosen">122279</div>
-         
-                    <div class="col col-6" data-label="Waktu Bimbingan"> 12-09-2024 11:00 WIB</div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">KJR98KQAM</div>
-                    <div class="col col-2" data-label="NIM">4342401040</div>
-                    
-                    <div class="col col-5" data-label="NIK Dosen">122279</div>
-         
-                    <div class="col col-6" data-label="Waktu Bimbingan"> 12-09-2024 11:00 WIB</div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">KJR98KQAM</div>
-                    <div class="col col-2" data-label="NIM">4342401040</div>
-                    
-                    <div class="col col-5" data-label="NIK Dosen">122279</div>
-         
-                    <div class="col col-6" data-label="Waktu Bimbingan"> 12-09-2024 11:00 WIB</div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">KJR98KQAM</div>
-                    <div class="col col-2" data-label="NIM">4342401040</div>
-                    
-                    <div class="col col-5" data-label="NIK Dosen">122279</div>
-         
-                    <div class="col col-6" data-label="Waktu Bimbingan"> 12-09-2024 11:00 WIB</div>
-                </li>
-               
-                
-                           
             </ul>
             <!-- Pagination -->
             <div class="pagination">
@@ -120,83 +88,10 @@
                 <button class="next-page">Next</button>
             </div>
         </div>
-        </div>
-
 </div>
 
-<div id="formModal" >
-    <div class="modal waw">
-        <h2>Hubungkan Mahasiswa</h2>
-        <form>
-            <div class="form-group">
-                <form method="post" class="">
-                    <div class="form-group">
-                        <label for="judul"> Mahasiswa</label>
-                        <input type="text" id="judulkami" class="form-control poke trpl" placeholder="Pilih Mahasiswa">
-                    </div> 
-                    <div class="form-group">
-                        <label for="judul">Dosen Pembimbing</label>
-                        <input type="text" id="judulkami" class="form-control poke trpl" placeholder="Pilih Dosen Pembimbing">
-                    </div>
-                <div class="button-group">
-                    <button type="button" id="closeForm" class="btn btn-secondary1">Batalkan</button>
-                    <button type="submit" class="btn btn-primary1">Simpan</button>
-                </div>
-                  </form>
-              </div>
-        </form>
-    </div>
-  </div>
-
-  <div id="formModaldeletecapek">
-    <div class="modal4">
-        <h2>Hapus Pengajuan</h2>
-       <div>Apa anda yakin ingin menghapus pengajuan?</div>
-       <div class="button-group">
-        <button  type="button" id="closeFormdelete" class="btn btn-secondary1 fun">Batalkan</button>
-        <button type="submit" class="btn btn-primary1">Buat Pengajuan</button>
-    </div>
-    </div>
-  </div>
-
-  <div id="formModaledit" >
-    <div class="modal waw">
-        <h2>Hubungkan Mahasiswa</h2>
-        <form>
-            <div class="form-group">
-                <form method="post" class="">
-                  <label  for="judul">Mahasiswa</label>
-                  <select id="judul" class="form-control poke band" placeholder="wkwkwkwk" name="jurusan">
-                  <option class="item" value="#"> Muhammad Yusuf<br>
-                  <option class="item" value="#"> Online <br>
-
-
-                  </select>
-                  <div class="form-group">
-                  <form method="post" class="">
-                    <label  for="judul">Dosen Pembimbing</label>
-                    <select id="judul" class="form-control poke band" name="jurusan">
-                    <option class="item" value="#"> Alena Uperiati<br>
-                    <option class="item" value="#"> Online <br>
-  
-                    </select>
-                    </form>
-                </div>
-                <div class="button-group">
-                    <button type="button" id="closeFormedit" class="btn btn-secondary1">Batalkan</button>
-                    <button type="submit" class="btn btn-primary1">Simpan</button>
-                </div>
-                  </form>
-              </div>
-        </form>
-    </div>
-  </div>
-
-  <script src="../asset/javascript/enroll-admin.js"></script>
-  <script src="../asset/javascript/Pengajuan-mahasiswa.js"></script>
+<script src="../asset/javascript/admin.js"></script>
 <script src="../asset/javascript/sidebar-navbar.js"></script>
-<script src="../asset/javascript/riwayat.js"></script>
-
 
 
 </body>

@@ -15,7 +15,7 @@
             <ul class="responsive-table">
                 <li class="table-row baris-pengajuan">
                     <div class="col col-1" data-label="img">
-                        <img src="{{ asset('assets/dashboard/asset/img/avatar.png') }}" alt="" />
+                        <img src="{{ asset('assets/dashboard/asset/img/avatar-dosen.png') }}" alt="" />
                     </div>
                     <div class="col col-2" data-label="Diajukan Pada">
                         <h1>Muhammad Maulana Yusuf</h1>

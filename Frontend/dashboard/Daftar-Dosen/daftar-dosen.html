@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../asset/img/kejardosen-logo-circle.png">
     <title>Daftar Dosen </title>
-    <link rel="stylesheet" href="../asset/css/sidebar-admin.css">
-    <link rel="stylesheet" href="../asset/css/pengajuan-mahasiswa-terbaru.css">
-    <link rel="stylesheet" href="../asset/css/riwayat-bimbingan2.css">
+    <link rel="stylesheet" href="../asset/css/sidebar-navbar.css">
+    <link rel="stylesheet" href="../asset/css/admin.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
@@ -17,152 +18,70 @@
 </head>
 <body>
     <header class="navbar">
-        <button onclick="toggleSidebar()" class="toggle-button">☰</button>
+        <!-- HAMBURGER BUTTON -->
+        <button onclick="toggleSidebar()" class="toggle-button">&#9776;</button>
         <div class="navbar-right">
-            <i class="fi fi-br-bell"></i>
-            <i class="fi fi-br-power"></i>
-            <img src="../asset/img/avatar.png" alt="User Profile" class="profile-icon">
+            <a href="/"><i class="fi fi-br-bell"></i></a>
+            <a href="/"><i class="fi fi-br-power"></i></a>
+            <a href="/"><img src="../asset/img/avatar-admin.jpg" alt="User Profile" class="profile-icon" /></a>
         </div>
     </header>
 
     <div class="container">
         <!-- Sidebar -->
-        <aside id="sidebar" class="sidebar bapak">
-            <!-- logo -->
+        <aside id="sidebar" class="sidebar">
             <div class="logo-section">
-                <img src="../asset/img/logokjrdns.png" alt="Kejardosen Logo" class="logokjr"/>
+                <a href="/"><img src="../asset/img/logokjrdns.png" alt="Kejardosen Logo" class="logokjr" /></a>
             </div>
             <ul class="menu">
-                <li><i class="fi fi-br-home"></i> <span class="menu-text">Beranda</span></li>
-                <li><i class="fi fi-br-graduation-cap"></i> <span class="menu-text">Daftar Mahasiswa</span></li>
-                <li><i class="fi fi-ss-lesson-class"></i> <span class="menu-text">Daftar Dosen</span></li>
-                <li><i class="fi fi-rr-people-network-partner"></i> <span class="menu-text">Hubungkan Mahasiswa</span></li>
-                <li><i class="fi fi-ss-workshop"></i> <span class="menu-text">Lihat Bimbingan</span></li>
+                <li>
+                    <a href="/"><i class="fi fi-br-home"></i>
+                        <span class="menu-text">Beranda</span></a>
+                </li>
+                <li>
+                    <a href="/"><i class="fi fi-br-graduation-cap"></i>
+                        <span class="menu-text">Daftar Mahasiswa</span></a>
+                </li>
+                <li>
+                    <a href="/"><i class="fi fi-br-lesson-class"></i>
+                        <span class="menu-text">Daftar Dosen</span></a>
+                </li>
+                <li>
+                    <a href="/"><i class="fi fi-br-people-network-partner"></i>
+                        <span class="menu-text">Hubungkan Mahasiswa</span></a>
+                </li>
+                <li>
+                    <a href="/"><i class="fi fi-br-workshop"></i>
+                        <span class="menu-text">Lihat Bimbingan</span></a>
+                </li>
             </ul>
         </aside>
+
         <!-- Main Content -->
-        <div class="main-content">
-            <div class="container-fluid keyne">
-            <div class="title"><H1>Daftar Dosen</H1></div>  
-            
-            <ul class="responsive-table">
-                <div class="search-container ">
+         <div class="main-content" >
+                     
+            <div class="title"><h1>Daftar Dosen</h1></div>
+            <div class="search-and-button">
+                <div class="search-container">
                     <input type="text" id="search-input" onkeyup="searchTable()" placeholder="Pencarian">
-                    <button id="openForm" class="btn btn-primary smk6">Tambah <img src="../asset/img/plus.png" alt=""> </button>
-                </div>
+                </div> 
+                <button id="tambah-dsn" class="btn btn-primary">Tambah Dosen</button>
+            </div> 
+            <ul class="responsive-table">
                 <li class="table-header">
-                    <div class="col col-1 vevo2">NIK/NIDN</div>
-                    <div class="col col-2 vevo">Nama</div>
-                    
-                    <div class="col col-5 vevo1">Program Studi</div>
-                    <div class="col col-6">Aksi</div>
+                    <div class="col col-1">NIK/NIDN</div>
+                    <div class="col col-2">Nama</div>
+                    <div class="col col-3">Program Studi</div>
+                    <div class="col col-4">Aksi</div>
                 </li>
                 <li class="table-row">
-                    <div class="col col-1 vevo2" data-label="Kode Pengajuan">113105</div>
-                    <div class="col col-2 vevo" data-label="Diajukan Pada">Supardianto, M.Eng.</div>
-                    
-                    <div class="col col-5 vevo1" data-label="Status">Teknologi Rekayasa Perangkat Lunak</div>
-                    <!-- <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div> -->
-                    <div class="col col-6" data-label="Aksi">
-                        <button id="openFormdeleteaduh" class="action-btn delete fine"><img src="../asset/img/trash.png" alt="">
-                        </button>
-                        <button id="openFormedit" class="action-btn edit master silver"><img src="../asset/img/edit.png" alt=""></button>
-                    </div>  
+                    <div class="col col-1" data-label="NIK/NIDN">122279</div>
+                    <div class="col col-2" data-label="Nama">Alena Uperiati.S.T.M.Cs</div>
+                    <div class="col col-3" data-label="Program Studi">Teknologi Rekayasa Perangkat Lunak</div>
+                    <div class="col col-4" data-label="Aksi">
+                        <button class="btn-hapus-dsn"><i class="fi fi-br-trash trash"></i></button>
+                    </div>
                 </li>
-                <li class="table-row">
-                    <div class="col col-1 vevo2" data-label="Kode Pengajuan">113105</div>
-                    <div class="col col-2 vevo" data-label="Diajukan Pada">Supardianto, M.Eng.</div>
-                    
-                    <div class="col col-5 vevo1" data-label="Status">Teknologi Rekayasa Perangkat Lunak</div>
-                    <!-- <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div> -->
-                    <div class="col col-6" data-label="Aksi">
-                        <button id="openFormdeleteaduh" class="action-btn delete fine"><img src="../asset/img/trash.png" alt="">
-                        </button>
-                        <button id="openFormedit" class="action-btn edit master silver"><img src="../asset/img/edit.png" alt=""></button>
-                    </div>  
-                </li>
-              
-                <li class="table-row">
-                    <div class="col col-1 vevo2" data-label="Kode Pengajuan">113105</div>
-                    <div class="col col-2 vevo" data-label="Diajukan Pada">Supardianto, M.Eng.</div>
-                    
-                    <div class="col col-5 vevo1" data-label="Status">Teknologi Rekayasa Perangkat Lunak</div>
-                    <!-- <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div> -->
-                    <div class="col col-6" data-label="Aksi">
-                        <button id="openFormdeleteaduh" class="action-btn delete fine"><img src="../asset/img/trash.png" alt="">
-                        </button>
-                        <button id="openFormedit" class="action-btn edit master silver"><img src="../asset/img/edit.png" alt=""></button>
-                    </div>  
-                </li>
-                <li class="table-row">
-                    <div class="col col-1 vevo2" data-label="Kode Pengajuan">113105</div>
-                    <div class="col col-2 vevo" data-label="Diajukan Pada">Supardianto, M.Eng.</div>
-                    
-                    <div class="col col-5 vevo1" data-label="Status">Teknologi Rekayasa Perangkat Lunak</div>
-                    <!-- <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div> -->
-                    <div class="col col-6" data-label="Aksi">
-                        <button id="openFormdeleteaduh" class="action-btn delete fine"><img src="../asset/img/trash.png" alt="">
-                        </button>
-                        <button id="openFormedit" class="action-btn edit master silver"><img src="../asset/img/edit.png" alt=""></button>
-                    </div>  
-                </li>
-                <li class="table-row">
-                    <div class="col col-1 vevo2" data-label="Kode Pengajuan">113105</div>
-                    <div class="col col-2 vevo" data-label="Diajukan Pada">Supardianto, M.Eng.</div>
-                    
-                    <div class="col col-5 vevo1" data-label="Status">Teknologi Rekayasa Perangkat Lunak</div>
-                    <!-- <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div> -->
-                    <div class="col col-6" data-label="Aksi">
-                        <button id="openFormdeleteaduh" class="action-btn delete fine"><img src="../asset/img/trash.png" alt="">
-                        </button>
-                        <button id="openFormedit" class="action-btn edit master silver"><img src="../asset/img/edit.png" alt=""></button>
-                    </div>  
-                </li>
-                <li class="table-row">
-                    <div class="col col-1 vevo2" data-label="Kode Pengajuan">113105</div>
-                    <div class="col col-2 vevo" data-label="Diajukan Pada">Supardianto, M.Eng.</div>
-                    
-                    <div class="col col-5 vevo1" data-label="Status">Teknologi Rekayasa Perangkat Lunak</div>
-                    <!-- <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div> -->
-                    <div class="col col-6" data-label="Aksi">
-                        <button id="openFormdeleteaduh" class="action-btn delete fine"><img src="../asset/img/trash.png" alt="">
-                        </button>
-                        <button id="openFormedit" class="action-btn edit master silver"><img src="../asset/img/edit.png" alt=""></button>
-                    </div>  
-                </li>
-                <li class="table-row">
-                    <div class="col col-1 vevo2" data-label="Kode Pengajuan">113105</div>
-                    <div class="col col-2 vevo" data-label="Diajukan Pada">Supardianto, M.Eng.</div>
-                    
-                    <div class="col col-5 vevo1" data-label="Status">Teknologi Rekayasa Perangkat Lunak</div>
-                    <!-- <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div> -->
-                    <div class="col col-6" data-label="Aksi">
-                        <button id="openFormdeleteaduh" class="action-btn delete fine"><img src="../asset/img/trash.png" alt="">
-                        </button>
-                        <button id="openFormedit" class="action-btn edit master silver"><img src="../asset/img/edit.png" alt=""></button>
-                    </div>  
-                </li>
-                <li class="table-row">
-                    <div class="col col-1 vevo2" data-label="Kode Pengajuan">113105</div>
-                    <div class="col col-2 vevo" data-label="Diajukan Pada">Supardianto, M.Eng.</div>
-                    
-                    <div class="col col-5 vevo1" data-label="Status">Teknologi Rekayasa Perangkat Lunak</div>
-                    <!-- <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div> -->
-                    <div class="col col-6" data-label="Aksi">
-                        <button id="openFormdeleteaduh" class="action-btn delete fine"><img src="../asset/img/trash.png" alt="">
-                        </button>
-                        <button id="openFormedit" class="action-btn edit master silver"><img src="../asset/img/edit.png" alt=""></button>
-                    </div>  
-                </li>
-              
-              
-                
-                
-               
-                
-                
-                
-                           
             </ul>
             <!-- Pagination -->
             <div class="pagination">
@@ -176,111 +95,12 @@
                 <button class="next-page">Next</button>
             </div>
         </div>
-        </div>
-
 </div>
 
-<div id="formModal" >
-    <div class="modal1 connect">
-          <h2>Tambahkan Dosen</h2>
-          <form>
-              <div id="double" class="form-group">
-                <div class="double1 woy">
-                  <label for="tanggal">NIK</label>
-                  <input type="text" id="tanggal1" class="form-control omega ultra" placeholder="Masukkan NIK Dosen">
-                </div>
-                <div class="double1 kepala">
-                    <label for="tanggal">Nomor Telepon</label>
-                    <input type="text" id="tanggal1" class="form-control omega1 ultra" placeholder="Masukkan Nomor Telepon Dosen">
-                  </div>
-              </div>
-              <div id="double2" class="form-group">
-                
-                <div class="double3 woy">
-                    <label for="waktu">Email</label>
-                    <input type="text" id="waktu" class="form-control omega ultra" placeholder="Masukkan Email Dosen">
-                  </div>       
-                  <div class="double1">
-                    <label for="tanggal">Nama Dosen</label>
-                    <input type="text" id="tanggal" class="form-control omega1 ultra" placeholder="Masukkan Nama Dosen">
-                  </div>
-                
-              </div>
-              <div id="double" class="form-group">
-                <div class="double1 woy mak">
-                    <label  for="judul">Jenis Kelamin</label>
-                    <select id="judul" class="form-control ultra omega key" name="jurusan">
-                    <option class="item" value="#"> Pilih Jenis Kelamin<br>
-                    <option class="item" value="#"> Laki-laki <br>
-                    <option class="item" value="#"> Perempuan <br>
-  
-                    </select>
-                </div>
-                <div class="double1 kepala" >
-                    <label class="pom"  for="tanggal">Password</label>
-                    <input type="password" id="tanggal1" class="form-control omega1 ultra rrq" placeholder="Masukkan Password Dosen ">
-                  </div>
-              </div>
-             
-
-              
-              <div class="button-group rapsodi">
-                  <button type="button" id="closeForm" class="btn btn-secondary learning if" >Batalkan</button>
-                  <button type="submit" class="btn btn-primary">Simpan</button>
-              </div>
-          </form>
-      </div>
-  </div>
-
-  <div id="formModaldeletecapek">
-    <div class="modal4 jiko pinggang">
-        <h2>Hapus Dosen</h2>
-       <div>Apa anda yakin ingin menghapus Dosen ?</div>
-       <div class="button-group">
-        <button  type="button" id="closeFormdelete" class="btn btn-secondary1 fun">Batalkan</button>
-        <button type="submit" class="btn btn-primary1 fun1">Hapus</button>
-    </div>
-    </div>
-  </div>
-
-  <div id="formModaledit" >
-    <div class="modal waw">
-        <h2> Edit Hubungan Mahasiswa dan Dosen</h2>
-        <form>
-            <div class="form-group">
-                <form method="post" class="">
-                  <label  for="judul">Mahasiswa</label>
-                  <select id="judul" class="form-control poke band" placeholder="wkwkwkwk" name="jurusan">
-                  <option class="item" value="#"> Muhammad Yusuf<br>
-                  <option class="item" value="#"> Online <br>
-
-
-                  </select>
-                  <div class="form-group">
-                  <form method="post" class="">
-                    <label  for="judul">Dosen Pembimbing</label>
-                    <select id="judul" class="form-control poke band" name="jurusan">
-                    <option class="item" value="#"> Alena Uperiati<br>
-                    <option class="item" value="#"> Online <br>
-  
-                    </select>
-                    </form>
-                </div>
-                <div class="button-group">
-                    <button type="button" id="closeFormedit" class="btn btn-secondary1">Batalkan</button>
-                    <button type="submit" class="btn btn-primary1">Simpan</button>
-                </div>
-                  </form>
-              </div>
-        </form>
-    </div>
-  </div>
-
-  <script src="../asset/javascript/enroll-admin.js"></script>
-  <script src="../asset/javascript/Pengajuan-mahasiswa.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+<script src="../asset/javascript/admin.js"></script>
+<script src="../asset/javascript/daftar-dosen.js"></script>
 <script src="../asset/javascript/sidebar-navbar.js"></script>
-<script src="../asset/javascript/riwayat.js"></script>
-
 
 
 </body>
