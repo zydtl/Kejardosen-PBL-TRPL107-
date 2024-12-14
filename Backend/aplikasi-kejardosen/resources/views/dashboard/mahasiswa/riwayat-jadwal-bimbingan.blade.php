@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{asset('assets/dashboaard/asset/img/kejardosen-logo-circle.png')}}">
     <title>Riwayat Jadwal Bimbingan - Mahasiswa</title>
     <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/riwayat-jadwal-bimbingan.css')}}">
     <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/sidebar-navbar.css')}}">
@@ -76,95 +77,7 @@
                     <div class="col col-5" data-label="Status"><span class="status-finish">Selesai</span></div>
                     <!-- <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div> -->
                     <div class="col col-6" data-label="Aksi"><a href="/"><i class="fi fi-br-info"></i></a></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">BWRT637</div>
-                    <div class="col col-2" data-label="Diajukan Pada">11 September 2024 10:00 WIB</div>
-                    <div class="col col-3" data-label="Tanggal Pengajuan">13 September 2024</div>
-                    <div class="col col-4" data-label="Waktu Pengajuan">08.30 WIB</div>
-                    <div class="col col-5" data-label="Status"><span class="status-finish">Selesai</span></div>
-                    <div class="col col-6" data-label="Aksi"><a href="/"><i class="fi fi-br-info"></i></a></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">CWQV742</div>
-                    <div class="col col-2" data-label="Diajukan Pada">12 September 2024 14:00 WIB</div>
-                    <div class="col col-3" data-label="Tanggal Pengajuan">14 September 2024</div>
-                    <div class="col col-4" data-label="Waktu Pengajuan">15.00 WIB</div>
-                    <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div>
-                    <div class="col col-6" data-label="Aksi"><a href="/"><i class="fi fi-br-info"></i></a></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">DWZX893</div>
-                    <div class="col col-2" data-label="Diajukan Pada">13 September 2024 08:00 WIB</div>
-                    <div class="col col-3" data-label="Tanggal Pengajuan">15 September 2024</div>
-                    <div class="col col-4" data-label="Waktu Pengajuan">13.30 WIB</div>
-                    <div class="col col-5" data-label="Status"><span class="status-finish">Selesai</span></div>
-                    <div class="col col-6" data-label="Aksi"><a href="/"><i class="fi fi-br-info"></i></a></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">EXYT320</div>
-                    <div class="col col-2" data-label="Diajukan Pada">14 September 2024 16:00 WIB</div>
-                    <div class="col col-3" data-label="Tanggal Pengajuan">16 September 2024</div>
-                    <div class="col col-4" data-label="Waktu Pengajuan">10.00 WIB</div>
-                    <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div>
-                    <div class="col col-6" data-label="Aksi"><a href="/"><i class="fi fi-br-info"></i></a></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">FYUZ112</div>
-                    <div class="col col-2" data-label="Diajukan Pada">15 September 2024 09:00 WIB</div>
-                    <div class="col col-3" data-label="Tanggal Pengajuan">17 September 2024</div>
-                    <div class="col col-4" data-label="Waktu Pengajuan">11.30 WIB</div>
-                    <div class="col col-5" data-label="Status"><span class="status-finish">Selesai</span></div>
-                    <div class="col col-6" data-label="Aksi"><a href="/"><i class="fi fi-br-info"></i></a></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">GWVA231</div>
-                    <div class="col col-2" data-label="Diajukan Pada">16 September 2024 10:00 WIB</div>
-                    <div class="col col-3" data-label="Tanggal Pengajuan">18 September 2024</div>
-                    <div class="col col-4" data-label="Waktu Pengajuan">09.00 WIB</div>
-                    <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div>
-                    <div class="col col-6" data-label="Aksi"><a href="/"><i class="fi fi-br-info"></i></a></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">HWKP667</div>
-                    <div class="col col-2" data-label="Diajukan Pada">17 September 2024 14:00 WIB</div>
-                    <div class="col col-3" data-label="Tanggal Pengajuan">19 September 2024</div>
-                    <div class="col col-4" data-label="Waktu Pengajuan">13.00 WIB</div>
-                    <div class="col col-5" data-label="Status"><span class="status-finish">Selesai</span></div>
-                    <div class="col col-6" data-label="Aksi"><a href="/"><i class="fi fi-br-info"></i></a></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">IWLE120</div>
-                    <div class="col col-2" data-label="Diajukan Pada">18 September 2024 07:00 WIB</div>
-                    <div class="col col-3" data-label="Tanggal Pengajuan">20 September 2024</div>
-                    <div class="col col-4" data-label="Waktu Pengajuan">12.00 WIB</div>
-                    <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div>
-                    <div class="col col-6" data-label="Aksi"><a href="/"><i class="fi fi-br-info"></i></a></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">JWPO452</div>
-                    <div class="col col-2" data-label="Diajukan Pada">19 September 2024 12:00 WIB</div>
-                    <div class="col col-3" data-label="Tanggal Pengajuan">21 September 2024</div>
-                    <div class="col col-4" data-label="Waktu Pengajuan">09.30 WIB</div>
-                    <div class="col col-5" data-label="Status"><span class="status-finish">Selesai</span></div>
-                    <div class="col col-6" data-label="Aksi"><a href="/"><i class="fi fi-br-info"></i></a></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">KXAZ567</div>
-                    <div class="col col-2" data-label="Diajukan Pada">20 September 2024 09:00 WIB</div>
-                    <div class="col col-3" data-label="Tanggal Pengajuan">22 September 2024</div>
-                    <div class="col col-4" data-label="Waktu Pengajuan">10.00 WIB</div>
-                    <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div>
-                    <div class="col col-6" data-label="Aksi"><a href="/"><i class="fi fi-br-info"></i></a></div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Pengajuan">LWTY984</div>
-                    <div class="col col-2" data-label="Diajukan Pada">21 September 2024 08:00 WIB</div>
-                    <div class="col col-3" data-label="Tanggal Pengajuan">23 September 2024</div>
-                    <div class="col col-4" data-label="Waktu Pengajuan">11.30 WIB</div>
-                    <div class="col col-5" data-label="Status"><span class="status-finish">Selesai</span></div>
-                    <div class="col col-6" data-label="Aksi"><a href="/"><i class="fi fi-br-info"></i></a></div>
-                </li>                
+                </li>               
             </ul>
             <!-- Pagination -->
             <div class="pagination">
