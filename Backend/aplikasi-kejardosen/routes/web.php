@@ -27,6 +27,7 @@ Route::post('/login/admin', [AuthController::class, 'loginAdmin'])->name('login.
 
 // Halaman Dashboard ================================================================================================================================================================================
 
+//ROUTE MAHASISWA-----------------------------------------------------------------------------------------------------------------------------------------
 
 // Halaman dashboard untuk mahasiswa (hanya bisa diakses oleh mahasiswa yang sudah login)
 Route::get('/mahasiswa/dashboard', function () {
@@ -39,11 +40,43 @@ Route::get('/mahasiswa/pengajuan', function () {
 })->name('mahasiswa.pengajuan')
     ->middleware('auth:mahasiswa');
 
+// LANJUTAN ROUTE MAHASISWA BY YUSUF********************************************************************************************************************
+
+Route::get('/mahasiswa/jadwal-bimbingan', function () {
+    return view('dashboard.mahasiswa.jadwal-bimbingan');
+})->name('mahasiswa.jadwal-bimbingan')
+    ->middleware('auth:mahasiswa');
+
+Route::get('/mahasiswa/kalender', function () {
+    return view('dashboard.mahasiswa.kalender');
+})->name('mahasiswa.kalender')
+    ->middleware('auth:mahasiswa');
+
+Route::get('/mahasiswa/logbook', function () {
+    return view('dashboard.mahasiswa.logbook');
+})->name('mahasiswa.logbook')
+    ->middleware('auth:mahasiswa');
+
+Route::get('/mahasiswa/riwayat-pengajuan', function () {
+    return view('dashboard.mahasiswa.riwayat-pengajuan');
+})->name('mahasiswa.riwayat-pengajuan')
+    ->middleware('auth:mahasiswa');
+
+Route::get('/mahasiswa/riwayat-jadwal-bimbingan', function () {
+    return view('dashboard.mahasiswa.riwayat-jadwal-bimbingan');
+})->name('mahasiswa.riwayat-jadwal-bimbingan')
+    ->middleware('auth:mahasiswa');
+
+Route::get('/mahasiswa/profil', function () {
+    return view('dashboard.mahasiswa.profil');
+})->name('mahasiswa.profil')
+    ->middleware('auth:mahasiswa');
+
+// END LANJUTAN ROUTE MAHASISWA BY YUSUF ***********************************************************************************************************************************
 
 
 
-//-----------------------------------------------------------------------------------------------------------------------------------------
-
+//ROUTE DOSEN-----------------------------------------------------------------------------------------------------------------------------------------
 
 // Halaman dashboard untuk dosen (hanya bisa diakses oleh dosen yang sudah login)
 Route::get('/dosen/dashboard', function () {
@@ -66,16 +99,69 @@ Route::get('/dosen/jadwal-bimbingan', function () {
 })->name('dosen.jadwal-bimbingan')
     ->middleware('auth:dosen');
 
+// LANJUTAN ROUTE DOSEN BY YUSUF********************************************************************************************************************
+
+Route::get('/dosen/profil', function () {
+    return view('dashboard.dosen.profil');
+})->name('dosen.profil')
+    ->middleware('auth:dosen');
+
+Route::get('/dosen/logbook', function () {
+    return view('dashboard.dosen.logbook');
+})->name('dosen.logbook')
+    ->middleware('auth:dosen');
+
+Route::get('/dosen/riwayat-pengajuan', function () {
+    return view('dashboard.dosen.riwayat-pengajuan');
+})->name('dosen.riwayat-pengajuan')
+    ->middleware('auth:dosen');
+
+Route::get('/dosen/riwayat-jadwal-bimbingan', function () {
+    return view('dashboard.dosen.riwayat-jadwal-bimbingan');
+})->name('dosen.riwayat-jadwal-bimbingan')
+    ->middleware('auth:dosen');
+
+Route::get('/dosen/kalender', function () {
+    return view('dashboard.dosen.kalender');
+})->name('dosen.kalender')
+    ->middleware('auth:dosen');
+
+// END LANJUTAN ROUTE DOSEN BY YUSUF ***********************************************************************************************************************************
+
+
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
+// LANJUTAN ROUTE ADMIN BY YUSUF********************************************************************************************************************
 
 // Halaman dashboard untuk admin (hanya bisa diakses oleh admin yang sudah login)
+
 Route::get('/admin/dashboard', function () {
     return view('dashboard.admin.dashboard');
-})->name('admin.dashboard')->middleware('auth:admin');
+})->name('admin.dashboard')
+    ->middleware('auth:admin');
 
+Route::get('/admin/daftar-dosen', function () {
+    return view('dashboard.admin.daftar-dosen');
+})->name('admin.daftar-dosen')
+    ->middleware('auth:admin');
 
+Route::get('/admin/daftar-mahasiswa', function () {
+    return view('dashboard.admin.daftar-mahasiswa');
+})->name('admin.daftar-mahasiswa')
+    ->middleware('auth:admin');
+
+Route::get('/admin/hubungkan-mahasiswa', function () {
+    return view('dashboard.admin.hubungkan-mahasiswa');
+})->name('admin.hubungkan-mahasiswa')
+    ->middleware('auth:admin');
+
+Route::get('/admin/lihat-bimbingan', function () {
+    return view('dashboard.admin.lihat-bimbingan');
+})->name('admin.lihat-bimbingan')
+    ->middleware('auth:admin');
+
+// END LANJUTAN ROUTE ADMIN BY YUSUF ***********************************************************************************************************************************
 
 // Rute logout================================================================================================================================================================================
 
