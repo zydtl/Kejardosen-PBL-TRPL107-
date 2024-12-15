@@ -1,116 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('dashboard.admin.layout.master')
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="{{asset('assets/dashboard/asset/img/kejardosen-logo-circle.png')}}" />
-    <title>Dashboard - Admin</title>
+@section('title')
+    Dashboard - Admin
+@endsection
 
+@section('css')
     <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/Dashboard-admin.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/sidebar-navbar.css')}}" />
-    <link rel="stylesheet"
-        href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet"
-        href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css" />
-    <link rel="stylesheet"
-        href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
-    <link rel="stylesheet"
-        href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css" />
-    <link rel="stylesheet"
-        href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css" />
-</head>
+@endsection
 
-<body>
-    <header class="navbar">
-        <!-- HAMBURGER BUTTON -->
-        <button onclick="toggleSidebar()" class="toggle-button">&#9776;</button>
-        <div class="navbar-right">
-            <a href="/"><i class="fi fi-br-bell"></i></a>
-            <a href="/"><i class="fi fi-br-power"></i></a>
-            <a href="/"><img src="{{asset('assets/dashboard/asset/img/avatar-admin.jpg')}}" alt="User Profile" class="profile-icon" /></a>
-        </div>
-    </header>
-
-    <div class="container">
-        <!-- Sidebar -->
-        <aside id="sidebar" class="sidebar">
-            <div class="logo-section">
-                <a href="/"><img src="{{asset('assets/dashboard/asset/img/logokjrdns.png')}}" alt="Kejardosen Logo" class="logokjr" /></a>
-            </div>
-            <ul class="menu">
-                <li>
-                    <a href="/"><i class="fi fi-br-home"></i>
-                        <span class="menu-text">Beranda</span></a>
-                </li>
-                <li>
-                    <a href="/"><i class="fi fi-br-graduation-cap"></i>
-                        <span class="menu-text">Daftar Mahasiswa</span></a>
-                </li>
-                <li>
-                    <a href="/"><i class="fi fi-br-lesson-class"></i>
-                        <span class="menu-text">Daftar Dosen</span></a>
-                </li>
-                <li>
-                    <a href="/"><i class="fi fi-br-people-network-partner"></i>
-                        <span class="menu-text">Hubungkan Mahasiswa</span></a>
-                </li>
-                <li>
-                    <a href="/"><i class="fi fi-br-workshop"></i>
-                        <span class="menu-text">Lihat Bimbingan</span></a>
-                </li>
-            </ul>
-        </aside>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <div class="left">
-                <div class="card-welcome">
-                    <div class="text">
-                        <h1>Halo!</h1>
-                        <div class="nama">AdminKJR</div>
-                        <div class="slogan">Kontrol Penuh, Proses Lancar</div>
-                    </div>
-                    <img class="img-welcome-admin" src="{{asset('assets/dashboard/asset/img/admin_ilustration.png')}}" alt="" />
+@section('content')
+    <div class="main-content">
+        <div class="left">
+            <div class="card-welcome">
+                <div class="text">
+                    <h1>Halo!</h1>
+                    <div class="nama">AdminKJR</div>
+                    <div class="slogan">Kontrol Penuh, Proses Lancar</div>
                 </div>
+                <img class="img-welcome-admin" src="{{asset('assets/dashboard/asset/img/admin_ilustration.png')}}" alt="" />
+            </div>
 
-                <div class="info-cards">
-                    <div class="card-info">
-                        <div class="card-info-icon">
-                            <i class="fi fi-br-time-check"></i>
-                        </div>
-                        <div class="card-info-details">
-                            <h4>120</h4>
-                            <span>Mahasiswa</span>
-                        </div>
+            <div class="info-cards">
+                <div class="card-info">
+                    <div class="card-info-icon">
+                        <i class="fi fi-br-time-check"></i>
                     </div>
-                    <div class="card-info">
-                        <div class="card-info-icon">
-                            <i class="fi fi-br-duration-alt"></i>
-                        </div>
-                        <div class="card-info-details">
-                            <h4>40</h4>
-                            <span>Dosen Pembimbing</span>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <div class="card-info-icon">
-                            <i class="fi fi-br-time-check"></i>
-                        </div>
-                        <div class="card-info-details">
-                            <h4>02</h4>
-                            <span>Jumlah Bimbingan Aktif</span>
-                        </div>
+                    <div class="card-info-details">
+                        <h4>120</h4>
+                        <span>Mahasiswa</span>
                     </div>
                 </div>
-                <div class="spacer"></div>
+                <div class="card-info">
+                    <div class="card-info-icon">
+                        <i class="fi fi-br-duration-alt"></i>
+                    </div>
+                    <div class="card-info-details">
+                        <h4>40</h4>
+                        <span>Dosen Pembimbing</span>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="card-info-icon">
+                        <i class="fi fi-br-time-check"></i>
+                    </div>
+                    <div class="card-info-details">
+                        <h4>02</h4>
+                        <span>Jumlah Bimbingan Aktif</span>
+                    </div>
+                </div>
             </div>
+            <div class="spacer"></div>
         </div>
     </div>
+@endsection
 
+@section('js')
     <script src="{{asset('assets/dashboard/asset/javascript/sidebar-navbar.js')}}"></script>
-</body>
-
-</html>
+@endsection
