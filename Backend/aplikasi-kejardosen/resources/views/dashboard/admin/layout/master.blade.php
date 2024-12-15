@@ -38,9 +38,9 @@
 
 
     </div>
-
-    @yield('js')
+    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+    @yield('js')
 
 
 

@@ -1,91 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{asset('assets/dashboard/asset/img/kejardosen-logo-circle.png')}}">
-    <title>Jadwal Bimbingan - Dosen</title>
+@extends('dashboard.dosen.layout.master')
+
+@section('title')
+    Jadwal Bimbingan - Dosen
+@endsection
+
+@section('css')
     <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/Jadwal-bimbingan.css')}}">
     <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/sidebar-navbar.css')}}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css">
-    
+@endsection
 
-    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css">    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-   
-</head>
-<body>
-    <header class="navbar">
-        <!-- HUMBURGER BUTTON -->
-        <button onclick="toggleSidebar()" class="toggle-button">&#9776;</button>
-        <div class="navbar-right">
-            <a href="/"><i class="fi fi-br-bell"></i></a>
-            <a href="/"><i class="fi fi-br-power"></i></a>
-            <a href="/"><img src="{{asset('assets/dashboard/asset/img/avatar-dosen.png')}}" alt="User Profile" class="profile-icon"></a>
-        </div>
-    </header>
+@section('content')
+    <div class="main-content">
+        <div class="title"><h1>Jadwal Bimbingan</h1></div>
+        <ul class="responsive-table">
+            <li class="table-header">
+                <div class="col col-1">Kode Jadwal</div>
+                <div class="col col-2">NIM</div>
+                <div class="col col-3">Tanggal Bimbingan</div>
+                <div class="col col-4">Waktu Bimbingan</div>
+                <div class="col col-5">Status</div>
+                <div class="col col-6">Aksi</div>
+            </li>
+            <li class="table-row">
+                <div class="col col-1" data-label="Kode Jadwal">KJR98KQAM</div>
+                <div class="col col-2" data-label="NIM">4342401057</div>
+                <div class="col col-3" data-label="Tanggal Bimbingan">12 September 2024</div>
+                <div class="col col-4" data-label="Waktu Bimbingan">09.00 WIB</div>
+                <div class="col col-5" data-label="Status"><span class="status-ongoing">Sedang Berlangsung</span></div>
+                <!-- <div class="col col-5" data-label="Status"><span class="status-waiting">Menunggu Jadwal</span></div> -->
+                <div class="col col-6" data-label="Aksi">
+                    <button class="btn-info"><i class="fi fi-br-info info"></i></button>
+                    <button class="btn-tolak" data-role="dosen"><i class="fi fi-br-ban delete"></i></button>
+                </div>
+            </li>
+        </ul>
+    </div>      
+@endsection
 
-    <div class="container">
-        <!-- Sidebar -->
-        <aside id="sidebar" class="sidebar">
-            <!-- logo -->
-            <div class="logo-section">
-                <a href="/"><img src="{{asset('assets/dashboard/asset/img/logokjrdns.png')}}" alt="Kejardosen Logo" class="logokjr"/></a>
-            </div>
-            <ul class="menu">
-                <li><a href="/"><i class="fi fi-br-home"></i> <span class="menu-text">Beranda</span></a></li>
-                <li><a href="/"><i class="fi fi-br-graduation-cap"></i> <span class="menu-text">Pengajuan</span></a></li>
-                <li><a href="/"><i class="fi fi-br-list-check"></i> <span class="menu-text">Jadwal Bimbingan</span></a></li>
-                <li><a href="/"><i class="fi fi-br-calendar"></i> <span class="menu-text">Kalender</span></a></li>
-                <li><a href="/"><i class="fi fi-br-memo"></i> <span class="menu-text">Logbook</span></a></li>
-                <li class="menu-item has-submenu">
-                    <div class="submenu-toggle">
-                        <i class="fi fi-br-time-past"></i> <span class="menu-text">Riwayat</span>
-                    </div>
-                    <ul class="submenu">
-                        <li><a href="/"><i class="fi fi-br-time-past"></i> <span class="menu-text">Riwayat Pengajuan</span></a></li>
-                        <li><a href="/"><i class="fi fi-br-time-past"></i> <span class="menu-text">Riwayat Jadwal Bimbingan</span></a></li>
-                    </ul>
-                </li>
-                <li><a href="/"><i class="fi fi-br-user"></i> <span class="menu-text">Profil</span></a></li>
-            </ul>
-        </aside>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <div class="title"><h1>Jadwal Bimbingan</h1></div>
-            <ul class="responsive-table">
-                <li class="table-header">
-                    <div class="col col-1">Kode Jadwal</div>
-                    <div class="col col-2">NIM</div>
-                    <div class="col col-3">Tanggal Bimbingan</div>
-                    <div class="col col-4">Waktu Bimbingan</div>
-                    <div class="col col-5">Status</div>
-                    <div class="col col-6">Aksi</div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Kode Jadwal">KJR98KQAM</div>
-                    <div class="col col-2" data-label="NIM">4342401057</div>
-                    <div class="col col-3" data-label="Tanggal Bimbingan">12 September 2024</div>
-                    <div class="col col-4" data-label="Waktu Bimbingan">09.00 WIB</div>
-                    <div class="col col-5" data-label="Status"><span class="status-ongoing">Sedang Berlangsung</span></div>
-                    <!-- <div class="col col-5" data-label="Status"><span class="status-waiting">Menunggu Jadwal</span></div> -->
-                    <div class="col col-6" data-label="Aksi">
-                        <button class="btn-info"><i class="fi fi-br-info info"></i></button>
-                        <button class="btn-tolak" data-role="dosen"><i class="fi fi-br-ban delete"></i></button>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+@section('js')
     <script src="{{asset('assets/dashboard/asset/javascript/sidebar-navbar.js')}}"></script>
     <script src="{{asset('assets/dashboard/asset/javascript/Jadwal-bimbingan.js')}}"></script>
-
-</body>
-</html>
+@endsection
