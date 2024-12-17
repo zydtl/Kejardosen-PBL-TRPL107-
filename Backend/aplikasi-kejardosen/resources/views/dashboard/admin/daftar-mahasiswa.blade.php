@@ -60,7 +60,7 @@
     <div id="formModalAdmin">
         <div class="modal1">
             <h2>Tambah Data Mahasiswa</h2>
-            <form>
+            <form id="formMhs">
                 <div class="form-container">
                     <!-- Kolom 1: Identitas Mahasiswa -->
                     <div class="column">

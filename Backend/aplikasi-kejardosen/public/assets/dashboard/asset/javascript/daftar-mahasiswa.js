@@ -64,7 +64,18 @@ window.addEventListener("click", function(event) {
 });
 
 
-
+const formMhs = document.getElementById("formMhs");
+formMhs.addEventListener("submit", function (e) {
+    e.preventDefault(); // Mencegah submit form default
+    Swal.fire({
+        title: "Berhasil!",
+        text: "Data Mahasiswa berhasil disimpan.",
+        icon: "success",
+        confirmButtonColor: "#22a0b8",
+    });
+    formModalAdmin.style.display = "none";
+}
+);
 
 //Konfirmasi Hapus Hubungan
 document.addEventListener("click", (event) => {
