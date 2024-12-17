@@ -58,6 +58,11 @@ body {
     border-collapse: collapse;
 }
 
+.nama {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
 /* icon aksi */
 .col button {
     margin: auto;
@@ -71,7 +76,7 @@ body {
     border-radius: 10px;
   }
   
-  .col .btn-info {
+  .col .btn-info, .col .btn-info-mhs {
     background-color: blue;
   }
   
@@ -79,13 +84,8 @@ body {
     background-color: red;
     margin-right: 5px;
   }
-
-  .col .btn-hapus-dsn {
-    background-color: red;
-    margin-right: 5px;
-  }
   
-  .col .btn-edit {
+  .col .btn-edit, .col .btn-edit-mhs {
     background-color: orange;
   }
 
@@ -124,7 +124,7 @@ body {
 }
 
 .table-row .col-1, .table-header .col-1 {
-    flex: 0.5;
+    flex: 1;
 }
 
 .table-row .col-2, .table-header .col-2 {
@@ -285,31 +285,193 @@ body {
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0), 0 0px 10px 0 rgba(0, 0, 0, 0.068);
 }
 
-/* css modal hubungkan mahasiswa */
-.modal-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .modal-label {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
-  
-  .modal-select {
+/* Styling untuk modal form tambah mahasiswa */
+#formModalAdmin{
+    background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    height: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; 
+    overflow-y: scroll; 
+  }
+  
+  .modal1, .modal3 {
+    margin-top: 200px; 
+    margin-bottom: 50px;
+    background: white; 
+    border-radius: 8px; 
+    padding: 20px;
+    padding-right: 20px;
+    width: 60%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    position: relative;
+  }
+  
+  /* Judul modal */
+  .modal1 h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333; /* Warna teks */
+  }
+  
+  /* Form styling */
+  .form-group {
+    margin-bottom: 15px; /* Jarak antar form */
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
     font-size: 14px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    background-color: #D5F5F8; /* Warna latar input */
+    border-radius: 5px; /* Sudut membulat */
+    font-size: 14px;
+    border: none; /* Hilangkan border */
+    box-sizing: border-box;
+  }
+  
+  textarea.form-control {
+    resize: none; /* Nonaktifkan resize */
+    height: 80px; /* Tinggi default untuk textarea */
+  }
+  
+  /* Dropdown select */
+  select.form-control {
+    cursor: pointer; /* Tampilkan pointer pada dropdown */
+    appearance: none; /* Hilangkan tampilan default browser */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 30px; /* Jarak untuk ikon dropdown */
+  }
+  
+  /* Tombol */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .btn, .btn-simpan, .btn-batalkan {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .btn-primary {
+    background-color: #00bcd4; /* Warna tombol utama */
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0196a8; /* Warna saat hover */
+  }
+  
+  .btn-secondary {
+    background-color: #ccc; /* Warna tombol sekunder */
+    color: black;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #aaa; /* Warna saat hover */
+  }
+  
+  
+  /* Media queries untuk responsivitas */
+  @media screen and (max-width: 600px) {
+    .modal1 {
+      width: 90%; /* Lebar modal lebih kecil untuk layar kecil */
+      padding: 15px;
+    }
   }
   
 
-/* css modal daftar dosen */
-.swal2-modal-custom {
-    width: 600px !important; /* Sesuaikan lebar modal */
-    max-width: 90%; /* Responsif pada layar kecil */
-    padding: 20px;
+ /* Styling untuk form container */
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Memberikan jarak antara kolom */
 }
+
+/* Styling untuk kolom */
+.column {
+    width: 48%; /* Setiap kolom memiliki lebar 48% dari form container */
+}
+
+/* Styling untuk form-group (untuk elemen label dan informasi) */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Styling untuk div yang menampilkan informasi */
+.value {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #F1F1F1;
+    color: #555;
+}
+
+/* Styling untuk label */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Styling untuk modal container */
+.modal2 {
+    background-color: white;
+    width: 60%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 200px;
+    margin-bottom: 50px;
+    transition: 0.9s ease-in-out;
+}
+
+/* Styling untuk judul modal */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Modal Background */
+#infoModalAdmin, #editModalAdmin {
+    display: none; /* Modal tersembunyi secara default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999999999999;
+    overflow-y: auto;
+}
+
+/* Modal aktif */
+#infoModalAdmin.show {
+    display: flex; /* Menampilkan modal saat tombol ditekan */
+}
+
