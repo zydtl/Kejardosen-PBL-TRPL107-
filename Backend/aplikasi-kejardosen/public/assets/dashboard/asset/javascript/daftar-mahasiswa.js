@@ -34,6 +34,12 @@ document.getElementById('infoModalAdmin').addEventListener('click', function(e) 
     }
 });
 
+document.getElementById('closeInfoAdmin').addEventListener('click', function(e) {
+    if (e.target === this) {
+        // Menyembunyikan modal jika klik di luar konten modal
+        document.getElementById('infoModalAdmin').classList.remove('show');
+    }
+});
 
 // JS MODAL EDIT =======================================================================================
 const modaledit = document.getElementById("editModalAdmin");

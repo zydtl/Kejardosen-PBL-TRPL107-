@@ -203,6 +203,10 @@
                         <div id="dosenPembimbing" class="value">Dr. Ahmad Maulana</div>
                     </div>
                 </div>
+                
+            </div>
+            <div class="button-group">
+                <button id="closeInfoAdmin" class="btn-batalkan btn-secondary">Tutup</button>
             </div>
         </div>
     </div>
@@ -218,25 +222,25 @@
                         <!-- Nama -->
                         <div class="form-group">
                             <label for="nama">Nama Mahasiswa</label>
-                            <input type="text" id="nama" class="form-control" placeholder="Masukkan nama mahasiswa" required>
+                            <input type="text" id="nama" class="form-control" placeholder="Masukkan nama mahasiswa" >
                         </div>
                         
                         <!-- NIM -->
                         <div class="form-group">
                             <label for="nim">NIM</label>
-                            <input type="text" id="nim" class="form-control" placeholder="Masukkan NIM mahasiswa" required>
+                            <input type="text" id="nim" class="form-control" placeholder="Masukkan NIM mahasiswa" >
                         </div>
                         
                         <!-- Kelas -->
                         <div class="form-group">
                             <label for="kelas">Kelas</label>
-                            <input type="text" id="kelas" class="form-control" placeholder="Masukkan kelas mahasiswa" required>
+                            <input type="text" id="kelas" class="form-control" placeholder="Masukkan kelas mahasiswa" >
                         </div>
                         
                         <!-- Jenis Kelamin -->
                         <div class="form-group">
                             <label for="jenisKelamin">Jenis Kelamin</label>
-                            <select id="jenisKelamin" class="form-control" required>
+                            <select id="jenisKelamin" class="form-control" >
                                 <option value="" disabled selected>Pilih jenis kelamin</option>
                                 <option value="Laki-Laki">Laki-Laki</option>
                                 <option value="Perempuan">Perempuan</option>
@@ -246,19 +250,19 @@
                         <!-- Nomor Telepon -->
                         <div class="form-group">
                             <label for="noTelp">Nomor Telepon</label>
-                            <input type="tel" id="noTelp" class="form-control" placeholder="Masukkan nomor telepon mahasiswa" required>
+                            <input type="tel" id="noTelp" class="form-control" placeholder="Masukkan nomor telepon mahasiswa" >
                         </div>
                         
                         <!-- Email -->
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Masukkan email mahasiswa" required>
+                            <input type="email" id="email" class="form-control" placeholder="Masukkan email mahasiswa" >
                         </div>
 
                         <!-- Password -->
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" id="password" class="form-control" placeholder="Masukkan password mahasiswa" required>
+                            <input type="password" id="password" class="form-control" placeholder="Masukkan password mahasiswa" >
                         </div>
                     </div>
 
@@ -267,13 +271,13 @@
                         <!-- Judul Tugas Akhir -->
                         <div class="form-group">
                             <label for="judulTA">Judul Tugas Akhir</label>
-                            <input type="text" id="judulTA" class="form-control" placeholder="Masukkan judul tugas akhir" required>
+                            <input type="text" id="judulTA" class="form-control" placeholder="Masukkan judul tugas akhir" >
                         </div>
                         
                         <!-- Dosen Pembimbing -->
                         <div class="form-group">
                             <label for="dosenPembimbing">Dosen Pembimbing</label>
-                            <select id="dosenPembimbing" class="form-control" required>
+                            <select id="dosenPembimbing" class="form-control" >
                                 <option value="" disabled selected>Pilih dosen pembimbing</option>
                                 <option value="1">Dr. Ahmad Maulana</option>
                                 <option value="2">Prof. Siti Aisyah</option>
