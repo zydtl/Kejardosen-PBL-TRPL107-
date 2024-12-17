@@ -58,7 +58,7 @@
         </aside>
 
         <!-- Main Content -->
-         <div class="main-content" >
+        <div class="main-content" >
                      
             <div class="title"><h1>Daftar Dosen</h1></div>
             <div class="search-and-button">
@@ -69,16 +69,20 @@
             </div> 
             <ul class="responsive-table">
                 <li class="table-header">
-                    <div class="col col-1">NIK/NIDN</div>
-                    <div class="col col-2">Nama</div>
-                    <div class="col col-3">Program Studi</div>
-                    <div class="col col-4">Aksi</div>
+                    <div class="col col-1">Nama Dosen</div>
+                    <div class="col col-2">NIK/NIDN</div>
+                    <div class="col col-3">Aksi</div>
                 </li>
                 <li class="table-row">
-                    <div class="col col-1" data-label="NIK/NIDN">122279</div>
-                    <div class="col col-2" data-label="Nama">Alena Uperiati.S.T.M.Cs</div>
-                    <div class="col col-3" data-label="Program Studi">Teknologi Rekayasa Perangkat Lunak</div>
-                    <div class="col col-4" data-label="Aksi">
+                    <div class="col col-1" data-label="Nama Dosen">
+                        Alena Uperiati
+                    </div>
+                    <div class="col col-2" data-label="NIK/NIDN">
+                        122279
+                    </div>
+                    <div class="col col-3" data-label="Aksi">
+                        <button id="info-dsn" class="btn-info-dsn"><i class="fi fi-br-info info"></i></button>
+                        <button id="edit-dsn" class="btn-edit-dsn"><i class="fi fi-br-edit edit"></i></button>
                         <button class="btn-hapus-dsn"><i class="fi fi-br-trash trash"></i></button>
                     </div>
                 </li>
@@ -96,6 +100,167 @@
             </div>
         </div>
 </div>
+
+<!-- Modal Admin : Tambah Dosen -->
+<div id="formModalAdminDosen" class="hide">
+    <div class="modal1">
+        <h2>Tambah Data Dosen</h2>
+        <form id="formDosen">
+            <!-- Container Utama -->
+            <div class="form-container-dosen">
+                <!-- Form Input -->
+                <div class="form-group">
+                    <label for="nama">Nama Dosen</label>
+                    <input type="text" id="nama" class="form-control" placeholder="Masukkan nama dosen" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nik">NIK/NIDN</label>
+                    <input type="text" id="nik" class="form-control" placeholder="Masukkan NIK/NIDN dosen" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="jenisKelamin">Jenis Kelamin</label>
+                    <select id="jenisKelamin" class="form-control" required>
+                        <option value="" disabled selected>Pilih jenis kelamin</option>
+                        <option value="Laki-Laki">Laki-Laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="noTelp">Nomor Telepon</label>
+                    <input type="tel" id="noTelp" class="form-control" placeholder="Masukkan nomor telepon dosen" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Masukkan email dosen" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Masukkan password dosen" required>
+                </div>
+            </div>
+
+            <!-- Tombol Aksi -->
+            <div class="button-group">
+                <button type="button" id="closeFormDosen" class="btn-batalkan btn-secondary">Batalkan</button>
+                <button type="submit" id="tambahdsn" class="btn-simpan btn-primary">Simpan Data</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Modal Admin : Info Dosen -->
+<div id="infoModalAdminDosen" class="hide">
+    <div class="modal2">
+        <h2>Informasi Dosen</h2>
+        <div class="form-container">
+            <!-- Kolom Informasi Dosen -->
+            <div class="column">
+                <!-- Nama Dosen -->
+                <div class="form-group">
+                    <label for="namaDosen">Nama Dosen</label>
+                    <div id="namaDosen" class="value">Dr. Ahmad Maulana</div>
+                </div>
+                
+                <!-- NIK/NIDN -->
+                <div class="form-group">
+                    <label for="nik">NIK/NIDN</label>
+                    <div id="nik" class="value">1234567890</div>
+                </div>
+                
+                <!-- Jenis Kelamin -->
+                <div class="form-group">
+                    <label for="jenisKelamin">Jenis Kelamin</label>
+                    <div id="jenisKelamin" class="value">Laki-Laki</div>
+                </div>
+            </div>    
+            <div class="column">
+                <!-- Nomor Telepon -->
+                <div class="form-group">
+                    <label for="noTelp">Nomor Telepon</label>
+                    <div id="noTelp" class="value">081234567890</div>
+                </div>
+                
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div id="email" class="value">ahmad.maulana@example.com</div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div id="password" class="value">dosen123</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol Aksi -->
+        <div class="button-group">
+            <button id="closeInfoDosen" class="btn-batalkan btn-secondary">Tutup</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Admin : edit Dosen -->
+<div id="editModalAdminDosen" class="hide">
+    <div class="modal3">
+        <h2>Edit Data Dosen</h2>
+        <form>
+            <!-- Container Utama -->
+            <div class="form-container-dosen">
+                <!-- Form Input -->
+                <div class="form-group">
+                    <label for="nama">Nama Dosen</label>
+                    <input type="text" id="nama" class="form-control" placeholder="Masukkan nama dosen">
+                </div>
+
+                <div class="form-group">
+                    <label for="nik">NIK/NIDN</label>
+                    <input type="text" id="nik" class="form-control" placeholder="Masukkan NIK/NIDN dosen" >
+                </div>
+
+                <div class="form-group">
+                    <label for="jenisKelamin">Jenis Kelamin</label>
+                    <select id="jenisKelamin" class="form-control" >
+                        <option value="" disabled selected>Pilih jenis kelamin</option>
+                        <option value="Laki-Laki">Laki-Laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="noTelp">Nomor Telepon</label>
+                    <input type="tel" id="noTelp" class="form-control" placeholder="Masukkan nomor telepon dosen" >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Masukkan email dosen" >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Masukkan password dosen" >
+                </div>
+            </div>
+
+            <!-- Tombol Aksi -->
+            <div class="button-group">
+                <button type="button" id="closeEditDosen" class="btn-batalkan btn-secondary">Batalkan</button>
+                <button type="submit" class="btn-simpan btn-primary">Simpan Data</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
 <script src="../asset/javascript/admin.js"></script>

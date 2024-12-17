@@ -150,10 +150,3 @@ inputDate.setAttribute("min", formatDate(tomorrow));
 inputDate.setAttribute("max", formatDate(maxDate));
 
 console.log(`Min date: ${formatDate(tomorrow)}, Max date: ${formatDate(maxDate)}`);
-
-
-
-
-
-
-

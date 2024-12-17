@@ -219,8 +219,7 @@ font-size: 14px;
   width: 100%;
   max-width: 768px;
   padding: 40px;
-  margin: 50px;
-  margin-top: 300px;
+  margin: auto;
   border-radius: 30px;
 }
 
@@ -238,8 +237,9 @@ font-size: 14px;
 }
 
 .foto-profil {
-  width: 200px;
-  height: 200px;
+  width: 170px;
+  height: 170px;
+  border-radius: 100%;
 }
 
 .detail-item {
@@ -264,6 +264,11 @@ input, select, textarea {
 
 .form-group {
   margin: 10px 0;
+}
+
+.form-group button{
+  margin: 0;
+  width: 100%;
 }
 
 .form-group p {
@@ -319,3 +324,41 @@ input:disabled {
   margin: 20px 0px;
 }
 
+.kosong {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15%;
+  gap: 20px;
+}
+
+.kosong-img img {
+  width: 300px;
+}
+
+#double5{
+  flex: 1;
+}
+
+.bagian1{
+  flex: 2;
+}
+
+/* css input mahasiswa */
+.detail {
+  margin-top: 5px;
+}
+
+.value {
+  padding: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 14px;
+  width: auto;
+}
+
+.datetime {
+  display: flex;
+  gap: 20px;
+}

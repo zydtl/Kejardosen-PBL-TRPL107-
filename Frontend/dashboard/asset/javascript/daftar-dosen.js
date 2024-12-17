@@ -1,57 +1,85 @@
-  // Modal untuk Tambah Dosen
-document.getElementById('tambah-dsn').addEventListener('click', function () {
-    Swal.fire({
-        title: 'Tambah Dosen',
-        html: `
-            <form id="formTambahDsn" style="text-align: left; margin: 0 auto; width: 100%; max-width: 400px;">
-                <div class="form-group" style="margin-bottom: 15px;">
-                    <label for="nama" style="display: block; margin-bottom: 5px; font-weight: bold;">Nama:</label>
-                    <input type="text" id="nama" class="swal2-input" style="width: 100%; padding: 10px; font-size: 14px;" placeholder="Nama Dosen" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 15px;">
-                    <label for="nik" style="display: block; margin-bottom: 5px; font-weight: bold;">NIK/NIDN:</label>
-                    <input type="text" id="nik" class="swal2-input" style="width: 100%; padding: 10px; font-size: 14px;" placeholder="NIK atau NIDN" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 15px;">
-                    <label for="program_studi" style="display: block; margin-bottom: 5px; font-weight: bold;">Program Studi:</label>
-                    <input type="text" id="program_studi" class="swal2-input" style="width: 100%; padding: 10px; font-size: 14px;" placeholder="Program Studi" required>
-                </div>
-            </form>
-        `,
-        focusConfirm: false,
-        showCancelButton: true,
-        confirmButtonText: 'Tambah',
-        cancelButtonText: 'Batal',
-        customClass: {
-            popup: 'swal2-modal-custom' // Tambahkan class custom
-        },
-        preConfirm: () => {
-            const nama = document.getElementById('nama').value;
-            const nik = document.getElementById('nik').value;
-            const programStudi = document.getElementById('program_studi').value;
+// JS MODAL tambah =======================================================================================
+const modalDosen = document.getElementById('formModalAdminDosen');
+const btnTambahDosen = document.getElementById('tambah-dsn'); // ID tombol untuk membuka modal
+const btnCloseDosen = document.getElementById('closeFormDosen'); // ID tombol batalkan modal
 
-            if (!nama || !nik || !programStudi) {
-                Swal.showValidationMessage('Semua kolom harus diisi!');
-                return false;
-            }
-
-            // Simulasi pengiriman data ke server
-          console.log('Data Dosen:', { nama, nik, programStudi });
-
-          // Tampilkan modal konfirmasi berhasil
-          setTimeout(() => { // Simulasikan proses (misalnya, API call)
-              Swal.fire({
-                  icon: 'success',
-                  title: 'Berhasil!',
-                  text: 'Data dosen berhasil ditambahkan.',
-                  confirmButtonText: 'OK'
-              });
-          }, 500); // Waktu delay untuk efek respons
-
-          return { nama, nik, programStudi };
-      }
-  });
+// Fungsi untuk membuka modal
+btnTambahDosen.addEventListener('click', () => {
+    modalDosen.classList.add('show'); // Menambahkan class show
+    modalDosen.querySelector('.modal1').classList.add('show');
 });
+
+// Fungsi untuk menutup modal
+btnCloseDosen.addEventListener('click', () => {
+    modalDosen.classList.remove('show'); // Menghapus class show
+    modalDosen.querySelector('.modal1').classList.remove('show');
+});
+
+
+// JS MODAL info =======================================================================================
+// Ambil elemen modal
+const infoModalDosen = document.getElementById('infoModalAdminDosen');
+const closeInfoDosen = document.getElementById('closeInfoDosen');
+
+// Event Delegation: Tangkap klik tombol info di seluruh halaman
+document.addEventListener('click', (e) => {
+    if (e.target.closest('.btn-info-dsn')) { // Pastikan tombol yang ditekan adalah info dosen
+        infoModalDosen.classList.remove('hide'); // Tampilkan modal
+        infoModalDosen.classList.add('show');
+    }
+});
+
+// Fungsi untuk menutup modal
+closeInfoDosen.addEventListener('click', () => {
+    infoModalDosen.classList.remove('show');
+    infoModalDosen.classList.add('hide');
+});
+
+document.getElementById('infoModalAdminDosen').addEventListener('click', function (e) {
+    if (e.target === this) {
+        // Menyembunyikan modal jika klik di luar konten modal
+        document.getElementById('infoModalAdminDosen').classList.remove('show');
+    }
+});
+
+
+
+// JS MODAL edit =======================================================================================
+// Ambil elemen modal
+const editModalDosen = document.getElementById('editModalAdminDosen');
+const closeeditDosen = document.getElementById('closeEditDosen');
+
+// Event Delegation: Tangkap klik tombol info di seluruh halaman
+document.addEventListener('click', (e) => {
+    if (e.target.closest('.btn-edit-dsn')) { // Pastikan tombol yang ditekan adalah info dosen
+        editModalDosen.classList.remove('hide'); // Tampilkan modal
+        editModalDosen.classList.add('show');
+    }
+});
+
+// Fungsi untuk menutup modal
+closeeditDosen.addEventListener('click', () => {
+    editModalDosen.classList.remove('show');
+    editModalDosen.classList.add('hide');
+});
+
+
+
+//=======================ALERT KONFIRMASI SWEET ALERT=============================================================================
+// Data dosen berhasil ditambah
+const formDosen = document.getElementById("formDosen");
+formDosen.addEventListener("submit", function (e) {
+    e.preventDefault(); // Mencegah submit form default
+    Swal.fire({
+        title: "Berhasil!",
+        text: "Data dosen berhasil disimpan.",
+        icon: "success",
+        confirmButtonColor: "#22a0b8",
+    });
+    formModalAdminDosen.style.display = "none";
+}
+);
+
 
 
 // Hapus Dosen (Tampilkan Modal Saja)

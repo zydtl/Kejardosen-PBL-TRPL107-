@@ -34,6 +34,12 @@ document.getElementById('infoModalAdmin').addEventListener('click', function(e) 
     }
 });
 
+document.getElementById('closeInfoAdmin').addEventListener('click', function(e) {
+    if (e.target === this) {
+        // Menyembunyikan modal jika klik di luar konten modal
+        document.getElementById('infoModalAdmin').classList.remove('show');
+    }
+});
 
 // JS MODAL EDIT =======================================================================================
 const modaledit = document.getElementById("editModalAdmin");
@@ -58,7 +64,18 @@ window.addEventListener("click", function(event) {
 });
 
 
-
+const formMhs = document.getElementById("formMhs");
+formMhs.addEventListener("submit", function (e) {
+    e.preventDefault(); // Mencegah submit form default
+    Swal.fire({
+        title: "Berhasil!",
+        text: "Data Mahasiswa berhasil disimpan.",
+        icon: "success",
+        confirmButtonColor: "#22a0b8",
+    });
+    formModalAdmin.style.display = "none";
+}
+);
 
 //Konfirmasi Hapus Hubungan
 document.addEventListener("click", (event) => {
