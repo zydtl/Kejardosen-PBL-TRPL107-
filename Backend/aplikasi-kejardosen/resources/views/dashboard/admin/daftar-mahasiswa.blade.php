@@ -103,6 +103,12 @@
                             <label for="email">Email</label>
                             <input type="email" id="email" class="form-control" placeholder="Masukkan email mahasiswa" required>
                         </div>
+
+                        <!-- Password -->
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" class="form-control" placeholder="Masukkan password mahasiswa" required>
+                        </div>
                     </div>
 
                     <!-- Kolom 2: Informasi Tugas Akhir -->
@@ -175,6 +181,12 @@
                         <label for="email">Email</label>
                         <div id="email" class="value">john.doe@example.com</div>
                     </div>
+
+                    <!-- password -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div id="password" class="value">mahasiswa123</div>
+                    </div>
                 </div>
 
                 <!-- Kolom 2: Informasi Tugas Akhir -->
@@ -241,6 +253,12 @@
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" class="form-control" placeholder="Masukkan email mahasiswa" required>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" class="form-control" placeholder="Masukkan password mahasiswa" required>
                         </div>
                     </div>
 
