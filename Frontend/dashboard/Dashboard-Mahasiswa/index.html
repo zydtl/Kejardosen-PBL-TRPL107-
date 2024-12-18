@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="../asset/css/Dashboard-mahasiswa.css" />
     <link rel="stylesheet" href="../asset/css/sidebar-navbar.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css">
     <link rel="stylesheet"
         href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css" />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
@@ -29,7 +30,7 @@
         <button onclick="toggleSidebar()" class="toggle-button">&#9776;</button>
         <div class="navbar-right">
             <a href="/"><i class="fi fi-br-bell"></i></a>
-            <a href="/"><i class="fi fi-br-power"></i></a>
+            <a id="logout"><i class="fi fi-br-power"></i></a>
             <a href="/"><img src="../asset/img/avatar.png" alt="User Profile" class="profile-icon" /></a>
         </div>
     </header>
@@ -177,7 +178,9 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
     <script src="../asset/javascript/sidebar-navbar.js"></script>
+    <script src="../asset/javascript/logout.js"></script>
 </body>
 
 </html>
