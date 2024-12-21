@@ -3,6 +3,7 @@ const formDosen = document.querySelector(".bagian2");
 const double7Div = document.getElementById("double7");  // Element div #double7 (tanggal dan waktu anjuran dosen)
 const double8Div = document.querySelector(".double8"); // Element div .double8 (bimbingan dan ruangan)
 const catatanDosen = document.getElementById("catatan");  // Catatan Dosen
+const catatanDosenTerima = document.getElementById("catatan-terima");  // Catatan Dosen Terima
 const kosong = document.querySelector(".kosong"); 
 
 
@@ -11,22 +12,27 @@ function toggleFormElements() {
     // Jika opsi "Tolak" dipilih
     double8Div.style.display = "none";  
     double7Div.style.display = "none";  
-    catatanDosen.style.display = "block";  
+    catatanDosen.style.display = "block"; 
+    catatanDosenTerima.style.display = "none";  
     formDosen.style.display = "block";  
     kosong.style.display = "none";
 
   } else if (selectAksi.value === "terima") {
     // Jika opsi "Terima" dipilih
     double8Div.style.display = "block";  
-    double7Div.style.display = "none";  
-    catatanDosen.style.display = "block";  
+    double7Div.style.display = "none";
+    catatanDosen.style.display = "none";  
+    catatanDosenTerima.style.display = "block";  
+    formDosen.style.display = "block";  
     kosong.style.display = "none";
 
   } else if (selectAksi.value === "banding") {
     // Jika opsi "Banding" dipilih
-    double8Div.style.display = "block";  
+    double8Div.style.display = "none";  
     double7Div.style.display = "block";  
     catatanDosen.style.display = "block";
+    catatanDosenTerima.style.display = "none";  
+    formDosen.style.display = "block";  
     kosong.style.display = "none";
 
   } else if (selectAksi.value === "default") {
@@ -34,6 +40,8 @@ function toggleFormElements() {
     double8Div.style.display = "none";  
     double7Div.style.display = "none";  
     catatanDosen.style.display = "none";
+    catatanDosenTerima.style.display = "none";  
+    formDosen.style.display = "block";  
     kosong.style.display = "none";
 
 
@@ -42,6 +50,8 @@ function toggleFormElements() {
     double8Div.style.display = "none";  
     double7Div.style.display = "none"; 
     catatanDosen.style.display = "none";
+    catatanDosenTerima.style.display = "none";  
+    formDosen.style.display = "none";  
     kosong.style.display = "block";
      
   }

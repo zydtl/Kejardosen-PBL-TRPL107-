@@ -5,47 +5,48 @@
 @endsection
 
 @section('content')
-    <div class="main-content utama">
-      <div class="title">
-        <h1>Pengajuan</h1>
-      </div>
-      <div class="search-container">
-        <input type="text" id="search-input" onkeyup="searchTable()" placeholder="Pencarian" />
-      </div>
-      <ul class="responsive-table">
-        <li class="table-row baris-pengajuan">
-          <div class="col col-1" data-label="img">
-            <img src="{{asset('assets/dashboard/asset/img/avatar.png')}}"/>
-          </div>
-          <div class="col col-2" data-label="Diajukan Pada">
-            <h1>Muhammad Maulana Yusuf</h1>
-            <p>4342401XXX - TRPL 7B Pagi</p>
-          </div>
-          <div class="col col-3" data-label="Tanggal Pengajuan">
-            <h1>Pengajuan Jadwal:</h1>
-            <p>12 September 2024 09:00 WIB</p>
-          </div>
-          <div class="col col-4" data-label="Waktu Pengajuan">
-            <h1>Kode Pengajuan:</h1>
-            <p>WKWHGG54</p>
-          </div>
-          <a><button id="openFormpengajuan" class="btn btnku btnkeren">
-              Lihat Pengajuan
-            </button></a>
-        </li>
-      </ul>
-      <!-- Pagination -->
-      <div class="pagination">
-        <button class="prev-page">Prev</button>
-        <span class="page-numbers">
-          <span class="page-number active">1</span>
-          <span class="page-number">2</span>
-          <span class="page-number">3</span>
-          <!-- Tambahkan lebih banyak page number sesuai dengan jumlah data -->
-        </span>
-        <button class="next-page">Next</button>
-      </div>
+  <div class="main-content utama">
+    <div class="title">
+      <h1>Pengajuan</h1>
     </div>
+    <div class="search-container">
+      <input type="text" id="search-input" onkeyup="searchTable()" placeholder="Pencarian" />
+    </div>
+    <ul class="responsive-table">
+      <li class="table-row baris-pengajuan">
+        <div class="col col-1" data-label="img">
+          <img src="{{asset('assets/dashboard/asset/img/avatar.png')}}"/>
+        </div>
+        <div class="col col-2" data-label="Diajukan Pada">
+          <h1>Muhammad Maulana Yusuf</h1>
+          <p>4342401XXX - TRPL 7B Pagi</p>
+        </div>
+        <div class="col col-3" data-label="Tanggal Pengajuan">
+          <h1>Pengajuan Jadwal:</h1>
+          <p>12 September 2024 09:00 WIB</p>
+        </div>
+        <div class="col col-4" data-label="Status">
+          <h1>Status</h1>
+          <span class="status-waiting">Menunggu</span>
+          <!-- <span class="status-resched">Alternatif</span> -->
+        </div>
+        <a><button id="openFormpengajuan" class="btn btnku btnkeren">
+            Lihat Pengajuan
+          </button></a>
+      </li>
+    </ul>
+    <!-- Pagination -->
+    <div class="pagination">
+      <button class="prev-page">Prev</button>
+      <span class="page-numbers">
+        <span class="page-number active">1</span>
+        <span class="page-number">2</span>
+        <span class="page-number">3</span>
+        <!-- Tambahkan lebih banyak page number sesuai dengan jumlah data -->
+      </span>
+      <button class="next-page">Next</button>
+    </div>
+  </div>>
 @endsection
 
 @section('modalDosen')
@@ -84,10 +85,6 @@
                 <option value="terima">Terima</option>
                 <option value="banding">Banding</option>
               </select>
-            </div>
-            <!-- Tombol submit dinamis -->
-            <div id="tombolSubmit" class="form-group" style="display: none;">
-              <button type="submit" class="btn btnku btnkeren">Kirim</button>
             </div>
           </div>
   
@@ -139,11 +136,12 @@
               </div>
 
               <div class="form-group">
-                <label for="catatan">Catatan Dosen</label>
+                <label for="catatan catatan-terima">Catatan Dosen</label>
                 <textarea id="catatan" class="form-control poke" rows="4" placeholder="Tambahkan catatan untuk mahasiswa"></textarea>
+                <textarea id="catatan-terima" class="form-control poke" rows="4" placeholder="Tambahkan catatan untuk mahasiswa"></textarea>
               </div>
-  
-              <!-- Bagian yang akan muncul saat Banding dipilih -->
+
+              <!-- Bagian tanggal dan waktu anjuran yang akan muncul saat Banding dipilih -->
               <div id="double7" class="form-group" style="display: none;">
                 <div class="double1 just1">
                   <p for="tanggal"><b>Tanggal Anjuran Dosen</b></p>
@@ -154,6 +152,10 @@
                   <input type="time" id="waktu" class="form-control1oke lebar1 atur1" required/>
                 </div>
               </div>
+            </div>
+            <!-- Tombol submit dinamis -->
+            <div id="tombolSubmit" class="form-group" style="display: none;">
+              <button type="submit" class="btn btnku btnkeren">Kirim</button>
             </div>
           </div>
         </form>

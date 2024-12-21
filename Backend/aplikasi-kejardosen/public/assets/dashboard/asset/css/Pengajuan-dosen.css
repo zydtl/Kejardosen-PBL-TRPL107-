@@ -48,6 +48,24 @@ body {
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0), 0 0px 10px 0 rgba(0, 0, 0, 0.068);
 }
 
+.status-waiting {
+  color: #83831E;
+  background-color: #FFF97E;
+  padding: 3px 15px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.status-resched {
+  color: #83831E;
+  background-color: #FFF97E;
+  padding: 3px 15px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
 /* icon aksi */
 .col i {
   background-color: #B1E8F0;
@@ -86,16 +104,19 @@ body {
 }
 
 .table-row .col-1, .table-header .col-1 {
-  flex: 1;
+  flex: 0.6;
 }
 
 .table-row .col-2, .table-header .col-2 {
-  flex: 2; /* Adjust proportions */
+  flex: 1; /* Adjust proportions */
 }
 
-.table-row .col-3, .table-header .col-3,
+.table-row .col-3, .table-header .col-3 {
+  flex: 0.7;
+}
+
 .table-row .col-4, .table-header .col-4 {
-  flex: 1.5;
+  flex: 0.7;
 }
 
 /* Pagination Styling */
@@ -237,9 +258,8 @@ font-size: 14px;
 }
 
 .foto-profil {
-  width: 170px;
-  height: 170px;
-  border-radius: 100%;
+  width: 200px;
+  height: 200px;
 }
 
 .detail-item {
@@ -337,15 +357,10 @@ input:disabled {
 }
 
 #double5{
-  flex: 1;
-  background-color: #edfdff;
-  padding-top: 30px;
+  flex: 0;
+  background-color: #f4feff;
+  padding: 15px;
   border-radius: 10px;
-  margin-top: 0;
-}
-
-.bagian1{
-  flex: 2;
 }
 
 /* css input mahasiswa */
