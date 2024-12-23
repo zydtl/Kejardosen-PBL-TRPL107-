@@ -381,3 +381,7 @@ input:disabled {
   display: flex;
   gap: 20px;
 }
+
+.hidden {
+  display: none;
+}
