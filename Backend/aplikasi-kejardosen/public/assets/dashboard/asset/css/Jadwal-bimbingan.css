@@ -30,7 +30,53 @@ body {
 
 
 /* status */
-.status-ongoing {
+.status-finish {
+    color: grey;
+    background-color: #cccccc9c;
+    padding: 3px 15px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .status-cancel {
+    color: #A70606;
+    background-color: #FFC6BA;
+    padding: 3px 15px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .status-waiting {
+    color: #83831E;
+    background-color: #FFF97E;
+    padding: 3px 15px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .status-resched {
+    color: #83831E;
+    background-color: #FFF97E;
+    padding: 3px 15px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .status-ongoing {
+    color: #1F819B;
+    background-color: #95DFEA;
+    padding: 8px 15px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    font-size: 10px;
+    font-weight: 600;
+  }
+  
+  .status-accept {
     color: #129D2E;
     background-color: #BAFFBA;
     padding: 8px 15px;
@@ -38,27 +84,7 @@ body {
     border-radius: 15px;
     font-size: 10px;
     font-weight: 600;
-}
-
-.status-reject {
-    color: #A70606;
-    background-color: #FFC6BA;
-    padding: 8px 15px;
-    margin-bottom: 5px;
-    border-radius: 15px;
-    font-size: 10px;
-    font-weight: 600;
-}
-
-.status-waiting {
-    color: #83831E;
-    background-color: #FFF97E;
-    padding: 8px 15px;
-    margin-bottom: 5px;
-    border-radius: 15px;
-    font-size: 10px;
-    font-weight: 600;
-}
+  }
 
 /* icon aksi */
 .col button {
