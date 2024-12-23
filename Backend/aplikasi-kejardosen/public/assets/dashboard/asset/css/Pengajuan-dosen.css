@@ -85,6 +85,16 @@ body {
   font-weight: 600;
 }
 
+.status-ongoing {
+  color: #129D2E;
+  background-color: #BAFFBA;
+  padding: 8px 15px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
 /* icon aksi */
 .col i {
   background-color: #B1E8F0;
