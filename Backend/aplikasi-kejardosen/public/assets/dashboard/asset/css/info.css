@@ -16,27 +16,6 @@ body {
 
 
 /* status */
-.status-accept {
-  color: #129D2E;
-  background-color: #BAFFBA;
-  padding: 3px 15px;
-  border-radius: 15px;
-  font-size: 15px;
-  font-weight: 600;
-  margin-right: 10px;
-}
-
-.status-ongoing {
-  color: #129D2E;
-  background-color: #BAFFBA;
-  padding: 8px 15px;
-  margin-bottom: 5px;
-  border-radius: 15px;
-  font-size: 10px;
-  font-weight: 600;
-  margin-right: 10px;
-}
-
 .status-finish {
   color: grey;
   background-color: #cccccc9c;
@@ -44,7 +23,6 @@ body {
   border-radius: 15px;
   font-size: 15px;
   font-weight: 600;
-  margin-right: 10px;
 }
 
 .status-cancel {
@@ -54,7 +32,6 @@ body {
   border-radius: 15px;
   font-size: 15px;
   font-weight: 600;
-  margin-right: 10px;
 }
 
 .status-waiting {
@@ -64,7 +41,6 @@ body {
   border-radius: 15px;
   font-size: 15px;
   font-weight: 600;
-  margin-right: 10px;
 }
 
 .status-resched {
@@ -74,7 +50,25 @@ body {
   border-radius: 15px;
   font-size: 15px;
   font-weight: 600;
-  margin-right: 10px;
+}
+
+.status-ongoing {
+  color: #1F819B;
+  background-color: #95DFEA;
+  padding: 8px 15px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.status-accept {
+  color: #129D2E;
+  background-color: #BAFFBA;
+  padding: 3px 15px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 
