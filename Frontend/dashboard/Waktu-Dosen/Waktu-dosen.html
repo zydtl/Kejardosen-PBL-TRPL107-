@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../asset/img/kejardosen-logo-circle.png">
+    <title>Waktu Dosen - Dosen</title>
+    <link rel="stylesheet" href="../asset/css/logbook.css">
+    <link rel="stylesheet" href="../asset/css/sidebar-navbar.css">
+
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css">    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <!-- HAMBURGER BUTTON -->
+        <button onclick="toggleSidebar()" class="toggle-button">&#9776;</button>
+        <div class="navbar-right">
+            <a href="/"><i class="fi fi-br-bell"></i></a>
+            <a href="/"><i class="fi fi-br-power"></i></a>
+            <a href="/"><img src="../asset/img/avatar-dosen.png" alt="User Profile" class="profile-icon"></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="logo-section">
+                <a href="/"><img src="../asset/img/logokjrdns.png" alt="Kejardosen Logo" class="logokjr"/></a>
+            </div>
+            <ul class="menu">
+                <li><a href="/"><i class="fi fi-br-home"></i> <span class="menu-text">Beranda</span></a></li>
+                <li><a href="/"><i class="fi fi-br-graduation-cap"></i> <span class="menu-text">Pengajuan</span></a></li>
+                <li><a href="/"><i class="fi fi-br-list-check"></i> <span class="menu-text">Jadwal Bimbingan</span></a></li>
+                <li><a href="/"><i class="fi fi-br-calendar"></i> <span class="menu-text">Kalender</span></a></li>
+                <li><a href="/"><i class="fi fi-br-memo"></i> <span class="menu-text">Logbook</span></a></li>
+                <li class="menu-item has-submenu">
+                    <div class="submenu-toggle">
+                        <i class="fi fi-br-time-past"></i> <span class="menu-text">Riwayat</span>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="/"><i class="fi fi-br-time-past"></i> <span class="menu-text">Riwayat Pengajuan</span></a></li>
+                        <li><a href="/"><i class="fi fi-br-time-past"></i> <span class="menu-text">Riwayat Jadwal Bimbingan</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="/"><i class="fi fi-br-user"></i> <span class="menu-text">Profil</span></a></li>
+            </ul>
+        </aside>
+
+         <!-- Main Content -->
+         <div class="main-content">
+            <div class="title"><h1>Waktu</h1></div>
+            <ul class="responsive-table-daftar">
+                <li class="table-header">
+                    <div class="col col-1">Hari</div>
+                    <div class="col col-2">Status</div>
+                    <div class="col col-3">Edit</div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="Hari">Senin</div>
+                    <div class="col col-2" data-label="Status">Aktif</div>
+                    <div class="col col-3" data-label="Edit">
+                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
+                    </div>
+                </li>
+                <li class="table-row">
+                    <div class="col col-1" data-label="Hari">Selasa</div>
+                    <div class="col col-2" data-label="Status">Tidak Aktif</div>
+                    <div class="col col-3" data-label="Edit">
+                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
+                    </div>
+                </li><li class="table-row">
+                    <div class="col col-1" data-label="Hari">Rabu</div>
+                    <div class="col col-2" data-label="Status">Tidak Aktif</div>
+                    <div class="col col-3" data-label="Edit">
+                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
+                    </div>
+                </li><li class="table-row">
+                    <div class="col col-1" data-label="Hari">Kamis</div>
+                    <div class="col col-2" data-label="Status">Tidak Aktif</div>
+                    <div class="col col-3" data-label="Edit">
+                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
+                    </div>
+                </li><li class="table-row">
+                    <div class="col col-1" data-label="Hari">Jumat</div>
+                    <div class="col col-2" data-label="Status">Tidak Aktif</div>
+                    <div class="col col-3" data-label="Edit">
+                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
+                    </div>
+                </li><li class="table-row">
+                    <div class="col col-1" data-label="Hari">Sabtu</div>
+                    <div class="col col-2" data-label="Status">Tidak Aktif</div>
+                    <div class="col col-3" data-label="Edit">
+                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
+                    </div>
+                </li><li class="table-row">
+                    <div class="col col-1" data-label="Hari">Minggu</div>
+                    <div class="col col-2" data-label="Status">Tidak Aktif</div>
+                    <div class="col col-3" data-label="Edit">
+                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+        /* Popup styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .popup.active {
+            display: block;
+        }
+
+        .popup-header {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .popup-footer {
+            text-align: right;
+        }
+
+        .popup-footer button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup-footer .close-btn {
+            background-color: #ccc;
+        }
+
+        .popup-footer .save-btn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .main-content {
+            margin-left: 250px; /* Adjust to fit the sidebar */
+            padding: 20px;
+        }
+    </style>
+
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-header">
+            <strong>Edit Status</strong>
+        </div>
+        <div class="popup-body">
+            <label for="status"><strong>Pilih Status:</strong></label>
+            <select id="status" name="status">
+                <option value="Aktif">Aktif</option>
+                <option value="Tidak Aktif">Tidak Aktif</option>
+            </select>
+        </div>
+        <div class="popup-footer">
+            <button class="close-btn" onclick="togglePopup()">Tutup</button>
+            <button class="save-btn" id="save-btn">Simpan</button>
+        </div>
+    </div>
+
+    <script>
+        let currentStatusElement;
+
+        function togglePopup() {
+            const popup = document.getElementById("popup");
+            popup.classList.toggle("active");
+        }
+
+        document.querySelectorAll(".btn-edit").forEach(button => {
+            button.addEventListener("click", function () {
+                currentStatusElement = this.parentElement.previousElementSibling;
+                const currentStatus = currentStatusElement.textContent;
+                document.getElementById("status").value = currentStatus;
+                togglePopup();
+            });
+        });
+
+        document.getElementById("save-btn").addEventListener("click", function () {
+            const newStatus = document.getElementById("status").value;
+            if (currentStatusElement) {
+                currentStatusElement.textContent = newStatus;
+            }
+            togglePopup();
+        });
+    </script>
+
+</body>
+</html>
