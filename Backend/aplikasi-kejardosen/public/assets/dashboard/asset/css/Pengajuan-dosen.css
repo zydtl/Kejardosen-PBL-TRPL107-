@@ -86,6 +86,16 @@ body {
 }
 
 .status-ongoing {
+  color: #1F819B;
+  background-color: #95DFEA;
+  padding: 8px 15px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.status-accept {
   color: #129D2E;
   background-color: #BAFFBA;
   padding: 8px 15px;
