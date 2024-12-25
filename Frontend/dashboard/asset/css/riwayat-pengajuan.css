@@ -28,32 +28,39 @@ body {
     border-collapse: collapse;
 }
 
-/* status */
+/* status untuk semua*/
+.status-accept, .status-ongoing, .status-reject, .status-cancel, 
+.status-waiting, .status-delay, .status-resched, .status-finish {
+  padding: 8px 15px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
 .status-accept {
-    color: #129D2E;
-    background-color: #BAFFBA;
-    padding: 3px 15px;
-    border-radius: 15px;
-    font-size: 15px;
-    font-weight: 600;
+  color: #129D2E;
+  background-color: #BAFFBA;
 }
 
-.status-reject {
-    color: #A70606;
-    background-color: #FFC6BA;
-    padding: 3px 15px;
-    border-radius: 15px;
-    font-size: 15px;
-    font-weight: 600;
+.status-ongoing {
+  color: #1F819B;
+  background-color: #B1E8F0;
 }
 
-.status-resched {
-    color: #83831E;
-    background-color: #FFF97E;
-    padding: 3px 15px;
-    border-radius: 15px;
-    font-size: 15px;
-    font-weight: 600;
+.status-reject, .status-cancel {
+  color: #A70606;
+  background-color: #FFC6BA;
+}
+
+.status-waiting, .status-delay .status-resched{
+  color: #83831E;
+  background-color: #FFF97E;
+}
+
+.status-finish {
+  color: grey;
+  background-color: #cccccc9c;
 }
 
 /* icon aksi */
