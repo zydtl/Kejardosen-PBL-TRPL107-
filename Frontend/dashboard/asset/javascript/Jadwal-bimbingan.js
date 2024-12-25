@@ -57,6 +57,41 @@ document.querySelectorAll(".btn-tolak").forEach((button) => {
     });
 });
 
+// JS VERIFIKASI BIMBINGAN SELESAI MAHASISWA
+const btnSelesai = document.querySelector('.btn-selesai');
+btnSelesai.addEventListener('click', function (e) {
+    e.preventDefault(); 
+    Swal.fire({
+        title: 'Apakah Anda yakin?',
+        text: 'Tandai sesi ini sebagai selesai.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#22a0b8', 
+        cancelButtonColor: '#95dfea', 
+        confirmButtonText: 'Ya, selesai!',
+        cancelButtonText: 'Batal',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Bimbingan Selesai',
+                text: 'Sesi bimbingan berhasil ditandai selesai!',
+                confirmButtonColor: '#22a0b8',
+              }).then(() => {
+                Swal.fire({
+                  icon: 'info',
+                  title: 'Pengingat!',
+                  text: 'Harap segera melengkapi logbook Anda untuk sesi bimbingan ini.',
+                  confirmButtonColor: '#22a0b8',
+                });
+              });
+
+            // Aksi tambahan di sini (contoh: mengirim data ke server)
+        }
+    });
+});
+
+
 
 // JS MODAL TUNDA BIMBINGAN DOSEN
 

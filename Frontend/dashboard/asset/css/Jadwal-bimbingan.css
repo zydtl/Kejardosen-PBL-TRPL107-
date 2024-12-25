@@ -91,6 +91,11 @@ body {
     margin-left: 3px;
 }
 
+.col .btn-selesai {
+    background-color: rgb(32, 188, 32);
+    margin-left: 3px;
+}
+
 .table-header, .table-row {
     display: flex;
     justify-content: space-between;
