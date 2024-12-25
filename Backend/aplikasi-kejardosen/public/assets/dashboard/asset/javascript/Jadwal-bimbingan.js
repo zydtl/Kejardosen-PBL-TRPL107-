@@ -56,3 +56,98 @@ document.querySelectorAll(".btn-tolak").forEach((button) => {
         }
     });
 });
+
+// JS VERIFIKASI BIMBINGAN SELESAI MAHASISWA
+const btnSelesai = document.querySelector('.btn-selesai');
+btnSelesai.addEventListener('click', function (e) {
+    e.preventDefault(); 
+    Swal.fire({
+        title: 'Apakah Anda yakin?',
+        text: 'Tandai sesi ini sebagai selesai.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#22a0b8', 
+        cancelButtonColor: '#95dfea', 
+        confirmButtonText: 'Ya, selesai!',
+        cancelButtonText: 'Batal',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Bimbingan Selesai',
+                text: 'Sesi bimbingan berhasil ditandai selesai!',
+                confirmButtonColor: '#22a0b8',
+              }).then(() => {
+                Swal.fire({
+                  icon: 'info',
+                  title: 'Pengingat!',
+                  text: 'Harap segera melengkapi logbook Anda untuk sesi bimbingan ini.',
+                  confirmButtonColor: '#22a0b8',
+                });
+              });
+
+            // Aksi tambahan di sini (contoh: mengirim data ke server)
+        }
+    });
+});
+
+
+
+// JS MODAL TUNDA BIMBINGAN DOSEN
+
+const modalTunda = document.querySelector('#formTundaDosen');
+const closeModal = document.querySelector('.close-modal');
+const modalOverlay = document.querySelector('.modal-overlay');
+const btnTunda = document.querySelector('.btn-tunda');
+const formTunda = document.querySelector('#tunda');
+
+// Fungsi untuk membuka modal
+function openModal() {
+    modalTunda.classList.remove('hidden');
+}
+
+// Fungsi untuk menutup modal
+function closeModalHandler() {
+    modalTunda.classList.add('hidden');
+}
+
+// Event listener untuk tombol tutup
+closeModal.addEventListener('click', closeModalHandler);
+
+// Event listener untuk klik di luar modal (overlay)
+modalOverlay.addEventListener('click', closeModalHandler);
+
+// Buka modal saat tombol "Tunda" ditekan
+btnTunda.addEventListener('click', openModal);
+
+// Validasi saat formulir dikirimkan
+formTunda.addEventListener('submit', function (e) {
+    e.preventDefault(); // Mencegah form terkirim
+
+    const tanggalAnjuran = document.querySelector('#tanggal-anjuran').value;
+    const waktuAnjuran = document.querySelector('#waktu-anjuran').value;
+    const catatanTunda = document.querySelector('#catatan-tunda').value;
+
+    // Periksa apakah semua input sudah diisi
+    if (!tanggalAnjuran || !waktuAnjuran || !catatanTunda) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Input Tidak Lengkap',
+            text: 'Harap isi semua bidang sebelum mengirimkan!',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#22a0b8',
+        });
+    } else {
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil',
+            text: 'Penundaan berhasil diajukan!',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#22a0b8',
+        }).then(() => {
+            closeModalHandler(); // Tutup modal setelah sukses
+            formTunda.reset(); // Reset form
+        });
+    }
+});
+

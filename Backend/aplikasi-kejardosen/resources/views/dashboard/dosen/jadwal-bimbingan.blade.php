@@ -26,15 +26,60 @@
                 <div class="col col-2" data-label="NIM">4342401057</div>
                 <div class="col col-3" data-label="Tanggal Bimbingan">12 September 2024</div>
                 <div class="col col-4" data-label="Waktu Bimbingan">09.00 WIB</div>
-                <div class="col col-5" data-label="Status"><span class="status-ongoing">Sedang Berlangsung</span></div>
-                <!-- <div class="col col-5" data-label="Status"><span class="status-waiting">Menunggu Jadwal</span></div> -->
+                <div class="col col-5" data-label="Status"><span class="status-ongoing">Berlangsung</span></div>
+                <!-- <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div> -->
+                <!-- <div class="col col-5" data-label="Status"><span class="status-delay">Ditunda</span></div> -->
+                <!-- <div class="col col-5" data-label="Status"><span class="status-finish">Selesai</span></div> -->
                 <div class="col col-6" data-label="Aksi">
-                    <button class="btn-info"><i class="fi fi-br-info info"></i></button>
-                    <button class="btn-tolak" data-role="dosen"><i class="fi fi-br-ban delete"></i></button>
+                    <button class="btn-tolak" title="Batalkan" data-role="dosen"><i class="fi fi-br-ban delete"></i></button>
+                    <button class="btn-info" title="Info"><i class="fi fi-br-info info"></i></button>
+                    <button class="btn-tunda" title="Tunda"><i class="fi fi-br-pending delay"></i></button> 
                 </div>
             </li>
         </ul>
-    </div>      
+    </div>     
+@endsection
+
+@section('modalDosen')
+    <div id="formTundaDosen" class="modal-tunda hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="close-modal" title="Tutup">&times;</button>
+            <h2>Penundaan Jadwal Bimbingan</h2>
+            <div class="waktu-bimbingan-before">
+                <div class="datetime">
+                    <div class="detail-group">
+                        <div class="detail">
+                            <label>Tanggal Bimbingan</label>
+                            <div class="value disabled-input">12 September 2024</div>
+                        </div>
+                        <div class="detail">
+                            <label>Waktu Bimbingan</label>
+                            <div class="value disabled-input">09:00 WIB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form action="/" id="tunda" class="form-aksi">
+                <div class="form-group">
+                    <label for="tanggal-anjuran">Tanggal Penundaan</label>
+                    <input type="date" id="tanggal-anjuran" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="waktu-anjuran">Waktu Penundaan</label>
+                    <input type="time" id="waktu-anjuran" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="catatan-tunda">Catatan Dosen</label>
+                    <textarea id="catatan-tunda" class="form-control" rows="4"
+                        placeholder="Tambahkan catatan untuk mahasiswa"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn-submit-tunda">Kirim</button>
+                </div>
+            </form>
+        </div>
+    </div>
 @endsection
 
 @section('js')
