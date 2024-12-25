@@ -84,5 +84,5 @@
 
 @section('js')
     <script src="{{asset('assets/dashboard/asset/javascript/sidebar-navbar.js')}}"></script>
-    <script src="{{asset('assets/dashboard/asset/javascript/Jadwal-bimbingan.js')}}"></script>
+    <script src="{{asset('assets/dashboard/asset/javascript/Jadwal-bimbinga-dsn.js')}}"></script>
 @endsection
