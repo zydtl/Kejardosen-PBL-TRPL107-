@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../asset/img/kejardosen-logo-circle.png">
-    <title>Waktu Dosen - Dosen</title>
-    <link rel="stylesheet" href="../asset/css/logbook.css">
+    <title>Waktu Bimbingan - Dosen</title>
+    <link rel="stylesheet" href="../asset/css/waktu-dosen.css">
     <link rel="stylesheet" href="../asset/css/sidebar-navbar.css">
-
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.7/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css">    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+   
 </head>
 <body>
     <header class="navbar">
-        <!-- HAMBURGER BUTTON -->
+        <!-- HUMBURGER BUTTON -->
         <button onclick="toggleSidebar()" class="toggle-button">&#9776;</button>
         <div class="navbar-right">
             <a href="/"><i class="fi fi-br-bell"></i></a>
             <a href="/"><i class="fi fi-br-power"></i></a>
-            <a href="/"><img src="../asset/img/avatar-dosen.png" alt="User Profile" class="profile-icon"></a>
+            <a href="/"><img src="../asset/img/avatar.png" alt="User Profile" class="profile-icon"></a>
         </div>
     </header>
 
     <div class="container">
         <!-- Sidebar -->
         <aside id="sidebar" class="sidebar">
+            <!-- logo -->
             <div class="logo-section">
                 <a href="/"><img src="../asset/img/logokjrdns.png" alt="Kejardosen Logo" class="logokjr"/></a>
             </div>
@@ -47,158 +53,101 @@
             </ul>
         </aside>
 
-         <!-- Main Content -->
-         <div class="main-content">
-            <div class="title"><h1>Waktu</h1></div>
-            <ul class="responsive-table-daftar">
-                <li class="table-header">
-                    <div class="col col-1">Hari</div>
-                    <div class="col col-2">Status</div>
-                    <div class="col col-3">Edit</div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Hari">Senin</div>
-                    <div class="col col-2" data-label="Status">Aktif</div>
-                    <div class="col col-3" data-label="Edit">
-                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="title">
+                <h1>Waktu Bimbingan</h1>
+            </div>
+            <div class="card-welcome">
+                <div class="text">
+                    <h1>Atur jadwal bimbingan Anda</h1>
+                    <div class="slogan">Hari yang Anda pilih akan digunakan sebagai default untuk semua minggu kecuali Anda membuat perubahan.</div>
+                    <div class="contoh-warna">
+                        <div class="contoh-warna-aktif"></div> 
+                        <p>hari aktif</p>
+                        <div class="contoh-warna-tidak-aktif"></div>
+                        <p>hari tidak aktif</p>
                     </div>
-                </li>
-                <li class="table-row">
-                    <div class="col col-1" data-label="Hari">Selasa</div>
-                    <div class="col col-2" data-label="Status">Tidak Aktif</div>
-                    <div class="col col-3" data-label="Edit">
-                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
-                    </div>
-                </li><li class="table-row">
-                    <div class="col col-1" data-label="Hari">Rabu</div>
-                    <div class="col col-2" data-label="Status">Tidak Aktif</div>
-                    <div class="col col-3" data-label="Edit">
-                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
-                    </div>
-                </li><li class="table-row">
-                    <div class="col col-1" data-label="Hari">Kamis</div>
-                    <div class="col col-2" data-label="Status">Tidak Aktif</div>
-                    <div class="col col-3" data-label="Edit">
-                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
-                    </div>
-                </li><li class="table-row">
-                    <div class="col col-1" data-label="Hari">Jumat</div>
-                    <div class="col col-2" data-label="Status">Tidak Aktif</div>
-                    <div class="col col-3" data-label="Edit">
-                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
-                    </div>
-                </li><li class="table-row">
-                    <div class="col col-1" data-label="Hari">Sabtu</div>
-                    <div class="col col-2" data-label="Status">Tidak Aktif</div>
-                    <div class="col col-3" data-label="Edit">
-                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
-                    </div>
-                </li><li class="table-row">
-                    <div class="col col-1" data-label="Hari">Minggu</div>
-                    <div class="col col-2" data-label="Status">Tidak Aktif</div>
-                    <div class="col col-3" data-label="Edit">
-                        <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
-                    </div>
-                </li>
-            </ul>
+                </div>
+                <img class="img-welcome-dosen" src="../asset/img/pilih-waktu.svg" alt="" />
+            </div>
+            <div class="card-hari">
+                <div class="card-header">
+                    <div class="header-text">Jadwal Anda:</div>
+                    <button class="atur-jadwal-btn">Atur Jadwal</button>
+                </div>
+            
+                <div class="hari" id="kondisi-senin">
+                    <h3>Senin</h3>
+                </div>
+                <div class="hari" id="kondisi-selasa">
+                    <h3>Selasa</h3>
+                </div>
+                <div class="hari" id="kondisi-rabu">
+                    <h3>Rabu</h3>
+                </div>
+                <div class="hari" id="kondisi-kamis">
+                    <h3>Kamis</h3>
+                </div>
+                <div class="hari" id="kondisi-jumat">
+                    <h3>Jumat</h3>
+                </div>
+                <div class="hari" id="kondisi-sabtu">
+                    <h3>Sabtu</h3>
+                </div>
+                <div class="hari" id="kondisi-minggu">
+                    <h3>Minggu</h3>
+                </div>
+            </div>            
         </div>
     </div>
 
-    <style>
-        /* Popup styling */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            background-color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            z-index: 1000;
-        }
-
-        .popup.active {
-            display: block;
-        }
-
-        .popup-header {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        .popup-footer {
-            text-align: right;
-        }
-
-        .popup-footer button {
-            margin-left: 10px;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .popup-footer .close-btn {
-            background-color: #ccc;
-        }
-
-        .popup-footer .save-btn {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .main-content {
-            margin-left: 250px; /* Adjust to fit the sidebar */
-            padding: 20px;
-        }
-    </style>
-
-    <!-- Popup -->
-    <div class="popup" id="popup">
-        <div class="popup-header">
-            <strong>Edit Status</strong>
-        </div>
-        <div class="popup-body">
-            <label for="status"><strong>Pilih Status:</strong></label>
-            <select id="status" name="status">
-                <option value="Aktif">Aktif</option>
-                <option value="Tidak Aktif">Tidak Aktif</option>
-            </select>
-        </div>
-        <div class="popup-footer">
-            <button class="close-btn" onclick="togglePopup()">Tutup</button>
-            <button class="save-btn" id="save-btn">Simpan</button>
+    <div class="modalAturHari hidden" id="modalAturHari">
+        <div class="modal-content">
+            <h3>Atur Waktu</h3>
+            <form id="form-atur-hari">
+                <div class="atur-hari">
+                    <label for="senin">Senin:</label>
+                    <input type="checkbox" id="senin" name="senin" value="senin">
+                </div>
+                <div class="atur-hari">
+                    <label for="selasa">Selasa:</label>
+                    <input type="checkbox" id="selasa" name="selasa" value="selasa">
+                </div>
+                <div class="atur-hari">
+                    <label for="rabu">Rabu:</label>
+                    <input type="checkbox" id="rabu" name="rabu" value="rabu">
+                </div>
+                <div class="atur-hari">
+                    <label for="kamis">Kamis:</label>
+                    <input type="checkbox" id="kamis" name="kamis" value="kamis">
+                </div>
+                <div class="atur-hari">
+                    <label for="jumat">Jumat:</label>
+                    <input type="checkbox" id="jumat" name="jumat" value="jumat">
+                </div>
+                <div class="atur-hari">
+                    <label for="sabtu">Sabtu:</label>
+                    <input type="checkbox" id="sabtu" name="sabtu" value="sabtu">
+                </div>
+                <div class="atur-hari">
+                    <label for="minggu">Minggu:</label>
+                    <input type="checkbox" id="minggu" name="minggu" value="minggu">
+                </div>
+                <button type="button" id="btn-simpan">Simpan</button>
+            </form>
         </div>
     </div>
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.7/dist/sweetalert2.min.js"></script>
+    <script src="../asset/javascript/waktu-dosen.js"></script>
+    <script src="../asset/javascript/sidebar-navbar.js"></script>
 
-    <script>
-        let currentStatusElement;
-
-        function togglePopup() {
-            const popup = document.getElementById("popup");
-            popup.classList.toggle("active");
-        }
-
-        document.querySelectorAll(".btn-edit").forEach(button => {
-            button.addEventListener("click", function () {
-                currentStatusElement = this.parentElement.previousElementSibling;
-                const currentStatus = currentStatusElement.textContent;
-                document.getElementById("status").value = currentStatus;
-                togglePopup();
-            });
-        });
-
-        document.getElementById("save-btn").addEventListener("click", function () {
-            const newStatus = document.getElementById("status").value;
-            if (currentStatusElement) {
-                currentStatusElement.textContent = newStatus;
-            }
-            togglePopup();
-        });
-    </script>
 
 </body>
+
 </html>
