@@ -1,0 +1,282 @@
+.main-content {
+    background-color: #f1f5f5;
+    overflow-y: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.card-hari {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    gap: 10px;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 400;
+    transition: all 0.5s ease;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.header-text {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+}
+
+.atur-jadwal-btn {
+    background-color: #3EBCD2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.atur-jadwal-btn:hover {
+    background-color: #1ca6be;
+}
+
+.hari {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #f9f9f9;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.032);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hari:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hari h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+.card-hari:hover {
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hari {
+    flex: 1;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 0;
+    border-radius: 10px;
+    background-color: #ddd;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hari.checked {
+    background-color: #B1E8F0; /* Warna ketika di ceklis */
+    color: black; /* Opsional: warna teks */
+}
+
+@media screen and (max-width: 768px) {
+    .hari {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hari {
+        flex: 1 1 100%;
+    }
+}
+
+.card-welcome {
+    display: flex;
+    height: 250px;
+    margin-top: 20px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.06);
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.card-welcome:hover {
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.img-welcome-dosen {
+    width: 250px;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+}
+
+.slogan {
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.sidebar.expanded .card-welcome {
+    width: 200px;
+}
+
+
+/* Modal Atur Jadwal */
+.modalAturHari {
+    display: none; /* Default: modal disembunyikan */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang gelap transparan */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Pastikan modal berada di atas elemen lain */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+    text-align: center;
+}
+
+.modal-content h3 {
+    margin-bottom: 10px;
+}
+
+.atur-hari {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+.atur-hari:hover {
+    background-color: #f0f8ff;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    flex: 1;
+    text-align: left;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #3EBCD2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #1ca6be;
+    transform: scale(1.05);
+}
+
+/* Tambahkan animasi untuk modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsif untuk modal */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+.contoh-warna {
+    display: flex;
+    gap: 10px;
+}
+
+.contoh-warna-aktif {
+    background-color: #B1E8F0;
+    border-radius: 100%;
+
+}
+
+.contoh-warna-tidak-aktif {
+    background-color: #ddd;
+    border-radius: 100%;
+
+}
+
+.contoh-warna-aktif, .contoh-warna-tidak-aktif {
+    padding: 10px;
+    width: 10px;
+    height: 10px;
+    margin-top: 20px;
+}
+
+.contoh-warna p {
+    margin-top: 20px;
+}
