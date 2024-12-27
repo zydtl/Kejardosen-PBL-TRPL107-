@@ -25,7 +25,7 @@
                     <p>hari tidak aktif</p>
                 </div>
             </div>
-            <img class="img-welcome-dosen" src="../asset/img/pilih-waktu.svg" alt="" />
+            <img class="img-welcome-dosen" src="{{asset('assets/dashboard/asset/img/pilih-waktu.svg')}}"/>
         </div>
         <div class="card-hari">
             <div class="card-header">
