@@ -1,0 +1,422 @@
+/* General Styling */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f1f5f5;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex-grow: 1;
+    margin-top: 15px;
+    margin-left: 15px;
+    transition: margin-left 0.3s ease;
+    padding: 25px 40px;
+    overflow-x: hidden; /* Menghindari scroll tidak perlu */
+}
+
+/* Responsive Table */
+.responsive-table {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 100%; /* Lebar tabel disesuaikan dengan container */
+    max-width: 100%; /* Membatasi tabel agar tidak melebihi layar */
+    overflow-x: auto; /* Menambahkan scroll jika konten tabel melebihi layar */
+    border-collapse: collapse;
+}
+
+/* status untuk semua*/
+.status-accept, .status-ongoing, .status-reject, .status-cancel, 
+.status-waiting, .status-delay, .status-resched, .status-finish {
+  padding: 8px 15px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.status-accept {
+  color: #129D2E;
+  background-color: #BAFFBA;
+  font-size: 12.5px;
+}
+
+.status-ongoing {
+  color: #1F819B;
+  background-color: #B1E8F0;
+  font-size: 12.5px;
+}
+
+.status-reject, .status-cancel {
+  color: #A70606;
+  background-color: #FFC6BA;
+  font-size: 12.5px;
+}
+
+.status-waiting, .status-delay .status-resched{
+  color: #83831E;
+  background-color: #FFF97E;
+  font-size: 12.5px;
+}
+
+.status-finish {
+  color: grey;
+  background-color: #cccccc9c;
+  font-size: 12.5px;
+}
+
+/* icon aksi */
+.col i {
+    background-color: #B1E8F0;
+    color: #22A0B8;
+    border-radius: 10px;
+    padding: 8px 8px 4px 8px;
+    margin-bottom: 0;
+}
+
+.table-header, .table-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertical alignment */
+    padding: 15px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap; /* Membungkus jika tidak cukup ruang */
+}
+
+.table-header {
+    background-color: #B1E8F0;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-radius: 10px 10px 0 0;
+}
+
+.table-row {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table-row .col, .table-header .col {
+    flex: 1;
+    text-align: center;
+    word-wrap: break-word; /* Membungkus teks panjang */
+}
+
+.table-row .col-1, .table-header .col-1 {
+    flex: 0.5;
+}
+
+.table-row .col-2, .table-header .col-2 {
+    flex: 1; /* Adjust proportions */
+}
+
+.table-row .col-3, .table-header .col-3 {
+    flex: 0.7;
+}
+.table-row .col-4, .table-header .col-4 {
+    flex: 0.5;
+}
+
+.table-row .col-5, .table-header .col-5 {
+    flex: 0.5;
+}
+.table-row .col-6, .table-header .col-6 {
+    flex: 0.3;
+}
+
+.responsive-table-dsn {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 100%; /* Lebar tabel disesuaikan dengan container */
+    max-width: 100%; /* Membatasi tabel agar tidak melebihi layar */
+    overflow-x: auto; /* Menambahkan scroll jika konten tabel melebihi layar */
+    border-collapse: collapse;
+
+    .table-header, .table-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Vertical alignment */
+        padding: 15px 20px;
+        font-size: 14px;
+        border-bottom: 1px solid #ddd;
+        flex-wrap: wrap; /* Membungkus jika tidak cukup ruang */
+    }
+    
+    .table-header {
+        background-color: #B1E8F0;
+        color: #000;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .table-row {
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .table-row .col, .table-header .col {
+        flex: 1;
+        text-align: center;
+        word-wrap: break-word; /* Membungkus teks panjang */
+    }
+    
+    .table-row .col-1, .table-header .col-1 {
+        flex: 0.5;
+    }
+    
+    .table-row .col-2, .table-header .col-2 {
+        flex: 0.5; 
+    }
+    
+    .table-row .col-3, .table-header .col-3 {
+        flex: 1;
+    }
+    .table-row .col-4, .table-header .col-4 {
+        flex: 0.7;
+    }
+    
+    .table-row .col-5, .table-header .col-5 {
+        flex: 0.5;
+    }
+    .table-row .col-6, .table-header .col-6 {
+        flex: 0.5;
+    }
+    .table-row .col-7, .table-header .col-7 {
+        flex: 0.3;
+    }
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .table-header, .table-row {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .table-row .col, .table-header .col {
+        flex: 100%; /* Kolom menggunakan seluruh lebar layar */
+        text-align: left;
+    }
+}
+
+/* Pagination Styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    padding-bottom: 50px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid white;
+    background-color: #22A0B8;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.pagination button:hover {
+    background-color: #B1E8F0;
+    color: black;
+}
+
+.page-numbers {
+    display: flex;
+}
+
+.page-number {
+    padding: 8px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.page-number.active {
+    background-color: #B1E8F0;
+    color: white;
+}
+
+.page-number:hover {
+    background-color: #3EBCD2;
+    color: white;
+}
+
+/* Pencarian */
+.search-container {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#search-input {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    width: 40vh;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0), 0 0px 10px 0 rgba(0, 0, 0, 0.068);
+}
+/* Halaman Enroll Admin*/
+.container-fluid{
+    margin-left: 15%;
+}
+
+.roamer{
+    width: 99%;
+}
+
+.search-container img{
+    width:20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.search-container button{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 61%;
+}
+.band{
+    width: 100%;
+    border-radius:20px;
+    margin-bottom: 20px;
+    
+}
+
+
+
+#formModaldeletecapek{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display:none;
+    justify-content: center;
+    align-items: center;
+    z-index: 910101010101020220022020;
+    
+  }
+
+  .trpl{
+    width: 100%;
+  }
+
+.omega{
+    width: auto;
+}
+.connect{
+    width: 40%;
+    height: auto;
+}
+.woy{
+    margin-left: 0%;
+    margin-right: 5%;  
+} 
+
+.omega1{
+    width: 239%;
+    margin-right: 0;
+}
+.drum{
+    width: 100%;
+}
+.learning{
+    margin-right: 2%;
+}
+.rapsodi{
+    margin-top: 15%;
+}
+.kepala label{
+    width: 180%;
+    margin-left: 5%;
+}
+.rrq{
+    width: 167%;
+    margin-left:31%;
+}
+
+.mak .key{
+    width:  137%;
+    margin-right: 0%;
+}
+
+.kepala .pom{
+    margin-left: 33%;
+}
+.jiko{
+    height: auto;
+    width: auto;
+}
+
+.fun{
+    margin-left: 68%;
+}
+.fun1{
+    margin-right: 0%;
+}
+
+.waw{
+    height: auto;
+}
+
+  /* Halaman Lihat Bimbingan */
+  .apt{
+    width: 99%;
+  }
+
+  .apt .col-5{
+    margin-left: -13%;
+  }
+  .apt .col-2{
+    margin-left: -10%;
+  }
+
+
+/* Halaman Daftar Dosen */
+
+.responsive-table .vevo1{
+    margin-left: -15%;
+}
+.responsive-table .vevo{
+    margin-left: -25%;
+}
+.responsive-table .vevo2{
+    margin-left:-5% ;
+}
+.col-6 .silver{
+    display: none;
+}
+.if{
+    margin-right: 3%;
+}
+.keyne{
+    margin-left: 18%;
+}
+.pinggang{
+    width: 40%;
+}
+
+/* Halama Daftar Mahasiswa */
+.lagu{
+    width: 40%;
+  height: auto;
+}
+.hikari{
+    margin-right: 5%;
+    position:relative;
+}

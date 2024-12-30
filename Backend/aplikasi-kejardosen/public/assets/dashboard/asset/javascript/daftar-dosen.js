@@ -113,3 +113,157 @@ document.addEventListener("click", (event) => {
         });
     }
 });
+
+
+
+document.querySelector("#formDosen").addEventListener("submit", function (event) {
+    event.preventDefault(); // Mencegah submit form default
+
+    // Ambil nilai dari form
+    const nama = document.getElementById('nama').value;
+    const nik = document.getElementById('nik').value;
+    const jenisKelamin = document.getElementById('jenisKelamin').value;
+    const noTelp = document.getElementById('noTelp').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Tutup modal setelah submit
+    modalDosen.classList.remove('show');
+    modalDosen.querySelector('.modal1').classList.remove('show');
+
+    // Kirim data ke server menggunakan Fetch API
+    fetch('/admin/daftar-dosen', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        },
+        body: JSON.stringify({
+            "nama": nama,
+            "nik": nik,
+            "jenis_kelamin": jenisKelamin,
+            "no_telp": noTelp,
+            "email": email,
+            "password": password
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                Swal.fire({
+                    title: "Berhasil!",
+                    text: "Data dosen berhasil disimpan.",
+                    icon: "success",
+                    confirmButtonColor: "#22a0b8",
+                }).then(() => {
+                    // Refresh halaman atau bisa lakukan update UI sesuai kebutuhan
+                    location.reload();  // Contoh untuk refresh halaman
+                });
+            } else {
+                Swal.fire({
+                    title: "Gagal!",
+                    text: "Data dosen gagal disimpan.",
+                    icon: "error",
+                    confirmButtonColor: "#22a0b8",
+                });
+            }
+        })
+        .catch(error => {
+            Swal.fire({
+                title: "Error!",
+                text: "Terjadi kesalahan saat mengirim data.",
+                icon: "error",
+                confirmButtonColor: "#22a0b8",
+            });
+            console.error("Error:", error);
+        });
+});
+
+
+
+document.querySelectorAll('.btn-edit-dsn').forEach(button => {
+    button.addEventListener('click', function () {
+
+        const modal = document.querySelector('#editModalAdminDosen');
+        const form = modal.querySelector('#formEditDosen');
+        const nik = this.dataset.nik;
+        const tanggalPengajuan = this.dataset.tanggal1;
+        const tanggalAnjuranDosen = this.dataset.tanggal2;
+        const waktuPengajuan = this.dataset.waktu1;
+        const waktuAnjuranDosen = this.dataset.waktu2;
+        const judul_bimbingan = this.dataset.judul;
+        const catatanMahasiswa = this.dataset.catatanmahasiswa;
+        const catatanDosen = this.dataset.catatandosen;
+
+        // Set action URL
+        form.action = `/mahasiswa/pengajuan/update/${kodePengajuan}`;
+
+        // /mahasiswa/pengajuan/${kodePengajuan}/batalkan
+
+        // Set modal inputs
+        modal.querySelector('#nik').value = nik;
+        modal.querySelector('#tanggal2').value = tanggalAnjuranDosen;
+        modal.querySelector('#waktu1').value = waktuPengajuan;
+        modal.querySelector('#waktu2').value = waktuAnjuranDosen;
+        modal.querySelector('#judulbimbingan').value = judul_bimbingan;
+        modal.querySelector('#catatanmahasiswa').value = catatanMahasiswa;
+        modal.querySelector('#catatandosen').value = catatanDosen;
+
+        // Show modal
+        modal.classList.add('show');
+        modal.style.display = 'flex';
+
+        // Handle form submission with AJAX
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();  // Prevent the default form submission
+
+            const formData = new FormData(form);  // Create FormData object from the form
+
+            // Send the data using fetch API (AJAX)
+            document.getElementById("formModal").style.display = "none";
+
+            fetch(form.action, {
+                method: 'PUT',  // Can use PUT for update
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({
+                    'nik': document.getElementById('nik').value,
+                    'waktu_pengajuan': document.getElementById('waktu1').value,
+                    'judul_bimbingan': document.getElementById('judulbimbingan').value,
+                    'catatan_mahasiswa': document.getElementById('catatanmahasiswa').value,
+                })
+            })
+                .then(response => response.json())  // Parse the JSON response from server
+                .then(data => {
+                    if (data.success) {
+                        Swal.fire({
+                            title: "Pengajuan diubah!",
+                            text: "Pengajuan Anda telah diubah.",
+                            icon: "success",
+                            confirmButtonColor: "#22a0b8",
+                        }).then(() => {
+                            const modal = document.querySelector('#formModaledit');
+                            modal.classList.remove('show');
+                            modal.style.display = 'none';
+                            location.reload();  // Refresh halaman setelah status dibatalkan
+                        });
+                    } else {
+                        Swal.fire({
+                            title: "Gagal Diubah!",
+                            text: "Pengajuan Anda gagal diubah.",
+                            icon: "error",
+                            confirmButtonColor: "#22a0b8",
+                        }).then(() => {
+                            location.reload();  // Refresh halaman setelah di edit
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Terjadi kesalahan, coba lagi');
+                });
+        });
+    });
+});

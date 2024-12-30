@@ -1,0 +1,425 @@
+/* Untuk template table kita */
+
+:root {
+  --primary: #3EBCD2;
+  --primary-100: #D5F5F8;
+}
+
+/* General Styling */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f1f5f5;
+}
+
+/* Main Content Styling */
+.main-content {
+  flex-grow: 1;
+  margin-top: 60px;
+  transition: margin-left 0.3s ease;
+  padding: 25px 40px;
+}
+
+/* Responsive Table */
+.responsive-table {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  max-width: 100%;
+}
+
+/* Pencarian */
+.search-container {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#search-input {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  width: 40vh;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0), 0 0px 10px 0 rgba(0, 0, 0, 0.068);
+}
+
+/* status */
+.status-finish {
+  color: grey;
+  background-color: #cccccc9c;
+  padding: 3px 15px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.status-cancel {
+  color: #A70606;
+  background-color: #FFC6BA;
+  padding: 3px 15px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.status-waiting {
+  color: #83831E;
+  background-color: #FFF97E;
+  padding: 3px 15px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.status-resched {
+  color: #83831E;
+  background-color: #FFF97E;
+  padding: 3px 15px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.status-ongoing {
+  color: #1F819B;
+  background-color: #95DFEA;
+  padding: 8px 15px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.status-accept {
+  color: #129D2E;
+  background-color: #BAFFBA;
+  padding: 3px 15px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* icon aksi */
+.col i {
+  background-color: #B1E8F0;
+  color: #22A0B8;
+  border-radius: 10px;
+  padding: 8px 8px 4px 8px;
+  margin-bottom: 0;
+}
+
+.table-header, .table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertical alignment */
+  padding: 15px 20px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-header {
+  background-color: #B1E8F0;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: 10px 10px 0 0;
+}
+
+.table-row {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table-row .col, .table-header .col {
+  flex: 1; /* All columns take equal width by default */
+  text-align: center; /* Horizontal alignment */
+}
+
+.table-row .col-1, .table-header .col-1 {
+  flex: 0.6;
+}
+
+.table-row .col-2, .table-header .col-2 {
+  flex: 1; /* Adjust proportions */
+}
+
+.table-row .col-3, .table-header .col-3 {
+  flex: 0.7;
+}
+
+.table-row .col-4, .table-header .col-4 {
+  flex: 0.7;
+}
+
+/* Pagination Styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding-bottom: 50px;
+}
+
+.pagination button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 1px solid white;
+  background-color: #22A0B8;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.pagination button:hover {
+  background-color: #B1E8F0;
+  color: black;
+}
+
+.page-numbers {
+  display: flex;
+}
+
+.page-number {
+  padding: 8px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.page-number.active {
+  background-color: #B1E8F0;
+  color: white;
+}
+
+.page-number:hover {
+  background-color: #3EBCD2;
+  color: white;
+}
+  
+
+/* Untuk Halaman Pengajuan Dosen */
+.utama{
+  margin-top: 35px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+ }
+.baris-pengajuan{
+  border-radius: 15px;
+  width: auto;
+  margin-bottom: 10px;
+  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.15);
+  height: 80px;
+}
+.baris-pengajuan img{
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  margin-left: 100px;
+}
+.baris-pengajuan h1{
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.baris-pengajuan a{
+  margin-right: -200px;
+}
+.baris-pengajuan div{
+  margin-left: -150px;
+}
+.baris-pengajuan .col-4{
+  margin-right: -60px;
+}
+
+
+/* Tombol */
+.btnku{
+  background-color: #00bcd4;
+  color: white;
+  margin-right: 210px;
+  
+}
+
+.btnku:active{
+  transform: scale(0.96);
+}
+
+.btn {
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 14px;
+}
+
+/* ini modal */
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0003;
+  overflow-y: scroll;
+  display: none;
+}
+
+.modal-content{
+  background-color: white;
+  width: 100%;
+  max-width: 768px;
+  padding: 40px;
+  margin: auto;
+  border-radius: 30px;
+}
+
+.pengajuan-split {
+  display: flex;
+  gap: 40px;
+}
+
+.bagian2{
+  width: 100%;
+}
+
+.profil {
+  text-align: center;
+}
+
+.foto-profil {
+  width: 200px;
+  height: 200px;
+}
+
+.detail-item {
+  margin: 20px;
+  text-align: center;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 50fr 50fr;
+  gap: 20px;
+}
+
+input, select, textarea {
+  width: 100%;
+  background-color: var(--primary-100);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.form-group {
+  margin: 10px 0;
+}
+
+.form-group button{
+  margin: 0;
+  width: 100%;
+}
+
+.form-group p {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+input:disabled {
+  background-color: #ddd;
+}
+
+.cancel {
+  text-align: right;
+}
+
+.cancel button {
+  background-color: red;
+  color: white;
+  border-radius: 100%;
+}
+
+.banding button{
+  margin: auto;
+}
+
+.banding {
+  text-align: center;
+}
+
+.respon button {
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  font-size: larger;
+  cursor: pointer;
+  color: white;
+  font-weight: 800;
+  border: none;
+  border-radius: 10px;
+}
+
+.respon .terima {
+  margin-left: 20px;
+  background-color: #40C34D;
+}
+
+.respon .tolak {
+  background-color: #FF3434;
+}
+
+.respon {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.kosong {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15%;
+  gap: 20px;
+}
+
+.kosong-img img {
+  width: 300px;
+}
+
+#double5{
+  flex: 0;
+  background-color: #f4feff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* css input mahasiswa */
+.detail {
+  margin-top: 5px;
+}
+
+.value {
+  padding: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 14px;
+  width: auto;
+}
+
+.datetime {
+  display: flex;
+  gap: 20px;
+}
+
+.hidden {
+  display: none;
+}
