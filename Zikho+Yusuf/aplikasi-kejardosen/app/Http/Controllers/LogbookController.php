@@ -80,60 +80,85 @@ class LogbookController extends Controller
     public function indexDosen()
     {
         // Mendapatkan dosen yang sedang login
-        $dosen = Auth::user();  // Menggunakan autentikasi dosen
-        
-        // Mengambil mahasiswa yang memiliki nik_dosen yang sama dengan dosen yang login
-        // Mengambil logbook terbaru untuk setiap mahasiswa
-        $mahasiswa = Mahasiswa::where('nik_dosen', $dosen->nik)
-            ->with(['logbook' => function($query) {
-                $query->latest()->first();  // Mengambil logbook terbaru
-            }])
-            ->get();
+        $dosen = Auth::user();
     
-        // Debug untuk melihat apakah data benar
-        dd($mahasiswa);
+        // Ambil mahasiswa yang dibimbing dosen dan logbook terbaru
+        $mahasiswa = Mahasiswa::with(['pengajuan.jadwal.logbooks' => function ($query) {
+            $query->latest('created_at'); // Ambil logbook terbaru berdasarkan waktu pembuatan
+        }])
+        ->whereHas('dosen', function ($query) use ($dosen) {
+            $query->where('nik', $dosen->nik); // Filter berdasarkan dosen yang login
+        })
+        ->get();
     
-        // Mengirimkan data mahasiswa beserta logbook ke view
+        // Kirim data ke view
         return view('dashboard.dosen.logbook', compact('mahasiswa'));
     }
-    
-    
-    
-    
 
-    // Halaman 2: Menampilkan seluruh logbook mahasiswa
+    // Halaman 2: Menampilkan seluruh logbook mahasiswa yang dipilih
     public function indexMahasiswaDosen($nim)
     {
-        // Query seluruh logbook berdasarkan NIM mahasiswa
-        $logbook = Logbook::where('nim_mahasiswa', $nim)
-            ->orderBy('updated_at', 'desc')
-            ->get();
-
+        // Ambil mahasiswa berdasarkan NIM dan semua logbook yang terkait
+        $mahasiswa = Mahasiswa::with(['pengajuan.jadwal.logbooks' => function ($query) {
+            $query->orderBy('created_at', 'asc'); // Urutkan berdasarkan waktu pembuatan dari terlama
+        }])
+        ->where('nim', $nim)
+        ->first();
+    
+        // Ambil semua logbook terkait mahasiswa
+        $logbook = $mahasiswa->pengajuan->flatMap->jadwal->flatMap->logbooks;
+    
+        // Kirim data ke view
         return view('dashboard.dosen.daftar-logbook', compact('logbook', 'nim'));
     }
+    
+    
 
     // Halaman 3: Menampilkan detail logbook tertentu
     public function showLogbookDetail($kodeLogbook)
     {
         // Query detail logbook berdasarkan kode logbook
-        $logbook = Logbook::where('kode_logbook', $kodeLogbook)->firstOrFail();
+        $logbook = Logbook::where('kodeLogbook', $kodeLogbook)->firstOrFail();
 
         return view('dashboard.dosen.form-logbook', compact('logbook'));
     }
 
-    // (Opsional) Simpan catatan dosen ke logbook
-    public function updateLogbook(Request $request, $kodeLogbook)
+    //tampil halaman edit logbook
+    public function formLogbookDosen($kodeLogbook)
+    {
+        $logbook = Logbook::where('kodeLogbook', $kodeLogbook)->first();
+
+        if (!$logbook) {
+            return redirect()->route('dosen.daftar-logbook')->with('error', 'Data tidak ditemukan.');
+        }
+
+        return view('dashboard.dosen.form-logbook', compact('logbook'));
+    }
+    
+    //Edit catatan dosen ke logbook
+    public function updateDosen(Request $request, $kodeLogbook)
     {
         $request->validate([
-            'catatan_dosen' => 'required|string',
+            'catatan_dosen' => 'nullable',
         ]);
 
         // Update logbook dengan catatan dosen
-        $logbook = Logbook::where('kode_logbook', $kodeLogbook)->firstOrFail();
-        $logbook->catatan_dosen = $request->input('catatan_dosen');
-        $logbook->save();
+        $logbook = Logbook::where('kodeLogbook', $kodeLogbook)->firstOrFail();
 
-        return redirect()->back()->with('success', 'Catatan dosen berhasil disimpan.');
+        // Ambil nim melalui relasi logbook -> jadwal -> pengajuan -> mahasiswa
+        $nim = $logbook->jadwal->pengajuan->mahasiswa->nim;
+
+        $logbook->update([
+
+            'catatan_dosen' => $request['catatan_dosen'] ?? $logbook->catatan_dosen, // Biarkan nilai lama jika kosong
+        ]);
+
+        // $logbook->catatan_dosen = $request->input('catatan_dosen');
+        // $logbook->save();
+
+        // Redirect dengan parameter nim
+        return redirect()->route('dosen.daftar-logbook', ['nim' => $nim])->with('success', 'Catatan dosen berhasil disimpan.');
+
     }
 
 

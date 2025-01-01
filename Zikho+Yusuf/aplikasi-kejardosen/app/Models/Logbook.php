@@ -32,16 +32,6 @@ class Logbook extends Model
     }
     
     
-    public function pengajuan()
-    {
-        return $this->hasOneThrough(
-            PengajuanJadwal::class,
-            JadwalBimbingan::class,
-            'kodeJadwal', // Foreign key di JadwalBimbingan
-            'kodePengajuan', // Foreign key di PengajuanJadwal
-            'kodeJadwal', // Local key di Logbook
-            'kodePengajuan' // Local key di JadwalBimbingan
-        );
-    }
+
     
 }

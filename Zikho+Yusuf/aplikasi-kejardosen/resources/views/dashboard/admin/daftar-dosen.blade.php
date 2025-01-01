@@ -11,7 +11,6 @@
 
 @section('content')
     <div class="main-content" >
-                        
         <div class="title"><h1>Daftar Dosen</h1></div>
         <div class="search-and-button">
             <div class="search-container">
@@ -34,19 +33,34 @@
                 <div class="col col-2" data-label="NIK/NIDN">
                     {{ $data->nik }}
                 </div>
-                <div class="col col-3" data-label="Aksi">
-                    <button id="info-dsn" class="btn-info-dsn"><i class="fi fi-br-info info"></i></button>
-                    <button id="edit-dsn" class="btn-edit-dsn" 
-                        data-nik="{{ $data->nik }}" 
-                        data-nama="{{ $data->nama_dosen }}" 
-                        data-password="{{ $data->password }}" 
-                        data-jenis_kelamin="{{ $data->jenis_kelamin }}" 
-                        data-no_telp="{{ $data->no_telp }}" 
-                        data-email="{{ $data->email }}"
-                    ><i class="fi fi-br-edit edit">
-                    </i></button>
-                    <button class="btn-hapus-dsn"><i class="fi fi-br-trash trash"></i></button>
-                </div>
+                    <div class="col col-3" data-label="Aksi">
+                        <button id="info-dsn" class="btn-info-dsn" 
+                            data-nik="{{ $data->nik }}" 
+                            data-nama="{{ $data->nama_dosen }}" 
+                            data-password="{{ $data->password }}" 
+                            data-jenis_kelamin="{{ $data->jenis_kelamin }}" 
+                            data-no_telp="{{ $data->no_telp }}" 
+                            data-email="{{ $data->email }}"
+                        ><i class="fi fi-br-info info"></i></button>
+                        <button id="edit-dsn" class="btn-edit-dsn" 
+                            data-nik="{{ $data->nik }}" 
+                            data-nama="{{ $data->nama_dosen }}" 
+                            data-password="{{ $data->password }}" 
+                            data-jenis_kelamin="{{ $data->jenis_kelamin }}" 
+                            data-no_telp="{{ $data->no_telp }}" 
+                            data-email="{{ $data->email }}"
+                        ><i class="fi fi-br-edit edit">
+                        </i></button>
+                        <button class="btn-hapus-dsn" 
+                            @if($data->has_mahasiswa) disabled style="
+                                background-color: #dcdcdc; 
+                                background-color: #dcdcdc; /* Warna latar belakang abu-abu */
+                                color: #a9a9a9; /* Warna teks abu-abu */
+                                cursor: not-allowed; /* Mengubah cursor menjadi tanda larangan */
+                                border: 1px solid #dcdcdc; /* Menyesuaikan border */
+                            " @endif
+                        ><i class="fi fi-br-trash trash"></i></button>
+                    </div>
             </li>
             @endforeach
         </ul>
@@ -130,7 +144,7 @@
                     <!-- Nama Dosen -->
                     <div class="form-group">
                         <label for="namaDosen">Nama Dosen</label>
-                        <div id="namaDosen" class="value">Dr. Ahmad Maulana</div>
+                        <div id="nama" class="value">Dr. Ahmad Maulana</div>
                     </div>
                     
                     <!-- NIK/NIDN -->
@@ -161,7 +175,7 @@
                     <!-- Password -->
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <div id="password" class="value">dosen123</div>
+                        <div id="password" class="value">Password Dosen gak boleh diintip ya...🤗🤗🤗</div>
                     </div>
                 </div>
             </div>

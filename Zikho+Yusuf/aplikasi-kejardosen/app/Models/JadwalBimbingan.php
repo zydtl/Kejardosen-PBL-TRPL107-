@@ -59,4 +59,11 @@ class JadwalBimbingan extends Model
             'nim'            // Local key di Mahasiswa
         );
     }
+
+
+    public function logbooks()
+    {
+        return $this->hasMany(Logbook::class, 'kodeJadwal', 'kodeJadwal');
+    }
+
 }

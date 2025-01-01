@@ -15,34 +15,34 @@
             <div class="title">
                 <h1>Riwayat Pengajuan</h1>
             </div>
-            <a href="{{ route('dosen.riwayat-jadwal-bimbingan') }}" class="btn btn-primary">Kembali</a>
+            <a href="{{ route('dosen.riwayat-pengajuan') }}" class="btn btn-primary">Kembali</a>
             {{-- <button class="btn btn-primary">Kembali</button> --}}
         </div>
         <div class="card-header">
             <div class="img-header"> <img
-                    src="{{ asset('assets/dashboard/asset/img/avatar-dosen.png') }}"alt="Profile Picture"
+                    src="{{ asset('assets/dashboard/asset/img/avatar.png') }}"alt="Profile Picture"
                     class="profile-pic"></div>
             <div class="text-header">
-                <b>Kode Jadwal: {{ $jadwal->kodeJadwal ?? '-' }}</b><br>
-                <small><b>Disepakati Pada:
-                    </b>{{ \Carbon\Carbon::parse($jadwal->created_at)->translatedFormat('l, d F Y') }} | <b>Jam :
-                    </b>{{ \Carbon\Carbon::parse($jadwal->created_at)->format('H:i') }} WIB</small>
+                <b>Kode Jadwal: {{ $pengajuan->kodePengajuan ?? '-' }}</b><br>
+                <small><b>Diajukan Pada:
+                    </b>{{ \Carbon\Carbon::parse($pengajuan->created_at)->translatedFormat('l, d F Y') }} | <b>Jam :
+                    </b>{{ \Carbon\Carbon::parse($pengajuan->created_at)->format('H:i') }} WIB</small>
                 </small>
             </div>
             <div class="col col-5" data-label="Status"><span
                     class="
-                        @if ($jadwal->status == 'menunggu' || $jadwal->status == 'alternatif' || $jadwal->status == 'ditunda') status-waiting
-                        @elseif($jadwal->status == 'dibatalkan' || $jadwal->status == 'ditolak') 
+                        @if ($pengajuan->status == 'menunggu' || $pengajuan->status == 'alternatif' || $pengajuan->status == 'ditunda') status-waiting
+                        @elseif($pengajuan->status == 'dibatalkan' || $pengajuan->status == 'ditolak') 
                             status-cancel
-                        @elseif($jadwal->status == 'diterima') 
+                        @elseif($pengajuan->status == 'diterima') 
                             status-accept
-                        @elseif($jadwal->status == 'berlangsung') 
+                        @elseif($pengajuan->status == 'berlangsung') 
                             status-ongoing
-                        @elseif($jadwal->status == 'disetujui') 
+                        @elseif($pengajuan->status == 'disetujui') 
                             status-accept                               
-                        @elseif($jadwal->status == 'diselesaikan') 
+                        @elseif($pengajuan->status == 'diselesaikan') 
                             status-finish @endif
-                    ">{{ $jadwal->status }}</span>
+                    ">{{ $pengajuan->status }}</span>
             </div>
         </div>
         <div class="detail-title">
@@ -50,79 +50,55 @@
         </div>
         <div class="detail">
             <div class="ket">Nama Mahasiswa</div>
-            <div class="isi">{{ $jadwal->pengajuan->mahasiswa->nama_mahasiswa ?? '-' }}</div>
+            <div class="isi">{{ $pengajuan->mahasiswa->nama_mahasiswa ?? '-' }}</div>
         </div>
         <div class="detail">
             <div class="ket">Kelas</div>
-            <div class="isi">{{ $jadwal->pengajuan->mahasiswa->kelas ?? '-' }}</div>
+            <div class="isi">{{ $pengajuan->mahasiswa->kelas ?? '-' }}</div>
         </div>
         <div class="detail">
             <div class="ket">NIM</div>
-            <div class="isi">{{ $jadwal->pengajuan->mahasiswa->nim ?? '-' }}</div>
+            <div class="isi">{{ $pengajuan->mahasiswa->nim ?? '-' }}</div>
         </div>
 
         
         <div class="detail">
-            <div class="ket">Tanggal Kesepakatan</div>
-            <div class="isi">
-                📅{{ \Carbon\Carbon::parse($jadwal->pengajuan->tanggal_pengajuan)->translatedFormat('l, d F Y') }}</div>
+            <div class="ket">Tanggal Pengajuan Bimbingan</div>
+            {{-- <div class="isi">{{ \Carbon\Carbon::parse($pengajuan->tanggal_pengajuan)->format('l, d F Y') }}</div> --}}
+            <div class="isi">{{ \Carbon\Carbon::parse($pengajuan->tanggal_pengajuan)->translatedFormat('l, d F Y') }}</div>
+    
         </div>
         <div class="detail">
-            <div class="ket">Waktu Kesepakatan</div>
-            <div class="isi">⏰{{ \Carbon\Carbon::parse($jadwal->pengajuan->waktu_pengajuan)->format('H:i') }} WIB</div>
+            <div class="ket">Waktu Pengajuan Bimbingan</div>
+            <div class="isi">{{ \Carbon\Carbon::parse($pengajuan->waktu_pengajuan)->format('H:i') }} WIB</div>
         </div>
         <div class="detail">
-            <div class="ket">Tanggal Bimbingan</div>
+            <div class="ket">Tanggal Anjuran Dosen</div>
+            {{-- <div class="isi">{{ \Carbon\Carbon::parse($pengajuan->tanggal_anjuranDosen ?? '-' )->translatedFormat('l, d F Y') }}</div> --}}
             <div class="isi">
-                📅{{ $jadwal->tanggal_bimbingan ? \Carbon\Carbon::parse($jadwal->tanggal_bimbingan)->translatedFormat('l, d F Y') : '⛔ Tidak ada' }}
+                {{ $pengajuan->tanggal_anjuranDosen ? \Carbon\Carbon::parse($pengajuan->tanggal_anjuranDosen)->translatedFormat('l, d F Y') : '⛔ Tidak ada' }}
             </div>
+            
         </div>
         <div class="detail">
-            <div class="ket">Waktu Bimbingan</div>
+            <div class="ket">Waktu Anjuran Dosen</div>
             <div class="isi">
-                ⏰{{ $jadwal->waktu_bimbingan ? \Carbon\Carbon::parse($jadwal->waktu_bimbingan)->format('H:i') . ' WIB' : '⛔ Tidak ada' }}
+                {{ $pengajuan->waktu_anjuranDosen ? \Carbon\Carbon::parse($pengajuan->waktu_anjuranDosen)->format('H:i') . ' WIB' : '⛔ Tidak ada' }}
             </div>
-        </div>
-        <div class="detail">
-            <div class="ket">Jenis Bimbingan</div>
-            <div class="isi">
-                @if ($jadwal->jenis_bimbingan === 'luring')
-                    👩🏻‍🏫
-                @elseif($jadwal->jenis_bimbingan === 'daring')
-                    👨🏻‍💻
-                @else
-                    ⛔ Tidak ada
-                @endif
-                {{ $jadwal->jenis_bimbingan ?? '⛔ Tidak ada' }}
-            </div>
-        </div>
-        <div class="detail">
-            <div class="ket">Ruangan</div>
-            <div class="isi">📍{{ $jadwal->tempat ?? '⛔ Tidak ada' }}</div>
+            
+            
         </div>
         <div class="detail">
             <div class="ket">Judul Bimbingan</div>
-            <div class="isi">{{ $jadwal->pengajuan->judul_bimbingan ?? '⛔ Tidak ada' }}</div>
+            <div class="isi">{{ $pengajuan->judul_bimbingan }}</div>
         </div>
         <div class="detail">
             <div class="ket">Catatan Mahasiswa</div>
-            <div class="isi">
-                @if (!empty($jadwal->catatan_mahasiswa))
-                    📝 {{ $jadwal->catatan_mahasiswa }}
-                @else
-                    ⛔ Tidak ada
-                @endif
-            </div>
+            <div class="isi">{{ $pengajuan->catatan_mahasiswa }}</div>
         </div>
         <div class="detail">
             <div class="ket">Catatan Dosen</div>
-            <div class="isi">
-                @if (!empty($jadwal->catatan_dosen))
-                    📝 {{ $jadwal->catatan_dosen }}
-                @else
-                    ⛔ Tidak ada
-                @endif
-            </div>
+            <div class="isi">{{ $pengajuan->catatan_dosen ?? '⛔ Tidak ada' }}</div>
         </div>
     </div>
 @endsection

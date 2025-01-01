@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('catatan_dosen')->nullable();
             $table->float('progres', 5, 2)->default(0);
             $table->timestamps();
-            $table->foreign('kodeJadwal')->references('kodeJadwal')->on('tb_jadwalBimbingan');
+            $table->foreign('kodeJadwal')->references('kodeJadwal')->on('tb_jadwalBimbingan')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

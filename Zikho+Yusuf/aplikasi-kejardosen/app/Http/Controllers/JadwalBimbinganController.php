@@ -138,7 +138,7 @@ class JadwalBimbinganController extends Controller
             return redirect()->route('mahasiswa.riwayat-jadwal-bimbingan')->with('error', 'Data tidak ditemukan.');
         }
 
-        return view('dashboard.dosen.detail-riwayat-pengajuan', compact('jadwal'));
+        return view('dashboard.dosen.detail-riwayat-jadwal-bimbingan', compact('jadwal'));
     }
 
 
@@ -273,7 +273,7 @@ class JadwalBimbinganController extends Controller
             return redirect()->route('mahasiswa.riwayat-jadwal-bimbingan')->with('error', 'Data tidak ditemukan.');
         }
 
-        return view('dashboard.mahasiswa.detail-riwayat-pengajuan', compact('jadwal'));
+        return view('dashboard.mahasiswa.detail-riwayat-jadwal-bimbingan', compact('jadwal'));
     }
 
 }

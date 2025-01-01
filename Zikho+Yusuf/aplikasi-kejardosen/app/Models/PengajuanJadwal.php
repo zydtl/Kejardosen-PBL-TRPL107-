@@ -31,5 +31,10 @@ class PengajuanJadwal extends Model
         return $this->belongsTo(Mahasiswa::class, 'nim', 'nim');
     }
 
+    public function jadwal()
+    {
+        return $this->hasMany(JadwalBimbingan::class, 'kodePengajuan', 'kodePengajuan');
+    }
+
 }
 

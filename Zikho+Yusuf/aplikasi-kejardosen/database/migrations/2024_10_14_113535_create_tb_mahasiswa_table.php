@@ -23,7 +23,7 @@ return new class extends Migration
             $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
             $table->timestamps();
             $table->string('remember_token', 100)->nullable();
-            $table->foreign('nik_dosen')->references('nik')->on('tb_dosen')->onUpdate('cascade');
+            $table->foreign('nik_dosen')->references('nik')->on('tb_dosen')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('createdByAdmin')->unsigned();
             $table->foreign('createdByAdmin')->references('idAdministrator')->on('tb_administrator');
         });

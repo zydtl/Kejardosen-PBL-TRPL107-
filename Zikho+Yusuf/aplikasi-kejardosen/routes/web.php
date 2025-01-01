@@ -39,6 +39,7 @@ Route::get('/mahasiswa/dashboard', function () {
     return view('dashboard.mahasiswa.dashboard');
 })->name('mahasiswa.dashboard')->middleware('auth:mahasiswa');
 
+
 // Halaman pengajuan untuk Mahasiswa
 Route::get('/mahasiswa/pengajuan', [PengajuanJadwalController::class, 'index'])
     ->name('mahasiswa.pengajuan')
@@ -218,9 +219,14 @@ Route::get('/dosen/daftar-logbook/{nim}', [LogbookController::class, 'indexMahas
     ->middleware('auth:dosen');
 
 // Halaman form logbook untuk dosen (edit)
-Route::get('/mahasiswa/form-logbook/{kodeLogbook}', [LogbookController::class, 'formLogbookMahasiswa'])
-->name('mahasiswa.form-logbook')
-->middleware('auth:mahasiswa');
+Route::get('/dosen/form-logbook/{kodeLogbook}', [LogbookController::class, 'formLogbookDosen'])
+->name('dosen.form-logbook')
+->middleware('auth:dosen');
+
+    // Route untuk mengupdate logbook
+    Route::put('/dosen/form-logbook/update/{kodeLogbook}', [LogbookController::class, 'updateDosen'])
+        ->name('dosen.form-logbook.update')
+        ->middleware('auth:dosen');
 
 
 
@@ -231,10 +237,7 @@ Route::get('/dosen/profil', function () {
 })->name('dosen.profil')
     ->middleware('auth:dosen');
 
-Route::get('/dosen/logbook', function () {
-    return view('dashboard.dosen.logbook');
-})->name('dosen.logbook')
-    ->middleware('auth:dosen');
+
 
 
 
@@ -258,15 +261,24 @@ Route::get('/admin/dashboard', function () {
 
 Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::get('/daftar-dosen', [KehendakAdminController::class, 'index'])->name('admin.daftar-dosen');
+    Route::get('/daftar-mahasiswa', [KehendakAdminController::class, 'indexMahasiswa'])->name('admin.daftar-mahasiswa');
 });
 
     Route::post('/admin/daftar-dosen', [KehendakAdminController::class, 'store'])->name('daftar-dosen.store');
     Route::put('/admin/daftar-dosen/update/{nik}', [KehendakAdminController::class, 'update'])->name('daftar-dosen.update');
+    Route::delete('/admin/daftar-dosen/destroy/{nik}', [KehendakAdminController::class, 'destroy'])->name('daftar-dosen.destroy');
 
-Route::get('/admin/daftar-mahasiswa', function () {
-    return view('dashboard.admin.daftar-mahasiswa');
-})->name('admin.daftar-mahasiswa')
-    ->middleware('auth:admin');
+    Route::post('/admin/daftar-mahasiswa', [KehendakAdminController::class, 'storeMahasiswa'])->name('daftar-mahasiswa.store');
+    Route::put('/admin/daftar-mahasiswa/update/{nim}', [KehendakAdminController::class, 'updateMahasiswa'])->name('daftar-mahasiswa.update');
+    Route::delete('/admin/daftar-mahasiswa/destroy/{nim}', [KehendakAdminController::class, 'destroyMahasiswa'])->name('daftar-mahasiswa.destroy');
+// Route::middleware('auth:admin')->prefix('admin')->group(function () {
+//     Route::get('/daftar-mahasiswa', [KehendakAdminController::class, 'indexMahasiswa'])->name('admin.daftar-mahasiswa');
+// });
+
+// Route::get('/admin/daftar-mahasiswa', function () {
+//     return view('dashboard.admin.daftar-mahasiswa');
+// })->name('admin.daftar-mahasiswa')
+//     ->middleware('auth:admin');
 
 Route::get('/admin/hubungkan-mahasiswa', function () {
     return view('dashboard.admin.hubungkan-mahasiswa');

@@ -17,30 +17,54 @@ btnCloseDosen.addEventListener('click', () => {
 
 
 // JS MODAL info =======================================================================================
-// Ambil elemen modal
+// Ambil elemen modal di luar scope agar dapat digunakan di seluruh fungsi
 const infoModalDosen = document.getElementById('infoModalAdminDosen');
-const closeInfoDosen = document.getElementById('closeInfoDosen');
 
 // Event Delegation: Tangkap klik tombol info di seluruh halaman
 document.addEventListener('click', (e) => {
-    if (e.target.closest('.btn-info-dsn')) { // Pastikan tombol yang ditekan adalah info dosen
-        infoModalDosen.classList.remove('hide'); // Tampilkan modal
+    if (e.target.closest('.btn-info-dsn')) {
+        infoModalDosen.classList.remove('hide');
         infoModalDosen.classList.add('show');
+
+        const btn = e.target.closest('.btn-info-dsn');
+
+        // Ambil data dari atribut dataset menggunakan getAttribute
+        const nama = btn.getAttribute("data-nama");
+        const nik = btn.getAttribute("data-nik");
+        const jenis_kelamin = btn.getAttribute("data-jenis_kelamin");
+        const no_telp = btn.getAttribute("data-no_telp");
+        const email = btn.getAttribute("data-email");
+        const password = btn.getAttribute("data-password");
+
+        // Gunakan innerText untuk mengisi modal dengan data
+        infoModalDosen.querySelector('#nama').innerText = nama;
+        infoModalDosen.querySelector('#nik').innerText = nik;
+        infoModalDosen.querySelector('#jenisKelamin').innerText = jenis_kelamin;
+        infoModalDosen.querySelector('#noTelp').innerText = no_telp;
+        infoModalDosen.querySelector('#email').innerText = email;
+        // infoModalDosen.querySelector('#password').innerText = password;
+
+        // Debug data untuk memastikan semuanya benar
+        console.log(btn.dataset); 
+        console.log('Nama:', nama);
+        console.log('NIK:', nik);
     }
 });
 
-// Fungsi untuk menutup modal
-closeInfoDosen.addEventListener('click', () => {
+// Tutup modal ketika tombol "Tutup" diklik
+document.getElementById('closeInfoDosen').addEventListener('click', () => {
     infoModalDosen.classList.remove('show');
     infoModalDosen.classList.add('hide');
 });
 
-document.getElementById('infoModalAdminDosen').addEventListener('click', function (e) {
+// Tutup modal jika klik di luar konten modal
+infoModalDosen.addEventListener('click', function (e) {
     if (e.target === this) {
-        // Menyembunyikan modal jika klik di luar konten modal
-        document.getElementById('infoModalAdminDosen').classList.remove('show');
+        infoModalDosen.classList.remove('show');
+        infoModalDosen.classList.add('hide');
     }
 });
+
 
 
 
@@ -87,6 +111,7 @@ document.addEventListener("click", (event) => {
     if (event.target.closest(".btn-hapus-dsn")) {
         const row = event.target.closest(".table-row");
         const dosen = row.querySelector(".col-1").textContent.trim();
+        const nik = row.querySelector(".col-2").textContent.trim(); // Ambil nik dari kolom yang sesuai
 
         Swal.fire({
             title: "Apakah Anda yakin?",
@@ -99,20 +124,63 @@ document.addEventListener("click", (event) => {
             cancelButtonText: "Tidak, batal!"
         }).then((result) => {
             if (result.isConfirmed) {
-                // Tampilkan notifikasi sukses
+                // Tampilkan notifikasi sedang menghapus
                 Swal.fire({
-                    title: "Berhasil!",
-                    text: `Dosen "${dosen}" telah dihapus.`,
-                    icon: "success",
-                    confirmButtonColor: "#22a0b8",
+                    title: "Menghapus...",
+                    text: `Dosen "${dosen}" sedang dihapus.`,
+                    icon: "info",
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
                 });
 
-                // Logika backend (opsional, kirim permintaan ke server)
-                console.log(`Dosen "${dosen}" dihapus (pengiriman ke backend).`);
+                // Menutup modal setelah 3 detik (3000 milidetik)
+                setTimeout(() => {
+                    // Kirim permintaan DELETE ke backend
+                    fetch(`/admin/daftar-dosen/destroy/${nik}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        },
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Tampilkan notifikasi sukses
+                            Swal.fire({
+                                title: "Berhasil!",
+                                text: `Dosen "${dosen}" telah dihapus.`,
+                                icon: "success",
+                                confirmButtonColor: "#22a0b8",
+                            });
+
+                            // Hapus baris di tabel
+                            row.remove();
+                        } else {
+                            // Tampilkan notifikasi error
+                            Swal.fire({
+                                title: "Gagal!",
+                                text: data.error || 'Terjadi kesalahan saat menghapus dosen.',
+                                icon: "error",
+                                confirmButtonColor: "#22a0b8",
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        Swal.fire({
+                            title: "Terjadi kesalahan!",
+                            text: "Gagal menghapus dosen.",
+                            icon: "error",
+                            confirmButtonColor: "#22a0b8",
+                        });
+                    });
+                }, 3000); // 3 detik sebelum melakukan permintaan DELETE
             }
         });
     }
 });
+
+
 
 
 // tambah dosen

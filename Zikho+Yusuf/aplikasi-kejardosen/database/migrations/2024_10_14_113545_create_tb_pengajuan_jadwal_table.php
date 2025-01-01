@@ -24,7 +24,7 @@ return new class extends Migration
             $table->enum('status', ['menunggu', 'disetujui', 'ditolak', 'alternatif', 'dibatalkan']);
         
             $table->timestamps();
-            $table->foreign('nim')->references('nim')->on('tb_mahasiswa');
+            $table->foreign('nim')->references('nim')->on('tb_mahasiswa')->onUpdate('cascade')->onDelete('cascade');
         });
         
         

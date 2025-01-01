@@ -26,12 +26,32 @@
             </li>
             @foreach ($mahasiswa as $item)
             <li class="table-row">
-                <div class="col col-1" data-label="NIM">4342401057</div>
-                <div class="col col-2" data-label="Nama">Muhammad Maulana Yusuf</div>
-                <div class="col col-3" data-label="Terakhir Diubah">10 September 2024 07:00 WIB</div>
-                <div class="col col-4" data-label="Progres TA">25%</div>
+                <div class="col col-1" data-label="NIM">{{ $item->nim }}</div>
+                <div class="col col-2" data-label="Nama">{{ $item->nama_mahasiswa }}</div>
+                <div class="col col-3" data-label="Terakhir Diubah">
+
+                @php
+                    $lastLogbook = $item->pengajuan->flatMap->jadwal->flatMap->logbooks->last();
+                @endphp
+
+                @if ($lastLogbook)
+                    {{ \Carbon\Carbon::parse($lastLogbook->created_at)->translatedFormat('l, d F Y - H:i') }} WIB
+                @else
+                    -
+                @endif
+    
+                </div>
+                <div class="col col-4" data-label="Progres TA">
+                    @if ($lastLogbook)
+                        {{ $lastLogbook->progres }}%
+                    @else
+                        0%
+                    @endif
+                </div>
                 <div class="col col-5" data-label="Aksi">
-                    <button class="btn-list"><i class="fi fi-br-list list"></i></button>
+                    <a href="{{ route('dosen.daftar-logbook', ['nim' => $item->nim]) }}">
+                        <button class="btn-list"><i class="fi fi-br-list list"></i></button>
+                    </a>
                 </div>
             </li>
             @endforeach

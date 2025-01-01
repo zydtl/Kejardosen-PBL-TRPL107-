@@ -24,7 +24,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('tempat');
             $table->enum('jenis_bimbingan', ['luring','daring']);
-            $table->foreign('kodePengajuan')->references('kodePengajuan')->on('tb_pengajuanJadwal');
+            $table->foreign('kodePengajuan')->references('kodePengajuan')->on('tb_pengajuanJadwal')->onUpdate('cascade')->onDelete('cascade');
         });
         
         
