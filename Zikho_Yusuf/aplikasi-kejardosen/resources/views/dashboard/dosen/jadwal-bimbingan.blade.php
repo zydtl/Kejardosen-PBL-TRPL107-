@@ -22,7 +22,7 @@
                 <div class="col col-5">Status</div>
                 <div class="col col-6">Aksi</div>
             </li>
-            @foreach ($jadwal as $item)
+            @forelse ($jadwal as $item)
             <li class="table-row">
                 <div class="col col-1" data-label="Kode Jadwal">{{ $item->pengajuan->mahasiswa->nama_mahasiswa }}</div>
                 <div class="col col-2" data-label="NIM">{{ $item->pengajuan->mahasiswa->nim }}</div>
@@ -70,8 +70,14 @@
                     ><i class="fi fi-br-pending delay"></i></button> 
                 </div>
             </li>
-            @endforeach
-
+            @empty
+                <li class="table-row gambar-kosong">
+                    <div class="col" style="text-align: center; width: 100%;">
+                        <img src="{{ asset('assets/dashboard/asset/img/tabel-kosong.svg') }}" alt="Kosong" />
+                        <p>Belum ada jadwal bimbingan.</p>
+                    </div>
+                </li>
+            @endforelse
         </ul>
     </div>     
 @endsection

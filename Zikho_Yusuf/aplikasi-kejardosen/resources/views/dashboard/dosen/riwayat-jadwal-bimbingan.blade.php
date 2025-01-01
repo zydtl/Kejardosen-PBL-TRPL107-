@@ -16,25 +16,23 @@
         <div class="search-container">
             <input type="text" id="search-input" onkeyup="searchTable()" placeholder="Pencarian">
         </div>
-        <ul class="responsive-table-dsn">
+        <ul class="responsive-table">
             <li class="table-header">
-                <div class="col col-1">Kode Pengajuan</div> 
-                <div class="col col-2">NIM</div> 
-                <div class="col col-3">Nama</div>
-                <div class="col col-4">Tanggal Bimbingan</div>
-                <div class="col col-5">Waktu Bimbingan</div>
-                <div class="col col-6">Status</div>
-                <div class="col col-7">Aksi</div>
+                <div class="col col-1">NIM</div> 
+                <div class="col col-2">Nama</div>
+                <div class="col col-3">Tanggal Bimbingan</div>
+                <div class="col col-4">Waktu Bimbingan</div>
+                <div class="col col-5">Status</div>
+                <div class="col col-6">Aksi</div>
 
             </li>
-            @foreach ($jadwal as $item)
+            @forelse ($jadwal as $item)
             <li class="table-row">
-                <div class="col col-1" data-label="Kode Jadwal">{{ $item->kodeJadwal }}</div>
-                <div class="col col-2" data-label="NIM">{{ $item->pengajuan->mahasiswa->nim }}</div>
-                <div class="col col-3" data-label="Tanggal Bimbingan">{{ $item->pengajuan->mahasiswa->nama_mahasiswa }}</div>
-                <div class="col col-4" data-label="Waktu Bimbingan">{{ \Carbon\Carbon::parse($item->tanggal_bimbingan)->locale('id')->timezone('Asia/Jakarta')->translatedFormat('l, d F Y') }}</div>
-                <div class="col col-5" data-label="Waktu Bimbingan">{{ \Carbon\Carbon::parse($item->waktu_bimbingan)->timezone('Asia/Jakarta')->format('H:i') }} WIB</div>
-                <div class="col col-6" data-label="Status"><span class="
+                <div class="col col-1" data-label="NIM">{{ $item->pengajuan->mahasiswa->nim }}</div>
+                <div class="col col-2" data-label="Tanggal Bimbingan">{{ $item->pengajuan->mahasiswa->nama_mahasiswa }}</div>
+                <div class="col col-3" data-label="Waktu Bimbingan">{{ \Carbon\Carbon::parse($item->tanggal_bimbingan)->locale('id')->timezone('Asia/Jakarta')->translatedFormat('l, d F Y') }}</div>
+                <div class="col col-4" data-label="Waktu Bimbingan">{{ \Carbon\Carbon::parse($item->waktu_bimbingan)->timezone('Asia/Jakarta')->format('H:i') }} WIB</div>
+                <div class="col col-5" data-label="Status"><span class="
                                 @if ($item->status == 'menunggu' || $item->status == 'alternatif' || $item->status == 'ditunda')
                                     status-waiting
                                 @elseif($item->status == 'dibatalkan' || $item->status == 'ditolak') 
@@ -50,14 +48,21 @@
                                 @endif
                     ">{{ $item->status }}</span></div>
                 <!-- <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div> -->
-                <div class="col col-7" data-label="Aksi">
+                <div class="col col-6" data-label="Aksi">
                     <a href="{{ route('dosen.detail-riwayat-jadwal-bimbingan', ['kodeJadwal' => $item->kodeJadwal]) }}">
                         <i class="fi fi-br-info info"></i>
                     </a>
                 </div>
 
             </li>   
-            @endforeach        
+            @empty
+                <li class="table-row gambar-kosong">
+                    <div class="col" style="text-align: center; width: 100%;">
+                        <img src="{{ asset('assets/dashboard/asset/img/tabel-kosong.svg') }}" alt="Kosong" />
+                        <p>Belum ada riwayat jadwal bimbingan.</p>
+                    </div>
+                </li>
+            @endforelse       
         </ul>
         <!-- Pagination -->
         <div class="pagination">

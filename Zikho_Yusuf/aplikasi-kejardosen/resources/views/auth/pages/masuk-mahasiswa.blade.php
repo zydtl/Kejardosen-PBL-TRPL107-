@@ -1,5 +1,9 @@
 @extends('auth.layout.master')
 
+@section('title')
+  Masuk Sebagai Mahasiswa
+@endsection
+
 @section('content')
   <div class="container-fluid">
     <div class="row">

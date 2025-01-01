@@ -169,9 +169,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Periksa apakah ada data di dalam daftar
+const responsiveTable = document.querySelector('.responsive-table');
+const gambarKosong = document.querySelector('.gambar-kosong');
 
+const checkEmptyTable = () => {
+    const hasRows = responsiveTable.querySelectorAll('.table-row.baris-pengajuan').length > 0;
+    gambarKosong.style.display = hasRows ? 'none' : 'block';
+};
 
+// Jalankan pengecekan awal
+checkEmptyTable();
 
-
-
-
+// Contoh: Jika kamu menambahkan atau menghapus data secara dinamis
+// Misalnya:
+document.querySelector('#addRowButton').addEventListener('click', () => {
+    // Tambahkan data baru...
+    // Setelah manipulasi DOM selesai, cek ulang
+    checkEmptyTable();
+});

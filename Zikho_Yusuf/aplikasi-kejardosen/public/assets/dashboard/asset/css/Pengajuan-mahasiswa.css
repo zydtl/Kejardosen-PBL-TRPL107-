@@ -419,6 +419,7 @@ textarea.form-control {
 
 
 .modal-container {
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background-color: white;
   margin-top: 50px;
@@ -847,5 +848,19 @@ textarea.form-control {
   justify-content: center;
   align-items: center;
   z-index: 910101010101020220022020;
+}
+
+/* gambar tabel kosong */
+.gambar-kosong {
+  text-align: center;
+  margin-top: 20px;
+}
+.gambar-kosong img {
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+
+ul.responsive-table:empty + .gambar-kosong {
+  display: block;
 }
 

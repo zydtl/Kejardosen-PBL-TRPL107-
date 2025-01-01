@@ -1,5 +1,8 @@
 @extends('auth.layout.master')
 
+@section('title')
+  Masuk Sebagai Administator
+@endsection
 
 @section('content')
   <div class="container-fluid">

@@ -350,3 +350,54 @@ document.querySelectorAll(".btnmuncul").forEach(button => {
     });
   });
 });
+
+
+//======================== INI BAGIAN PENGATURAN RANGE TANGGAL DOSEN ===============================================================================
+
+// Fungsi untuk memformat tanggal menjadi `YYYY-MM-DD`
+const formatDate = (date) => {
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Bulan berbasis indeks (0-11)
+  const day = date.getDate().toString().padStart(2, "0");
+  return `${year}-${month}-${day}`;
+};
+
+// Fungsi untuk menghitung batas tanggal min dan max
+const calculateMinMaxDates = (daysAheadMin, daysAheadMax) => {
+  const today = new Date();
+
+  // Tentukan tanggal minimum
+  const minDate = new Date(today);
+  minDate.setDate(today.getDate() + daysAheadMin);
+
+  // Tentukan tanggal maksimum
+  const maxDate = new Date(today);
+  maxDate.setDate(today.getDate() + daysAheadMax);
+
+  return {
+      min: formatDate(minDate),
+      max: formatDate(maxDate),
+  };
+};
+
+// Fungsi untuk menetapkan atribut `min` dan `max` pada elemen input
+const setMinMaxDate = (inputElement, daysAheadMin = 1, daysAheadMax = 30) => {
+  const { min, max } = calculateMinMaxDates(daysAheadMin, daysAheadMax);
+
+  inputElement.setAttribute("min", min);
+  inputElement.setAttribute("max", max);
+
+  console.log(`Min date: ${min}, Max date: ${max} for #${inputElement.id}`);
+};
+
+// Tetapkan untuk elemen dengan ID `tanggal-anjuran` dan elemen lain
+const inputDate1 = document.getElementById("tanggal-anjuran");
+const inputDate2 = document.getElementById("tanggal-banding"); // Jika ada elemen lain
+
+if (inputDate1) {
+  setMinMaxDate(inputDate1);
+}
+
+if (inputDate2) {
+  setMinMaxDate(inputDate2, 2, 45); // Misalnya, batas berbeda untuk input lain
+}

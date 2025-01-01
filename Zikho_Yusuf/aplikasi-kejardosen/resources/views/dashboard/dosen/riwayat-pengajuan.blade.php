@@ -25,7 +25,7 @@
                 <div class="col col-6">Aksi</div>
             </li>
 
-            @foreach ($pengajuan as $item)
+            @forelse ($pengajuan as $item)
                 <li class="table-row">
                     <div class="col col-1" data-label="Kode Pengajuan">{{ $item->nim }}</div>
                     <div class="col col-2" data-label="Diajukan Pada">{{ \Carbon\Carbon::parse($item->created_at)->locale('id')->timezone('Asia/Jakarta')->translatedFormat('d F Y - H:i') }} WIB</div>
@@ -61,7 +61,14 @@
                     
                     
                 </li>
-            @endforeach
+            @empty
+                <li class="table-row gambar-kosong">
+                    <div class="col" style="text-align: center; width: 100%;">
+                        <img src="{{ asset('assets/dashboard/asset/img/tabel-kosong.svg') }}" alt="Kosong" />
+                        <p>Belum ada riwayat jadwal bimbingan.</p>
+                    </div>
+                </li>
+            @endforelse 
         </ul>
         <!-- Pagination -->
         <div class="pagination">

@@ -1,4 +1,9 @@
 @extends('dashboard.dosen.layout.master')
+
+@section('title')
+    Pengajuan - Dosen
+@endsection
+
 @section('css')
     <link rel="stylesheet" href=  "{{ asset('assets/dashboard/asset/css/sidebar-navbar.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/dashboard/asset/css/Pengajuan-dosen.css') }}" />
@@ -13,7 +18,7 @@
             <input type="text" id="search-input" onkeyup="searchTable()" placeholder="Pencarian">
         </div>
         <ul class="responsive-table">
-            @foreach ($pengajuan as $item)
+            @forelse ($pengajuan as $item)
                 <li class="table-row baris-pengajuan">
                     <div class="col col-1" data-label="img">
                         <img src="{{ asset('assets/dashboard/asset/img/avatar.png') }}" alt="" />
@@ -48,31 +53,33 @@
                     </div>
                     <a>
                         <button id="openFormpengajuan" class="btn btnku btnkeren btnmuncul"
-                        data-nama_mahasiswa="{{ $item->mahasiswa->nama_mahasiswa }}"
-                        data-nim="{{ $item->mahasiswa->nim }}"
-                        data-kelas="{{ $item->mahasiswa->kelas }}"
-                        data-judul_tugas_akhir="{{ $item->mahasiswa->judul_tugas_akhir }}"
-
-                        data-kodepengajuan="{{ $item->kodePengajuan }}"
-                        data-created_at="{{ \Carbon\Carbon::parse($item->created_at)->locale('id')->timezone('Asia/Jakarta')->translatedFormat('d F Y  H:i') }} WIB"
-                        data-updated_at="{{ \Carbon\Carbon::parse($item->updated_at)->locale('id')->timezone('Asia/Jakarta')->translatedFormat('d F Y  H:i') }} WIB"
-
-                        data-judul="{{ $item->judul_bimbingan }}"
-                        data-catatan_mahasiswa="{{ $item->catatan_mahasiswa }}"
-                        data-tanggal_pengajuan="{{ \Carbon\Carbon::parse($item->tanggal_pengajuan)->locale('id')->translatedFormat('d F Y') }}"
-                        data-waktu_pengajuan="{{ \Carbon\Carbon::parse($item->waktu_pengajuan)->timezone('Asia/Jakarta')->format('H:i') }} WIB"
-        
-
-                        data-catatan_dosen="{{ $item->catatan_dosen }}"
-                        data-waktu_anjurandosen="{{ $item->waktu_anjuranDosen }}"
-                        data-tanggal_anjurandosen="{{ $item->tanggal_anjuranDosen}}"
+                            data-nama_mahasiswa="{{ $item->mahasiswa->nama_mahasiswa }}"
+                            data-nim="{{ $item->mahasiswa->nim }}"
+                            data-kelas="{{ $item->mahasiswa->kelas }}"
+                            data-judul_tugas_akhir="{{ $item->mahasiswa->judul_tugas_akhir }}"
+                            data-kodepengajuan="{{ $item->kodePengajuan }}"
+                            data-created_at="{{ \Carbon\Carbon::parse($item->created_at)->locale('id')->timezone('Asia/Jakarta')->translatedFormat('d F Y  H:i') }} WIB"
+                            data-updated_at="{{ \Carbon\Carbon::parse($item->updated_at)->locale('id')->timezone('Asia/Jakarta')->translatedFormat('d F Y  H:i') }} WIB"
+                            data-judul="{{ $item->judul_bimbingan }}"
+                            data-catatan_mahasiswa="{{ $item->catatan_mahasiswa }}"
+                            data-tanggal_pengajuan="{{ \Carbon\Carbon::parse($item->tanggal_pengajuan)->locale('id')->translatedFormat('d F Y') }}"
+                            data-waktu_pengajuan="{{ \Carbon\Carbon::parse($item->waktu_pengajuan)->timezone('Asia/Jakarta')->format('H:i') }} WIB"
+                            data-catatan_dosen="{{ $item->catatan_dosen }}"
+                            data-waktu_anjurandosen="{{ $item->waktu_anjuranDosen }}"
+                            data-tanggal_anjurandosen="{{ $item->tanggal_anjuranDosen}}"
                         >
                             Lihat Pengajuan
                         </button>
                     </a>
                 </li>
-            @endforeach
+            @empty
+                <div class="gambar-kosong">
+                    <img src="{{asset('assets/dashboard/asset/img/tabel-kosong.svg')}}" alt="Kosong" />
+                    <p>Belum ada pengajuan.</p>
+                </div>
+            @endforelse
         </ul>
+        
         <!-- Pagination -->
         <div class="pagination">
             <button class="prev-page">Prev</button>
@@ -113,7 +120,7 @@
                         <p id="created_at">11 September 2024 09:00 WIB</p>
                     </div>
                     <div class="detail-item" data-label="Tanggal Diajukan">
-                        <h4>Diaujan ulang Pada:</h4>
+                        <h4>Diajukan Ulang Pada:</h4>
                         <p id="updated_at">11 September 2024 09:00 WIB</p>
                     </div>  
                     <div class="detail-item" data-label="Waktu Pengajuan">

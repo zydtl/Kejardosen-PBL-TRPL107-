@@ -42,7 +42,7 @@
             </ul>
         </li>
         <li>
-            <a href=""><i class="fi fi-br-user"></i>
+            <a href="{{ route('dosen.profil') }}"><i class="fi fi-br-user"></i>
                 <span class="menu-text">Profil</span></a>
         </li>
     </ul>

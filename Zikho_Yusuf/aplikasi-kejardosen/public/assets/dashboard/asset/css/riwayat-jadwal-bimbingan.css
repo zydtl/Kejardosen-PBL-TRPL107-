@@ -17,17 +17,6 @@ body {
     overflow-x: hidden; /* Menghindari scroll tidak perlu */
 }
 
-/* Responsive Table */
-.responsive-table {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    width: 100%; /* Lebar tabel disesuaikan dengan container */
-    max-width: 100%; /* Membatasi tabel agar tidak melebihi layar */
-    overflow-x: auto; /* Menambahkan scroll jika konten tabel melebihi layar */
-    border-collapse: collapse;
-}
-
 /* status untuk semua*/
 .status-accept, .status-ongoing, .status-reject, .status-cancel, 
 .status-waiting, .status-delay, .status-resched, .status-finish {
@@ -87,6 +76,19 @@ body {
     flex-wrap: wrap; /* Membungkus jika tidak cukup ruang */
 }
 
+
+
+/* Responsive Table */
+.responsive-table {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 100%; /* Lebar tabel disesuaikan dengan container */
+    max-width: 100%; /* Membatasi tabel agar tidak melebihi layar */
+    overflow-x: auto; /* Menambahkan scroll jika konten tabel melebihi layar */
+    border-collapse: collapse;
+}
+
 .table-header {
     background-color: #B1E8F0;
     color: #000;
@@ -129,7 +131,8 @@ body {
     flex: 0.3;
 }
 
-.responsive-table-dsn {
+
+.responsive-table .dsn {
     list-style: none;
     padding: 0;
     margin: 20px 0;
@@ -420,3 +423,18 @@ body {
     margin-right: 5%;
     position:relative;
 }
+
+/* gambar tabel kosong */
+.gambar-kosong {
+    text-align: center;
+    margin-top: 20px;
+    display: none; /* Disembunyikan secara default */
+  }
+  .gambar-kosong img {
+    max-width: 200px;
+    margin-bottom: 10px;
+  }
+  
+  ul.responsive-table:empty + .gambar-kosong {
+    display: block;
+  }

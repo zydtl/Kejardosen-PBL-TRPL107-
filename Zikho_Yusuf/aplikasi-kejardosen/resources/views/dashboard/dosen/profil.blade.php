@@ -16,7 +16,7 @@
         </div>
         <div class="profil">
             <div class="foto">
-                <img class="foto-profil" src="{{asset('assets/dashboard/asset/img/avatar.png')}}" alt="" />
+                <img class="foto-profil" src="{{asset('assets/dashboard/asset/img/avatar-dosen.png')}}" alt="" />
             </div>
             <div class="identitas">
                 <div class="title-identitas">

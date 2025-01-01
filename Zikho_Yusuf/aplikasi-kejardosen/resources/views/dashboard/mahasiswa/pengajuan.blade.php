@@ -1,5 +1,9 @@
 @extends('dashboard.mahasiswa.layout.master')
 
+@section('title')
+    Pengajuan - Mahasiswa
+@endsection
+
 @section('css')
     <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/Pengajuan-mahasiswa.css')}}">
     <link rel="stylesheet" href="{{asset('assets/dashboard/asset/css/sidebar-navbar.css')}}">
@@ -22,65 +26,65 @@
                 <div class="col col-5">Status</div>
                 <div class="col col-6">Aksi</div>
             </li>
-
-
-            @if ($pengajuan->isEmpty())
-            <li class="table-row">
-                <div>
-                    <button hidden  class="btn-edit" id="openFormedit" ><i class="fi fi-br-edit edit"></i></button>
-                    <h1 class="">Data pengajuan kosong</h1>
-                </div>
-            </li>
-            @else
-            @foreach ($pengajuan as $item)
-            <li class="table-row">
-                
-                <div class="col col-1" data-label="Kode Pengajuan">{{ $item->kodePengajuan }}</div>
-                <div class="col col-2" data-label="Diajukan Pada">{{ \Carbon\Carbon::parse($item->created_at)->locale('id')->timezone('Asia/Jakarta')->translatedFormat('d F Y - H:i') }} WIB</div>
-                <div class="col col-3" data-label="Tanggal Pengajuan">{{ \Carbon\Carbon::parse($item->tanggal_pengajuan)->locale('id')->translatedFormat('d F Y') }}</div>
-                <div class="col col-4" data-label="Waktu Pengajuan">{{ \Carbon\Carbon::parse($item->waktu_pengajuan)->timezone('Asia/Jakarta')->format('H:i') }} WIB</div>
-                <div class="col col-5" data-label="Status">
-                    <span class=" -mt-2
-                            @if($item->status == 'menunggu' || $item->status == 'alternatif') 
-                                status-waiting
-                            @elseif($item->status == 'dibatalkan' || $item->status == 'ditolak') 
-                                status-cancel
-                            @elseif($item->status == 'diterima') 
-                                status-accept
-                            @elseif($item->status == 'berlangsung') 
-                                status-ongoing
-                            @elseif($item->status == 'disetujui') 
-                                status-accept                               
-                            @elseif($item->status == 'diselesaikan') 
-                                status-finish
-                            @endif">{{ $item->status }}
-                    </span>
-                </div>
-                <!-- <div class="col col-5" data-label="Status"><span class="status-resched">Reschedule</span></div> -->
-                <div class="col col-6" data-label="Aksi">
-                    <button class="btn-info" data-id="{{ $item->kodePengajuan }}"><i class="fi fi-br-info info"></i></button>
-                    <button class="btn-tolak" @if($item->status == 'dibatalkan') style="background-color: #ddd" @endif  @if($item->status == 'dibatalkan') disabled @endif id="openFormdelete" data-id="{{ $item->kodePengajuan }}"><i class="fi fi-br-ban delete"></i></button>
-                    <button class="btn-edit" id="openFormedit" 
-                    data-kode="{{ $item->kodePengajuan }}" 
-                    data-tanggal1="{{ $item->tanggal_pengajuan }}" 
-                    data-waktu1="{{ $item->waktu_pengajuan }}"
-                    data-tanggal2="{{ $item->tanggal_anjuranDosen }}" 
-                    data-waktu2="{{ $item->waktu_anjuranDosen }}"
-                    data-judul="{{ $item->judul_bimbingan }}" 
-                    data-catatanmahasiswa="{{ $item->catatan_mahasiswa }}" 
-                    data-catatandosen="{{ $item->catatan_dosen }}"><i class="fi fi-br-edit edit"></i></button>
-                </div>
-            </li>
-            @endforeach
-            @endif  
-
+            @forelse ($pengajuan as $item)
+                <li class="table-row">
+                    <div class="col col-1" data-label="Kode Pengajuan">{{ $item->kodePengajuan }}</div>
+                    <div class="col col-2" data-label="Diajukan Pada">{{ \Carbon\Carbon::parse($item->created_at)->locale('id')->timezone('Asia/Jakarta')->translatedFormat('d F Y - H:i') }} WIB</div>
+                    <div class="col col-3" data-label="Tanggal Pengajuan">{{ \Carbon\Carbon::parse($item->tanggal_pengajuan)->locale('id')->translatedFormat('d F Y') }}</div>
+                    <div class="col col-4" data-label="Waktu Pengajuan">{{ \Carbon\Carbon::parse($item->waktu_pengajuan)->timezone('Asia/Jakarta')->format('H:i') }} WIB</div>
+                    <div class="col col-5" data-label="Status">
+                        <span class="@if($item->status == 'menunggu' || $item->status == 'alternatif') 
+                                        status-waiting
+                                    @elseif($item->status == 'dibatalkan' || $item->status == 'ditolak') 
+                                        status-cancel
+                                    @elseif($item->status == 'diterima') 
+                                        status-accept
+                                    @elseif($item->status == 'berlangsung') 
+                                        status-ongoing
+                                    @elseif($item->status == 'disetujui') 
+                                        status-accept                               
+                                    @elseif($item->status == 'diselesaikan') 
+                                        status-finish
+                                    @endif">
+                            {{ $item->status }}
+                        </span>
+                    </div>
+                    <div class="col col-6" data-label="Aksi">
+                        <button class="btn-info" data-id="{{ $item->kodePengajuan }}"><i class="fi fi-br-info info"></i></button>
+                        <button class="btn-tolak" 
+                            @if($item->status == 'dibatalkan') style="background-color: #ddd" @endif 
+                            @if($item->status == 'dibatalkan') disabled @endif 
+                            id="openFormdelete" 
+                            data-id="{{ $item->kodePengajuan }}">
+                            <i class="fi fi-br-ban delete"></i>
+                        </button>
+                        <button class="btn-edit" id="openFormedit" 
+                            data-kode="{{ $item->kodePengajuan }}" 
+                            data-tanggal1="{{ $item->tanggal_pengajuan }}" 
+                            data-waktu1="{{ $item->waktu_pengajuan }}"
+                            data-tanggal2="{{ $item->tanggal_anjuranDosen }}" 
+                            data-waktu2="{{ $item->waktu_anjuranDosen }}"
+                            data-judul="{{ $item->judul_bimbingan }}" 
+                            data-catatanmahasiswa="{{ $item->catatan_mahasiswa }}" 
+                            data-catatandosen="{{ $item->catatan_dosen }}">
+                            <i class="fi fi-br-edit edit"></i>
+                        </button>
+                    </div>
+                </li>
+            @empty
+                <li class="table-row gambar-kosong">
+                    <div class="col" style="text-align: center; width: 100%;">
+                        <img src="{{ asset('assets/dashboard/asset/img/tabel-kosong.svg') }}" alt="Kosong" />
+                        <p>Belum ada pengajuan yang diajukan.</p>
+                    </div>
+                    <div>
+                        <button hidden  class="btn-edit" id="openFormedit" ><i class="fi fi-br-edit edit"></i></button>
+                    </div>
+                </li>
+            @endforelse
         </ul>
+        
     </div>
-@endsection
-
-@section('js')
-    <script src="{{asset('assets/dashboard/asset/javascript/Pengajuan-mahasiswa.js')}}"></script>
-    <script src="{{asset('assets/dashboard/asset/javascript/sidebar-navbar.js')}}"></script>
 @endsection
 
 @section('modal')
@@ -163,6 +167,13 @@
         </div>
     </div>
 @endsection
+
+@section('js')
+    <script src="{{asset('assets/dashboard/asset/javascript/Pengajuan-mahasiswa.js')}}"></script>
+    <script src="{{asset('assets/dashboard/asset/javascript/sidebar-navbar.js')}}"></script>
+@endsection
+
+
 
 
 

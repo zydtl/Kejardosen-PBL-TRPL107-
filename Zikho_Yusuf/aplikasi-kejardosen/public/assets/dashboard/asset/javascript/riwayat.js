@@ -106,3 +106,30 @@ function searchTable() {
         row.style.display = match ? '' : 'none';
     });
 }
+
+
+
+// Fungsi untuk memeriksa apakah tabel memiliki data
+const checkEmptyTable = (tableClass, emptyClass) => {
+    const tables = document.querySelectorAll(`.${tableClass}`);
+    tables.forEach((table) => {
+        const gambarKosong = table.nextElementSibling; // Ambil elemen gambar kosong setelah tabel
+        const hasRows = table.querySelectorAll('.table-row').length > 0;
+
+        if (gambarKosong && gambarKosong.classList.contains(emptyClass)) {
+            gambarKosong.style.display = hasRows ? 'none' : 'block';
+        }
+    });
+};
+
+// Jalankan pengecekan awal untuk kedua tabel
+checkEmptyTable('responsive-table', 'gambar-kosong');
+checkEmptyTable('responsive-table-dsn', 'gambar-kosong');
+
+// Contoh: Jika kamu menambahkan atau menghapus data secara dinamis
+document.querySelector('#addRowButton').addEventListener('click', () => {
+    // Tambahkan data baru...
+    // Setelah manipulasi DOM selesai, cek ulang untuk kedua tabel
+    checkEmptyTable('responsive-table', 'gambar-kosong');
+    checkEmptyTable('responsive-table-dsn', 'gambar-kosong');
+});
