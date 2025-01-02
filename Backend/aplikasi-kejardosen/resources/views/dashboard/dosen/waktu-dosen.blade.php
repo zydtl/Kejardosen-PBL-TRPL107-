@@ -98,6 +98,6 @@
 @endsection
 
 @section('js')
-    <script src="../asset/javascript/waktu-dosen.js"></script>
-    <script src="../asset/javascript/sidebar-navbar.js"></script>
+    <script src="{{asset('assets/dashboard/asset/javascript/waktu-dosen.js')}}"></script>
+    <script src="{{asset('assets/dashboard/asset/javascript/sidebar-navbar.js')}}"></script>
 @endsection
