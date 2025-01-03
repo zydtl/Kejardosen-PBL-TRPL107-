@@ -14,7 +14,7 @@
     <div class="left">
         <div class="card-welcome">
             <div class="text">
-                <h1>Halo!👋👋🏻👋🏿</h1>
+                <h1>Halo!👋</h1>
                 <div class="nama">{{ $mahasiswa->nama_mahasiswa }}</div>
                 <div class="slogan">🎯Bimbingan on time, Tugas Akhir on point!</div>
                 <a href="{{ route('mahasiswa.pengajuan') }}">
@@ -51,14 +51,14 @@
                     @if (!empty($logbook->progres))
                         <div class="progress-fill" style="width: {{ $logbook->progres > 0 ? $logbook->progres : 100 }}%;">
                     @else
-                        <div class="progress-fill" style="width:100%">
+                        <div class="progress-fill-kosong" style="width:100%">
                     @endif
 
 
                     @if (!empty($logbook->progres))
                         <span class="progress-text">{{ $logbook->progres }}%</span>
                     @else
-                        <span class="progress-text">Logbook belum diisi</span>
+                        <span class="progress-text">Logbook masih kosong</span>
                     @endif
                 </div>                
             </div>

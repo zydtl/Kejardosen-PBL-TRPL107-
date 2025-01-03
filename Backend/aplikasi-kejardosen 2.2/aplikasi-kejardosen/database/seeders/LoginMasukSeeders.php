@@ -392,7 +392,7 @@ class LoginMasukSeeders extends Seeder
                 'nik_dosen' => 122279,
                 'no_telp' => '081234567815',
                 'kelas' => 'TRPL 7A',
-                'jenis_kelamin' => 'Perempuan',
+                'jenis_kelamin' => 'Laki-laki',
                 'created_at' => now(),
                 'updated_at' => now(),
                 'remember_token' => null,

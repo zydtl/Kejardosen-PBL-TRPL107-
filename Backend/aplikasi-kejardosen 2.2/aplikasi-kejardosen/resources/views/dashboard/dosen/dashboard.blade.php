@@ -14,7 +14,7 @@
         <div class="left">
             <div class="card-welcome">
                 <div class="text">
-                    <h1>Halo!👋👋🏻👋🏿 </h1>
+                    <h1>Halo!👋 </h1>
                     <div class="nama">{{ $dosen->nama_dosen }}</div>
                     <div class="slogan">🎯Bimbingan on time, Tugas Akhir on point!</div>
                     <button href="#" class="atur"><h3>Atur Jadwal</h3><i class="fi fi-br-calendar"></i></button>
