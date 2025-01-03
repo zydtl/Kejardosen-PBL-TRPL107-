@@ -43,6 +43,9 @@
                     <a href="{{ route('mahasiswa.form-logbook', ['kodeLogbook' => $item->kodeLogbook]) }}">
                         <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
                     </a>
+                    <a href="{{ route('mahasiswa.detail-logbook', ['kodeLogbook' => $item->kodeLogbook]) }}">
+                        <button class="btn-info"><i class="fi fi-br-info info"></i></button>
+                    </a>
                 </div>
 
             </li>

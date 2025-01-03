@@ -58,7 +58,7 @@
                     @if (!empty($logbook->progres))
                         <span class="progress-text">{{ $logbook->progres }}%</span>
                     @else
-                        <span class="progress-text">Belum ada progres</span>
+                        <span class="progress-text">Logbook belum diisi</span>
                     @endif
                 </div>                
             </div>
@@ -132,39 +132,7 @@
                 </div>
             @endforeach
         @else
-            <div class="card-pengajuan">
-                <div class="detail1">
-                    <div><img src="{{asset('assets/dashboard/asset/img/avatar-dosen.png')}}" alt="" /></div>
-                    <div class="value">
-                        <h4 class="dosen">-</h4>
-                        <div class="tanggal"><i class="fi fi-br-calendar"></i>--/--/----</div>
-                        <div class="jam"><i class="fi fi-br-clock"></i> --:-- WIB</div>
-                    </div>
-                </div>
-            
-                <div class="detail2">
-                    <div class="item">
-                        <i class="fi fi-br-map-marker-home"></i>
-                        <p>Ruangan</p>
-                        <span>-</span>
-                    </div>
-                    <div class="item">
-                        <i class="fi fi-br-time-add"></i>
-                        <p>Dibuat</p>
-                        <span>--/--/----</span>
-                    </div>
-                    <div class="item">
-                        <i class="fi fi-br-memo"></i>
-                        <p>Kode Pengajuan</p>
-                        <span>pj-</span>
-                    </div>
-                    <div class="item">
-                        <i class="fi fi-br-memo"></i>
-                        <p>Kode Jadwal</p>
-                        <span>jb-</span>
-                    </div>
-                </div>
-            </div>
+             <img class="bimbingan-kosong" src="{{asset('assets/dashboard/asset/img/bimbingan_kosong.svg')}}" alt="">
         @endif
 
 

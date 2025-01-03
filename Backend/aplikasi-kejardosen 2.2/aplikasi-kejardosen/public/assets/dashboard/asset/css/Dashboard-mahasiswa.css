@@ -1,6 +1,6 @@
 .main-content {
     display: flex;
-    gap: 50px;
+    gap: 30px;
     overflow-y: scroll;
 }
 
@@ -303,7 +303,9 @@ a {
 
 .card-pengajuan {
     background-image: linear-gradient(to top left, #B1E8F0, #EFFAFE);
-    width: 330px;
+    width: auto;
+    max-width: 420px;
+    min-width: 320px;
     margin-top: 10px;
     border-radius: 15px;
     padding: 15px;
@@ -369,4 +371,8 @@ a {
     font-size: 14px;
     font-weight: bold;
     color: #555;
+}
+
+.bimbingan-kosong {
+    margin-left: -15px;
 }

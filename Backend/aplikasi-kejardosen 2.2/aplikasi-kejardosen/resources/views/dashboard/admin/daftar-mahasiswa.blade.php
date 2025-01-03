@@ -130,7 +130,7 @@
                         <!-- Password -->
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" id="password" class="form-control" placeholder="Masukkan password mahasiswa" required>
+                            <input type="text" id="password" class="form-control" placeholder="Masukkan password mahasiswa" required>
                         </div>
                     </div>
 

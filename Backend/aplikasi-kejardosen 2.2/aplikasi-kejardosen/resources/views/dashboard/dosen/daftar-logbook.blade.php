@@ -40,6 +40,9 @@
                         <a href="{{ route('dosen.form-logbook', ['kodeLogbook' => $item->kodeLogbook]) }}">
                             <button class="btn-edit"><i class="fi fi-br-edit edit"></i></button>
                         </a>
+                        <a href="">
+                            <button class="btn-info"><i class="fi fi-br-info info"></i></button>
+                        </a>
                     </div>
                 </li>
             @empty
