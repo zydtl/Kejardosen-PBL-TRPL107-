@@ -1,6 +1,6 @@
 .main-content {
     display: flex;
-    gap: 5px;
+    gap: 50px;
     overflow-y: scroll;
 }
 
@@ -21,19 +21,18 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    flex: 2;
 }
 
 
 .card-welcome {
     display: flex;
-    width: 700px;
     height: 250px;
     background-color: #B1E8F0;
     background-image: linear-gradient(to bottom left, #B1E8F0, #EFFAFE);
     box-sizing: border-box;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.060);
     justify-content: space-between;
     align-items: center;
     transition: all 0.5s ease; 
@@ -46,8 +45,7 @@ body {
 
 
 .sidebar.expanded ~ .main-content .left .card-welcome {
-    width: 500px; 
-    padding: 20px; 
+    padding: 30px; 
 }
 
 .sidebar.expanded ~ .main-content .left .img-welcome-dosen {
@@ -103,11 +101,9 @@ a {
 
 /* Jadwal Dospem */
 .card-jadwal-dosen {
-    width: 700px;
     padding: 20px 30px;
     background-color: white;
     border-radius: 15px;
-    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.062);
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -208,7 +204,6 @@ a {
 }
 
 .sidebar.expanded ~ .main-content .card-jadwal-dosen {
-    width: 500px; /* Lebar lebih kecil */
     padding: 20px; /* Padding lebih kecil */
 }
 
@@ -231,7 +226,6 @@ a {
     background-color: white;
     padding: 15px 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     gap: 15px;
 }
 
@@ -266,24 +260,21 @@ a {
     color: #666;
 }
 
-.sidebar.expanded ~ .main-content .info-cards {
-    width: 500px; /* Lebar lebih kecil */
-}
-
 /* kolom kanan */
 .right {
     flex: 1;
 }
 
+.bimbingan-kosong {
+    margin-left: -15px;
+}
+
 .card-pengajuan {
     background-image: linear-gradient(to top left, #B1E8F0, #EFFAFE);
-    width: auto;
-    max-width: 420px;
-    min-width: 320px;
+    min-width: 340px;
     margin-top: 10px;
     border-radius: 15px;
     padding: 15px;
-    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -347,6 +338,84 @@ a {
     color: #555;
 }
 
-.bimbingan-kosong {
-    margin-left: -15px;
+/* Container notifikasi */
+.notif {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.notif-item {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9; /* Latar belakang lembut */
+    border-radius: 12px; /* Sudut melengkung */
+    padding: 16px; /* Ruang di dalam */
+    margin-bottom: 16px; /* Jarak antar notifikasi */
+  }
+  
+  
+  /* Ikon notifikasi */
+  .notif-icon {
+    flex-shrink: 0; /* Jangan mengecilkan ikon */
+    background-color: #eaf1ff; /* Latar belakang biru lembut */
+    border-radius: 50%; /* Membuat ikon bulat */
+    padding: 12px; /* Ruang di dalam lingkaran */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px; /* Jarak antara ikon dan teks */
+  }
+  
+  /* Warna dan ukuran ikon */
+  .notif-icon i {
+    color: #3a7bfc; /* Warna biru utama */
+    font-size: 20px; /* Ukuran ikon */
+  }
+  
+  /* Bagian teks notifikasi */
+  .notif-text h4 {
+    margin: 0; /* Menghapus margin default */
+    font-size: 16px; /* Ukuran font judul */
+    font-weight: 600; /* Font tebal */
+    color: #333; /* Warna teks */
+  }
+  
+  .notif-text p {
+    margin: 4px 0 0; /* Jarak kecil dari judul */
+    font-size: 14px; /* Ukuran font deskripsi */
+    color: #555; /* Warna teks deskripsi */
+  }
+  
+
+  .card-jadwal-dosen, .card-pengajuan, .card-welcome, .notif-item, .card-info {
+    transition: transform 0.2s, box-shadow 0.2s; /* Animasi hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+
+  }
+
+
+  .notif-item:hover,
+  .card-jadwal-dosen:hover,
+  .card-pengajuan:hover,
+  .card-welcome:hover, 
+  .progress-container:hover,
+  .card-info:hover {
+    transform: translateY(-4px); /* Sedikit melayang */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+.red {
+    background-color: #f9e0e0;
+}
+
+.red i {
+    color: #f44336;
+}
+
+.yellow {
+    background-color: #fff9e5;
+}
+
+.yellow i {
+    color: #ff9800;
 }

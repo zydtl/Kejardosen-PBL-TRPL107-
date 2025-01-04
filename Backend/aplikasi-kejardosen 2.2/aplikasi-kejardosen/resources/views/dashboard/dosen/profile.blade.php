@@ -33,7 +33,7 @@
 
                             <div class="ket">Jumlah Mahasiswa</div>
                             @if ($mahasiswa > 0)
-                                <div class="value">{{ $mahasiswa }} Orang Mahasiswa</div>
+                                <div class="value">{{ $mahasiswa }}</div>
                             @else
                                 <div class="value">⛔Belum memiliki mahasiswa</div>
                             @endif

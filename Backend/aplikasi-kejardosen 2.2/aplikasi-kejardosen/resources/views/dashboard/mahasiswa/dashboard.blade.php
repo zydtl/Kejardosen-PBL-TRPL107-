@@ -130,9 +130,83 @@
                         </div>
                     </a>
                 </div>
+
+                <h2 class="notif">Pemberitahuan</h2>
+
+                <div class="notif-item">
+                    <div class="notif-icon">
+                        <i class="fi fi-br-graduation-cap"></i>
+                    </div>
+                    <div class="notif-text">
+                        <h4>Pengajuan Diterima</h4>
+                        <p>Pengajuan bimbingan Anda telah disetujui oleh dosen.</p>
+                    </div>
+                </div>                
+
+                <div class="notif-item">
+                    <div class="notif-icon red">
+                        <i class="fi fi-br-graduation-cap"></i>
+                    </div>
+                    <div class="notif-text">
+                        <h4>Pengajuan Ditolak</h4>
+                        <p>Pengajuan bimbingan Anda ditolak oleh dosen.</p>
+                    </div>
+                </div>                
+                      
+                <div class="notif-item">
+                    <div class="notif-icon yellow">
+                        <i class="fi fi-br-graduation-cap"></i>
+                    </div>
+                    <div class="notif-text">
+                        <h4>Jadwal Alternatif</h4>
+                        <p>Dosen mengajukan jadwal bimbingan baru. Silakan periksa.</p>
+                    </div>
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-icon red">
+                        <i class="fi fi-br-calendar"></i>
+                    </div>
+                    <div class="notif-text">
+                        <h4>Bimbingan Dibatalkan</h4>
+                        <p>Bimbingan Anda dibatalkan oleh dosen.</p>
+                    </div>
+                </div>                
+                
+                <div class="notif-item">
+                    <div class="notif-icon yellow">
+                        <i class="fi fi-br-calendar"></i>
+                    </div>
+                    <div class="notif-text">
+                        <h4>Jadwal Diperbarui</h4>
+                        <p>Dosen menunda waktu bimbingan. Segera periksa jadwal baru Anda!</p>
+                    </div>
+                </div>                
+
+                <div class="notif-item">
+                    <div class="notif-icon">
+                        <i class="fi fi-br-memo"></i>
+                    </div>
+                    <div class="notif-text">
+                        <h4>Logbook</h4>
+                        <p>Jangan lupa mengisi logbook setelah bimbingan Anda selesai.</p>
+                    </div>
+                </div>
+                
+                <div class="notif-item">
+                    <div class="notif-icon">
+                        <i class="fi fi-br-memo"></i>
+                    </div>
+                    <div class="notif-text">
+                        <h4>Logbook Diperbarui</h4>
+                        <p>Dosen telah mengisi logbook Anda. Silakan periksa.</p>
+                    </div>
+                </div>
+                
+                <div class="spacer"></div>
             @endforeach
         @else
-             <img class="bimbingan-kosong" src="{{asset('assets/dashboard/asset/img/bimbingan_kosong.svg')}}" alt="">
+             <img class="bimbingan-kosong" src="{{asset('assets/dashboard/asset/img/bimbingan_kosong_mhs.svg')}}" alt="">
         @endif
 
 
