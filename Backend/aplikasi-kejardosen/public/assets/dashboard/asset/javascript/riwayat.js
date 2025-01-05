@@ -73,6 +73,7 @@ function searchTable() {
     const input = document.getElementById('search-input');
     const filter = input.value.toLowerCase();
     const tableRows = document.querySelectorAll('.responsive-table .table-row');
+    const tableRowsDosen = document.querySelectorAll('.responsive-table-dsn .table-row');
 
     // Loop melalui semua baris di tabel
     tableRows.forEach(row => {
@@ -89,4 +90,46 @@ function searchTable() {
         // Tampilkan atau sembunyikan baris berdasarkan pencocokan
         row.style.display = match ? '' : 'none';
     });
+
+    tableRowsDosen.forEach(row => {
+        const cells = row.querySelectorAll('.col');
+        let match = false;
+
+        // Periksa setiap kolom dalam baris
+        cells.forEach(cell => {
+            if (cell.textContent.toLowerCase().includes(filter)) {
+                match = true;
+            }
+        });
+
+        // Tampilkan atau sembunyikan baris berdasarkan pencocokan
+        row.style.display = match ? '' : 'none';
+    });
 }
+
+
+
+// Fungsi untuk memeriksa apakah tabel memiliki data
+const checkEmptyTable = (tableClass, emptyClass) => {
+    const tables = document.querySelectorAll(`.${tableClass}`);
+    tables.forEach((table) => {
+        const gambarKosong = table.nextElementSibling; // Ambil elemen gambar kosong setelah tabel
+        const hasRows = table.querySelectorAll('.table-row').length > 0;
+
+        if (gambarKosong && gambarKosong.classList.contains(emptyClass)) {
+            gambarKosong.style.display = hasRows ? 'none' : 'block';
+        }
+    });
+};
+
+// Jalankan pengecekan awal untuk kedua tabel
+checkEmptyTable('responsive-table', 'gambar-kosong');
+checkEmptyTable('responsive-table-dsn', 'gambar-kosong');
+
+// Contoh: Jika kamu menambahkan atau menghapus data secara dinamis
+document.querySelector('#addRowButton').addEventListener('click', () => {
+    // Tambahkan data baru...
+    // Setelah manipulasi DOM selesai, cek ulang untuk kedua tabel
+    checkEmptyTable('responsive-table', 'gambar-kosong');
+    checkEmptyTable('responsive-table-dsn', 'gambar-kosong');
+});

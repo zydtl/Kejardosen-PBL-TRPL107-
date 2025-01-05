@@ -15,19 +15,23 @@ return new class extends Migration
             $table->string('kodePengajuan', 20)->primary();
             $table->date('tanggal_pengajuan');
             $table->time('waktu_pengajuan');
-            $table->date('tanggal_anjuranDosen');
-            $table->time('waktu_anjuranDosen');
-            $table->string('catatan_dosen');
+            $table->date('tanggal_anjuranDosen')->nullable(); // Membolehkan null
+            $table->time('waktu_anjuranDosen')->nullable(); // Membolehkan null
+            $table->string('judul_bimbingan');
+            $table->string('catatan_dosen')->nullable(); // Membolehkan null
             $table->string('catatan_mahasiswa');
             $table->bigInteger('nim');
-            $table->enum('status', ['menunggu', 'disetujui', 'ditolak', 'alternatif']);
-
+            $table->enum('status', ['menunggu', 'disetujui', 'ditolak', 'alternatif', 'dibatalkan']);
+        
             $table->timestamps();
-            $table->foreign('nim')->references('nim')->on('tb_mahasiswa');
+            $table->foreign('nim')->references('nim')->on('tb_mahasiswa')->onUpdate('cascade')->onDelete('cascade');
         });
         
         
+        
     }
+
+    
 
     /**
      * Reverse the migrations.

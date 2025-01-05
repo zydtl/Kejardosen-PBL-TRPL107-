@@ -25,21 +25,44 @@
                 <div class="col col-2">Dosen</div>
                 <div class="col col-3">Aksi</div>
             </li>
+            @foreach($mahasiswa as $data)    
             <li class="table-row">
                 <div class="col col-1" data-label="Mahasiswa">
-                    <div class="nama">Muhammad Maulana Yusuf</div>
-                    <div class="nim_nik">4342401057</div> 
+                    <div class="nama">{{ $data->nama_mahasiswa }}</div>
+                    <div class="nim_nik">{{ $data->nim }}</div> 
                 </div>
                 <div class="col col-2" data-label="Dosen">
-                    <div class="nama">Alena Uperiati</div>
-                    <div class="nim_nik">221211</div> 
+                    <div class="nama">{{ $data->dosen->nama_dosen}}</div>
+                    <div class="nim_nik">{{ $data->dosen->nik }}</div> 
                 </div>
                 <div class="col col-3" data-label="Aksi">
-                    <button id="info-mhs" class="btn-info-mhs"><i class="fi fi-br-info info"></i></button>
-                    <button id="edit-mhs" class="btn-edit-mhs"><i class="fi fi-br-edit edit"></i></button>
+                    <button id="info-mhs" class="btn-info-mhs"
+                        data-nim="{{ $data->nim }}" 
+                        data-nama_mahasiswa="{{ $data->nama_mahasiswa }}" 
+                        data-password="{{ $data->password }}" 
+                        data-email="{{ $data->email }}" 
+                        data-no_telp="{{ $data->no_telp }}" 
+                        data-kelas="{{ $data->kelas }}" 
+                        data-jenis_kelamin="{{ $data->jenis_kelamin }}" 
+                        data-nik_dosen="{{ $data->dosen->nama_dosen }}" 
+                        data-judul_tugas_akhir="{{ $data->judul_tugas_akhir }}" 
+                    ><i class="fi fi-br-info info"></i></button>
+                    <button id="edit-mhs" class="btn-edit-mhs"
+                        data-nim="{{ $data->nim }}" 
+                        data-nama_mahasiswa="{{ $data->nama_mahasiswa }}" 
+                        data-password="{{ $data->password }}" 
+                        data-email="{{ $data->email }}" 
+                        data-no_telp="{{ $data->no_telp }}" 
+                        data-kelas="{{ $data->kelas }}" 
+                        data-jenis_kelamin="{{ $data->jenis_kelamin }}" 
+                        data-nik_dosen="{{ $data->nik_dosen }}" 
+                        data-judul_tugas_akhir="{{ $data->judul_tugas_akhir }}" 
+                    ><i class="fi fi-br-edit edit"></i></button>
                     <button class="btn-hapus-mhs"><i class="fi fi-br-trash trash"></i></button>
                 </div>
             </li>
+            @endforeach
+
         </ul>
         <!-- Pagination -->
         <div class="pagination">
@@ -107,7 +130,7 @@
                         <!-- Password -->
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" id="password" class="form-control" placeholder="Masukkan password mahasiswa" required>
+                            <input type="text" id="password" class="form-control" placeholder="Masukkan password mahasiswa" required>
                         </div>
                     </div>
 
@@ -122,12 +145,12 @@
                         <!-- Dosen Pembimbing -->
                         <div class="form-group">
                             <label for="dosenPembimbing">Dosen Pembimbing</label>
-                            <select id="dosenPembimbing" class="form-control" required>
+                            <select id="dosenPembimbing" class="form-control" name="nik_dosen" required>
                                 <option value="" disabled selected>Pilih dosen pembimbing</option>
-                                <option value="1">Dr. Ahmad Maulana</option>
-                                <option value="2">Prof. Siti Aisyah</option>
-                                <option value="3">Dr. Andi Kurniawan</option>
-                            </select>
+                                @foreach($dosen as $item)
+                                    <option value="{{ $item->nik }}">{{ $item->nama_dosen }}</option>
+                                @endforeach
+                            </select>                                   
                         </div>
                     </div>
                 </div>
@@ -185,7 +208,7 @@
                     <!-- password -->
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <div id="password" class="value">mahasiswa123</div>
+                        <div id="password" class="value">Password Mahasiswa gak boleh diintip ya...🤗🤗🤗</div>
                     </div>
                 </div>
 
@@ -222,27 +245,27 @@
                         <!-- Nama -->
                         <div class="form-group">
                             <label for="nama">Nama Mahasiswa</label>
-                            <input type="text" id="nama" class="form-control" placeholder="Masukkan nama mahasiswa" >
+                            <input type="text" id="nama_edit" class="form-control" placeholder="Masukkan nama mahasiswa" >
                         </div>
                         
                         <!-- NIM -->
                         <div class="form-group">
                             <label for="nim">NIM</label>
-                            <input type="text" id="nim" class="form-control" placeholder="Masukkan NIM mahasiswa" >
+                            <input type="text" id="nim_edit" class="form-control" placeholder="Masukkan NIM mahasiswa" >
                         </div>
                         
                         <!-- Kelas -->
                         <div class="form-group">
                             <label for="kelas">Kelas</label>
-                            <input type="text" id="kelas" class="form-control" placeholder="Masukkan kelas mahasiswa" >
+                            <input type="text" id="kelas_edit" class="form-control" placeholder="Masukkan kelas mahasiswa" >
                         </div>
                         
                         <!-- Jenis Kelamin -->
                         <div class="form-group">
                             <label for="jenisKelamin">Jenis Kelamin</label>
-                            <select id="jenisKelamin" class="form-control" >
+                            <select id="jenisKelamin_edit" class="form-control" >
                                 <option value="" disabled selected>Pilih jenis kelamin</option>
-                                <option value="Laki-Laki">Laki-Laki</option>
+                                <option value="Laki-laki">Laki-Laki</option>
                                 <option value="Perempuan">Perempuan</option>
                             </select>
                         </div>
@@ -250,19 +273,19 @@
                         <!-- Nomor Telepon -->
                         <div class="form-group">
                             <label for="noTelp">Nomor Telepon</label>
-                            <input type="tel" id="noTelp" class="form-control" placeholder="Masukkan nomor telepon mahasiswa" >
+                            <input type="tel" id="noTelp_edit" class="form-control" placeholder="Masukkan nomor telepon mahasiswa" >
                         </div>
                         
                         <!-- Email -->
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Masukkan email mahasiswa" >
+                            <input type="email" id="email_edit" class="form-control" placeholder="Masukkan email mahasiswa" >
                         </div>
 
                         <!-- Password -->
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" id="password" class="form-control" placeholder="Masukkan password mahasiswa" >
+                            <input type="password" id="password_edit" class="form-control" placeholder="kosongkan input ini jikalau tidak ingin diubah 🤗🤗🤗" >
                         </div>
                     </div>
 
@@ -271,18 +294,19 @@
                         <!-- Judul Tugas Akhir -->
                         <div class="form-group">
                             <label for="judulTA">Judul Tugas Akhir</label>
-                            <input type="text" id="judulTA" class="form-control" placeholder="Masukkan judul tugas akhir" >
+                            <input type="text" id="judulTA_edit" class="form-control" placeholder="Masukkan judul tugas akhir" >
                         </div>
                         
                         <!-- Dosen Pembimbing -->
                         <div class="form-group">
-                            <label for="dosenPembimbing">Dosen Pembimbing</label>
-                            <select id="dosenPembimbing" class="form-control" >
+                            <label for="dosenPembimbing_edit">Dosen Pembimbing</label>
+                            <select id="dosenPembimbing_edit" class="form-control"  required>
+                                {{-- name="nik_dosen" --}}
                                 <option value="" disabled selected>Pilih dosen pembimbing</option>
-                                <option value="1">Dr. Ahmad Maulana</option>
-                                <option value="2">Prof. Siti Aisyah</option>
-                                <option value="3">Dr. Andi Kurniawan</option>
-                            </select>
+                                @foreach($dosen as $item)
+                                    <option value="{{ $item->nik }}">{{ $item->nama_dosen }}</option>
+                                @endforeach
+                            </select> 
                         </div>
                     </div>
                 </div>

@@ -69,40 +69,18 @@
     
   }
   
-/* status untuk semua*/
-.status-accept, .status-ongoing, .status-reject, .status-cancel, 
-.status-waiting, .status-delay, .status-resched, .status-finish {
-  padding: 8px 15px;
-  margin-bottom: 5px;
-  border-radius: 15px;
-  font-size: 10px;
-  font-weight: 600;
-}
-
-.status-accept {
-  color: #129D2E;
-  background-color: #BAFFBA;
-}
-
-.status-ongoing {
-  color: #1F819B;
-  background-color: #B1E8F0;
-}
-
-.status-reject, .status-cancel {
-  color: #A70606;
-  background-color: #FFC6BA;
-}
-
-.status-waiting, .status-delay .status-resched{
-  color: #83831E;
-  background-color: #FFF97E;
-}
-
-.status-finish {
-  color: grey;
-  background-color: #cccccc9c;
-}
+  .status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .status.pending {
+    background-color: #ffd900;
+    color: #333;
+     margin-left: 0px;
+     border-radius: 10px;
+  }
   
   .action-btn {
     border: none;
@@ -314,7 +292,6 @@ textarea.form-control {
 
 
 .modal-container {
-  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background-color: white;
   margin-top: 50px;

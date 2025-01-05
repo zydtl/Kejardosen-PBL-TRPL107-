@@ -16,7 +16,8 @@ class Administrator extends Authenticatable
     protected $primaryKey = 'idAdministrator';
 
     // Tentukan kolom mana yang bisa diisi secara massal
-    protected $fillable = ['name', 'email', 'password', 'remember_token',];
+    // protected $fillable = ['name', 'email', 'password', 'remember_token', 'id_administator'];
+    protected $fillable = ['username', 'nama', 'email', 'password', 'jenis_kelamin', 'remember_token'];
 
     // Kolom yang disembunyikan agar tidak terlihat di hasil serialisasi
     protected $hidden = [

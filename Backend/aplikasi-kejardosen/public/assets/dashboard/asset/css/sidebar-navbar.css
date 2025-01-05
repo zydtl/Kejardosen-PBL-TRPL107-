@@ -248,4 +248,5 @@ a {
 
 .main-content.expanded {
     margin-left: 270px; 
+    gap: 30px;
 }

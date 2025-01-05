@@ -15,27 +15,56 @@
         <ul class="responsive-table">
             <li class="table-header">
                 <div class="col col-1">Kode Jadwal</div>
-                <div class="col col-2">NIM</div>
+                <div class="col col-2">Disepakati Pada</div>
                 <div class="col col-3">Tanggal Bimbingan</div>
                 <div class="col col-4">Waktu Bimbingan</div>
                 <div class="col col-5">Status</div>
                 <div class="col col-6">Aksi</div>
             </li>
+
+            @forelse ($jadwal as $item)
             <li class="table-row">
-                <div class="col col-1" data-label="Kode Jadwal">KJR98KQAM</div>
-                <div class="col col-2" data-label="NIM">4342401057</div>
-                <div class="col col-3" data-label="Tanggal Bimbingan">12 September 2024</div>
-                <div class="col col-4" data-label="Waktu Bimbingan">09.00 WIB</div>
-                <div class="col col-5" data-label="Status"><span class="status-ongoing">Berlangsung</span></div>
+                <div class="col col-1" data-label="Kode Jadwal">{{ $item->kodeJadwal }}</div>
+                <div class="col col-2" data-label="NIM">{{ \Carbon\Carbon::parse($item->created_at)->locale('id')->timezone('Asia/Jakarta')->translatedFormat('l, d F Y - H:i') }} WIB</div>
+                <div class="col col-3" data-label="Tanggal Bimbingan">{{ \Carbon\Carbon::parse($item->tanggal_bimbingan)->translatedFormat('l, d F Y') }}</div>
+                <div class="col col-4" data-label="Waktu Bimbingan">{{ \Carbon\Carbon::parse($item->waktu_bimbingan)->timezone('Asia/Jakarta')->format('H:i') }} WIB</div>
+                <div class="col col-5" data-label="Status"><span class="
+                                @if ($item->status == 'menunggu' || $item->status == 'alternatif' || $item->status == 'ditunda')
+                                    status-waiting
+                                @elseif($item->status == 'dibatalkan' || $item->status == 'ditolak') 
+                                    status-cancel
+                                @elseif($item->status == 'diterima') 
+                                    status-accept
+                                @elseif($item->status == 'berlangsung') 
+                                    status-ongoing
+                                @elseif($item->status == 'disetujui') 
+                                    status-accept                               
+                                @elseif($item->status == 'diselesaikan') 
+                                    status-finish 
+                                @endif
+                    ">{{ $item->status }}</span></div>
                 <!-- <div class="col col-5" data-label="Status"><span class="status-cancel">Dibatalkan</span></div> -->
                 <!-- <div class="col col-5" data-label="Status"><span class="status-delay">Ditunda</span></div> -->
                 <!-- <div class="col col-5" data-label="Status"><span class="status-finish">Selesai</span></div> -->
                 <div class="col col-6" data-label="Aksi">
-                    <button class="btn-tolak" title="Batalkan" data-role="mahasiswa"><i class="fi fi-br-ban delete"></i></button>
-                    <button class="btn-info" title="Info"><i class="fi fi-br-info info"></i></button>
-                    <button class="btn-selesai" title="Bimbingan Selesai"><i class="fi fi-br-check selesai"></i></button>
+                    <button class="btn-tolak" title="Batalkan" data-role="dosen" data-kode="{{ $item->kodeJadwal }}"><i class="fi fi-br-ban delete"></i></button>
+                    <a href="{{ route('mahasiswa.detail-jadwal-bimbingan', ['kodeJadwal' => $item->kodeJadwal]) }}">
+                        <button class="btn-info" title="Info">
+                            <i class="fi fi-br-info info"></i>
+                        </button>
+                    </a>
+                    <button class="btn-selesai" title="Bimbingan Selesai" data-kode="{{ $item->kodeJadwal }}"><i class="fi fi-br-check selesai"></i></button>
+
                 </div>
             </li>
+            @empty
+                <li class="table-row gambar-kosong">
+                    <div class="col" style="text-align: center; width: 100%;">
+                        <img src="{{ asset('assets/dashboard/asset/img/tabel-kosong.svg') }}" alt="Kosong" />
+                        <p>Belum ada jadwal bimbingan.</p>
+                    </div>
+                </li>
+            @endforelse
         </ul>
     </div>
 @endsection

@@ -22,10 +22,12 @@ return new class extends Migration
             $table->boolean('kondisi_sabtu')->default(false);
             $table->boolean('kondisi_minggu')->default(false);
             $table->timestamps();
-            $table->foreign('nik_dosen')->references('nik')->on('tb_dosen')->onDelete('cascade');
+            $table->foreign('nik_dosen')->references('nik')->on('tb_dosen')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
+
+    
     /**
      * Reverse the migrations.
      */

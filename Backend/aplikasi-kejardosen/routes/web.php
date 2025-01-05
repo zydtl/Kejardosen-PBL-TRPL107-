@@ -4,6 +4,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\KehendakAdminController;
+
+use App\Http\Controllers\PengajuanJadwalController;
+use App\Http\Controllers\JadwalBimbinganController;
+// use App\Models\JadwalBimbingan;
+use App\Http\Controllers\LogbookController;
+use App\Http\Controllers\DashboardController;
 
 // Halaman utama menuju ke landing page
 Route::get('/', function () {
@@ -27,104 +34,225 @@ Route::post('/login/admin', [AuthController::class, 'loginAdmin'])->name('login.
 
 // Halaman Dashboard ================================================================================================================================================================================
 
-//ROUTE MAHASISWA-----------------------------------------------------------------------------------------------------------------------------------------
 
 // Halaman dashboard untuk mahasiswa (hanya bisa diakses oleh mahasiswa yang sudah login)
-Route::get('/mahasiswa/dashboard', function () {
-    return view('dashboard.mahasiswa.dashboard');
-})->name('mahasiswa.dashboard')->middleware('auth:mahasiswa');
+Route::get('/mahasiswa/dashboard', [DashboardController::class, 'indexMahasiswa'])
+    ->name('mahasiswa.dashboard')
+    ->middleware('auth:mahasiswa');
 
 // Halaman pengajuan untuk Mahasiswa
-Route::get('/mahasiswa/pengajuan', function () {
-    return view('dashboard.mahasiswa.pengajuan');
-})->name('mahasiswa.pengajuan')
+Route::get('/mahasiswa/pengajuan', [PengajuanJadwalController::class, 'index'])
+    ->name('mahasiswa.pengajuan')
     ->middleware('auth:mahasiswa');
 
-// LANJUTAN ROUTE MAHASISWA BY YUSUF********************************************************************************************************************
+    // Route untuk buat pengajuan
+    Route::post('/mahasiswa/pengajuan', [PengajuanJadwalController::class, 'store'])->name('pengajuan.store');
 
-Route::get('/mahasiswa/jadwal-bimbingan', function () {
-    return view('dashboard.mahasiswa.jadwal-bimbingan');
-})->name('mahasiswa.jadwal-bimbingan')
+    // Route untuk menangani request data berdasarkan kodePengajuan
+    // Route::put('/mahasiswa/pengajuan/update/{kodePengajuan}', [PengajuanJadwalController::class, 'update'])->name('pengajuan.update');
+    Route::put('/mahasiswa/pengajuan/update/{kodePengajuan}', [PengajuanJadwalController::class, 'update'])->name('pengajuan.update');
+
+
+
+    // Route untuk membatalkan pengajuan
+    Route::patch('mahasiswa/pengajuan/{kodePengajuan}/batalkan', [PengajuanJadwalController::class, 'updateStatus']);
+
+
+
+// Halaman detail pengajuan untuk Mahasiswa
+Route::get('/mahasiswa/detail-pengajuan/{kodePengajuan}', [PengajuanJadwalController::class, 'detail'])
+    ->name('mahasiswa.detail-pengajuan')
     ->middleware('auth:mahasiswa');
 
-Route::get('/mahasiswa/kalender', function () {
-    return view('dashboard.mahasiswa.kalender');
-})->name('mahasiswa.kalender')
+// Halaman Riwayat Pengajuan
+Route::get('/mahasiswa/riwayat-pengajuan', [PengajuanJadwalController::class, 'riwayatPengajuanMahasiswa'])
+    ->name('mahasiswa.riwayat-pengajuan')
     ->middleware('auth:mahasiswa');
 
-Route::get('/mahasiswa/logbook', function () {
-    return view('dashboard.mahasiswa.logbook');
-})->name('mahasiswa.logbook')
+// Halaman detail riwayat pengajuan untuk Mahasiswa
+Route::get('/mahasiswa/detail-riwayat-pengajuan/{kodePengajuan}', [PengajuanJadwalController::class, 'detailRiwayatPengajuanMahasiswa'])
+    ->name('mahasiswa.detail-riwayat-pengajuan')
     ->middleware('auth:mahasiswa');
 
-Route::get('/mahasiswa/riwayat-pengajuan', function () {
-    return view('dashboard.mahasiswa.riwayat-pengajuan');
-})->name('mahasiswa.riwayat-pengajuan')
+
+// Route untuk Mahasiswa Jadwal Bimbingan
+Route::get('/mahasiswa/jadwal-bimbingan', [JadwalBimbinganController::class, 'indexMahasiswa'])
+    ->name('mahasiswa.jadwal-bimbingan')
     ->middleware('auth:mahasiswa');
 
-Route::get('/mahasiswa/riwayat-jadwal-bimbingan', function () {
-    return view('dashboard.mahasiswa.riwayat-jadwal-bimbingan');
-})->name('mahasiswa.riwayat-jadwal-bimbingan')
+    Route::put('/mahasiswa/jadwal-bimbingan/tunda/{kodeJadwal}', [JadwalBimbinganController::class, 'tunda'])
+        ->name('mahasiswa.jadwal-bimbingan.tunda')
+        ->middleware('auth:mahasiswa');
+
+    Route::put('/mahasiswa/jadwal-bimbingan/batalkan/{kodeJadwal}', [JadwalBimbinganController::class, 'batalkanMahasiswa'])
+        ->name('mahasiswa.jadwal-bimbingan.batalkan')
+        ->middleware('auth:mahasiswa');
+
+    Route::put('/mahasiswa/jadwal-bimbingan/selesai/{kodePengajuan}', [JadwalBimbinganController::class, 'selesai'])
+        ->name('dosen.jadwal-bimbingan.selesai')
+        ->middleware('auth:dosen');
+
+// Halaman detail pengajuan untuk Mahasiswa
+Route::get('/mahasiswa/detail-jadwal-bimbingan/{kodeJadwal}', [JadwalBimbinganController::class, 'detailMahasiswa'])
+    ->name('mahasiswa.detail-jadwal-bimbingan')
     ->middleware('auth:mahasiswa');
 
-Route::get('/mahasiswa/profil', function () {
-    return view('dashboard.mahasiswa.profil');
-})->name('mahasiswa.profil')
+// Halaman Riwayat jadwal bimbingan
+Route::get('/mahasiswa/riwayat-jadwal-bimbingan', [JadwalBimbinganController::class, 'riwayatJadwalMahasiswa'])
+    ->name('mahasiswa.riwayat-jadwal-bimbingan')
     ->middleware('auth:mahasiswa');
+
+// Halaman detail riwayat jadwal untuk Mahasiswa
+Route::get('/mahasiswa/detail-riwayat-jadwal-bimbingan/{kodeJadwal}', [JadwalBimbinganController::class, 'detailRiwayatMahasiswa'])
+    ->name('mahasiswa.detail-riwayat-jadwal-bimbingan')
+    ->middleware('auth:mahasiswa');
+
+// Halaman daftar logbook untuk mahasiswa
+Route::get('/mahasiswa/logbook', [LogbookController::class, 'indexMahasiswa'])
+    ->name('mahasiswa.logbook')
+    ->middleware('auth:mahasiswa');
+
+// Halaman Detail Logbook
+Route::get('/mahasiswa/detail-logbook/{kodeLogbook}', [LogbookController::class, 'showLogbookDetailMahasiswa'])
+    ->name('mahasiswa.detail-logbook')
+    ->middleware('auth:mahasiswa');
+
+// Halaman form logbook untuk Mahasiswa (edit)
+Route::get('/mahasiswa/form-logbook/{kodeLogbook}', [LogbookController::class, 'formLogbookMahasiswa'])
+->name('mahasiswa.form-logbook')
+->middleware('auth:mahasiswa');
+
+    // Route untuk mengupdate logbook
+    Route::put('/mahasiswa/form-logbook/update/{kodeLogbook}', [LogbookController::class, 'updateMahasiswa'])
+        ->name('mahasiswa.form-logbook.update')
+        ->middleware('auth:mahasiswa');
+
+
+// profile mahasiswa
+Route::get('/mahasiswa/profile', [DashboardController::class, 'profileMahasiswa'])
+    ->name('mahasiswa.profile')
+    ->middleware('auth:mahasiswa');
+
+
+// LANJUTAN ROUTE MAHASISWA BY YUSUF ********************************************************************************************************************
+
+
+
+
+
+
+
+
+
 
 // END LANJUTAN ROUTE MAHASISWA BY YUSUF ***********************************************************************************************************************************
 
 
+//-----------------------------------------------------------------------------------------------------------------------------------------
 
-//ROUTE DOSEN-----------------------------------------------------------------------------------------------------------------------------------------
 
 // Halaman dashboard untuk dosen (hanya bisa diakses oleh dosen yang sudah login)
-Route::get('/dosen/dashboard', function () {
-    return view('dashboard.dosen.dashboard');
-})->name('dosen.dashboard')->middleware('auth:dosen');
 
-// Halaman pengajuan untuk Dosen
-Route::get('/dosen/pengajuan', function () {
-    return view('dashboard.dosen.pengajuan');
-})->name('dosen.pengajuan')
+Route::get('/dosen/dashboard', [DashboardController::class, 'indexDosen'])
+    ->name('dosen.dashboard')
     ->middleware('auth:dosen');
 
-Route::get('/dosen/form-logbook', function () {
-    return view('dashboard.dosen.form-logbook');
-})->name('dosen.form-logbook')
+// Route untuk Dosen Pengajuan
+Route::get('/dosen/pengajuan', [PengajuanJadwalController::class, 'indexDosen'])
+    ->name('dosen.pengajuan')
     ->middleware('auth:dosen');
 
-Route::get('/dosen/jadwal-bimbingan', function () {
-    return view('dashboard.dosen.jadwal-bimbingan');
-})->name('dosen.jadwal-bimbingan')
+    // Route::put('/mahasiswa/pengajuan/update/{kodePengajuan}', [PengajuanJadwalController::class, 'update'])->name('pengajuan.update');
+    
+    Route::put('/dosen/pengajuan/tolakPengajuan/{kodePengajuan}', [PengajuanJadwalController::class, 'tolakPengajuan'])
+        ->name('dosen.pengajuan.tolak')
+        ->middleware('auth:dosen');
+
+    Route::put('/dosen/pengajuan/bandingPengajuan/{kodePengajuan}', [PengajuanJadwalController::class, 'bandingPengajuan'])
+        ->name('dosen.pengajuan.banding')
+        ->middleware('auth:dosen');
+
+    Route::put('/dosen/pengajuan/terimaPengajuan/{kodePengajuan}', [PengajuanJadwalController::class, 'terimaPengajuan'])
+        ->name('dosen.pengajuan.terima')
+        ->middleware('auth:dosen');
+
+// Halaman Riwayat Pengajuan
+Route::get('/dosen/riwayat-pengajuan', [PengajuanJadwalController::class, 'riwayatPengajuanDosen'])
+    ->name('dosen.riwayat-pengajuan')
+    ->middleware('auth:dosen');
+
+// Halaman detail riwayat pengajuan untuk Dosen
+Route::get('/dosen/detail-riwayat-pengajuan/{kodePengajuan}', [PengajuanJadwalController::class, 'detailRiwayatPengajuanDosen'])
+    ->name('dosen.detail-riwayat-pengajuan')
+    ->middleware('auth:dosen');
+
+// Route untuk Dosen Jadwal Bimbingan
+Route::get('/dosen/jadwal-bimbingan', [JadwalBimbinganController::class, 'indexDosen'])
+    ->name('dosen.jadwal-bimbingan')
+    ->middleware('auth:dosen');
+
+    Route::put('/dosen/jadwal-bimbingan/tunda/{kodeJadwal}', [JadwalBimbinganController::class, 'tunda'])
+        ->name('dosen.jadwal-bimbingan.tunda')
+        ->middleware('auth:dosen');
+
+    Route::put('/dosen/jadwal-bimbingan/batalkan/{kodeJadwal}', [JadwalBimbinganController::class, 'batalkanDosen'])
+        ->name('dosen.jadwal-bimbingan.batalkan')
+        ->middleware('auth:dosen');
+
+// Halaman detail pengajuan untuk Dosen
+Route::get('/dosen/detail-jadwal-bimbingan/{kodeJadwal}', [JadwalBimbinganController::class, 'detailDosen'])
+    ->name('dosen.detail-jadwal-bimbingan')
+    ->middleware('auth:dosen');
+
+// Halaman Riwayat jadwal bimbingan
+Route::get('/dosen/riwayat-jadwal-bimbingan', [JadwalBimbinganController::class, 'riwayatJadwalDosen'])
+    ->name('dosen.riwayat-jadwal-bimbingan')
+    ->middleware('auth:dosen');
+
+// Halaman detail riwayat jadwal untuk dosen
+Route::get('/dosen/detail-riwayat-jadwal-bimbingan/{kodeJadwal}', [JadwalBimbinganController::class, 'detailRiwayatDosen'])
+    ->name('dosen.detail-riwayat-jadwal-bimbingan')
+    ->middleware('auth:dosen');
+
+    
+// Halaman daftar logbook seluruh mahasiswa
+Route::get('/dosen/logbook', [LogbookController::class, 'indexDosen'])
+    ->name('dosen.logbook')
+    ->middleware('auth:dosen');
+
+// Halaman logbook mahasiswa yang dipilih
+Route::get('/dosen/daftar-logbook/{nim}', [LogbookController::class, 'indexMahasiswaDosen'])
+    ->name('dosen.daftar-logbook')
+    ->middleware('auth:dosen');
+
+// Halaman Detail Logbook
+Route::get('/dosen/detail-logbook/{kodeLogbook}', [LogbookController::class, 'showLogbookDetailDosen'])
+    ->name('dosen.detail-logbook')
+    ->middleware('auth:dosen');
+
+// Halaman form logbook untuk dosen (edit)
+Route::get('/dosen/form-logbook/{kodeLogbook}', [LogbookController::class, 'formLogbookDosen'])
+->name('dosen.form-logbook')
+->middleware('auth:dosen');
+
+    // Route untuk mengupdate logbook
+    Route::put('/dosen/form-logbook/update/{kodeLogbook}', [LogbookController::class, 'updateDosen'])
+        ->name('dosen.form-logbook.update')
+        ->middleware('auth:dosen');
+
+
+// profile dosen
+Route::get('/dosen/profile', [DashboardController::class, 'profileDosen'])
+    ->name('dosen.profile')
     ->middleware('auth:dosen');
 
 // LANJUTAN ROUTE DOSEN BY YUSUF********************************************************************************************************************
 
-Route::get('/dosen/profil', function () {
-    return view('dashboard.dosen.profil');
-})->name('dosen.profil')
-    ->middleware('auth:dosen');
 
-Route::get('/dosen/logbook', function () {
-    return view('dashboard.dosen.logbook');
-})->name('dosen.logbook')
-    ->middleware('auth:dosen');
 
-Route::get('/dosen/riwayat-pengajuan', function () {
-    return view('dashboard.dosen.riwayat-pengajuan');
-})->name('dosen.riwayat-pengajuan')
-    ->middleware('auth:dosen');
 
-Route::get('/dosen/riwayat-jadwal-bimbingan', function () {
-    return view('dashboard.dosen.riwayat-jadwal-bimbingan');
-})->name('dosen.riwayat-jadwal-bimbingan')
-    ->middleware('auth:dosen');
 
-Route::get('/dosen/kalender', function () {
-    return view('dashboard.dosen.kalender');
-})->name('dosen.kalender')
-    ->middleware('auth:dosen');
+
 
 // END LANJUTAN ROUTE DOSEN BY YUSUF ***********************************************************************************************************************************
 
@@ -132,24 +260,36 @@ Route::get('/dosen/kalender', function () {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-// LANJUTAN ROUTE ADMIN BY YUSUF********************************************************************************************************************
+
+// Halaman dashboard untuk admin (hanya bisa diakses oleh admin yang sudah login)
+Route::get('/admin/dashboard', [DashboardController::class, 'indexAdmin'])
+    ->name('admin.dashboard')
+    ->middleware('auth:admin');
 
 // Halaman dashboard untuk admin (hanya bisa diakses oleh admin yang sudah login)
 
-Route::get('/admin/dashboard', function () {
-    return view('dashboard.admin.dashboard');
-})->name('admin.dashboard')
-    ->middleware('auth:admin');
 
-Route::get('/admin/daftar-dosen', function () {
-    return view('dashboard.admin.daftar-dosen');
-})->name('admin.daftar-dosen')
-    ->middleware('auth:admin');
 
-Route::get('/admin/daftar-mahasiswa', function () {
-    return view('dashboard.admin.daftar-mahasiswa');
-})->name('admin.daftar-mahasiswa')
-    ->middleware('auth:admin');
+Route::middleware('auth:admin')->prefix('admin')->group(function () {
+    Route::get('/daftar-dosen', [KehendakAdminController::class, 'index'])->name('admin.daftar-dosen');
+    Route::get('/daftar-mahasiswa', [KehendakAdminController::class, 'indexMahasiswa'])->name('admin.daftar-mahasiswa');
+});
+
+    Route::post('/admin/daftar-dosen', [KehendakAdminController::class, 'store'])->name('daftar-dosen.store');
+    Route::put('/admin/daftar-dosen/update/{nik}', [KehendakAdminController::class, 'update'])->name('daftar-dosen.update');
+    Route::delete('/admin/daftar-dosen/destroy/{nik}', [KehendakAdminController::class, 'destroy'])->name('daftar-dosen.destroy');
+
+    Route::post('/admin/daftar-mahasiswa', [KehendakAdminController::class, 'storeMahasiswa'])->name('daftar-mahasiswa.store');
+    Route::put('/admin/daftar-mahasiswa/update/{nim}', [KehendakAdminController::class, 'updateMahasiswa'])->name('daftar-mahasiswa.update');
+    Route::delete('/admin/daftar-mahasiswa/destroy/{nim}', [KehendakAdminController::class, 'destroyMahasiswa'])->name('daftar-mahasiswa.destroy');
+// Route::middleware('auth:admin')->prefix('admin')->group(function () {
+//     Route::get('/daftar-mahasiswa', [KehendakAdminController::class, 'indexMahasiswa'])->name('admin.daftar-mahasiswa');
+// });
+
+// Route::get('/admin/daftar-mahasiswa', function () {
+//     return view('dashboard.admin.daftar-mahasiswa');
+// })->name('admin.daftar-mahasiswa')
+//     ->middleware('auth:admin');
 
 Route::get('/admin/hubungkan-mahasiswa', function () {
     return view('dashboard.admin.hubungkan-mahasiswa');
@@ -163,17 +303,19 @@ Route::get('/admin/lihat-bimbingan', function () {
 
 // END LANJUTAN ROUTE ADMIN BY YUSUF ***********************************************************************************************************************************
 
+
+
 // Rute logout================================================================================================================================================================================
 
 
 // Rute logout untuk admin
-Route::post('/logout/admin', [AuthController::class, 'logout'])->name('logout.admin');
+Route::get('/logout/admin', [AuthController::class, 'logout'])->name('logout.admin');
 
 // Rute logout untuk dosen
-Route::post('/logout/dosen', [AuthController::class, 'logoutDosen'])->name('logout.dosen');
+Route::get('/logout/dosen', [AuthController::class, 'logoutDosen'])->name('logout.dosen');
 
 // Rute logout untuk mahasiswa
-Route::post('/logout/mahasiswa', [AuthController::class, 'logoutMahasiswa'])->name('logout.mahasiswa');
+Route::get('/logout/mahasiswa', [AuthController::class, 'logoutMahasiswa'])->name('logout.mahasiswa');
 
 // Fallback login untuk rute lain (halaman login default jika belum login)
 Route::get('/login', function () {

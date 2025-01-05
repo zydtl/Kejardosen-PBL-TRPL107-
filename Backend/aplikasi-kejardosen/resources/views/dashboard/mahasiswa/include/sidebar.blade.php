@@ -9,7 +9,7 @@
         </li>
         <li><a href="{{ route('mahasiswa.jadwal-bimbingan') }}"><i class="fi fi-br-list-check"></i> <span class="menu-text">Jadwal Bimbingan</span></a>
         </li>
-        <li><a href="{{ route('mahasiswa.kalender') }}"><i class="fi fi-br-calendar"></i> <span class="menu-text">Kalender</span></a></li>
+        <li><a href=""><i class="fi fi-br-calendar"></i> <span class="menu-text">Waktu Dosen</span></a></li>
         <li><a href="{{ route('mahasiswa.logbook') }}"><i class="fi fi-br-memo"></i> <span class="menu-text">Logbook</span></a></li>
         <li class="menu-item has-submenu">
             <div class="submenu-toggle">
@@ -22,7 +22,7 @@
                             Bimbingan</span></a></li>
             </ul>
         </li>
-        <li><a href="{{ route('mahasiswa.profil') }}"><i class="fi fi-br-user"></i> <span class="menu-text">Profil</span></a></li>
+        <li><a href="{{ route('mahasiswa.profile') }}"><i class="fi fi-br-user"></i> <span class="menu-text">Profil</span></a></li>
     </ul>
 </aside>
 

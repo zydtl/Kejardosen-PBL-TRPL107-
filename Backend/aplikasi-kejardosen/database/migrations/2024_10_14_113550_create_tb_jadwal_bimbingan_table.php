@@ -15,16 +15,17 @@ return new class extends Migration
             $table->string('kodeJadwal', 20)->primary();
             $table->date('tanggal_bimbingan');
             $table->time('waktu_bimbingan');
-            $table->date('tanggal_pelaksanaan');
-            $table->time('waktu_pelaksanaan');
-            $table->string('catatan_dosen');
-            $table->string('catatan_mahasiswa');
-            $table->enum('status', ['diselesaikan', 'ditunda', 'menunggu']);
+            $table->date('tanggal_pelaksanaan')->nullable();
+            $table->time('waktu_pelaksanaan')->nullable();
+            $table->string('catatan_dosen')->nullable();
+            $table->string('catatan_mahasiswa')->nullable();
+            $table->enum('status', ['diselesaikan', 'ditunda', 'berlangsung', 'dibatalkan']);
             $table->string('kodePengajuan', 20);
             $table->timestamps();
             $table->string('tempat');
             $table->enum('jenis_bimbingan', ['luring','daring']);
-            $table->foreign('kodePengajuan')->references('kodePengajuan')->on('tb_pengajuanJadwal');
+            $table->string('batalkan')->nullable();
+            $table->foreign('kodePengajuan')->references('kodePengajuan')->on('tb_pengajuanJadwal')->onUpdate('cascade')->onDelete('cascade');
         });
         
         

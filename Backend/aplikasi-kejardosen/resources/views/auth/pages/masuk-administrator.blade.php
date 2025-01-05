@@ -1,5 +1,8 @@
 @extends('auth.layout.master')
 
+@section('title')
+  Masuk Sebagai Administator
+@endsection
 
 @section('content')
   <div class="container-fluid">
@@ -12,7 +15,7 @@
           @csrf <!-- Token CSRF untuk keamanan -->
           <div class="row align-items-center">
               <div class="logo-container">
-                  <img src="{{ asset('assets/auth/asset/img/logo-kejardosen.png') }}" alt="Logo KJRDNS" class="logo">
+                  <a href="/"><img src="{{ asset('assets/auth/asset/img/logo-kejardosen.png') }}" alt="Logo KJRDNS" class="logo"></a>
                   <p class="welcome-title text-center">Selamat Datang!👋 </p>
                   <p class="welcome-subtitle text-center ms-5 me-5">Anda berada di halaman masuk sebagai Administator💻, Silahkan masuk sebagai Administator👨🏻‍💻👩🏻‍💻</p>
               </div>

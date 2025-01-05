@@ -18,8 +18,8 @@
                 <span class="menu-text">Jadwal Bimbingan</span></a>
         </li>
         <li>
-            <a href="{{ route('dosen.kalender') }}"><i class="fi fi-br-calendar"></i>
-                <span class="menu-text">Kalender</span></a>
+            <a href=""><i class="fi fi-br-calendar"></i>
+                <span class="menu-text">Waktu Dosen</span></a>
         </li>
         <li>
             <a href="{{ route('dosen.logbook') }}"><i class="fi fi-br-memo"></i>
@@ -42,7 +42,7 @@
             </ul>
         </li>
         <li>
-            <a href="{{ route('dosen.profil') }}"><i class="fi fi-br-user"></i>
+            <a href="{{ route('dosen.profile') }}"><i class="fi fi-br-user"></i>
                 <span class="menu-text">Profil</span></a>
         </li>
     </ul>

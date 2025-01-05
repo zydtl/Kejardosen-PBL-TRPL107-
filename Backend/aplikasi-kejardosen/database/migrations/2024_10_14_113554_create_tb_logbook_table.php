@@ -14,13 +14,15 @@ return new class extends Migration
         Schema::create('tb_logbook', function (Blueprint $table) {
             $table->string('kodeLogbook', 20)->primary();
             $table->string('kodeJadwal', 20);
-            $table->text('isi_logbook');
-            $table->string('judul_logbook', 255);
-            $table->string('catatan_dosen');
-            $table->string('catatan_mahasiswa');
+            $table->text('isi_logbook')->nullable();
+            $table->string('judul_logbook', 255)->nullable();
+            $table->text('catatan_mahasiswa')->nullable();
+            $table->text('catatan_dosen')->nullable();
             $table->float('progres', 5, 2)->default(0);
+            $table->timestamp('notifikasi_mahasiswa')->nullable(); // Tambahkan kolom notifikasi
+            $table->timestamp('notifikasi_dosen')->nullable(); // Tambahkan kolom notifikasi
             $table->timestamps();
-            $table->foreign('kodeJadwal')->references('kodeJadwal')->on('tb_jadwalBimbingan');
+            $table->foreign('kodeJadwal')->references('kodeJadwal')->on('tb_jadwalBimbingan')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

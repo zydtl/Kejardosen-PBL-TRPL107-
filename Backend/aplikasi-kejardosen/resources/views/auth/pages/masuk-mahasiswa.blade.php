@@ -1,5 +1,9 @@
 @extends('auth.layout.master')
 
+@section('title')
+  Masuk Sebagai Mahasiswa
+@endsection
+
 @section('content')
   <div class="container-fluid">
     <div class="row">
@@ -9,7 +13,7 @@
       <div class="col-sm-12 col-md-12 col-lg-6 order-lg-last order-first bg-right">
         <div class="row align-items-center">
           <div class="logo-container">
-            <img src="{{ asset('assets/auth/asset/img/logo-kejardosen.png') }}" alt="Logo KJRDNS" class="logo">
+            <a href="/"><img src="{{ asset('assets/auth/asset/img/logo-kejardosen.png') }}" alt="Logo KJRDNS" class="logo"></a>
             <p class="welcome-title text-center">Selamat Datang!👋 </p>
             <p class="welcome-subtitle text-center ms-5 me-5">Anda berada di halaman masuk sebagai Mahasiswa🎓, Silahkan masuk sebagai Mahasiswa👨🏻‍🎓👩🏻‍🎓</p>
           </div>

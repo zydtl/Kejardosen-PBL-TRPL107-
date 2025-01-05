@@ -112,7 +112,7 @@ document.querySelectorAll('.btn-edit').forEach(button => {
           const formData = new FormData(form);  // Create FormData object from the form
 
           // Send the data using fetch API (AJAX)
-          document.getElementById("formModal").style.display = "none";
+          modal.style.display = "none";
 
           fetch(form.action, {
               method: 'PUT',  // Can use PUT for update
@@ -270,4 +270,5 @@ document.getElementById('showButton').addEventListener('click', function () {
   document.getElementById('content').style.display = 'block';
    // Sembunyikan tombol setelah ditekan
 });
+
 
