@@ -255,7 +255,10 @@
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Setelah login, mahasiswa dapat melihat ketersediaan waktu dosen melalui kalender di aplikasi. Pilih waktu yang tersedia dan ajukan jadwal bimbingan. Dosen akan menerima notifikasi untuk mengonfirmasi atau menyesuaikan jadwal tersebut.
+            Setelah login, mahasiswa dapat melihat jadwal dosen yang tersedia di dashboard aplikasi, yang menunjukkan hari-hari 
+            dosen yang tersedia untuk bimbingan. Mahasiswa dapat mengajukan jadwal bimbingan dengan memilih hari dan waktu yang tersedia.  
+            Pengajuan hanya dapat dilakukan untuk tanggal mulai dari hari ini dan tidak dapat melebihi batas waktu 30 hari ke depan. 
+            Setelah diajukan, dosen akan menerima notifikasi untuk mengonfirmasi, menolak, atau menyarankan perubahan pada jadwal yang diajukan mahasiswa.
           </div>
         </div>
       </div>
@@ -267,7 +270,7 @@
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Kejardosen akan mengirimkan notifikasi otomatis melalui email dan di dalam aplikasi sebelum sesi bimbingan dimulai.
+            Kejardosen mengirim notifikasi langsung melalui dashboard aplikasi setiap ada aksi, seperti pengajuan jadwal, konfirmasi, penolakan, atau perubahan jadwal
           </div>
         </div>
       </div>
@@ -279,7 +282,7 @@
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Ya, jika dosen belum mengonfirmasi jadwal, Anda bisa mengajukan perubahan jadwal. Setelah dosen menyetujui, jadwal hanya bisa diubah atas persetujuan dosen.
+            Ya, jika dosen belum mengonfirmasi jadwal, Anda bisa mengajukan perubahan pengajuan jadwal bimbingan
           </div>
         </div>
       </div>
@@ -291,7 +294,9 @@
         </h2>
         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
-            Setelah bimbingan selesai, Anda dapat mencatat hasil diskusi dan progres proyek di fitur logbook yang ada di aplikasi. Catatan ini dapat diakses kembali kapan saja dan akan tersimpan sebagai riwayat bimbingan.
+            Mahasiswa dapat mencatat progress perkembangan tugas akhir secara terperinci di fitur logbook setelah setiap sesi 
+            bimbingan. Setiap entri logbook mencakup informasi seperti tanggal bimbingan, topik yang dibahas, dan catatan progres. 
+            Logbook dapat diperbarui setelah setiap pertemuan untuk mencatat perkembangan proyek secara sistematis.
           </div>
         </div>
       </div>

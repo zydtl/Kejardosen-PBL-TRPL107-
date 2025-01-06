@@ -185,9 +185,9 @@
                         <div class="form-group">
                             <label for="jenis-bimbingan">Pilih Jenis Bimbingan</label>
                             <select id="jenis-bimbingan" class="form-control" required>
-                                <option value="default" selected disabled>Offline/Online</option>
-                                <option value="luring">luring</option>
-                                <option value="daring">daring</option>
+                                <option value="default" selected disabled>Luring/Daring</option>
+                                <option value="luring">Luring</option>
+                                <option value="daring">Daring</option>
                             </select>
                         </div>
                         <div class="form-group">

@@ -1,240 +1,242 @@
-/* Mengatur font untuk keseluruhan body */
-.custom-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-/* Gaya latar belakang kiri dan kanan */
-.bg-left {
-    background-color: #d5f5f8;
-    height: 100vh;
-}
-
-.bg-right {
-    background-color: #ffffff;
-    height: 100vh;
-}
-
-/* Gaya gambar ilustrasi login */
-/* Gaya gambar ilustrasi login */
-.login-illustration {
-    max-width: 100%; /* Maksimal lebar 100% dari kolom */
-    max-height: 80vh; /* Maksimal tinggi 80% dari viewport */
-    margin: auto; /* Pusatkan secara horizontal */
-    object-fit: contain; /* Sesuaikan gambar tanpa merusak rasio aspek */
-}
-
-
-/* Logo dan teks selamat datang */
-.logo-container {
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #f3f7fb; /* Soft background color for the whole page */
+  }
+  
+  .container-fluid {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo {
-    width: 250px;
-    margin-top: 5rem;
-}
-
-.welcome-title {
-    font-size: 25px;
-    font-weight: 700;
-    margin-top: 1rem;
-}
-
-.welcome-subtitle {
-    font-size: 20px;
-    font-weight: 400;
-    margin-top: 0;
-}
-
-/* Gaya input form */
-.input-container {
-    width: 75%;
-}
-
-.input-label {
-    font-size: 15px;
-    margin-bottom: 0.25rem;
-}
-
-/* Gaya input dengan border-radius */
-.custom-input {
-    border: 1px solid #ced4da;
-    border-radius: 15px; /* Gaya lengkung */
-    padding: 0.5rem; /* Memberikan padding di dalam input */
-    width: 100%; /* Membuat input memenuhi lebar kontainer */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Transisi saat fokus */
-}
-
-/* Tambahkan gaya fokus untuk input */
-.custom-input:focus {
-    border-color: #1f819b;
-    box-shadow: 0 0 5px rgba(31, 130, 155, 0.5);
-}
-
-/* Menghilangkan border kanan input password secara default */
-#passwordInput {
-    border-right: none; /* Hilangkan border kanan secara default */
-    border-radius: 15px 0 0 15px; /* Lengkung di sebelah kiri */
-}
-
-/* Saat input password dalam keadaan fokus */
-#passwordInput:focus {
-    border-right: 1px solid #1f819b; /* Border kanan warna #1f819b saat fokus */
-}
-
-/* Gaya untuk tombol mata saat input dalam fokus */
-.input-group:focus-within .btn-toggle-password {
-    box-shadow: 0 0 5px rgba(31, 130, 155, 0.5);
-}
-
-/* Gaya tombol mata untuk input kata sandi */
-.btn-toggle-password {
-    background-color: #ffffff;
-    border: 1px solid #ced4da;
-    border-left: none; /* Hilangkan border di sebelah kiri */
-    border-radius: 0 15px 15px 0; /* Lengkung di sebelah kanan */
-    cursor: pointer;
-    color: #1f819b; /* Warna ikon saat tidak aktif */
-}
-
-/* Aktifkan gaya untuk tombol mata saat aktif */
-.btn-toggle-password.active {
-    background-color: #1f819b;
-    color: #ffffff; /* Warna ikon saat aktif */
-    border-left: none; /* Pastikan border kiri tetap hilang */
-}
-
-.btn-toggle-password:hover {
-    background-color: #1f819b;
-}
-
-.btn-toggle-password:hover i {
-    color: #ffffff;
-}
-
-/* styling ingat saya dan lupa kata sandi */
-
-/* ingat saya */
-.remember-forgot-container {
-    width: 75%;
-}
-
-.form-check-label {
-    font-size: 0.875rem;
-}
-
-/* Mengatur warna centang dan kotak untuk checkbox */
-#rememberMe:checked {
-    background-color: #1f819b;
-    border-color: #1f819b;
-}
-
-#rememberMe:checked::after {
-    border-color: #ffffff;
-}
-
-
-
-
-/* lupa password */
-
-.forgot-password {
-    font-size: 0.875rem;
-    color: #6c757d;
-    text-decoration: none;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-/* Tombol submit */
-.submit-button-container {
-    width: 75%;
-}
-
-/* Tombol submit */
-.btn-custom-submit {
-    background-color: #1f819b;
-    color: white;
-    font-size: 1.25rem;
+    min-height: 100vh;
+  }
+  
+  .row {
     width: 100%;
-    padding: 0.5rem;
+    display: flex;
+  }
+  
+  .col-half {
+    flex: 1;
+    height: 100vh;
+  }
+  
+  .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(143, 230, 245), rgb(255, 255, 255)); /* Gradient */
+    padding: 20px;
+  }
+  
+  .login-illustration {
+    max-width: 75%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+ .dsn {
+    max-width: 65%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+ /* Right Side Background */
+/* Right Side Background with Gradient */
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(to bottom, rgb(143, 230, 245), rgb(255, 255, 255)); /* Gradient */
+  }
+  
+  
+  
+  
+  .form-content {
+    width: 100%;
+    max-width: 450px;
+    padding: 25px;
+    background-color: #ffffff;
     border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .form-content:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* Logo and Welcome */
+  .logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    width: 140px;
+    margin-bottom: 15px;
+  }
+  
+  .welcome-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .welcome-subtitle {
+    font-size: 15px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  /* Input Fields */
+  .input-container {
+    margin-bottom: 18px;
+  }
+  
+  .input-label {
+    font-size: 14px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type="number"] {
+    -moz-appearance: textfield; /* Untuk Firefox */
+    appearance: textfield; /* Standard property for compatibility */
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f5f7fb;
+    transition: all 0.3s ease;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #3EBCD2;
+    background-color: #ffffff;
+  }
+  
+  .password-container {
+    position: relative;
+  }
+  
+  .toggle-password {
+    background: none;
     border: none;
-    transition: border 0.3s, color 0.3s;
+    cursor: pointer;
+    position: absolute;
+    right: 10px; /* Sesuaikan posisi tombol toggle */
+    top: 50%; /* Posisikan di tengah input */
+    transform: translateY(-50%);
+    z-index: 9999999; /* Pastikan di atas input field */
+    display: inline-block; /* Pastikan tampil */
+  }
+  
+  .toggle-password i {
+    font-size: 20px; /* Sesuaikan ukuran ikon */
+    color: #000; /* Warna ikon */
+  }
+
+
+  
+  /* Remember & Forgot Password */
+  .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .remember-checkbox {
+    display: flex;
+    align-items: center;
+  }
+  
+  .remember-checkbox input {
+    margin-right: 8px;
+  }
+  
+  .forgot-password {
+    color: #3EBCD2;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  /* Submit Button */
+  .submit-container {
+    margin-top: 25px;
+    text-align: center;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #3EBCD2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #3396a8;
+  }
+  
+
+  .custom-alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
 }
 
-.btn-custom-submit:hover {
-    border: 1px solid #1f819b;
-    color: #1f819b;
-    background-color: white;
+.custom-alert strong {
+    font-weight: bold;
 }
 
+.custom-alert .btn-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #721c24;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
 
-
-/* reponsifnya ini cuy */
-
-
-/* Media query for mobile devices */
-/* Media query untuk perangkat mobile */
-@media (max-width: 767px) {
-    /* Sembunyikan bagian kiri (bg-left) */
-    .bg-left {
-        display: none !important; /* Sembunyikan div ilustrasi login di mobile */
-    }
-
-    /* Sesuaikan kolom kanan agar memenuhi seluruh lebar layar */
-    .bg-right {
-        /* width: 100%;
-        padding: 20px;
-        height: auto; */
-    }
-
-    /* Sesuaikan ukuran logo dan spasi di sekitar elemen */
-    .logo {
-        /* width: 150px;
-        margin-top: 2rem; */
-    }
-
-    /* Kurangi ukuran font dan margin teks selamat datang */
-    .welcome-title {
-        /* font-size: 20px; */
-    }
-
-    .welcome-subtitle {
-        /* font-size: 14px;
-        margin: 1rem 0; */
-    }
-
-    /* Sesuaikan ukuran input dan container input */
-    .input-container {
-        /* width: 100%; */
-    }
-
-    .custom-input {
-        /* padding: 0.4rem;
-        font-size: 0.875rem; */
-    }
-
-    /* Sesuaikan ukuran tombol */
-    .btn-custom-submit {
-        /* font-size: 1rem;
-        padding: 0.4rem;
-        border-radius: 15px; */
-    }
-
-    /* Ukuran dan tata letak ingat saya dan lupa password */
-    .remember-forgot-container {
-        /* width: 100%;
-        flex-direction: column;
-        align-items: center;
-        text-align: center; */
-    }
-
-    .forgot-password {
-        /* margin-top: 0.5rem; */
-    }
+.custom-alert .btn-close:hover {
+    color: #f44336;
 }

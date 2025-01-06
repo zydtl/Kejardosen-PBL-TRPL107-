@@ -75,7 +75,7 @@
                     <h4>{{ $mahasiswa->dosen->nama_dosen }}</h4>
                     <span>NIK : {{ $mahasiswa->nik_dosen }}</span>
                     <div class="button-container">
-                        <a href="#">Selengkapnya</a>
+                        <a href="{{ route('mahasiswa.waktu-dosen') }}">Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -132,7 +132,7 @@
                     <div class="notif-text">
                         <h4>{{ $notification['type'] }}</h4>
                         <p>{{ $notification['description'] }}</p>
-                        <small class="date-text-notif" >{{ \Carbon\Carbon::parse($notification['updated_at'])->locale('id')->timezone('Asia/Jakarta')->translatedFormat('l, d F Y - H:i') }}WIB</small>
+                        <small class="date-text-notif" >{{ \Carbon\Carbon::parse($notification['updated_at'])->locale('id')->timezone('Asia/Jakarta')->translatedFormat('l, d F Y - H:i') }} WIB</small>
                     </div>
                 </div>
             @endforeach

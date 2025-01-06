@@ -68,29 +68,6 @@ document.querySelector('.next-page').addEventListener('click', () => {
 displayRows(currentPage);
 generatePageNumbers();
 
-function searchTable() {
-    // Ambil input pencarian
-    const input = document.getElementById('search-input');
-    const filter = input.value.toLowerCase();
-    const tableRows = document.querySelectorAll('.responsive-table .table-row');
-    
-
-    // Loop melalui semua baris di tabel
-    tableRows.forEach(row => {
-        const cells = row.querySelectorAll('.col');
-        let match = false;
-
-        // Periksa setiap kolom dalam baris
-        cells.forEach(cell => {
-            if (cell.textContent.toLowerCase().includes(filter)) {
-                match = true;
-            }
-        });
-
-        // Tampilkan atau sembunyikan baris berdasarkan pencocokan
-        row.style.display = match ? '' : 'none';
-    });
-}
 
 // JS untuk fitur pencarian
 function searchTable() {
@@ -178,3 +155,5 @@ document.querySelector('#addRowButton').addEventListener('click', () => {
     // Setelah manipulasi DOM selesai, cek ulang
     checkEmptyTable();
 });
+
+

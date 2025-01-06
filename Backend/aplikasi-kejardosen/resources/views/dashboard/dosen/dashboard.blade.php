@@ -91,7 +91,7 @@
                 <div class="notif-text">
                     <h4>{{ $notif['type'] }}</h4>
                     <p>{{ $notif['mahasiswa'] }} {{ $notif['description'] }}</p>
-                    <small class="date-text-notif" >{{ \Carbon\Carbon::parse($notif['updated_at'])->locale('id')->timezone('Asia/Jakarta')->translatedFormat('l, d F Y - H:i') }}WIB</small>
+                    <small class="date-text-notif" >{{ \Carbon\Carbon::parse($notif['updated_at'])->locale('id')->timezone('Asia/Jakarta')->translatedFormat('l, d F Y - H:i') }} WIB</small>
                 </div>
             </div>
             @empty

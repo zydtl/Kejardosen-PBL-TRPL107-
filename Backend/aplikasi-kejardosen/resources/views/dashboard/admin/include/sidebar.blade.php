@@ -15,13 +15,5 @@
             <a href="{{ route('admin.daftar-dosen') }}"><i class="fi fi-br-lesson-class"></i>
                 <span class="menu-text">Daftar Dosen</span></a>
         </li>
-        <li>
-            <a href="{{ route('admin.hubungkan-mahasiswa') }}"><i class="fi fi-br-people-network-partner"></i>
-                <span class="menu-text">Hubungkan Mahasiswa</span></a>
-        </li>
-        <li>
-            <a href="{{ route('admin.lihat-bimbingan') }}"><i class="fi fi-br-workshop"></i>
-                <span class="menu-text">Lihat Bimbingan</span></a>
-        </li>
     </ul>
 </aside>

@@ -347,7 +347,7 @@ a {
 .notif-item {
     display: flex;
     align-items: center;
-    background: #f9f9f9; /* Latar belakang lembut */
+    background: #ffffff; /* Latar belakang lembut */
     border-radius: 12px; /* Sudut melengkung */
     padding: 16px; /* Ruang di dalam */
     margin-bottom: 16px; /* Jarak antar notifikasi */
@@ -384,6 +384,7 @@ a {
     margin: 4px 0 0; /* Jarak kecil dari judul */
     font-size: 14px; /* Ukuran font deskripsi */
     color: #555; /* Warna teks deskripsi */
+    margin-bottom: 5px;
   }
   
 
@@ -435,5 +436,5 @@ a {
     font-size: 12px; /* Ukuran font kecil */
     text-align: right; /* Rata kanan */
     margin-left: auto; /* Menggeser elemen ke kanan */
-    color: #555; /* Opsional: untuk memberi warna */
+    color: #55555590; /* Opsional: untuk memberi warna */
 }

@@ -18,7 +18,7 @@
                 <span class="menu-text">Jadwal Bimbingan</span></a>
         </li>
         <li>
-            <a href=""><i class="fi fi-br-calendar"></i>
+            <a href="{{ route('dosen.waktu-dosen') }}"><i class="fi fi-br-calendar"></i>
                 <span class="menu-text">Waktu Dosen</span></a>
         </li>
         <li>

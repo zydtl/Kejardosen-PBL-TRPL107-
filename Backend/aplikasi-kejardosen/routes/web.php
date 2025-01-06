@@ -45,17 +45,23 @@ Route::get('/mahasiswa/pengajuan', [PengajuanJadwalController::class, 'index'])
     ->name('mahasiswa.pengajuan')
     ->middleware('auth:mahasiswa');
 
-    // Route untuk buat pengajuan
-    Route::post('/mahasiswa/pengajuan', [PengajuanJadwalController::class, 'store'])->name('pengajuan.store');
+//Waktu Dosen bagian mahasiswa
+Route::get('/mahasiswa/waktu-dosen', function () {
+    return view('dashboard.mahasiswa.waktu-dosen');
+})->name('mahasiswa.waktu-dosen')
+    ->middleware('auth:mahasiswa');
 
-    // Route untuk menangani request data berdasarkan kodePengajuan
-    // Route::put('/mahasiswa/pengajuan/update/{kodePengajuan}', [PengajuanJadwalController::class, 'update'])->name('pengajuan.update');
-    Route::put('/mahasiswa/pengajuan/update/{kodePengajuan}', [PengajuanJadwalController::class, 'update'])->name('pengajuan.update');
+// Route untuk buat pengajuan
+Route::post('/mahasiswa/pengajuan', [PengajuanJadwalController::class, 'store'])->name('pengajuan.store');
+
+// Route untuk menangani request data berdasarkan kodePengajuan
+// Route::put('/mahasiswa/pengajuan/update/{kodePengajuan}', [PengajuanJadwalController::class, 'update'])->name('pengajuan.update');
+Route::put('/mahasiswa/pengajuan/update/{kodePengajuan}', [PengajuanJadwalController::class, 'update'])->name('pengajuan.update');
 
 
 
-    // Route untuk membatalkan pengajuan
-    Route::patch('mahasiswa/pengajuan/{kodePengajuan}/batalkan', [PengajuanJadwalController::class, 'updateStatus']);
+// Route untuk membatalkan pengajuan
+Route::patch('mahasiswa/pengajuan/{kodePengajuan}/batalkan', [PengajuanJadwalController::class, 'updateStatus']);
 
 
 
@@ -80,17 +86,17 @@ Route::get('/mahasiswa/jadwal-bimbingan', [JadwalBimbinganController::class, 'in
     ->name('mahasiswa.jadwal-bimbingan')
     ->middleware('auth:mahasiswa');
 
-    Route::put('/mahasiswa/jadwal-bimbingan/tunda/{kodeJadwal}', [JadwalBimbinganController::class, 'tunda'])
-        ->name('mahasiswa.jadwal-bimbingan.tunda')
-        ->middleware('auth:mahasiswa');
+Route::put('/mahasiswa/jadwal-bimbingan/tunda/{kodeJadwal}', [JadwalBimbinganController::class, 'tunda'])
+    ->name('mahasiswa.jadwal-bimbingan.tunda')
+    ->middleware('auth:mahasiswa');
 
-    Route::put('/mahasiswa/jadwal-bimbingan/batalkan/{kodeJadwal}', [JadwalBimbinganController::class, 'batalkanMahasiswa'])
-        ->name('mahasiswa.jadwal-bimbingan.batalkan')
-        ->middleware('auth:mahasiswa');
+Route::put('/mahasiswa/jadwal-bimbingan/batalkan/{kodeJadwal}', [JadwalBimbinganController::class, 'batalkanMahasiswa'])
+    ->name('mahasiswa.jadwal-bimbingan.batalkan')
+    ->middleware('auth:mahasiswa');
 
-    Route::put('/mahasiswa/jadwal-bimbingan/selesai/{kodePengajuan}', [JadwalBimbinganController::class, 'selesai'])
-        ->name('dosen.jadwal-bimbingan.selesai')
-        ->middleware('auth:dosen');
+Route::put('/mahasiswa/jadwal-bimbingan/selesai/{kodePengajuan}', [JadwalBimbinganController::class, 'selesai'])
+    ->name('dosen.jadwal-bimbingan.selesai')
+    ->middleware('auth:dosen');
 
 // Halaman detail pengajuan untuk Mahasiswa
 Route::get('/mahasiswa/detail-jadwal-bimbingan/{kodeJadwal}', [JadwalBimbinganController::class, 'detailMahasiswa'])
@@ -119,13 +125,13 @@ Route::get('/mahasiswa/detail-logbook/{kodeLogbook}', [LogbookController::class,
 
 // Halaman form logbook untuk Mahasiswa (edit)
 Route::get('/mahasiswa/form-logbook/{kodeLogbook}', [LogbookController::class, 'formLogbookMahasiswa'])
-->name('mahasiswa.form-logbook')
-->middleware('auth:mahasiswa');
+    ->name('mahasiswa.form-logbook')
+    ->middleware('auth:mahasiswa');
 
-    // Route untuk mengupdate logbook
-    Route::put('/mahasiswa/form-logbook/update/{kodeLogbook}', [LogbookController::class, 'updateMahasiswa'])
-        ->name('mahasiswa.form-logbook.update')
-        ->middleware('auth:mahasiswa');
+// Route untuk mengupdate logbook
+Route::put('/mahasiswa/form-logbook/update/{kodeLogbook}', [LogbookController::class, 'updateMahasiswa'])
+    ->name('mahasiswa.form-logbook.update')
+    ->middleware('auth:mahasiswa');
 
 
 // profile mahasiswa
@@ -153,8 +159,15 @@ Route::get('/mahasiswa/profile', [DashboardController::class, 'profileMahasiswa'
 
 // Halaman dashboard untuk dosen (hanya bisa diakses oleh dosen yang sudah login)
 
+
 Route::get('/dosen/dashboard', [DashboardController::class, 'indexDosen'])
     ->name('dosen.dashboard')
+    ->middleware('auth:dosen');
+
+// Waktu Dosen
+Route::get('/dosen/waktu-dosen', function () {
+    return view('dashboard.dosen.waktu-dosen');
+})->name('dosen.waktu-dosen')
     ->middleware('auth:dosen');
 
 // Route untuk Dosen Pengajuan
@@ -162,19 +175,19 @@ Route::get('/dosen/pengajuan', [PengajuanJadwalController::class, 'indexDosen'])
     ->name('dosen.pengajuan')
     ->middleware('auth:dosen');
 
-    // Route::put('/mahasiswa/pengajuan/update/{kodePengajuan}', [PengajuanJadwalController::class, 'update'])->name('pengajuan.update');
-    
-    Route::put('/dosen/pengajuan/tolakPengajuan/{kodePengajuan}', [PengajuanJadwalController::class, 'tolakPengajuan'])
-        ->name('dosen.pengajuan.tolak')
-        ->middleware('auth:dosen');
+// Route::put('/mahasiswa/pengajuan/update/{kodePengajuan}', [PengajuanJadwalController::class, 'update'])->name('pengajuan.update');
 
-    Route::put('/dosen/pengajuan/bandingPengajuan/{kodePengajuan}', [PengajuanJadwalController::class, 'bandingPengajuan'])
-        ->name('dosen.pengajuan.banding')
-        ->middleware('auth:dosen');
+Route::put('/dosen/pengajuan/tolakPengajuan/{kodePengajuan}', [PengajuanJadwalController::class, 'tolakPengajuan'])
+    ->name('dosen.pengajuan.tolak')
+    ->middleware('auth:dosen');
 
-    Route::put('/dosen/pengajuan/terimaPengajuan/{kodePengajuan}', [PengajuanJadwalController::class, 'terimaPengajuan'])
-        ->name('dosen.pengajuan.terima')
-        ->middleware('auth:dosen');
+Route::put('/dosen/pengajuan/bandingPengajuan/{kodePengajuan}', [PengajuanJadwalController::class, 'bandingPengajuan'])
+    ->name('dosen.pengajuan.banding')
+    ->middleware('auth:dosen');
+
+Route::put('/dosen/pengajuan/terimaPengajuan/{kodePengajuan}', [PengajuanJadwalController::class, 'terimaPengajuan'])
+    ->name('dosen.pengajuan.terima')
+    ->middleware('auth:dosen');
 
 // Halaman Riwayat Pengajuan
 Route::get('/dosen/riwayat-pengajuan', [PengajuanJadwalController::class, 'riwayatPengajuanDosen'])
@@ -191,13 +204,13 @@ Route::get('/dosen/jadwal-bimbingan', [JadwalBimbinganController::class, 'indexD
     ->name('dosen.jadwal-bimbingan')
     ->middleware('auth:dosen');
 
-    Route::put('/dosen/jadwal-bimbingan/tunda/{kodeJadwal}', [JadwalBimbinganController::class, 'tunda'])
-        ->name('dosen.jadwal-bimbingan.tunda')
-        ->middleware('auth:dosen');
+Route::put('/dosen/jadwal-bimbingan/tunda/{kodeJadwal}', [JadwalBimbinganController::class, 'tunda'])
+    ->name('dosen.jadwal-bimbingan.tunda')
+    ->middleware('auth:dosen');
 
-    Route::put('/dosen/jadwal-bimbingan/batalkan/{kodeJadwal}', [JadwalBimbinganController::class, 'batalkanDosen'])
-        ->name('dosen.jadwal-bimbingan.batalkan')
-        ->middleware('auth:dosen');
+Route::put('/dosen/jadwal-bimbingan/batalkan/{kodeJadwal}', [JadwalBimbinganController::class, 'batalkanDosen'])
+    ->name('dosen.jadwal-bimbingan.batalkan')
+    ->middleware('auth:dosen');
 
 // Halaman detail pengajuan untuk Dosen
 Route::get('/dosen/detail-jadwal-bimbingan/{kodeJadwal}', [JadwalBimbinganController::class, 'detailDosen'])
@@ -214,7 +227,7 @@ Route::get('/dosen/detail-riwayat-jadwal-bimbingan/{kodeJadwal}', [JadwalBimbing
     ->name('dosen.detail-riwayat-jadwal-bimbingan')
     ->middleware('auth:dosen');
 
-    
+
 // Halaman daftar logbook seluruh mahasiswa
 Route::get('/dosen/logbook', [LogbookController::class, 'indexDosen'])
     ->name('dosen.logbook')
@@ -232,13 +245,13 @@ Route::get('/dosen/detail-logbook/{kodeLogbook}', [LogbookController::class, 'sh
 
 // Halaman form logbook untuk dosen (edit)
 Route::get('/dosen/form-logbook/{kodeLogbook}', [LogbookController::class, 'formLogbookDosen'])
-->name('dosen.form-logbook')
-->middleware('auth:dosen');
+    ->name('dosen.form-logbook')
+    ->middleware('auth:dosen');
 
-    // Route untuk mengupdate logbook
-    Route::put('/dosen/form-logbook/update/{kodeLogbook}', [LogbookController::class, 'updateDosen'])
-        ->name('dosen.form-logbook.update')
-        ->middleware('auth:dosen');
+// Route untuk mengupdate logbook
+Route::put('/dosen/form-logbook/update/{kodeLogbook}', [LogbookController::class, 'updateDosen'])
+    ->name('dosen.form-logbook.update')
+    ->middleware('auth:dosen');
 
 
 // profile dosen
@@ -275,13 +288,13 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::get('/daftar-mahasiswa', [KehendakAdminController::class, 'indexMahasiswa'])->name('admin.daftar-mahasiswa');
 });
 
-    Route::post('/admin/daftar-dosen', [KehendakAdminController::class, 'store'])->name('daftar-dosen.store');
-    Route::put('/admin/daftar-dosen/update/{nik}', [KehendakAdminController::class, 'update'])->name('daftar-dosen.update');
-    Route::delete('/admin/daftar-dosen/destroy/{nik}', [KehendakAdminController::class, 'destroy'])->name('daftar-dosen.destroy');
+Route::post('/admin/daftar-dosen', [KehendakAdminController::class, 'store'])->name('daftar-dosen.store');
+Route::put('/admin/daftar-dosen/update/{nik}', [KehendakAdminController::class, 'update'])->name('daftar-dosen.update');
+Route::delete('/admin/daftar-dosen/destroy/{nik}', [KehendakAdminController::class, 'destroy'])->name('daftar-dosen.destroy');
 
-    Route::post('/admin/daftar-mahasiswa', [KehendakAdminController::class, 'storeMahasiswa'])->name('daftar-mahasiswa.store');
-    Route::put('/admin/daftar-mahasiswa/update/{nim}', [KehendakAdminController::class, 'updateMahasiswa'])->name('daftar-mahasiswa.update');
-    Route::delete('/admin/daftar-mahasiswa/destroy/{nim}', [KehendakAdminController::class, 'destroyMahasiswa'])->name('daftar-mahasiswa.destroy');
+Route::post('/admin/daftar-mahasiswa', [KehendakAdminController::class, 'storeMahasiswa'])->name('daftar-mahasiswa.store');
+Route::put('/admin/daftar-mahasiswa/update/{nim}', [KehendakAdminController::class, 'updateMahasiswa'])->name('daftar-mahasiswa.update');
+Route::delete('/admin/daftar-mahasiswa/destroy/{nim}', [KehendakAdminController::class, 'destroyMahasiswa'])->name('daftar-mahasiswa.destroy');
 // Route::middleware('auth:admin')->prefix('admin')->group(function () {
 //     Route::get('/daftar-mahasiswa', [KehendakAdminController::class, 'indexMahasiswa'])->name('admin.daftar-mahasiswa');
 // });
@@ -329,8 +342,9 @@ Route::get('/login', function () {
     }
 
     // Jika belum login, arahkan kembali ke landing page
-    return redirect()->route('login.admin');
+    return redirect('/');
 })->name('login');
+
 
 
 // Halaman login untuk Mahasiswa (untuk pengguna yang belum login)
@@ -347,4 +361,3 @@ Route::get('/login/dosen', [AuthController::class, 'showLoginDosen'])
 Route::get('/login/admin', [AuthController::class, 'showLoginAdmin'])
     ->name('login.admin')
     ->middleware('guest');  // Memastikan hanya pengguna yang belum login
-
