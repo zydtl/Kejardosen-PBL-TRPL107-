@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// form banding
+// form tolak
 document.querySelectorAll(".btnmuncul").forEach(button => {
   button.addEventListener('click', function () {
     
@@ -177,7 +177,7 @@ document.querySelectorAll(".btnmuncul").forEach(button => {
 
 
 
-// form tolak
+// form banding
 document.querySelectorAll(".btnmuncul").forEach(button => {
   button.addEventListener('click', function () {
     

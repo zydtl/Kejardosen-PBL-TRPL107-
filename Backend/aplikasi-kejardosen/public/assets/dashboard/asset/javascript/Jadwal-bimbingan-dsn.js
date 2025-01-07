@@ -222,8 +222,8 @@ document.querySelectorAll('.btn-tunda').forEach(button => {
                 .then(data => {
                     if (data.success) {
                         Swal.fire({
-                            title: "Pengajuan diubah!",
-                            text: "Pengajuan Anda telah diubah.",
+                            title: "Bimbingan ditunda!",
+                            text: "Bimbingan Anda telah berhasil ditunda.",
                             icon: "success",
                             confirmButtonColor: "#22a0b8",
                         }).then(() => {

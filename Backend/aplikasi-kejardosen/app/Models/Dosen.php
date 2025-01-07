@@ -35,5 +35,9 @@ class Dosen extends Authenticatable
         return $this->hasManyThrough(PengajuanJadwal::class, Mahasiswa::class, 'nik_dosen', 'nim', 'nik', 'nim');
     }
 
+    public function waktuDosen()
+    {
+        return $this->hasOne(WaktuDosen::class, 'nik_dosen', 'nik');
+    }
     
 }

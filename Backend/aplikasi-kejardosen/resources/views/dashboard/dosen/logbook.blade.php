@@ -49,7 +49,15 @@
                     <a href="{{ route('dosen.daftar-logbook', ['nim' => $item->nim]) }}">
                         <button class="btn-list"><i class="fi fi-br-list list"></i></button>
                     </a>
-                    <button class="btn-profil"><i class="fi fi-br-user profil"></i></button>
+                    <button class="btn-profil" 
+                    data-nama = "{{ $item->nama_mahasiswa }}"
+                    data-nim = "{{ $item->nim }}"
+                    data-email = "{{ $item->email }}"
+                    data-no_telp= "{{ $item->no_telp }}"
+                    data-judul_tugas_akhir = "{{ $item->judul_tugas_akhir }}"
+                    data-jenis_kelamin = "{{ $item->jenis_kelamin }}"
+                    data-kelas = "{{ $item->kelas }}"
+                    ><i class="fi fi-br-user profil"></i></button>
                 </div>
             </li>
             @endforeach

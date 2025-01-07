@@ -8,9 +8,11 @@ use App\Http\Controllers\KehendakAdminController;
 
 use App\Http\Controllers\PengajuanJadwalController;
 use App\Http\Controllers\JadwalBimbinganController;
+use App\Http\Controllers\WaktuDosenController;
 // use App\Models\JadwalBimbingan;
 use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\DashboardController;
+use App\Models\WaktuDosen;
 
 // Halaman utama menuju ke landing page
 Route::get('/', function () {
@@ -46,9 +48,8 @@ Route::get('/mahasiswa/pengajuan', [PengajuanJadwalController::class, 'index'])
     ->middleware('auth:mahasiswa');
 
 //Waktu Dosen bagian mahasiswa
-Route::get('/mahasiswa/waktu-dosen', function () {
-    return view('dashboard.mahasiswa.waktu-dosen');
-})->name('mahasiswa.waktu-dosen')
+Route::get('/mahasiswa/waktu-dosen', [WaktuDosenController::class, 'indexMahasiswa'])
+    ->name('mahasiswa.waktu-dosen')
     ->middleware('auth:mahasiswa');
 
 // Route untuk buat pengajuan
@@ -165,10 +166,15 @@ Route::get('/dosen/dashboard', [DashboardController::class, 'indexDosen'])
     ->middleware('auth:dosen');
 
 // Waktu Dosen
-Route::get('/dosen/waktu-dosen', function () {
-    return view('dashboard.dosen.waktu-dosen');
-})->name('dosen.waktu-dosen')
+Route::get('/dosen/waktu-dosen', [WaktuDosenController::class, 'indexDosen'])
+    ->name('dosen.waktu-dosen')
     ->middleware('auth:dosen');
+    
+// update waktu dosen
+Route::put('dosen/waktu-dosen{idWaktuDosen}', [WaktuDosenController::class, 'update'])
+    ->name('dosen.waktu-dosen.update')
+    ->middleware('auth:dosen');
+
 
 // Route untuk Dosen Pengajuan
 Route::get('/dosen/pengajuan', [PengajuanJadwalController::class, 'indexDosen'])

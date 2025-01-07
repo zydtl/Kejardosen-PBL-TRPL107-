@@ -19,10 +19,10 @@
             <img src="{{asset('assets/dashboard/asset/img/avatar-dosen.png')}}" alt="Foto Profil Dosen">
         </div>
         <div class="info">
-            <h2>Dr. John Doe</h2>
-            <p>NIK: 12345678</p>
-            <p>Email: johndoe@example.com</p>
-            <p>No. Telp: +62 812 3456 7890</p>
+            <h2>{{ $waktuDosen->dosen->nama_dosen }}</h2>
+            <p>NIK: {{ $waktuDosen->dosen->nik }}</p>
+            <p>Email: {{ $waktuDosen->dosen->email }}</p>
+            <p>No. Telp: +62 {{ $waktuDosen->dosen->no_telp }}</p>
             <span class="info-jadwal">Berikut adalah jadwal bimbingan yang telah diatur dosen selama satu minggu</span>
             <div class="contoh-warna">
                 <div class="contoh-warna-aktif"></div> 
@@ -37,70 +37,35 @@
     
     <div class="card-hari">
         <div class="card-header">
-            <div class="header-text">Jadwal Anda:</div>
-            <button class="atur-jadwal-btn">Atur Jadwal</button>
+            <div class="header-text">Jadwal {{ $waktuDosen->dosen->nama_dosen }}:</div>
+            <a href="{{ route('mahasiswa.pengajuan') }}" class="atur-jadwal-btn">Ajukan Jadwal</a>
+            {{-- <button class="atur-jadwal-btn">Atur Jadwal</button> --}}
         </div>
     
-        <div class="hari" id="kondisi-senin">
+        <div class="hari {{ $waktuDosen->kondisi_senin == 1 ? 'checked' : '' }}" id="kondisi-senin">
             <h3>Senin</h3>
         </div>
-        <div class="hari" id="kondisi-selasa">
+        <div class="hari {{ $waktuDosen->kondisi_selasa == 1 ? 'checked' : '' }}" id="kondisi-selasa">
             <h3>Selasa</h3>
         </div>
-        <div class="hari" id="kondisi-rabu">
+        <div class="hari {{ $waktuDosen->kondisi_rabu == 1 ? 'checked' : '' }}" id="kondisi-rabu">
             <h3>Rabu</h3>
         </div>
-        <div class="hari" id="kondisi-kamis">
+        <div class="hari {{ $waktuDosen->kondisi_kamis == 1 ? 'checked' : '' }}" id="kondisi-kamis">
             <h3>Kamis</h3>
         </div>
-        <div class="hari" id="kondisi-jumat">
+        <div class="hari {{ $waktuDosen->kondisi_jumat == 1 ? 'checked' : '' }}" id="kondisi-jumat">
             <h3>Jumat</h3>
         </div>
-        <div class="hari" id="kondisi-sabtu">
+        <div class="hari {{ $waktuDosen->kondisi_sabtu == 1 ? 'checked' : '' }}" id="kondisi-sabtu">
             <h3>Sabtu</h3>
         </div>
-        <div class="hari" id="kondisi-minggu">
+        <div class="hari {{ $waktuDosen->kondisi_minggu == 1 ? 'checked' : '' }}" id="kondisi-minggu">
             <h3>Minggu</h3>
         </div>
     </div>            
 </div>
-</div>
 
-<div class="modalAturHari hidden" id="modalAturHari">
-<div class="modal-content">
-    <h3>Atur Waktu</h3>
-    <form id="form-atur-hari">
-        <div class="atur-hari">
-            <label for="senin">Senin:</label>
-            <input type="checkbox" id="senin" name="senin" value="senin">
-        </div>
-        <div class="atur-hari">
-            <label for="selasa">Selasa:</label>
-            <input type="checkbox" id="selasa" name="selasa" value="selasa">
-        </div>
-        <div class="atur-hari">
-            <label for="rabu">Rabu:</label>
-            <input type="checkbox" id="rabu" name="rabu" value="rabu">
-        </div>
-        <div class="atur-hari">
-            <label for="kamis">Kamis:</label>
-            <input type="checkbox" id="kamis" name="kamis" value="kamis">
-        </div>
-        <div class="atur-hari">
-            <label for="jumat">Jumat:</label>
-            <input type="checkbox" id="jumat" name="jumat" value="jumat">
-        </div>
-        <div class="atur-hari">
-            <label for="sabtu">Sabtu:</label>
-            <input type="checkbox" id="sabtu" name="sabtu" value="sabtu">
-        </div>
-        <div class="atur-hari">
-            <label for="minggu">Minggu:</label>
-            <input type="checkbox" id="minggu" name="minggu" value="minggu">
-        </div>
-        <button type="button" id="btn-simpan">Simpan</button>
-    </form>
-</div>
 @endsection
 
 @section('js')

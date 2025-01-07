@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    <div class="main-content">
+<div class="main-content">
     <div class="left">
         <div class="card-welcome">
             <div class="text">
@@ -18,7 +18,7 @@
                 <div class="nama">{{ $mahasiswa->nama_mahasiswa }}</div>
                 <div class="slogan">🎯Bimbingan on time, Tugas Akhir on point!</div>
                 <a href="{{ route('mahasiswa.pengajuan') }}">
-                    <button href="" class="ajukan"><h3>Ajukan Jadwal</h3><i class="fi fi-br-calendar"></i></button>
+                    <button  class="ajukan"><h3>Ajukan Jadwal</h3><i class="fi fi-br-calendar"></i></button>
                 </a>
             </div>
             <img class="img-welcome-mahasiswa" src="{{asset('assets/dashboard/asset/img/student_ilustration.png')}}" alt="" />
@@ -80,20 +80,21 @@
                 </div>
             </div>
             <div class="schedule">
-                <div class="day">Sen</div>
-                <div class="day">Sel</div>
-                <div class="day">Rab</div>
-                <div class="day">Kam</div>
-                <div class="day">Jum</div>
-                <div class="day disabled">Sab</div>
-                <div class="day disabled">Min</div>
+                <div class="day {{ $waktuDosen->kondisi_senin == 0 ? 'disabled' : '' }}">Sen</div>
+                <div class="day {{ $waktuDosen->kondisi_selasa == 0 ? 'disabled' : '' }}">Sel</div>
+                <div class="day {{ $waktuDosen->kondisi_rabu == 0 ? 'disabled' : '' }}">Rab</div>
+                <div class="day {{ $waktuDosen->kondisi_kamis == 0 ? 'disabled' : '' }}">Kam</div>
+                <div class="day {{ $waktuDosen->kondisi_jumat == 0 ? 'disabled' : '' }}">Jum</div>
+                <div class="day {{ $waktuDosen->kondisi_sabtu == 0 ? 'disabled' : '' }}">Sab</div>
+                <div class="day {{ $waktuDosen->kondisi_minggu == 0 ? 'disabled' : '' }}">Min</div>
             </div>
+                        
         </div>
         <div class="spacer"></div>
     </div>
     <div class="right">
 
-        <h2 class="notif">Pemberitahuan</h2>
+        <h2 class="notif">🔔 Pemberitahuan</h2>
 
         @if ($notifications->isEmpty())
             <div class="notif-item">
@@ -221,7 +222,7 @@
         </div> --}}
 
 
-        <h2>Jadwal Bimbingan</h2>
+        <h2>📅 Jadwal Bimbingan</h2>
         @if ($jadwal->isNotEmpty())
             @foreach ($jadwal as $bimbingan)
                 <div class="card-pengajuan">
@@ -259,18 +260,15 @@
                         </div>
                     </a>
                 </div>
-
-                
-                <div class="spacer"></div>
             @endforeach
         @else
             <img class="bimbingan-kosong" src="{{asset('assets/dashboard/asset/img/bimbingan_kosong_mhs.svg')}}" alt="">
-            
         @endif
 
+        <div class="spacer"></div>
 
     </div>
-    </div>
+</div>
 @endsection
 
 @section('js')

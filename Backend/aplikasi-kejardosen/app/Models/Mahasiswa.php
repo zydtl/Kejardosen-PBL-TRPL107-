@@ -38,5 +38,16 @@ class Mahasiswa extends Authenticatable
         return $this->hasMany(Logbook::class, 'nim', 'nim');
     }
 
-
+    public function waktuDosen()
+    {
+        return $this->hasOneThrough(
+            WaktuDosen::class,
+            Dosen::class,
+            'nik',         // Foreign key di model Dosen
+            'nik_dosen',   // Foreign key di model WaktuDosen
+            'nik_dosen',   // Local key di model Mahasiswa
+            'nik'          // Local key di model Dosen
+        );
+    }
+    
 }

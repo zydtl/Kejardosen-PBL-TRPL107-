@@ -6,6 +6,7 @@ use App\Models\Administrator;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Mahasiswa;
 use App\Models\Dosen;
+use App\Models\WaktuDosen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -68,14 +69,27 @@ class KehendakAdminController extends Controller
 
         ]);
 
-        // Mengarahkan ulang ke halaman yang sama setelah berhasil
         if ($createDosen) {
+            // Membuat entri waktu dosen otomatis
+            WaktuDosen::create([
+                'nik_dosen' => $createDosen->nik, // Menggunakan NIK dosen yang baru saja dibuat
+                'kondisi_senin' => true,
+                'kondisi_selasa' => true,
+                'kondisi_rabu' => true,
+                'kondisi_kamis' => true,
+                'kondisi_jumat' => true,
+                'kondisi_sabtu' => false,
+                'kondisi_minggu' => false,
+            ]);
+    
             // Kembalikan respons sukses
             return response()->json(['success' => true]);
         } else {
-            // Jika pengajuan tidak ditemukan
+            // Jika pembuatan dosen gagal
             return response()->json(['success' => false]);
         }
+
+
     }
 
     public function update(Request $request, $nik)

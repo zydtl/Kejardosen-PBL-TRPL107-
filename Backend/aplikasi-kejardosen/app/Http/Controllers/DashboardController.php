@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
+use App\Models\WaktuDosenDosen;
 use App\Models\PengajuanJadwal;
 use App\Models\JadwalBimbingan;
 use App\Models\Logbook;
+use App\Models\WaktuDosen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
@@ -21,6 +23,10 @@ class DashboardController extends Controller
         // Mendapatkan dosen yang sedang login
         $dosen = $request->user(); // Jika menggunakan middleware auth:dosen
     
+        // waktu dosen
+        $waktuDosen = WaktuDosen::where('nik_dosen', $dosen->nik)->get()->first();
+
+
         // Menghitung jumlah bimbingan mahasiswa
         $bimbinganBerlangsung = JadwalBimbingan::whereHas('mahasiswa', function ($query) use ($dosen) {
             $query->where('nik_dosen', $dosen->nik);
@@ -106,6 +112,7 @@ class DashboardController extends Controller
             'pengajuanMenunggu' => $pengajuan,
             'jadwal' => $jadwal,
             'notifikasi' => $notifikasi,
+            'waktuDosen' => $waktuDosen,
         ]);
     }
     
@@ -135,8 +142,13 @@ class DashboardController extends Controller
         // Memastikan NIM mahasiswa yang sedang login
         $nim = $mahasiswa->nim;
 
-        // Menghitung Jumlah --------------------------------------------------------------------------------------------------------------
+        $mahasiswaWaktuDosen = $mahasiswa;
 
+        $waktuDosen = WaktuDosen::whereHas('dosen', function ($query) use ($mahasiswa) {
+            $query->where('nik_dosen', $mahasiswa->nik_dosen);
+        })->get()->first();
+        
+        // Menghitung Jumlah --------------------------------------------------------------------------------------------------------------
         // Hitung jumlah bimbingan mahasiswa
         $jadwal = JadwalBimbingan::whereHas('pengajuan', function ($query) use ($nim) {
             $query->where('nim', $nim); // Filter berdasarkan NIM
@@ -264,6 +276,7 @@ class DashboardController extends Controller
             'jadwal' => $jadwal,
             'logbook' => $logbook,
             'notifications' => $notifikasi,
+            'waktuDosen' => $waktuDosen,
         ]);
     }
 

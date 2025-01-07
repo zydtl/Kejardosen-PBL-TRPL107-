@@ -30,33 +30,42 @@
     <div class="card-hari">
         <div class="card-header">
             <div class="header-text">Jadwal Anda:</div>
-            <button class="atur-jadwal-btn">Atur Jadwal</button>
+            <button class="atur-jadwal-btn"
+                data-id = "{{ $waktuDosen->idWaktuDosen }}"
+                data-kondisi_senin = "{{ $waktuDosen->kondisi_senin }}"
+                data-kondisi_selasa = "{{ $waktuDosen->kondisi_selasa }}"
+                data-kondisi_rabu = "{{ $waktuDosen->kondisi_rabu }}"
+                data-kondisi_kamis = "{{ $waktuDosen->kondisi_kamis }}"
+                data-kondisi_jumat = "{{ $waktuDosen->kondisi_jumat }}"
+                data-kondisi_sabtu = "{{ $waktuDosen->kondisi_sabtu }}"
+                data-kondisi_minggu = "{{ $waktuDosen->kondisi_minggu }}"
+            >Atur Jadwal</button>
         </div>
     
-        <div class="hari" id="kondisi-senin">
+        <div class="hari {{ $waktuDosen->kondisi_senin == 1 ? 'checked' : '' }}" id="kondisi-senin">
             <h3>Senin</h3>
         </div>
-        <div class="hari" id="kondisi-selasa">
+        <div class="hari {{ $waktuDosen->kondisi_selasa == 1 ? 'checked' : '' }}" id="kondisi-selasa">
             <h3>Selasa</h3>
         </div>
-        <div class="hari" id="kondisi-rabu">
+        <div class="hari {{ $waktuDosen->kondisi_rabu == 1 ? 'checked' : '' }}" id="kondisi-rabu">
             <h3>Rabu</h3>
         </div>
-        <div class="hari" id="kondisi-kamis">
+        <div class="hari {{ $waktuDosen->kondisi_kamis == 1 ? 'checked' : '' }}" id="kondisi-kamis">
             <h3>Kamis</h3>
         </div>
-        <div class="hari" id="kondisi-jumat">
+        <div class="hari {{ $waktuDosen->kondisi_jumat == 1 ? 'checked' : '' }}" id="kondisi-jumat">
             <h3>Jumat</h3>
         </div>
-        <div class="hari" id="kondisi-sabtu">
+        <div class="hari {{ $waktuDosen->kondisi_sabtu == 1 ? 'checked' : '' }}" id="kondisi-sabtu">
             <h3>Sabtu</h3>
         </div>
-        <div class="hari" id="kondisi-minggu">
+        <div class="hari {{ $waktuDosen->kondisi_minggu == 1 ? 'checked' : '' }}" id="kondisi-minggu">
             <h3>Minggu</h3>
         </div>
     </div>            
 </div>
-</div>
+
 
 <div class="modalAturHari hidden" id="modalAturHari">
 <div class="modal-content">
@@ -92,6 +101,7 @@
         </div>
         <button type="button" id="btn-simpan">Simpan</button>
     </form>
+</div>
 </div>
 @endsection
 
