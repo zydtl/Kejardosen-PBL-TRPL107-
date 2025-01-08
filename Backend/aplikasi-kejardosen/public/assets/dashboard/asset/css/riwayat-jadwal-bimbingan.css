@@ -20,12 +20,13 @@ body {
 /* status untuk semua*/
 .status-accept, .status-ongoing, .status-reject, .status-cancel, 
 .status-waiting, .status-delay, .status-resched, .status-finish {
-  padding: 8px 15px;
+  padding: 3px 15px;
   margin-bottom: 5px;
   border-radius: 15px;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 600;
 }
+
 
 .status-accept {
   color: #129D2E;

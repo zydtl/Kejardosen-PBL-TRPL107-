@@ -69,7 +69,8 @@
             title: "Berhasil!",
             text: "Logbook berhasil diubah.",
             icon: "success",
-            confirmButtonText: "OK"
+            confirmButtonText: "OK",
+            confirmButtonColor: "#22a0b8"
         }).then(() => {
             // Setelah klik "OK", submit form secara normal
             document.getElementById('logbook-form').submit();

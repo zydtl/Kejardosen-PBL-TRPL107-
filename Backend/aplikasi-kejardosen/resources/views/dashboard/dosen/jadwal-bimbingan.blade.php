@@ -125,6 +125,7 @@
 @endsection
 
 @section('js')
+    <script src="{{asset('assets/dashboard/asset/javascript/range-tunda.js')}}"></script>
     <script src="{{asset('assets/dashboard/asset/javascript/sidebar-navbar.js')}}"></script>
     <script src="{{asset('assets/dashboard/asset/javascript/Jadwal-bimbingan-dsn.js')}}"></script>
 @endsection
