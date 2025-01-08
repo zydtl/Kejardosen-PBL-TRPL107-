@@ -519,3 +519,19 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+
+
+/* gambar tabel kosong */
+.gambar-kosong {
+  text-align: center;
+  margin-top: 20px;
+  display: none; /* Disembunyikan secara default */
+}
+.gambar-kosong img {
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+
+ul.responsive-table:empty + .gambar-kosong {
+  display: block;
+}

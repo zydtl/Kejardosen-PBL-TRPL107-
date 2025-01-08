@@ -21,7 +21,7 @@
                 <div class="col col-4">Progres TA</div>
                 <div class="col col-5">Aksi</div>
             </li>
-            @foreach ($mahasiswa as $item)
+            @forelse ($mahasiswa as $item)
             <li class="table-row">
                 <div class="col col-1" data-label="NIM">{{ $item->nim }}</div>
                 <div class="col col-2" data-label="Nama">{{ $item->nama_mahasiswa }}</div>
@@ -60,7 +60,15 @@
                     ><i class="fi fi-br-user profil"></i></button>
                 </div>
             </li>
-            @endforeach
+
+            @empty
+            <li style="display: block" class="table-row gambar-kosong">
+                <div class="col" style="text-align: center; width: 100%;">
+                    <img src="{{ asset('assets/dashboard/asset/img/tabel-kosong.svg') }}" alt="Kosong" />
+                    <p>Anda belum memiliki mahasiswa bimbingan...</p>
+                </div>
+            </li>
+            @endforelse
         </ul>
     </div>
 @endsection

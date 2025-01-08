@@ -25,7 +25,7 @@
                 <div class="col col-2">Dosen</div>
                 <div class="col col-3">Aksi</div>
             </li>
-            @foreach($mahasiswa as $data)    
+            @forelse($mahasiswa as $data)    
             <li class="table-row">
                 <div class="col col-1" data-label="Mahasiswa">
                     <div class="nama">{{ $data->nama_mahasiswa }}</div>
@@ -61,8 +61,15 @@
                     <button class="btn-hapus-mhs"><i class="fi fi-br-trash trash"></i></button>
                 </div>
             </li>
-            @endforeach
 
+            @empty
+                <li class="table-row gambar-kosong">
+                    <div class="col" style="text-align: center; width: 100%;">
+                        <img src="{{ asset('assets/dashboard/asset/img/tabel-kosong.svg') }}" alt="Kosong" />
+                        <p>Belum ada mahasiswa terdaftar...</p>
+                    </div>
+                </li>
+            @endforelse
         </ul>
         <!-- Pagination -->
         <div class="pagination">
