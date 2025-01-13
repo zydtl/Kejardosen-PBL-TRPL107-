@@ -136,26 +136,47 @@
     background-color: #ffffff;
   }
   
-  .password-container {
-    position: relative;
-  }
-  
-  .toggle-password {
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    right: 10px; /* Sesuaikan posisi tombol toggle */
-    top: 50%; /* Posisikan di tengah input */
-    transform: translateY(-50%);
-    z-index: 9999999; /* Pastikan di atas input field */
-    display: inline-block; /* Pastikan tampil */
-  }
-  
-  .toggle-password i {
-    font-size: 20px; /* Sesuaikan ukuran ikon */
-    color: #000; /* Warna ikon */
-  }
+  /* Style untuk kontainer password */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Style untuk input */
+.input-field {
+  width: 100%;
+  padding-right: 50px; /* Beri ruang untuk tombol */
+  box-sizing: border-box;
+}
+
+/* Style untuk tombol toggle mata */
+.toggle-password {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50px; /* Sesuaikan dengan kebutuhan */
+  background-color: #3EBCD2; /* Warna latar belakang */
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 5px 5px 0; /* Rounded di sudut kanan */
+}
+
+/* Hapus border di tombol saat fokus */
+.toggle-password:focus {
+  outline: none;
+}
+
+/* Icon di tombol */
+.toggle-password i {
+  font-size: 18px;
+  color: #ffffff;
+}
+
 
 
   

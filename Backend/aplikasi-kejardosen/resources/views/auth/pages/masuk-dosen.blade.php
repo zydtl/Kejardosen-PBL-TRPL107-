@@ -39,14 +39,14 @@
               <input id="usernameInput" name="nik" type="number" class="input-field" placeholder="masukkan NIK anda ..." required>
             </div>
   
-            <!-- Password Input -->
+             <!-- Password Input -->
             <div class="input-container mt-2">
               <label for="passwordInput" class="input-label">🔐 Kata Sandi</label>
               <div class="password-container">
-                <input id="passwordInput" name="password" type="password" class="input-field" placeholder="masukkan kata sandi anda ..." required>
-                <button id="togglePassword" class="toggle-password" type="button">
-                  <i class="bi bi-eye-slash"></i>
-                </button>
+                  <input id="passwordInput" name="password" type="password" class="input-field" placeholder="masukkan kata sandi anda ..." required>
+                  <button type="button" id="togglePassword" class="toggle-password">
+                      <i class="fi fi-rr-eye"></i> <!-- Icon untuk eye-slash -->
+                  </button>
               </div>
             </div>
   

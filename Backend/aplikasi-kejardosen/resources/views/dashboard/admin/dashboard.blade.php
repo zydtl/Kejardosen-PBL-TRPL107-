@@ -14,8 +14,8 @@
         <div class="left">
             <div class="card-welcome">
                 <div class="text">
-                    <h1>👋🏻Halo!🤗</h1>
-                    <div class="nama">Username : {{ $admin->username }}🧑🏻‍💻 <span>({{ $admin->nama }})</span></div>
+                    <h1>Halo!👋</h1>
+                    <div class="nama">Username : {{ $admin->username }} <span>({{ $admin->nama }})</span></div>
                     <div class="slogan">Kontrol Penuh, Proses Lancar</div>
                 </div>
                 <img class="img-welcome-admin" src="{{asset('assets/dashboard/asset/img/admin_ilustration.png')}}" alt="" />

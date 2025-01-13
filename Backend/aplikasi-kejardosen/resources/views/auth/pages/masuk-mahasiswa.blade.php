@@ -45,7 +45,7 @@
               <div class="password-container">
                   <input id="passwordInput" name="password" type="password" class="input-field" placeholder="masukkan kata sandi anda ..." required>
                   <button type="button" id="togglePassword" class="toggle-password">
-                      <i class="bi bi-eye-slash"></i> <!-- Icon untuk eye-slash -->
+                      <i class="fi fi-rr-eye"></i> <!-- Icon untuk eye-slash -->
                   </button>
               </div>
             </div>
