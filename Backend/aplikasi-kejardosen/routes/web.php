@@ -96,8 +96,8 @@ Route::put('/mahasiswa/jadwal-bimbingan/batalkan/{kodeJadwal}', [JadwalBimbingan
     ->middleware('auth:mahasiswa');
 
 Route::put('/mahasiswa/jadwal-bimbingan/selesai/{kodePengajuan}', [JadwalBimbinganController::class, 'selesai'])
-    ->name('dosen.jadwal-bimbingan.selesai')
-    ->middleware('auth:dosen');
+    ->name('mahasiswa.jadwal-bimbingan.selesai')
+    ->middleware('auth:mahasiswa');
 
 // Halaman detail pengajuan untuk Mahasiswa
 Route::get('/mahasiswa/detail-jadwal-bimbingan/{kodeJadwal}', [JadwalBimbinganController::class, 'detailMahasiswa'])
