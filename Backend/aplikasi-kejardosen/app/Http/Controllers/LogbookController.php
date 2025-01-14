@@ -120,7 +120,7 @@ class LogbookController extends Controller
         ->first();
     
         // Ambil semua logbook terkait mahasiswa
-        $logbook = $mahasiswa->pengajuan->flatMap->jadwal->flatMap->logbooks;
+        $logbook = $mahasiswa->pengajuan->flatMap->jadwal->flatMap->logbooks->sortBy('created_at');
     
         // Kirim data ke view
         return view('dashboard.dosen.daftar-logbook', compact('logbook', 'nim'));
